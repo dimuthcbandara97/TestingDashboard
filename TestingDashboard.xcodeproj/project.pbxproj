@@ -25,6 +25,8 @@
 		A2537AA529BF5929000DED14 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AA429BF5929000DED14 /* ProgressViewController.swift */; };
 		A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AA829BF5964000DED14 /* SessionViewController.swift */; };
 		A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AAA29BF597B000DED14 /* DashboardViewController.swift */; };
+		A2537AAD29BF5AA3000DED14 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AAC29BF5AA3000DED14 /* TabBarController.swift */; };
+		A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AAE29BF5AEA000DED14 /* NavBarController.swift */; };
 		A2E2889529BEC43D008921E4 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2E2889429BEC43D008921E4 /* Supabase */; };
 		A2E2889729BEC4CF008921E4 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E2889629BEC4CF008921E4 /* Todo.swift */; };
 		A2E2889929BEC6B4008921E4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E2889829BEC6B4008921E4 /* Task.swift */; };
@@ -70,6 +72,8 @@
 		A2537AA429BF5929000DED14 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		A2537AA829BF5964000DED14 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		A2537AAA29BF597B000DED14 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		A2537AAC29BF5AA3000DED14 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A2537AAE29BF5AEA000DED14 /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		A2E2889629BEC4CF008921E4 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		A2E2889829BEC6B4008921E4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +191,8 @@
 		A240C2B129BC43F000E5DDAC /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				A2537AAC29BF5AA3000DED14 /* TabBarController.swift */,
+				A2537AAE29BF5AEA000DED14 /* NavBarController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -387,12 +393,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */,
+				A2537AAD29BF5AA3000DED14 /* TabBarController.swift in Sources */,
 				A2537A9A29BF55A3000DED14 /* Date.swift in Sources */,
 				A2E2889729BEC4CF008921E4 /* Todo.swift in Sources */,
 				A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */,
 				A2537AA529BF5929000DED14 /* ProgressViewController.swift in Sources */,
 				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
+				A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */,
 				A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */,
 				A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */,
 				A2537A9629BF5515000DED14 /* UIColor.swift in Sources */,
