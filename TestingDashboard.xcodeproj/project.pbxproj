@@ -10,12 +10,16 @@
 		A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C27C29BC3E6600E5DDAC /* AppDelegate.swift */; };
 		A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C27E29BC3E6600E5DDAC /* SceneDelegate.swift */; };
 		A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C28029BC3E6600E5DDAC /* ViewController.swift */; };
-		A240C28429BC3E6600E5DDAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A240C28229BC3E6600E5DDAC /* Main.storyboard */; };
 		A240C28629BC3E6700E5DDAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A240C28529BC3E6700E5DDAC /* Assets.xcassets */; };
 		A240C28929BC3E6700E5DDAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A240C28729BC3E6700E5DDAC /* LaunchScreen.storyboard */; };
 		A240C29429BC3E6700E5DDAC /* TestingDashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C29329BC3E6700E5DDAC /* TestingDashboardTests.swift */; };
 		A240C29E29BC3E6700E5DDAC /* TestingDashboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C29D29BC3E6700E5DDAC /* TestingDashboardUITests.swift */; };
 		A240C2A029BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C29F29BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift */; };
+		A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C2B429BC44F200E5DDAC /* Resources.swift */; };
+		A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C2B629BC655100E5DDAC /* HomeViewController.swift */; };
+		A2E2889529BEC43D008921E4 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2E2889429BEC43D008921E4 /* Supabase */; };
+		A2E2889729BEC4CF008921E4 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E2889629BEC4CF008921E4 /* Todo.swift */; };
+		A2E2889929BEC6B4008921E4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E2889829BEC6B4008921E4 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +44,6 @@
 		A240C27C29BC3E6600E5DDAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A240C27E29BC3E6600E5DDAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A240C28029BC3E6600E5DDAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A240C28329BC3E6600E5DDAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A240C28529BC3E6700E5DDAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A240C28829BC3E6700E5DDAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A240C28A29BC3E6700E5DDAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,10 @@
 		A240C29929BC3E6700E5DDAC /* TestingDashboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingDashboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A240C29D29BC3E6700E5DDAC /* TestingDashboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDashboardUITests.swift; sourceTree = "<group>"; };
 		A240C29F29BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDashboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A240C2B429BC44F200E5DDAC /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		A240C2B629BC655100E5DDAC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A2E2889629BEC4CF008921E4 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		A2E2889829BEC6B4008921E4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E2889529BEC43D008921E4 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +107,13 @@
 		A240C27B29BC3E6600E5DDAC /* TestingDashboard */ = {
 			isa = PBXGroup;
 			children = (
-				A240C27C29BC3E6600E5DDAC /* AppDelegate.swift */,
-				A240C27E29BC3E6600E5DDAC /* SceneDelegate.swift */,
+				A240C2B329BC440E00E5DDAC /* Application */,
+				A240C2B229BC440600E5DDAC /* Base */,
+				A240C2B129BC43F000E5DDAC /* Navigation */,
+				A240C2B029BC43E100E5DDAC /* Controllers */,
+				A240C2AF29BC43D600E5DDAC /* Extensions */,
+				A240C2AE29BC43CC00E5DDAC /* Resources */,
 				A240C28029BC3E6600E5DDAC /* ViewController.swift */,
-				A240C28229BC3E6600E5DDAC /* Main.storyboard */,
-				A240C28529BC3E6700E5DDAC /* Assets.xcassets */,
-				A240C28729BC3E6700E5DDAC /* LaunchScreen.storyboard */,
 				A240C28A29BC3E6700E5DDAC /* Info.plist */,
 			);
 			path = TestingDashboard;
@@ -127,6 +136,56 @@
 			path = TestingDashboardUITests;
 			sourceTree = "<group>";
 		};
+		A240C2AE29BC43CC00E5DDAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A240C28529BC3E6700E5DDAC /* Assets.xcassets */,
+				A240C2B429BC44F200E5DDAC /* Resources.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A240C2AF29BC43D600E5DDAC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A240C2B029BC43E100E5DDAC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A240C2B629BC655100E5DDAC /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A240C2B129BC43F000E5DDAC /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		A240C2B229BC440600E5DDAC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A2E2889629BEC4CF008921E4 /* Todo.swift */,
+				A2E2889829BEC6B4008921E4 /* Task.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A240C2B329BC440E00E5DDAC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A240C27C29BC3E6600E5DDAC /* AppDelegate.swift */,
+				A240C27E29BC3E6600E5DDAC /* SceneDelegate.swift */,
+				A240C28729BC3E6700E5DDAC /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +202,9 @@
 			dependencies = (
 			);
 			name = TestingDashboard;
+			packageProductDependencies = (
+				A2E2889429BEC43D008921E4 /* Supabase */,
+			);
 			productName = TestingDashboard;
 			productReference = A240C27929BC3E6600E5DDAC /* TestingDashboard.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +277,9 @@
 				Base,
 			);
 			mainGroup = A240C27029BC3E6600E5DDAC;
+			packageReferences = (
+				A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = A240C27A29BC3E6600E5DDAC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,7 +298,6 @@
 			files = (
 				A240C28929BC3E6700E5DDAC /* LaunchScreen.storyboard in Resources */,
 				A240C28629BC3E6700E5DDAC /* Assets.xcassets in Resources */,
-				A240C28429BC3E6600E5DDAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */,
+				A2E2889729BEC4CF008921E4 /* Todo.swift in Sources */,
 				A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */,
+				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
 				A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */,
+				A2E2889929BEC6B4008921E4 /* Task.swift in Sources */,
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +365,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A240C28229BC3E6600E5DDAC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A240C28329BC3E6600E5DDAC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A240C28729BC3E6700E5DDAC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,7 +501,6 @@
 				INFOPLIST_FILE = TestingDashboard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +527,6 @@
 				INFOPLIST_FILE = TestingDashboard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -596,6 +654,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2E2889429BEC43D008921E4 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A240C27129BC3E6600E5DDAC /* Project object */;
 }
