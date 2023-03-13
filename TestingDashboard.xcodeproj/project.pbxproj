@@ -17,6 +17,9 @@
 		A240C2A029BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C29F29BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift */; };
 		A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C2B429BC44F200E5DDAC /* Resources.swift */; };
 		A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C2B629BC655100E5DDAC /* HomeViewController.swift */; };
+		A2537A9629BF5515000DED14 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9529BF5515000DED14 /* UIColor.swift */; };
+		A2537A9829BF5575000DED14 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9729BF5575000DED14 /* UIView.swift */; };
+		A2537A9A29BF55A3000DED14 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9929BF55A3000DED14 /* Date.swift */; };
 		A2E2889529BEC43D008921E4 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2E2889429BEC43D008921E4 /* Supabase */; };
 		A2E2889729BEC4CF008921E4 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E2889629BEC4CF008921E4 /* Todo.swift */; };
 		A2E2889929BEC6B4008921E4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E2889829BEC6B4008921E4 /* Task.swift */; };
@@ -54,6 +57,9 @@
 		A240C29F29BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDashboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A240C2B429BC44F200E5DDAC /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		A240C2B629BC655100E5DDAC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A2537A9529BF5515000DED14 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A2537A9729BF5575000DED14 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		A2537A9929BF55A3000DED14 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A2E2889629BEC4CF008921E4 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		A2E2889829BEC6B4008921E4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +154,9 @@
 		A240C2AF29BC43D600E5DDAC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A2537A9529BF5515000DED14 /* UIColor.swift */,
+				A2537A9729BF5575000DED14 /* UIView.swift */,
+				A2537A9929BF55A3000DED14 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,11 +332,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */,
+				A2537A9A29BF55A3000DED14 /* Date.swift in Sources */,
 				A2E2889729BEC4CF008921E4 /* Todo.swift in Sources */,
 				A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
 				A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */,
+				A2537A9629BF5515000DED14 /* UIColor.swift in Sources */,
 				A2E2889929BEC6B4008921E4 /* Task.swift in Sources */,
+				A2537A9829BF5575000DED14 /* UIView.swift in Sources */,
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
