@@ -20,6 +20,11 @@
 		A2537A9629BF5515000DED14 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9529BF5515000DED14 /* UIColor.swift */; };
 		A2537A9829BF5575000DED14 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9729BF5575000DED14 /* UIView.swift */; };
 		A2537A9A29BF55A3000DED14 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9929BF55A3000DED14 /* Date.swift */; };
+		A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9C29BF56BA000DED14 /* LoginViewController.swift */; };
+		A2537AA029BF57C0000DED14 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */; };
+		A2537AA529BF5929000DED14 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AA429BF5929000DED14 /* ProgressViewController.swift */; };
+		A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AA829BF5964000DED14 /* SessionViewController.swift */; };
+		A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AAA29BF597B000DED14 /* DashboardViewController.swift */; };
 		A2E2889529BEC43D008921E4 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2E2889429BEC43D008921E4 /* Supabase */; };
 		A2E2889729BEC4CF008921E4 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E2889629BEC4CF008921E4 /* Todo.swift */; };
 		A2E2889929BEC6B4008921E4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E2889829BEC6B4008921E4 /* Task.swift */; };
@@ -60,6 +65,11 @@
 		A2537A9529BF5515000DED14 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A2537A9729BF5575000DED14 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A2537A9929BF55A3000DED14 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A2537A9C29BF56BA000DED14 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A2537AA429BF5929000DED14 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		A2537AA829BF5964000DED14 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		A2537AAA29BF597B000DED14 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A2E2889629BEC4CF008921E4 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		A2E2889829BEC6B4008921E4 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +174,11 @@
 		A240C2B029BC43E100E5DDAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A2537AA329BF5909000DED14 /* Dashboard */,
+				A2537AA229BF58F9000DED14 /* Session */,
+				A2537AA129BF58ED000DED14 /* Progress */,
+				A2537A9E29BF56CC000DED14 /* Settings */,
+				A2537A9B29BF5694000DED14 /* LoginView  */,
 				A240C2B629BC655100E5DDAC /* HomeViewController.swift */,
 			);
 			path = Controllers;
@@ -193,6 +208,46 @@
 				A240C28729BC3E6700E5DDAC /* LaunchScreen.storyboard */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		A2537A9B29BF5694000DED14 /* LoginView  */ = {
+			isa = PBXGroup;
+			children = (
+				A2537A9C29BF56BA000DED14 /* LoginViewController.swift */,
+			);
+			path = "LoginView ";
+			sourceTree = "<group>";
+		};
+		A2537A9E29BF56CC000DED14 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A2537AA129BF58ED000DED14 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				A2537AA429BF5929000DED14 /* ProgressViewController.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		A2537AA229BF58F9000DED14 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				A2537AA829BF5964000DED14 /* SessionViewController.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		A2537AA329BF5909000DED14 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				A2537AAA29BF597B000DED14 /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,12 +390,17 @@
 				A2537A9A29BF55A3000DED14 /* Date.swift in Sources */,
 				A2E2889729BEC4CF008921E4 /* Todo.swift in Sources */,
 				A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */,
+				A2537AA529BF5929000DED14 /* ProgressViewController.swift in Sources */,
+				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
+				A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */,
 				A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */,
 				A2537A9629BF5515000DED14 /* UIColor.swift in Sources */,
 				A2E2889929BEC6B4008921E4 /* Task.swift in Sources */,
 				A2537A9829BF5575000DED14 /* UIView.swift in Sources */,
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
+				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
+				A2537AA029BF57C0000DED14 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
