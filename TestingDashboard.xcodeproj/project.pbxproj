@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A2396E1A29C02CD8009206D3 /* ExerciseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1929C02CD8009206D3 /* ExerciseElement.swift */; };
+		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
+		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
+		A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2529C08D63009206D3 /* SectionHeaderView.swift */; };
 		A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C27C29BC3E6600E5DDAC /* AppDelegate.swift */; };
 		A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C27E29BC3E6600E5DDAC /* SceneDelegate.swift */; };
 		A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C28029BC3E6600E5DDAC /* ViewController.swift */; };
@@ -53,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		A2396E1929C02CD8009206D3 /* ExerciseElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseElement.swift; sourceTree = "<group>"; };
+		A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavBar.swift; sourceTree = "<group>"; };
+		A2396E2229C08C15009206D3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		A2396E2529C08D63009206D3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		A240C27929BC3E6600E5DDAC /* TestingDashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingDashboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A240C27C29BC3E6600E5DDAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A240C27E29BC3E6600E5DDAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +120,31 @@
 				A2396E1929C02CD8009206D3 /* ExerciseElement.swift */,
 			);
 			path = Element;
+			sourceTree = "<group>";
+		};
+		A2396E1E29C08B92009206D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2396E2429C08D25009206D3 /* CollectionViews */,
+				A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A2396E2129C08C01009206D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2396E2229C08C15009206D3 /* BaseView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A2396E2429C08D25009206D3 /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				A2396E2529C08D63009206D3 /* SectionHeaderView.swift */,
+			);
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 		A240C27029BC3E6600E5DDAC = {
@@ -264,6 +295,7 @@
 		A2537AA329BF5909000DED14 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				A2396E1E29C08B92009206D3 /* Views */,
 				A2537AAA29BF597B000DED14 /* DashboardViewController.swift */,
 			);
 			path = Dashboard;
@@ -307,6 +339,7 @@
 		A2537ABB29BF5DBB000DED14 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A2396E2129C08C01009206D3 /* Views */,
 				A2537ABE29BF5E36000DED14 /* BaseController.swift */,
 			);
 			path = Base;
@@ -464,6 +497,7 @@
 			files = (
 				A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */,
 				A2537AAD29BF5AA3000DED14 /* TabBarController.swift in Sources */,
+				A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */,
 				A2537A9A29BF55A3000DED14 /* Date.swift in Sources */,
 				A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */,
 				A2537AB429BF5CB0000DED14 /* APIAuth.swift in Sources */,
@@ -472,6 +506,7 @@
 				A2396E1A29C02CD8009206D3 /* ExerciseElement.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
 				A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */,
+				A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */,
 				A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */,
 				A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */,
 				A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */,
@@ -479,6 +514,7 @@
 				A2537A9629BF5515000DED14 /* UIColor.swift in Sources */,
 				A2537A9829BF5575000DED14 /* UIView.swift in Sources */,
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
+				A2396E2329C08C15009206D3 /* BaseView.swift in Sources */,
 				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
 				A2537AA029BF57C0000DED14 /* SettingsViewController.swift in Sources */,
 			);
