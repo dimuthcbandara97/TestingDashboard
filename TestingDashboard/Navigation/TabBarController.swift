@@ -38,13 +38,26 @@ class TabBarController: UITabBarController {
     
     private func configureAppearance() {
 
+        // Ading Decorations to TabBar
+        
+        // Adding Animations
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        
         // Adding Controllers
         let controllers: [NavBarController] = Tabs.allCases.map { tab in
             let controller = NavBarController(rootViewController: tabController(for: tab))
+            controller.tabBarItem = UITabBarItem(title: OverallController.Strings.TabBar.title(for: tab),
+                                                 image: OverallController.Images.TabBar.icon(for: tab),
+                                                 tag: tab.rawValue)
             return controller
         }
         
-    setViewControllers(controllers, animated: false)
+        view.layer.add(transition, forKey: kCATransition)
+        setViewControllers(controllers, animated: true)
     }
     }
     private func tabController(for tab: Tabs) -> BaseController {
