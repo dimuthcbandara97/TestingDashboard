@@ -30,7 +30,7 @@ private extension SectionHeaderView {
     
      func setupViews() {
         
-//        setupView(title)
+        setupView(title)
        
     }
      func constaintViews() {

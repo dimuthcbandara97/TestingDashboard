@@ -27,7 +27,7 @@ extension DashboardBaseController {
     override func setupViews(){
         super.setupViews()
         
-        
+        title = "Dashboard Main"
         view.setupView(navBar)
     }
     
