@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Overall controller is addeed to add constant Strings and numbers
 enum OverallController {
     
     // Create seperate enums for Strings, Images, Fonts, and Colors
