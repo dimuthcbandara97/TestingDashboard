@@ -34,6 +34,7 @@
 		A2537AB429BF5CB0000DED14 /* APIAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB329BF5CB0000DED14 /* APIAuth.swift */; };
 		A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */; };
 		A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537ABE29BF5E36000DED14 /* BaseController.swift */; };
+		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A2E2889529BEC43D008921E4 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2E2889429BEC43D008921E4 /* Supabase */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		A2537AB329BF5CB0000DED14 /* APIAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuth.swift; sourceTree = "<group>"; };
 		A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		A2537ABE29BF5E36000DED14 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		A28BF1DD29C177F8001B8264 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +343,7 @@
 			children = (
 				A2396E2129C08C01009206D3 /* Views */,
 				A2537ABE29BF5E36000DED14 /* BaseController.swift */,
+				A28BF1DD29C177F8001B8264 /* BaseButton.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				A2537AA529BF5929000DED14 /* ProgressViewController.swift in Sources */,
 				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A2396E1A29C02CD8009206D3 /* ExerciseElement.swift in Sources */,
+				A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
 				A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */,
 				A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */,
