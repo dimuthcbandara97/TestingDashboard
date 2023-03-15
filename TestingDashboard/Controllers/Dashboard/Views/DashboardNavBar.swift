@@ -23,6 +23,7 @@ class DashboardNavBar: BaseView {
     private let allWorkoutButton: BaseButton = {
         let button = BaseButton(with: .secondary)
         button.setTitle("My Workouts")
+        button.backgroundColor = .systemPurple
         return button
     }()
     
@@ -97,7 +98,7 @@ extension DashboardNavBar {
         backgroundColor = .white
 
         
-        allWorkoutButton.setTitle("All My workouts")
+        allWorkoutButton.setTitle("Workouts")
         
         addButton.setImage(UIImage(systemName: "home"), for: .normal)
         

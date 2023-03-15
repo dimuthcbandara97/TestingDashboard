@@ -37,6 +37,12 @@
 		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E729C191DF001B8264 /* WeekView.swift */; };
 		A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E929C1924E001B8264 /* WeekDayView.swift */; };
+		A28BF1EE29C1ACAE001B8264 /* BaseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1ED29C1ACAE001B8264 /* BaseInfoView.swift */; };
+		A28BF1F029C1AF04001B8264 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1EF29C1AF04001B8264 /* TimerView.swift */; };
+		A28BF1F229C1AF81001B8264 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1F129C1AF81001B8264 /* ProgressView.swift */; };
+		A28BF1F429C1AF8E001B8264 /* PercentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1F329C1AF8E001B8264 /* PercentView.swift */; };
+		A28BF1F829C1B2F1001B8264 /* DailyPerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1F729C1B2F1001B8264 /* DailyPerformanceView.swift */; };
+		A28BF1FE29C1B4E7001B8264 /* BaseBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1FD29C1B4E7001B8264 /* BaseBarView.swift */; };
 		A2E2889529BEC43D008921E4 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2E2889429BEC43D008921E4 /* Supabase */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +98,12 @@
 		A28BF1DD29C177F8001B8264 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A28BF1E729C191DF001B8264 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		A28BF1E929C1924E001B8264 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
+		A28BF1ED29C1ACAE001B8264 /* BaseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoView.swift; sourceTree = "<group>"; };
+		A28BF1EF29C1AF04001B8264 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		A28BF1F129C1AF81001B8264 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		A28BF1F329C1AF8E001B8264 /* PercentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentView.swift; sourceTree = "<group>"; };
+		A28BF1F729C1B2F1001B8264 /* DailyPerformanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPerformanceView.swift; sourceTree = "<group>"; };
+		A28BF1FD29C1B4E7001B8264 /* BaseBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +298,8 @@
 		A2537AA129BF58ED000DED14 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				A28BF1F629C1B22E001B8264 /* DailyPerformanceView */,
+				A28BF1F529C1B211001B8264 /* MonthlyPerformanceView */,
 				A2537AA429BF5929000DED14 /* ProgressViewController.swift */,
 			);
 			path = Progress;
@@ -294,6 +308,7 @@
 		A2537AA229BF58F9000DED14 /* Session */ = {
 			isa = PBXGroup;
 			children = (
+				A28BF1EB29C1AB2F001B8264 /* Views */,
 				A2537AA829BF5964000DED14 /* SessionViewController.swift */,
 			);
 			path = Session;
@@ -349,6 +364,7 @@
 				A2396E2129C08C01009206D3 /* Views */,
 				A2537ABE29BF5E36000DED14 /* BaseController.swift */,
 				A28BF1DD29C177F8001B8264 /* BaseButton.swift */,
+				A28BF1ED29C1ACAE001B8264 /* BaseInfoView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -363,6 +379,7 @@
 		A2537ABD29BF5DD2000DED14 /* BarsViews */ = {
 			isa = PBXGroup;
 			children = (
+				A28BF1FD29C1B4E7001B8264 /* BaseBarView.swift */,
 			);
 			path = BarsViews;
 			sourceTree = "<group>";
@@ -374,6 +391,39 @@
 				A28BF1E929C1924E001B8264 /* WeekDayView.swift */,
 			);
 			path = WeekView;
+			sourceTree = "<group>";
+		};
+		A28BF1EB29C1AB2F001B8264 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A28BF1EC29C1AC42001B8264 /* TimerView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A28BF1EC29C1AC42001B8264 /* TimerView */ = {
+			isa = PBXGroup;
+			children = (
+				A28BF1EF29C1AF04001B8264 /* TimerView.swift */,
+				A28BF1F129C1AF81001B8264 /* ProgressView.swift */,
+				A28BF1F329C1AF8E001B8264 /* PercentView.swift */,
+			);
+			path = TimerView;
+			sourceTree = "<group>";
+		};
+		A28BF1F529C1B211001B8264 /* MonthlyPerformanceView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MonthlyPerformanceView;
+			sourceTree = "<group>";
+		};
+		A28BF1F629C1B22E001B8264 /* DailyPerformanceView */ = {
+			isa = PBXGroup;
+			children = (
+				A28BF1F729C1B2F1001B8264 /* DailyPerformanceView.swift */,
+			);
+			path = DailyPerformanceView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,7 +563,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */,
+				A28BF1F829C1B2F1001B8264 /* DailyPerformanceView.swift in Sources */,
 				A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */,
+				A28BF1FE29C1B4E7001B8264 /* BaseBarView.swift in Sources */,
 				A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */,
 				A2537AAD29BF5AA3000DED14 /* TabBarController.swift in Sources */,
 				A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */,
@@ -521,20 +573,24 @@
 				A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */,
 				A2537AB429BF5CB0000DED14 /* APIAuth.swift in Sources */,
 				A2537AA529BF5929000DED14 /* ProgressViewController.swift in Sources */,
+				A28BF1F029C1AF04001B8264 /* TimerView.swift in Sources */,
 				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A2396E1A29C02CD8009206D3 /* ExerciseElement.swift in Sources */,
 				A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
 				A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */,
 				A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */,
+				A28BF1F429C1AF8E001B8264 /* PercentView.swift in Sources */,
 				A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */,
 				A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */,
 				A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */,
 				A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */,
 				A2537A9629BF5515000DED14 /* UIColor.swift in Sources */,
 				A2537A9829BF5575000DED14 /* UIView.swift in Sources */,
+				A28BF1EE29C1ACAE001B8264 /* BaseInfoView.swift in Sources */,
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
 				A2396E2329C08C15009206D3 /* BaseView.swift in Sources */,
+				A28BF1F229C1AF81001B8264 /* ProgressView.swift in Sources */,
 				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
 				A2537AA029BF57C0000DED14 /* SettingsViewController.swift in Sources */,
 			);
