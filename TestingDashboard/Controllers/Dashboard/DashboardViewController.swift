@@ -36,10 +36,10 @@ extension DashboardBaseController {
         NSLayoutConstraint.activate([
             
             navBar.topAnchor.constraint(equalTo: view.topAnchor),
-            navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor ),
+            navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor ),
             
-            navBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            navBar.bottomAnchor.constraint(equalTo: view.bottomAnchor) ,
 //            header.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>)
 //
             

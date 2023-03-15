@@ -26,6 +26,9 @@ class DashboardNavBar: BaseView {
         return button
     }()
     
+    // WeekView
+    private var weekView = WeekView()
+    
     // layout subViews Here
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -54,6 +57,7 @@ extension DashboardNavBar {
         setupView(allWorkoutButton)
         setupView(titlelabel)
         setupView(addButton)
+        setupView(weekView)
     }
    
     override func constaintViews() {
@@ -77,6 +81,12 @@ extension DashboardNavBar {
             titlelabel.centerYAnchor.constraint(equalTo: addButton.centerYAnchor),
             titlelabel.trailingAnchor.constraint(equalTo: addButton.leadingAnchor),
             titlelabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            
+            weekView.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 15),
+            weekView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            weekView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
+            weekView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
+            weekView.heightAnchor.constraint(equalToConstant: 47)
             
         ])
     }

@@ -29,11 +29,17 @@ extension WeekView {
     override func constaintViews() {
         super.constaintViews()
         // StackView constraints
+//        NSLayoutConstraint.activate([
+//            stackView.topAnchor.constraint(equalTo: topAnchor),
+//            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+//        ])
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -550)
         ])
     }
 
