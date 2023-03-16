@@ -7,27 +7,38 @@
 
 import UIKit
 
-final class SessionBaseController: BaseController {
-    
-    
-    private let timerView = TimerView()
+import UIKit
 
+final class SessionBaseController: BaseController {
+    private let timerView = TimerView()
     
     private let timerDuration = 5.0
     
     override func navBarLeftButtonHandler() {
-
+        if timerView.state == .isStopped {
+            timerView.startTimer()
+        } else {
+            timerView.pauseTimer()
+        }
+        
+        timerView.state = timerView.state == .isRuning ? .isStopped : .isRuning
+        addNavBarButton(
+            at: .Left,
+            with: timerView.state == .isRuning
+            ? "PAUSE" : "START"
+        )
     }
     
     override func navBarRightButtonHanler() {
-
+        timerView.stopTimer()
+        timerView.state = .isStopped
+        
+        addNavBarButton(at: .Left, with: "NavBar Start")
     }
 }
 
 extension SessionBaseController {
     override func setupViews() {
-        
-        view.backgroundColor = .white
         super.setupViews()
         
         view.setupView(timerView)
@@ -41,7 +52,6 @@ extension SessionBaseController {
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            
 
         ])
     }
@@ -52,7 +62,9 @@ extension SessionBaseController {
         
         title = OverallController.Strings.NavBar.session
         navigationController?.tabBarItem.title = OverallController.Strings.TabBar.title(for: .session)
-
+        
+        addNavBarButton(at: .Left, with: "START")
+        addNavBarButton(at: .Right, with: "FINISH")
         
         timerView.configure(with: timerDuration, progress: 0)
         
@@ -65,6 +77,7 @@ extension SessionBaseController {
         //        timerView.callBack = { [weak self] in
         //            self?.navBarRightButtonHandler()
         //        }
+        
         
         
     }
