@@ -77,13 +77,7 @@ extension SessionBaseController {
                 self.navBarRightButtonHanler()
             }
         }
-        
-        //        timerView.callBack = { [weak self] in
-        //            self?.navBarRightButtonHandler()
-        //        }
-        
-        
-      
+
         
         statsView.configure(with: [.topic01(value: "val"),
                                    .topic02(value: "val2"),
