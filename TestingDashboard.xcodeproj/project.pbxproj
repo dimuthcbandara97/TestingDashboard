@@ -34,6 +34,7 @@
 		A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */; };
 		A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537ABE29BF5E36000DED14 /* BaseController.swift */; };
 		A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6C829C327E800ED848D /* StatsItemView.swift */; };
+		A274D6CB29C32FFD00ED848D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6CA29C32FFD00ED848D /* StatsView.swift */; };
 		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E729C191DF001B8264 /* WeekView.swift */; };
 		A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E929C1924E001B8264 /* WeekDayView.swift */; };
@@ -105,6 +106,7 @@
 		A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		A2537ABE29BF5E36000DED14 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		A274D6C829C327E800ED848D /* StatsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsItemView.swift; sourceTree = "<group>"; };
+		A274D6CA29C32FFD00ED848D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		A28BF1DD29C177F8001B8264 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A28BF1E729C191DF001B8264 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		A28BF1E929C1924E001B8264 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				A274D6C829C327E800ED848D /* StatsItemView.swift */,
+				A274D6CA29C32FFD00ED848D /* StatsView.swift */,
 			);
 			path = StatsView;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				A28BF1F429C1AF8E001B8264 /* PercentView.swift in Sources */,
 				A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */,
 				A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */,
+				A274D6CB29C32FFD00ED848D /* StatsView.swift in Sources */,
 				A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */,
 				A28BF21029C1F50E001B8264 /* ExerciseElement.swift in Sources */,
 				A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */,
