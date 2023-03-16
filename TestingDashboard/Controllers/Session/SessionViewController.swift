@@ -8,6 +8,8 @@
 import UIKit
 
 final class SessionBaseController: BaseController {
+    
+    
     private let timerView = TimerView()
 
     
@@ -24,6 +26,8 @@ final class SessionBaseController: BaseController {
 
 extension SessionBaseController {
     override func setupViews() {
+        
+        view.backgroundColor = .white
         super.setupViews()
         
         view.setupView(timerView)

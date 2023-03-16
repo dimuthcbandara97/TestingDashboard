@@ -11,7 +11,7 @@ enum Tabs: Int, CaseIterable {
     case dashboard
     case session
     case progress
-    case settings
+    case nutrition
 }
 
 class TabBarController: UITabBarController {
@@ -66,7 +66,7 @@ class TabBarController: UITabBarController {
         case .dashboard: return DashboardBaseController()
         case .session: return SessionBaseController()
         case .progress: return ProgressBaseController()
-        case .settings: return SettingsBaseController()
+        case .nutrition: return SettingsBaseController()
         }
     }
 
