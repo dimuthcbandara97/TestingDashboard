@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MusicKit
 
 class SettingsBaseController: BaseController {
 
