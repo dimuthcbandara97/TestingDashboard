@@ -36,6 +36,9 @@
 		A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6C829C327E800ED848D /* StatsItemView.swift */; };
 		A274D6CB29C32FFD00ED848D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6CA29C32FFD00ED848D /* StatsView.swift */; };
 		A274D6CE29C3352A00ED848D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6CD29C3352A00ED848D /* ProgressView.swift */; };
+		A274D6D129C33FE900ED848D /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6D029C33FE900ED848D /* TitleCollectionViewCell.swift */; };
+		A274D6D429C3407500ED848D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A274D6D329C3407500ED848D /* SDWebImage */; };
+		A274D6D629C3407500ED848D /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A274D6D529C3407500ED848D /* SDWebImageMapKit */; };
 		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E729C191DF001B8264 /* WeekView.swift */; };
 		A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E929C1924E001B8264 /* WeekDayView.swift */; };
@@ -109,6 +112,7 @@
 		A274D6C829C327E800ED848D /* StatsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsItemView.swift; sourceTree = "<group>"; };
 		A274D6CA29C32FFD00ED848D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		A274D6CD29C3352A00ED848D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		A274D6D029C33FE900ED848D /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		A28BF1DD29C177F8001B8264 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A28BF1E729C191DF001B8264 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		A28BF1E929C1924E001B8264 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A274D6D429C3407500ED848D /* SDWebImage in Frameworks */,
+				A274D6D629C3407500ED848D /* SDWebImageMapKit in Frameworks */,
 				A2E2889529BEC43D008921E4 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +325,7 @@
 		A2537A9E29BF56CC000DED14 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A274D6CF29C33FB900ED848D /* Views */,
 				A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -433,6 +440,14 @@
 			path = Progress;
 			sourceTree = "<group>";
 		};
+		A274D6CF29C33FB900ED848D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A274D6D029C33FE900ED848D /* TitleCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A28BF1E629C191CB001B8264 /* WeekView */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +519,8 @@
 			name = TestingDashboard;
 			packageProductDependencies = (
 				A2E2889429BEC43D008921E4 /* Supabase */,
+				A274D6D329C3407500ED848D /* SDWebImage */,
+				A274D6D529C3407500ED848D /* SDWebImageMapKit */,
 			);
 			productName = TestingDashboard;
 			productReference = A240C27929BC3E6600E5DDAC /* TestingDashboard.app */;
@@ -579,6 +596,7 @@
 			mainGroup = A240C27029BC3E6600E5DDAC;
 			packageReferences = (
 				A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = A240C27A29BC3E6600E5DDAC /* Products */;
 			projectDirPath = "";
@@ -627,6 +645,7 @@
 				A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */,
 				A28BF1FE29C1B4E7001B8264 /* BaseBarView.swift in Sources */,
 				A28BF20E29C1F461001B8264 /* NetworkingElement.swift in Sources */,
+				A274D6D129C33FE900ED848D /* TitleCollectionViewCell.swift in Sources */,
 				A274D6CE29C3352A00ED848D /* ProgressView.swift in Sources */,
 				A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */,
 				A2537AAD29BF5AA3000DED14 /* TabBarController.swift in Sources */,
@@ -992,6 +1011,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase/supabase-swift.git";
@@ -1003,6 +1030,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A274D6D329C3407500ED848D /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		A274D6D529C3407500ED848D /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
 		A2E2889429BEC43D008921E4 /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */;
