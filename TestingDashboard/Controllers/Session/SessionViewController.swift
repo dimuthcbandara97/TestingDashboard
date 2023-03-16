@@ -7,13 +7,12 @@
 
 import UIKit
 
-import UIKit
-
 final class SessionBaseController: BaseController {
     private let timerView = TimerView()
+    private let statsView = StatsView(with: "My Stats")
+
     
     private let timerDuration = 5.0
-    
     
     override func navBarLeftButtonHandler() {
         if timerView.state == .isStopped {
@@ -34,16 +33,16 @@ final class SessionBaseController: BaseController {
         timerView.stopTimer()
         timerView.state = .isStopped
         
-        addNavBarButton(at: .Left, with: "NavBar Start")
+        addNavBarButton(at: .Left, with: "START")
     }
 }
 
 extension SessionBaseController {
     override func setupViews() {
         super.setupViews()
-       
+        
         view.setupView(timerView)
-
+        view.setupView(statsView)
     }
     
     override func constaintViews() {
@@ -53,6 +52,10 @@ extension SessionBaseController {
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            
+            statsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 10),
+            statsView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -7.5),
 
         ])
     }
@@ -80,7 +83,13 @@ extension SessionBaseController {
         //        }
         
         
+      
+        
+        statsView.configure(with: [.topic01(value: "val"),
+                                   .topic02(value: "val2"),
+                                   .topic03(value: "val3"),
+                                   .topic04(value: "val4")])
+        
         
     }
 }
-
