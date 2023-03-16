@@ -23,5 +23,5 @@ struct TimerElement: Codable {
     }
 }
 
-typealias Timer = [TimerElement]
+typealias Timerr = [TimerElement]
 

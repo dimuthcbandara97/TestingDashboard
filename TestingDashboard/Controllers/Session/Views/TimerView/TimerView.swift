@@ -7,24 +7,30 @@
 
 import UIKit
 
+enum TimerState {
+    case isRuning
+    case isPaused
+    case isStopped
+}
+
 final class TimerView: BaseInfoView {
 
     private let elapsedTimeLable: UILabel = {
-        let label = UILabel()
-        label.text = "Time Remaining"
+        let lable = UILabel()
+        lable.text = "Remaining Time"
 //        lable.font =
-        label.textColor = .orange
-        label.textAlignment = .center
-        return label
+        lable.textColor = .black
+        lable.textAlignment = .center
+        return lable
     }()
 
     private let elapsedTimeValueLable: UILabel = {
-        let label = UILabel()
-        label.text = "02:15"
+        let lable = UILabel()
+        lable.text = "02:15"
 //        lable.font =
-        label.textColor = .green
-        label.textAlignment = .center
-        return label
+        lable.textColor = .gray
+        lable.textAlignment = .center
+        return lable
     }()
 
     private let remainingTimeLable: UILabel = {
@@ -38,9 +44,9 @@ final class TimerView: BaseInfoView {
 
     private let remainingTimeValueLable: UILabel = {
         let lable = UILabel()
-        lable.text = "12:45"
+        //lable.text = "12:45"
 //        lable.font =
-        lable.textColor = .gray
+        lable.textColor = .black
         lable.textAlignment = .center
         return lable
     }()
@@ -59,20 +65,25 @@ final class TimerView: BaseInfoView {
         view.spacing = 25
         return view
     }()
-
+    
+    private let completedPercentView = PercentView()
+    private let remainingPercentView = PercentView()
     
     private let bottomSeparatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         return view
     }()
     
+    private let progressView = ProgressView()
     
+   
 
     private var timer = Timer()
     private var timerProgress: CGFloat = 0
     private var timerDuration = 0.0
 
+    var state: TimerState = .isStopped
     var callBack: (() -> Void)?
 
     func configure(with duration: Double, progress: Double) {
@@ -86,19 +97,53 @@ final class TimerView: BaseInfoView {
 
         elapsedTimeValueLable.text = getDisplayedString(from: Int(tempCurrentValue))
         remainingTimeValueLable.text = getDisplayedString(from: Int(duration - tempCurrentValue))
-
+        completedPercentView.configure(with: "Completed", andValue: roundedPercent)
+        remainingPercentView.configure(with: "Remaining", andValue: 100 - roundedPercent)
+        progressView.drawProgress(with: CGFloat(percent))
     }
 
     func startTimer() {
+        timer.invalidate()
+  
 
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01,
+                                     repeats: true,
+                                     block: { [weak self] timer in
+            guard let self = self else { return }
+            self.timerProgress += 0.01
+
+            if self.timerProgress > self.timerDuration {
+                self.timerProgress = self.timerDuration
+                timer.invalidate()
+                self.callBack?()
+            }
+
+            self.configure(with: self.timerDuration, progress: self.timerProgress)
+        })
     }
 
     func pauseTimer() {
-
+        timer.invalidate()
     }
 
     func stopTimer() {
-       
+        guard self.timerProgress > 0 else { return }
+        timer.invalidate()
+
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01,
+                                     repeats: true,
+                                     block: { [weak self] timer in
+            guard let self = self else { return }
+            self.timerProgress -= 0.1
+            self.timerProgress -= self.timerDuration * 0.02
+
+            if self.timerProgress <= 0 {
+                self.timerProgress = 0
+                timer.invalidate()
+            }
+
+            self.configure(with: self.timerDuration, progress: self.timerProgress)
+        })
     }
 }
 
@@ -106,6 +151,7 @@ extension TimerView {
     override func setupViews() {
         super.setupViews()
 
+        setupView(progressView)
         setupView(timeStackView)
         setupView(bottomStackView)
 
@@ -117,8 +163,9 @@ extension TimerView {
         ].forEach(timeStackView.addArrangedSubview)
         
         [
+            completedPercentView,
             bottomSeparatorView,
-
+            remainingPercentView,
         ].forEach(bottomStackView.addArrangedSubview)
         
         
@@ -128,7 +175,14 @@ extension TimerView {
         super.constaintViews()
 
         NSLayoutConstraint.activate([
+            progressView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
+            progressView.topAnchor.constraint(equalTo: topAnchor, constant: 40),
+            progressView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            progressView.heightAnchor.constraint(equalTo: progressView.widthAnchor),
+            progressView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
 
+            timeStackView.centerYAnchor.constraint(equalTo: progressView.centerYAnchor),
+            timeStackView.centerXAnchor.constraint(equalTo: progressView.centerXAnchor),
             
             bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -28),
             bottomStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -159,5 +213,4 @@ private extension TimerView {
         : [hoursStr, minutesStr, secondStr].joined(separator: ": ")
     }
 }
-
 
