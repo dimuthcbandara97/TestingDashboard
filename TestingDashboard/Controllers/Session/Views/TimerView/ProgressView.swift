@@ -27,7 +27,7 @@ extension TimerView {
 
             let defaultCircleLayer = CAShapeLayer()
             defaultCircleLayer.path = circlePath.cgPath
-//            defaultCircleLayer.strokeColor = .systemRed
+            defaultCircleLayer.strokeColor = UIColor.systemYellow.cgColor
             defaultCircleLayer.lineWidth = 20
             defaultCircleLayer.strokeEnd = 1
             defaultCircleLayer.fillColor = UIColor.clear.cgColor
@@ -35,7 +35,7 @@ extension TimerView {
 
             let circleLayer = CAShapeLayer()
             circleLayer.path = circlePath.cgPath
-//            circleLayer.strokeColor =
+            circleLayer.strokeColor = UIColor.systemTeal.cgColor
             circleLayer.lineWidth = 20
             circleLayer.strokeEnd = percent
             circleLayer.fillColor = UIColor.clear.cgColor

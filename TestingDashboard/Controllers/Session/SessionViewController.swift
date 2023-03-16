@@ -14,6 +14,7 @@ final class SessionBaseController: BaseController {
     
     private let timerDuration = 5.0
     
+    
     override func navBarLeftButtonHandler() {
         if timerView.state == .isStopped {
             timerView.startTimer()
@@ -40,7 +41,7 @@ final class SessionBaseController: BaseController {
 extension SessionBaseController {
     override func setupViews() {
         super.setupViews()
-        
+       
         view.setupView(timerView)
 
     }

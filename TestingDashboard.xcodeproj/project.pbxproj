@@ -33,6 +33,7 @@
 		A2537AB429BF5CB0000DED14 /* APIAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB329BF5CB0000DED14 /* APIAuth.swift */; };
 		A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */; };
 		A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537ABE29BF5E36000DED14 /* BaseController.swift */; };
+		A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6C829C327E800ED848D /* StatsItemView.swift */; };
 		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E729C191DF001B8264 /* WeekView.swift */; };
 		A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E929C1924E001B8264 /* WeekDayView.swift */; };
@@ -103,6 +104,7 @@
 		A2537AB329BF5CB0000DED14 /* APIAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuth.swift; sourceTree = "<group>"; };
 		A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		A2537ABE29BF5E36000DED14 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		A274D6C829C327E800ED848D /* StatsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsItemView.swift; sourceTree = "<group>"; };
 		A28BF1DD29C177F8001B8264 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A28BF1E729C191DF001B8264 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		A28BF1E929C1924E001B8264 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
@@ -410,6 +412,14 @@
 			path = BarsViews;
 			sourceTree = "<group>";
 		};
+		A274D6C729C327D400ED848D /* StatsView */ = {
+			isa = PBXGroup;
+			children = (
+				A274D6C829C327E800ED848D /* StatsItemView.swift */,
+			);
+			path = StatsView;
+			sourceTree = "<group>";
+		};
 		A28BF1E629C191CB001B8264 /* WeekView */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +432,7 @@
 		A28BF1EB29C1AB2F001B8264 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A274D6C729C327D400ED848D /* StatsView */,
 				A28BF1EC29C1AC42001B8264 /* TimerView */,
 			);
 			path = Views;
@@ -632,6 +643,7 @@
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
 				A2396E2329C08C15009206D3 /* BaseView.swift in Sources */,
 				A28BF20A29C1F355001B8264 /* NutritionElement.swift in Sources */,
+				A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */,
 				A28BF1F229C1AF81001B8264 /* ProgressView.swift in Sources */,
 				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
 				A28BF20729C1EA76001B8264 /* XAxisView.swift in Sources */,
