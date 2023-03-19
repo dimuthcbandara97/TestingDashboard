@@ -13,8 +13,6 @@
 		A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C27C29BC3E6600E5DDAC /* AppDelegate.swift */; };
 		A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C27E29BC3E6600E5DDAC /* SceneDelegate.swift */; };
 		A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C28029BC3E6600E5DDAC /* ViewController.swift */; };
-		A240C28629BC3E6700E5DDAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A240C28529BC3E6700E5DDAC /* Assets.xcassets */; };
-		A240C28929BC3E6700E5DDAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A240C28729BC3E6700E5DDAC /* LaunchScreen.storyboard */; };
 		A240C29429BC3E6700E5DDAC /* TestingDashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C29329BC3E6700E5DDAC /* TestingDashboardTests.swift */; };
 		A240C29E29BC3E6700E5DDAC /* TestingDashboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C29D29BC3E6700E5DDAC /* TestingDashboardUITests.swift */; };
 		A240C2A029BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C29F29BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift */; };
@@ -24,7 +22,6 @@
 		A2537A9829BF5575000DED14 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9729BF5575000DED14 /* UIView.swift */; };
 		A2537A9A29BF55A3000DED14 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9929BF55A3000DED14 /* Date.swift */; };
 		A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9C29BF56BA000DED14 /* LoginViewController.swift */; };
-		A2537AA029BF57C0000DED14 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */; };
 		A2537AA529BF5929000DED14 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AA429BF5929000DED14 /* ProgressViewController.swift */; };
 		A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AA829BF5964000DED14 /* SessionViewController.swift */; };
 		A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AAA29BF597B000DED14 /* DashboardViewController.swift */; };
@@ -35,10 +32,9 @@
 		A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537ABE29BF5E36000DED14 /* BaseController.swift */; };
 		A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6C829C327E800ED848D /* StatsItemView.swift */; };
 		A274D6CB29C32FFD00ED848D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6CA29C32FFD00ED848D /* StatsView.swift */; };
-		A274D6CE29C3352A00ED848D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6CD29C3352A00ED848D /* ProgressView.swift */; };
-		A274D6D129C33FE900ED848D /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6D029C33FE900ED848D /* TitleCollectionViewCell.swift */; };
-		A274D6D429C3407500ED848D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A274D6D329C3407500ED848D /* SDWebImage */; };
-		A274D6D629C3407500ED848D /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A274D6D529C3407500ED848D /* SDWebImageMapKit */; };
+		A274D6D729C34FB100ED848D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A240C28529BC3E6700E5DDAC /* Assets.xcassets */; };
+		A274D6D829C3505300ED848D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A240C28729BC3E6700E5DDAC /* LaunchScreen.storyboard */; };
+		A274D6D929C3552900ED848D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */; };
 		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E729C191DF001B8264 /* WeekView.swift */; };
 		A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E929C1924E001B8264 /* WeekDayView.swift */; };
@@ -58,7 +54,6 @@
 		A28BF21029C1F50E001B8264 /* ExerciseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF20F29C1F50E001B8264 /* ExerciseElement.swift */; };
 		A28BF21229C1F6C7001B8264 /* UserElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF21129C1F6C7001B8264 /* UserElement.swift */; };
 		A28BF21429C1F706001B8264 /* TimerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF21329C1F706001B8264 /* TimerElement.swift */; };
-		A2E2889529BEC43D008921E4 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A2E2889429BEC43D008921E4 /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,8 +106,6 @@
 		A2537ABE29BF5E36000DED14 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		A274D6C829C327E800ED848D /* StatsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsItemView.swift; sourceTree = "<group>"; };
 		A274D6CA29C32FFD00ED848D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
-		A274D6CD29C3352A00ED848D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		A274D6D029C33FE900ED848D /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		A28BF1DD29C177F8001B8264 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A28BF1E729C191DF001B8264 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		A28BF1E929C1924E001B8264 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
@@ -139,9 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A274D6D429C3407500ED848D /* SDWebImage in Frameworks */,
-				A274D6D629C3407500ED848D /* SDWebImageMapKit in Frameworks */,
-				A2E2889529BEC43D008921E4 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +425,6 @@
 		A274D6CC29C3350A00ED848D /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				A274D6CD29C3352A00ED848D /* ProgressView.swift */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -443,7 +432,6 @@
 		A274D6CF29C33FB900ED848D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A274D6D029C33FE900ED848D /* TitleCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -518,9 +506,6 @@
 			);
 			name = TestingDashboard;
 			packageProductDependencies = (
-				A2E2889429BEC43D008921E4 /* Supabase */,
-				A274D6D329C3407500ED848D /* SDWebImage */,
-				A274D6D529C3407500ED848D /* SDWebImageMapKit */,
 			);
 			productName = TestingDashboard;
 			productReference = A240C27929BC3E6600E5DDAC /* TestingDashboard.app */;
@@ -614,8 +599,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A240C28929BC3E6700E5DDAC /* LaunchScreen.storyboard in Resources */,
-				A240C28629BC3E6700E5DDAC /* Assets.xcassets in Resources */,
+				A274D6D829C3505300ED848D /* LaunchScreen.storyboard in Resources */,
+				A274D6D729C34FB100ED848D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,13 +625,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A274D6D929C3552900ED848D /* SettingsViewController.swift in Sources */,
 				A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */,
 				A28BF1F829C1B2F1001B8264 /* DailyPerformanceView.swift in Sources */,
 				A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */,
 				A28BF1FE29C1B4E7001B8264 /* BaseBarView.swift in Sources */,
 				A28BF20E29C1F461001B8264 /* NetworkingElement.swift in Sources */,
-				A274D6D129C33FE900ED848D /* TitleCollectionViewCell.swift in Sources */,
-				A274D6CE29C3352A00ED848D /* ProgressView.swift in Sources */,
 				A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */,
 				A2537AAD29BF5AA3000DED14 /* TabBarController.swift in Sources */,
 				A28BF20429C1EA48001B8264 /* BaseChartsView.swift in Sources */,
@@ -683,7 +667,6 @@
 				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
 				A28BF20729C1EA76001B8264 /* XAxisView.swift in Sources */,
 				A28BF21229C1F6C7001B8264 /* UserElement.swift in Sources */,
-				A2537AA029BF57C0000DED14 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,7 +847,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dimuth-c-bandara.TestingDashboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TestingDashboard;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -890,7 +873,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dimuth-c-bandara.TestingDashboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TestingDashboard;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1028,24 +1011,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A274D6D329C3407500ED848D /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-		A274D6D529C3407500ED848D /* SDWebImageMapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImageMapKit;
-		};
-		A2E2889429BEC43D008921E4 /* Supabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Supabase;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A240C27129BC3E6600E5DDAC /* Project object */;
 }
