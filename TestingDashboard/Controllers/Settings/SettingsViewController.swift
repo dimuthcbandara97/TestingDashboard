@@ -8,8 +8,19 @@
 import UIKit
 import MusicKit
 
-class SettingsBaseController: BaseController {
+enum Sections2: Int {
+    case sectionss01 = 0
+    case sectionss02 = 1
+    case sectionss03 = 2
+    case sectionss04 = 3
+    case sectionss05 = 4
+}
 
+class SettingsBaseController: BaseController{
+  
+
+    let sectionTitles: [String] = ["Nutritious Foods","Meditations"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
