@@ -30,6 +30,21 @@ enum OverallController {
             static let progress = "Your Progress"
             static let nutrition = "Health"
         }
+        // For Login Contrller
+        enum Login2{
+            // user name
+            static let usernameLabel = "User Name"
+            static let usernamePlaceholder = "Enter your placeholder"
+            // password
+            // Button
+        }
+        enum SignUp2{
+            // First Name
+            // Last Name
+            // Password
+            // Confirm password
+            // Button
+        }
     }
     enum Images {
         // For TabBar Contorller
@@ -43,11 +58,22 @@ enum OverallController {
                 }
             }
         }
+        // For NavBar Controller
+        // For Login Controller
+        // For Dashboard Controller
     }
     enum Fonts {
-        
+        // Tab Bar
+        // Nav bar
+        // Login
+        // Sign Up
+        // Others
     }
     enum Colors {
-        
+        // Tab Bar
+        // Nav bar
+        // Login
+        // Sign Up
+        // Others
     }
 }
