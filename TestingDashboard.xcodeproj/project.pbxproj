@@ -58,6 +58,8 @@
 		A2C1836C29C88A8E00990A02 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1836B29C88A8E00990A02 /* TitleCollectionViewCell.swift */; };
 		A2C1836F29C88C9900990A02 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1836E29C88C9900990A02 /* SDWebImage */; };
 		A2C1837129C88CD400990A02 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1837029C88CD400990A02 /* SDWebImageMapKit */; };
+		A2C1837329C8923100990A02 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1837229C8923100990A02 /* TitleTableViewCell.swift */; };
+		A2C1837529C8964100990A02 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1837429C8964100990A02 /* TitleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,8 @@
 		A28BF21329C1F706001B8264 /* TimerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerElement.swift; sourceTree = "<group>"; };
 		A2C1836929C86EBC00990A02 /* Progress2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress2View.swift; sourceTree = "<group>"; };
 		A2C1836B29C88A8E00990A02 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2C1837229C8923100990A02 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		A2C1837429C8964100990A02 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				A2C1836B29C88A8E00990A02 /* TitleCollectionViewCell.swift */,
+				A2C1837229C8923100990A02 /* TitleTableViewCell.swift */,
+				A2C1837429C8964100990A02 /* TitleViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -670,6 +676,7 @@
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
 				A28BF20C29C1F3ED001B8264 /* MeditationElement.swift in Sources */,
 				A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */,
+				A2C1837329C8923100990A02 /* TitleTableViewCell.swift in Sources */,
 				A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */,
 				A28BF1F429C1AF8E001B8264 /* PercentView.swift in Sources */,
 				A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */,
@@ -683,6 +690,7 @@
 				A28BF1EE29C1ACAE001B8264 /* BaseInfoView.swift in Sources */,
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
 				A2396E2329C08C15009206D3 /* BaseView.swift in Sources */,
+				A2C1837529C8964100990A02 /* TitleViewModel.swift in Sources */,
 				A28BF20A29C1F355001B8264 /* NutritionElement.swift in Sources */,
 				A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */,
 				A28BF1F229C1AF81001B8264 /* ProgressView.swift in Sources */,
