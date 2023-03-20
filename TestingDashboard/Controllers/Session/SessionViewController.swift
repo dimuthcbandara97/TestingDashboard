@@ -9,8 +9,8 @@ import UIKit
 
 final class SessionBaseController: BaseController {
     private let timerView = TimerView()
-    private let statsView = StatsView(with: "My Stats")
-
+    private let statsView = StatsView(with: "STATS")
+    private let progress2View = Progress2View(with: "PROGRESS 2")
     
     private let timerDuration = 5.0
     
@@ -43,6 +43,7 @@ extension SessionBaseController {
         
         view.setupView(timerView)
         view.setupView(statsView)
+        view.setupView(progress2View)
     }
     
     override func constaintViews() {
@@ -56,7 +57,11 @@ extension SessionBaseController {
             statsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 10),
             statsView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -7.5),
-
+            
+            progress2View.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 7.5),
+            progress2View.topAnchor.constraint(equalTo: statsView.topAnchor),
+            progress2View.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            progress2View.heightAnchor.constraint(equalTo: statsView.heightAnchor),
         ])
     }
     
@@ -77,13 +82,23 @@ extension SessionBaseController {
                 self.navBarRightButtonHanler()
             }
         }
-
         
-        statsView.configure(with: [.topic01(value: "val"),
-                                   .topic02(value: "val2"),
-                                   .topic03(value: "val3"),
-                                   .topic04(value: "val4")])
+        //        timerView.callBack = { [weak self] in
+        //            self?.navBarRightButtonHandler()
+        //        }
+        
+        
+        progress2View.configure(with: [.init(value: "8k", heigntMultiplier: 1, title: "2/14"),
+                                   .init(value: "7k", heigntMultiplier: 0.8, title: "2/15"),
+                                   .init(value: "5k", heigntMultiplier: 0.6, title: "2/16"),
+                                   .init(value: "6k", heigntMultiplier: 0.7, title: "2/17"),])
+        
+        statsView.configure(with: [.topic01(value: "155"),
+                                   .topic02(value: "8'20''"),
+                                   .topic03(value: "7,682"),
+                                   .topic04(value: "8.25")])
         
         
     }
 }
+
