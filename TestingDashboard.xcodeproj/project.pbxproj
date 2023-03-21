@@ -11,6 +11,8 @@
 		A21EBC5E29C9B4B700EC1210 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC5D29C9B4B700EC1210 /* CustomButton.swift */; };
 		A21EBC6029C9CC7B00EC1210 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC5F29C9CC7B00EC1210 /* RegisterViewController.swift */; };
 		A21EBC6229C9CCF100EC1210 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6129C9CCF100EC1210 /* WebViewController.swift */; };
+		A21EBC6529C9DBA500EC1210 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6429C9DBA500EC1210 /* ForgetPasswordViewController.swift */; };
+		A21EBC6729C9DC2B00EC1210 /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6629C9DC2B00EC1210 /* ViewControllerLogin.swift */; };
 		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
 		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
 		A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2529C08D63009206D3 /* SectionHeaderView.swift */; };
@@ -91,6 +93,8 @@
 		A21EBC5D29C9B4B700EC1210 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A21EBC5F29C9CC7B00EC1210 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A21EBC6129C9CCF100EC1210 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A21EBC6429C9DBA500EC1210 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		A21EBC6629C9DC2B00EC1210 /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
 		A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavBar.swift; sourceTree = "<group>"; };
 		A2396E2229C08C15009206D3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A2396E2529C08D63009206D3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				A2537A9C29BF56BA000DED14 /* LoginViewController.swift */,
 				A21EBC6129C9CCF100EC1210 /* WebViewController.swift */,
 				A21EBC5F29C9CC7B00EC1210 /* RegisterViewController.swift */,
+				A21EBC6429C9DBA500EC1210 /* ForgetPasswordViewController.swift */,
+				A21EBC6629C9DC2B00EC1210 /* ViewControllerLogin.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -710,6 +716,7 @@
 				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A28BF20229C1E97D001B8264 /* MonthlyPerformanceView.swift in Sources */,
 				A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */,
+				A21EBC6529C9DBA500EC1210 /* ForgetPasswordViewController.swift in Sources */,
 				A2C1836A29C86EBC00990A02 /* Progress2View.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
 				A21EBC6029C9CC7B00EC1210 /* RegisterViewController.swift in Sources */,
@@ -732,6 +739,7 @@
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
 				A2396E2329C08C15009206D3 /* BaseView.swift in Sources */,
 				A2C1837929C898A100990A02 /* Title.swift in Sources */,
+				A21EBC6729C9DC2B00EC1210 /* ViewControllerLogin.swift in Sources */,
 				A2C1837529C8964100990A02 /* TitleViewModel.swift in Sources */,
 				A28BF20A29C1F355001B8264 /* NutritionElement.swift in Sources */,
 				A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */,

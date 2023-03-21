@@ -107,19 +107,19 @@ class LoginViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapSignIn() {
-        let vc = ViewController()
+        let vc = ViewControllerLogin()
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: false, completion: nil)
     }
     
     @objc private func didTapNewUser() {
-//        let vc = RegisterViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = RegisterViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapForgotPassword() {
-//        let vc = ForgetPasswordViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = ForgetPasswordViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

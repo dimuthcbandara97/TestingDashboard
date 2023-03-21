@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let tabBarScene = (scene as? UIWindowScene) else { return }
         
 //        let tabBarController = TabBarController()
-        let tabBarController = LoginViewController()
+        let tabBarController = TabBarController()
         
         window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
         window?.windowScene = tabBarScene
