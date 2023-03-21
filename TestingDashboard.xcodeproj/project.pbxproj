@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A21EBC5C29C9A54600EC1210 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */; };
 		A21EBC5E29C9B4B700EC1210 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC5D29C9B4B700EC1210 /* CustomButton.swift */; };
+		A21EBC6029C9CC7B00EC1210 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC5F29C9CC7B00EC1210 /* RegisterViewController.swift */; };
+		A21EBC6229C9CCF100EC1210 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6129C9CCF100EC1210 /* WebViewController.swift */; };
 		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
 		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
 		A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2529C08D63009206D3 /* SectionHeaderView.swift */; };
@@ -87,6 +89,8 @@
 /* Begin PBXFileReference section */
 		A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A21EBC5D29C9B4B700EC1210 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		A21EBC5F29C9CC7B00EC1210 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A21EBC6129C9CCF100EC1210 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavBar.swift; sourceTree = "<group>"; };
 		A2396E2229C08C15009206D3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A2396E2529C08D63009206D3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -532,6 +536,8 @@
 				A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */,
 				A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */,
 				A21EBC5D29C9B4B700EC1210 /* CustomButton.swift */,
+				A21EBC5F29C9CC7B00EC1210 /* RegisterViewController.swift */,
+				A21EBC6129C9CCF100EC1210 /* WebViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 				A28BF20429C1EA48001B8264 /* BaseChartsView.swift in Sources */,
 				A28BF21429C1F706001B8264 /* TimerElement.swift in Sources */,
 				A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */,
+				A21EBC6229C9CCF100EC1210 /* WebViewController.swift in Sources */,
 				A2537A9A29BF55A3000DED14 /* Date.swift in Sources */,
 				A240C28129BC3E6600E5DDAC /* ViewController.swift in Sources */,
 				A2537AB429BF5CB0000DED14 /* APIAuth.swift in Sources */,
@@ -697,6 +704,7 @@
 				A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */,
 				A2C1836A29C86EBC00990A02 /* Progress2View.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
+				A21EBC6029C9CC7B00EC1210 /* RegisterViewController.swift in Sources */,
 				A28BF20C29C1F3ED001B8264 /* MeditationElement.swift in Sources */,
 				A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */,
 				A2C1837329C8923100990A02 /* TitleTableViewCell.swift in Sources */,
