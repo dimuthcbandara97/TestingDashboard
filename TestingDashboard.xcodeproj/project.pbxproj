@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A21EBC5C29C9A54600EC1210 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */; };
+		A21EBC5E29C9B4B700EC1210 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC5D29C9B4B700EC1210 /* CustomButton.swift */; };
 		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
 		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
 		A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2529C08D63009206D3 /* SectionHeaderView.swift */; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A21EBC5D29C9B4B700EC1210 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavBar.swift; sourceTree = "<group>"; };
 		A2396E2229C08C15009206D3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A2396E2529C08D63009206D3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 			children = (
 				A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */,
 				A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */,
+				A21EBC5D29C9B4B700EC1210 /* CustomButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */,
 				A28BF1F229C1AF81001B8264 /* ProgressView.swift in Sources */,
 				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
+				A21EBC5E29C9B4B700EC1210 /* CustomButton.swift in Sources */,
 				A28BF20729C1EA76001B8264 /* XAxisView.swift in Sources */,
 				A28BF21229C1F6C7001B8264 /* UserElement.swift in Sources */,
 				A2F34E7629C9970400BBA9BA /* AuthHeaderView.swift in Sources */,
