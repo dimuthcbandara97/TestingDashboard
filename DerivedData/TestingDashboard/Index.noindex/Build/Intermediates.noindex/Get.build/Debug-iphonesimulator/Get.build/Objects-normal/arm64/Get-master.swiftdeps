@@ -1,0 +1,15 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "7afc91cddd577f8e95b1a2672380c8bd700b7b59fdae9b6f7bfaf0f3d6db56a8"
+build_start_time: [1679199119, 192659854]
+build_end_time: [1679199120, 259258985]
+inputs:
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/Get/Sources/Get/APIClient.swift"
+  : [1679198800, 264061212]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/Get/Sources/Get/APIClientDelegate.swift"
+  : [1679198800, 264145374]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/Get/Sources/Get/DataLoader.swift"
+  : [1679198800, 264235973]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/Get/Sources/Get/Request.swift"
+  : [1679198800, 275584220]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/Get/Sources/Get/Response.swift"
+  : [1679198800, 275652647]

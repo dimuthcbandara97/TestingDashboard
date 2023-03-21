@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "b828907c6f33e3d1c2402357dd97a56f3662f742141f2213ee5be519ae73106f"
+build_start_time: [1679199120, 480763912]
+build_end_time: [1679199120, 535852909]
+inputs:
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/GetExtensions/Sources/GetExtensions/MultiAPIClientDelegate.swift"
+  : [1679198799, 164799213]

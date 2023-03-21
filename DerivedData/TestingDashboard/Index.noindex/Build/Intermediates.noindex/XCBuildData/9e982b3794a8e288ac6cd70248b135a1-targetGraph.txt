@@ -1,0 +1,13 @@
+Target dependency graph (8 targets)
+TestingDashboard in TestingDashboard, no dependencies
+TestingDashboard in TestingDashboard, no dependencies
+TestingDashboardTests in TestingDashboard, depends on:
+TestingDashboard in TestingDashboard (explicit)
+TestingDashboardTests in TestingDashboard, depends on:
+TestingDashboard in TestingDashboard (explicit)
+TestingDashboardTests in TestingDashboard, no dependencies
+TestingDashboardUITests in TestingDashboard, depends on:
+TestingDashboard in TestingDashboard (explicit)
+TestingDashboardUITests in TestingDashboard, depends on:
+TestingDashboard in TestingDashboard (explicit)
+TestingDashboardUITests in TestingDashboard, no dependencies

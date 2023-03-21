@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "3e8fb0a31bd53c4e5a860d36a25b4d522acd184262826000b81329c6ddad4687"
+build_start_time: [1679199121, 865096092]
+build_end_time: [1679199121, 947077035]
+inputs:
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/functions-swift/Sources/Functions/FunctionsClient.swift"
+  : [1679198799, 601267337]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/functions-swift/Sources/Functions/Types.swift"
+  : [1679198799, 601331710]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/functions-swift/Sources/Functions/Version.swift"
+  : [1679198799, 601386070]

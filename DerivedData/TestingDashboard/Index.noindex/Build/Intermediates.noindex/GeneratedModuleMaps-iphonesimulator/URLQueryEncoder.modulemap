@@ -1,0 +1,4 @@
+module URLQueryEncoder {
+header "URLQueryEncoder-Swift.h"
+export *
+}

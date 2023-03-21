@@ -1,0 +1,29 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "a5b4c6e0d886e965e21e2cb5b91e7e2d680c55eb32c64b723259cec23940dd35"
+build_start_time: [1679199121, 872073173]
+build_end_time: [1679199121, 975203990]
+inputs:
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/Bucket.swift"
+  : [1679198799, 396473884]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/FileObject.swift"
+  : [1679198799, 396533966]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/FileOptions.swift"
+  : [1679198799, 396588563]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/MultipartFile.swift"
+  : [1679198799, 396647930]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/SearchOptions.swift"
+  : [1679198799, 396696567]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/SortBy.swift"
+  : [1679198799, 396741867]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/StorageApi.swift"
+  : [1679198799, 396824836]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/StorageBucketApi.swift"
+  : [1679198799, 396909236]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/StorageError.swift"
+  : [1679198799, 396967887]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/StorageFileApi.swift"
+  : [1679198799, 397064685]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/StorageHTTPClient.swift"
+  : [1679198799, 397125959]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/storage-swift/Sources/SupabaseStorage/SupabaseStorage.swift"
+  : [1679198799, 397186279]

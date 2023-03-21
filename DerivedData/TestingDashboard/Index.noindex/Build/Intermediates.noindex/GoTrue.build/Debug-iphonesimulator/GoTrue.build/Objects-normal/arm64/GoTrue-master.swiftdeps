@@ -1,0 +1,31 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "6140b0750d70cd9d2cdd34ebd55b1c64bd7a150ae4c0d41cffb7f63fd12076c1"
+build_start_time: [1679199121, 873751163]
+build_end_time: [1679199122, 23830890]
+inputs:
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/AuthChangeEvent.swift"
+  : [1679198800, 149095058]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/Extensions.swift"
+  : [1679198800, 149169445]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/Generated/Entities.swift"
+  : [1679198800, 149383068]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/Generated/Paths.swift"
+  : [1679198800, 149477243]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/GoTrueClient.swift"
+  : [1679198800, 149584293]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/GoTrueError.swift"
+  : [1679198800, 149660825]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/GoTrueLocalStorage.swift"
+  : [1679198800, 149733304]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/Internal/ConcurrencySupport.swift"
+  : [1679198800, 149861335]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/Internal/Environment.swift"
+  : [1679198800, 149956941]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/Internal/Helpers.swift"
+  : [1679198800, 150032281]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/Internal/SessionManager.swift"
+  : [1679198800, 150116682]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/Internal/Shims.swift"
+  : [1679198800, 150185346]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/gotrue-swift/Sources/GoTrue/Version.swift"
+  : [1679198800, 150261878]

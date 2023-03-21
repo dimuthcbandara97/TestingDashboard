@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "8772e75759d634bf546ebb0944128931f38d16486dd07589ef2a3110571fa968"
+build_start_time: [1679199120, 599413871]
+build_end_time: [1679199121, 450400829]
+inputs:
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/KeychainAccess/Lib/KeychainAccess/Keychain.swift"
+  : [1679198799, 822158813]

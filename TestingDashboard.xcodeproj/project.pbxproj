@@ -62,6 +62,7 @@
 		A2C1837529C8964100990A02 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1837429C8964100990A02 /* TitleViewModel.swift */; };
 		A2C1837729C897FF00990A02 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1837629C897FF00990A02 /* CollectionViewTableViewCell.swift */; };
 		A2C1837929C898A100990A02 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1837829C898A100990A02 /* Title.swift */; };
+		A2F34E7629C9970400BBA9BA /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		A2C1837429C8964100990A02 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		A2C1837629C897FF00990A02 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		A2C1837829C898A100990A02 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 		A2537A9B29BF5694000DED14 /* LoginView  */ = {
 			isa = PBXGroup;
 			children = (
+				A2F34E7429C996E600BBA9BA /* Views */,
 				A2537A9C29BF56BA000DED14 /* LoginViewController.swift */,
 			);
 			path = "LoginView ";
@@ -517,6 +520,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2F34E7429C996E600BBA9BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -705,6 +716,7 @@
 				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
 				A28BF20729C1EA76001B8264 /* XAxisView.swift in Sources */,
 				A28BF21229C1F6C7001B8264 /* UserElement.swift in Sources */,
+				A2F34E7629C9970400BBA9BA /* AuthHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

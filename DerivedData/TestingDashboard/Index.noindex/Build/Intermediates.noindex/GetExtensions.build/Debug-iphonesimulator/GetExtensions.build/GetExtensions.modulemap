@@ -1,0 +1,4 @@
+module GetExtensions {
+header "GetExtensions-Swift.h"
+export *
+}

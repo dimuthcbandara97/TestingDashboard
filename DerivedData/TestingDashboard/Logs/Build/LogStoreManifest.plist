@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>41B27F99-B2AD-4B3F-9303-02830F705B00</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>41B27F99-B2AD-4B3F-9303-02830F705B00.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>TestingDashboard project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>TestingDashboard</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build TestingDashboard</string>
+			<key>timeStartedRecording</key>
+			<real>700891917.15033603</real>
+			<key>timeStoppedRecording</key>
+			<real>700891917.22205102</real>
+			<key>title</key>
+			<string>Build TestingDashboard</string>
+			<key>uniqueIdentifier</key>
+			<string>41B27F99-B2AD-4B3F-9303-02830F705B00</string>
+		</dict>
+		<key>939CB630-3B76-490D-9881-A3C354BA0D1B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>939CB630-3B76-490D-9881-A3C354BA0D1B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>TestingDashboard project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>TestingDashboard</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build TestingDashboard</string>
+			<key>timeStartedRecording</key>
+			<real>700891894.08233094</real>
+			<key>timeStoppedRecording</key>
+			<real>700891894.16775203</real>
+			<key>title</key>
+			<string>Build TestingDashboard</string>
+			<key>uniqueIdentifier</key>
+			<string>939CB630-3B76-490D-9881-A3C354BA0D1B</string>
+		</dict>
+		<key>F0EA3524-76F1-489D-AC1F-9B18D22B0717</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F0EA3524-76F1-489D-AC1F-9B18D22B0717.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>TestingDashboard project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>TestingDashboard</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build TestingDashboard</string>
+			<key>timeStartedRecording</key>
+			<real>700891647.63145697</real>
+			<key>timeStoppedRecording</key>
+			<real>700891647.722785</real>
+			<key>title</key>
+			<string>Build TestingDashboard</string>
+			<key>uniqueIdentifier</key>
+			<string>F0EA3524-76F1-489D-AC1F-9B18D22B0717</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,63 @@
+Target dependency graph (24 targets)
+Realtime in Realtime, no dependencies
+Realtime in Realtime, depends on:
+Realtime in Realtime (explicit)
+Get in Get, no dependencies
+Get in Get, depends on:
+Get in Get (explicit)
+KeychainAccess in KeychainAccess, no dependencies
+KeychainAccess in KeychainAccess, depends on:
+KeychainAccess in KeychainAccess (explicit)
+URLQueryEncoder in URLQueryEncoder, no dependencies
+URLQueryEncoder in URLQueryEncoder, depends on:
+URLQueryEncoder in URLQueryEncoder (explicit)
+GoTrue in GoTrue, depends on:
+Get in Get (explicit)
+KeychainAccess in KeychainAccess (explicit)
+URLQueryEncoder in URLQueryEncoder (explicit)
+GoTrue in GoTrue, depends on:
+GoTrue in GoTrue (explicit)
+Get in Get (explicit)
+KeychainAccess in KeychainAccess (explicit)
+URLQueryEncoder in URLQueryEncoder (explicit)
+SupabaseStorage in SupabaseStorage, no dependencies
+SupabaseStorage in SupabaseStorage, depends on:
+SupabaseStorage in SupabaseStorage (explicit)
+GetExtensions in GetExtensions, depends on:
+Get in Get (explicit)
+GetExtensions in GetExtensions, depends on:
+GetExtensions in GetExtensions (explicit)
+Get in Get (explicit)
+PostgREST in PostgREST, depends on:
+Get in Get (explicit)
+GetExtensions in GetExtensions (explicit)
+PostgREST in PostgREST, depends on:
+PostgREST in PostgREST (explicit)
+Get in Get (explicit)
+GetExtensions in GetExtensions (explicit)
+Functions in functions-swift, depends on:
+Get in Get (explicit)
+Functions in functions-swift, depends on:
+Functions in functions-swift (explicit)
+Get in Get (explicit)
+Supabase in Supabase, depends on:
+GoTrue in GoTrue (explicit)
+SupabaseStorage in SupabaseStorage (explicit)
+Realtime in Realtime (explicit)
+PostgREST in PostgREST (explicit)
+Functions in functions-swift (explicit)
+Supabase in Supabase, depends on:
+Supabase in Supabase (explicit)
+GoTrue in GoTrue (explicit)
+SupabaseStorage in SupabaseStorage (explicit)
+Realtime in Realtime (explicit)
+PostgREST in PostgREST (explicit)
+Functions in functions-swift (explicit)
+SDWebImage in SDWebImage, no dependencies
+SDWebImageMapKit in SDWebImage, depends on:
+SDWebImage in SDWebImage (explicit)
+SDWebImage in SDWebImage, depends on:
+SDWebImage in SDWebImage (explicit)
+SDWebImageMapKit in SDWebImage, depends on:
+SDWebImageMapKit in SDWebImage (explicit)
+SDWebImage in SDWebImage (explicit)

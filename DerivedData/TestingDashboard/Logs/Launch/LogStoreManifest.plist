@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>529F8EB8-D952-4300-B563-9F3888D4423A</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>939CB630-3B76-490D-9881-A3C354BA0D1B</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-TestingDashboard-2023.03.19_09-41-34-+0530.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>TestingDashboard project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>TestingDashboard</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run TestingDashboard</string>
+			<key>timeStartedRecording</key>
+			<real>700891894.08186102</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run TestingDashboard</string>
+			<key>uniqueIdentifier</key>
+			<string>529F8EB8-D952-4300-B563-9F3888D4423A</string>
+		</dict>
+		<key>AD7C8C99-0408-48A3-9D9C-3BA945C48B0A</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>F0EA3524-76F1-489D-AC1F-9B18D22B0717</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-TestingDashboard-2023.03.19_09-37-27-+0530.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>TestingDashboard project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>TestingDashboard</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run TestingDashboard</string>
+			<key>timeStartedRecording</key>
+			<real>700891647.63122296</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run TestingDashboard</string>
+			<key>uniqueIdentifier</key>
+			<string>AD7C8C99-0408-48A3-9D9C-3BA945C48B0A</string>
+		</dict>
+		<key>BC3432DD-CDF0-4CD3-8FDF-63ED8B9365EB</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>41B27F99-B2AD-4B3F-9303-02830F705B00</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-TestingDashboard-2023.03.19_09-41-57-+0530.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>TestingDashboard project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>TestingDashboard</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run TestingDashboard</string>
+			<key>timeStartedRecording</key>
+			<real>700891917.15023398</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run TestingDashboard</string>
+			<key>uniqueIdentifier</key>
+			<string>BC3432DD-CDF0-4CD3-8FDF-63ED8B9365EB</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

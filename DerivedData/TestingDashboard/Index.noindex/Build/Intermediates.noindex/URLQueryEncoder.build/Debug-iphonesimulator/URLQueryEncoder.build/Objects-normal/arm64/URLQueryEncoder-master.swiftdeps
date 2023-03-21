@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "f6c8807ff5a52f4fe596847b85250bbb2a3af903cc3d2ce861c16ed554082533"
+build_start_time: [1679199120, 599411964]
+build_end_time: [1679199121, 302505970]
+inputs:
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/URLQueryEncoder/Sources/URLQueryEncoder/URLQueryEncoder.swift"
+  : [1679198799, 498646736]

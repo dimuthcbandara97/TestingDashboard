@@ -1,0 +1,4 @@
+module SDWebImageMapKit {
+umbrella header "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/SDWebImage/SDWebImageMapKit/include/SDWebImageMapKit/SDWebImageMapKit.h"
+export *
+}

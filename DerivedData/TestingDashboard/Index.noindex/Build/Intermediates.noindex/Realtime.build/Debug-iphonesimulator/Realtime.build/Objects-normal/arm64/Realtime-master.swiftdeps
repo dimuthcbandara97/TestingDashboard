@@ -1,0 +1,27 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "ca4eeb34d8dba7a65d977ad8bfff8e30e916b37f272556712c21e4096d74cd31"
+build_start_time: [1679199121, 869989871]
+build_end_time: [1679199122, 3666877]
+inputs:
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/Channel.swift"
+  : [1679198800, 43283700]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/Defaults.swift"
+  : [1679198800, 43395996]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/Delegated.swift"
+  : [1679198800, 43471813]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/HeartbeatTimer.swift"
+  : [1679198800, 43541431]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/Message.swift"
+  : [1679198800, 43637752]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/Push.swift"
+  : [1679198800, 43707847]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/RealtimeClient.swift"
+  : [1679198800, 43864250]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/SocketError.swift"
+  : [1679198800, 43919563]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/StateChangeCallbacks.swift"
+  : [1679198800, 43970584]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/TimeoutTimer.swift"
+  : [1679198800, 44045448]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/realtime-swift/Sources/Realtime/Transport.swift"
+  : [1679198800, 44142723]

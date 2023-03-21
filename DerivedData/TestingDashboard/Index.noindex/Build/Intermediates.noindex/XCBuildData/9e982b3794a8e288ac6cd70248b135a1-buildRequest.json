@@ -1,0 +1,65 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "9c56775b445e50d1aa358c0ccbb5897a0ce8e8ab5518b03fe0b2ca8f23de2b01"
+    },
+    {
+      "guid" : "9c56775b445e50d1aa358c0ccbb5897a345ba28928a5622b8a785c60ed582ec4"
+    },
+    {
+      "guid" : "9c56775b445e50d1aa358c0ccbb5897ae390144a122c5c5241ad1ea5f675ee26"
+    }
+  ],
+  "containerPath" : "/Users/dimuthbandara/Documents/TestingDashboard/TestingDashboard.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator16.2",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/dimuthbandara/Documents/TestingDashboard/DerivedData/TestingDashboard/Index.noindex/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/dimuthbandara/Documents/TestingDashboard/DerivedData/TestingDashboard/Index.noindex/Build/Products",
+      "derivedDataPath" : "/Users/dimuthbandara/Documents/TestingDashboard/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/dimuthbandara/Documents/TestingDashboard/DerivedData/TestingDashboard/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/dimuthbandara/Documents/TestingDashboard/DerivedData/TestingDashboard/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/dimuthbandara/Documents/TestingDashboard/DerivedData/TestingDashboard/Index.noindex/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "INDEX_ARENA_INFO_REGULAR_BUILD_PRODUCTS_DIR" : "/Users/dimuthbandara/Documents/TestingDashboard/DerivedData/TestingDashboard/Build/Products",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

@@ -1,0 +1,4 @@
+module GoTrue {
+header "GoTrue-Swift.h"
+export *
+}

@@ -1,0 +1,31 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "3fbb5dd8555b10e6038a993308636ad77af6e202be0a10b6c1695aceaa0c383b"
+build_start_time: [1679199121, 877191066]
+build_end_time: [1679199121, 992213010]
+inputs:
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/CountOption.swift"
+  : [1679198799, 935358524]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/PostgrestBuilder.swift"
+  : [1679198799, 935447931]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/PostgrestClient.swift"
+  : [1679198799, 935508728]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/PostgrestError.swift"
+  : [1679198799, 935565471]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/PostgrestFilterBuilder.swift"
+  : [1679198799, 935651302]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/PostgrestQueryBuilder.swift"
+  : [1679198799, 935716629]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/PostgrestResponse.swift"
+  : [1679198799, 935767650]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/PostgrestReturningOptions.swift"
+  : [1679198799, 935821056]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/PostgrestRpcBuilder.swift"
+  : [1679198799, 935875892]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/PostgrestTransformBuilder.swift"
+  : [1679198799, 935938835]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/TextSearchType.swift"
+  : [1679198799, 935985326]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/URLQueryRepresentable.swift"
+  : [1679198799, 936038255]
+  ? "/Users/dimuthbandara/Library/Developer/Xcode/DerivedData/TestingDashboard-glctwdtjrdphrbedysymatxzxgdm/SourcePackages/checkouts/postgrest-swift/Sources/PostgREST/Version.swift"
+  : [1679198799, 936085224]
