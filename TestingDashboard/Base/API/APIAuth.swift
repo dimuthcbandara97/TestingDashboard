@@ -15,6 +15,11 @@ struct Constants {
     static let API_KEY_NETWORKING = "https://nodemongocrud.onrender.com/api/networking"
     static let API_KEY_NUTRITION = "https://nodemongocrud.onrender.com/api/nutrition"
     static let API_KEY_TIMER = "https://nodemongocrud.onrender.com/api/timer"
+    
+    // Testing Image View
+    static let API_KEY = "faa8695dc581ea2088374b01596042e2"
+    static let baseURL = "https://api.themoviedb.org"
+    
 }
 
 enum APIError: Error {
@@ -157,9 +162,29 @@ class APICaller {
         task.resume()
     }
     
-   
-    
-    
+   // Testing Image View
+    func gettrendingMoview(completion: @escaping (Result<[Title], Error>) -> Void){
+        guard let url = URL(string: "\(Constants.baseURL)/3/trending/movie/day?api_key=\(Constants.API_KEY)") else { return}
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)){ data, _, error in
+            
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            do {
+                //                let results = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                //                print(results)
+                let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
+                completion(.success(results.results))
+                //                print(results.results[0].original_title)
+            } catch {
+                //                print(error.localizedDescription)
+                completion(.failure(APIError.failedToGetData))
+            }
+        }
+        task.resume()
+    }
     
 
 }
