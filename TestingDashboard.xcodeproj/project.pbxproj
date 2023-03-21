@@ -190,6 +190,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A21EBC6329C9CF4200EC1210 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2537A9C29BF56BA000DED14 /* LoginViewController.swift */,
+				A21EBC6129C9CCF100EC1210 /* WebViewController.swift */,
+				A21EBC5F29C9CC7B00EC1210 /* RegisterViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		A2396E1829C02CB5009206D3 /* Element */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,8 +356,8 @@
 		A2537A9B29BF5694000DED14 /* LoginView  */ = {
 			isa = PBXGroup;
 			children = (
+				A21EBC6329C9CF4200EC1210 /* Controllers */,
 				A2F34E7429C996E600BBA9BA /* Views */,
-				A2537A9C29BF56BA000DED14 /* LoginViewController.swift */,
 			);
 			path = "LoginView ";
 			sourceTree = "<group>";
@@ -536,8 +546,6 @@
 				A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */,
 				A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */,
 				A21EBC5D29C9B4B700EC1210 /* CustomButton.swift */,
-				A21EBC5F29C9CC7B00EC1210 /* RegisterViewController.swift */,
-				A21EBC6129C9CCF100EC1210 /* WebViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
