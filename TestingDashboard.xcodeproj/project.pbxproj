@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21EBC5C29C9A54600EC1210 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */; };
 		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
 		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
 		A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2529C08D63009206D3 /* SectionHeaderView.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavBar.swift; sourceTree = "<group>"; };
 		A2396E2229C08C15009206D3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A2396E2529C08D63009206D3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 			isa = PBXGroup;
 			children = (
 				A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */,
+				A21EBC5B29C9A54600EC1210 /* CustomTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */,
 				A28BF21029C1F50E001B8264 /* ExerciseElement.swift in Sources */,
 				A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */,
+				A21EBC5C29C9A54600EC1210 /* CustomTextField.swift in Sources */,
 				A2537A9629BF5515000DED14 /* UIColor.swift in Sources */,
 				A2537A9829BF5575000DED14 /* UIView.swift in Sources */,
 				A28BF1EE29C1ACAE001B8264 /* BaseInfoView.swift in Sources */,
