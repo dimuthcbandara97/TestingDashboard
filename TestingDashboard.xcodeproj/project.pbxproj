@@ -13,6 +13,7 @@
 		A21EBC6229C9CCF100EC1210 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6129C9CCF100EC1210 /* WebViewController.swift */; };
 		A21EBC6529C9DBA500EC1210 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6429C9DBA500EC1210 /* ForgetPasswordViewController.swift */; };
 		A21EBC6729C9DC2B00EC1210 /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6629C9DC2B00EC1210 /* ViewControllerLogin.swift */; };
+		A21EBC6C29CAC3EE00EC1210 /* CustomTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6B29CAC3EE00EC1210 /* CustomTableViewCell2.swift */; };
 		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
 		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
 		A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2529C08D63009206D3 /* SectionHeaderView.swift */; };
@@ -95,6 +96,7 @@
 		A21EBC6129C9CCF100EC1210 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A21EBC6429C9DBA500EC1210 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		A21EBC6629C9DC2B00EC1210 /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
+		A21EBC6B29CAC3EE00EC1210 /* CustomTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell2.swift; sourceTree = "<group>"; };
 		A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavBar.swift; sourceTree = "<group>"; };
 		A2396E2229C08C15009206D3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A2396E2529C08D63009206D3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				A2C1837429C8964100990A02 /* TitleViewModel.swift */,
 				A2C1837629C897FF00990A02 /* CollectionViewTableViewCell.swift */,
 				A2C1837829C898A100990A02 /* Title.swift */,
+				A21EBC6B29CAC3EE00EC1210 /* CustomTableViewCell2.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +207,13 @@
 				A21EBC6629C9DC2B00EC1210 /* ViewControllerLogin.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A21EBC6A29CAB3C800EC1210 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		A2396E1829C02CB5009206D3 /* Element */ = {
@@ -320,6 +330,7 @@
 		A240C2B029BC43E100E5DDAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A21EBC6A29CAB3C800EC1210 /* Onboarding */,
 				A2537AA329BF5909000DED14 /* Dashboard */,
 				A2537AA229BF58F9000DED14 /* Session */,
 				A2537AA129BF58ED000DED14 /* Progress */,
@@ -715,6 +726,7 @@
 				A28BF1F029C1AF04001B8264 /* TimerView.swift in Sources */,
 				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A28BF20229C1E97D001B8264 /* MonthlyPerformanceView.swift in Sources */,
+				A21EBC6C29CAC3EE00EC1210 /* CustomTableViewCell2.swift in Sources */,
 				A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */,
 				A21EBC6529C9DBA500EC1210 /* ForgetPasswordViewController.swift in Sources */,
 				A2C1836A29C86EBC00990A02 /* Progress2View.swift in Sources */,
