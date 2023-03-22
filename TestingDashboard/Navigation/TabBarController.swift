@@ -58,6 +58,7 @@ class TabBarController: UITabBarController {
         
         view.layer.add(transition, forKey: kCATransition)
         setViewControllers(controllers, animated: true)
+
     }
     }
     private func tabController(for tab: Tabs) -> BaseController {

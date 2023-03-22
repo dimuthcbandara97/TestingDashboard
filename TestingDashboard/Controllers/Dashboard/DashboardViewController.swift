@@ -22,7 +22,7 @@ class DashboardBaseController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .white
     }
 
 

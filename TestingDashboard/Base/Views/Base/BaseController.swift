@@ -33,7 +33,7 @@ class BaseController: UIViewController {
     func setupViews(){}
     func constaintViews(){}
     func configureAppearance(){
-        view.backgroundColor = .systemGray
+        view.backgroundColor = .white
     
     }
     

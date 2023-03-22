@@ -8,6 +8,7 @@
 import UIKit
 
 final class SessionBaseController: BaseController {
+    
     private let timerView = TimerView()
     private let statsView = StatsView(with: "STATS")
     private let progress2View = Progress2View(with: "PROGRESS 2")
@@ -44,6 +45,7 @@ extension SessionBaseController {
         view.setupView(timerView)
         view.setupView(statsView)
         view.setupView(progress2View)
+        view.backgroundColor = .white
     }
     
     override func constaintViews() {
