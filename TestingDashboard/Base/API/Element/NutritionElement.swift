@@ -7,10 +7,11 @@
 
 import Foundation
 
+
 // MARK: - NutritionElement
 struct NutritionElement: Codable {
     let id, foodName, value, recomendedBy: String
-    let whyRecomended: String
+    let whyRecomended, imageurl: String
     let v: Int
 
     enum CodingKeys: String, CodingKey {
@@ -19,6 +20,7 @@ struct NutritionElement: Codable {
         case value
         case recomendedBy = "recomended_by"
         case whyRecomended = "why_recomended"
+        case imageurl
         case v = "__v"
     }
 }

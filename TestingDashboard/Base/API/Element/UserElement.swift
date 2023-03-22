@@ -7,15 +7,15 @@
 
 import Foundation
 
-// MARK: - UserElement
+// MARK: - UserssElement
 struct UserElement: Codable {
     let id, name, email, gender: String
-    let status: String
+    let status, imageurl: String
     let v: Int
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
-        case name, email, gender, status
+        case name, email, gender, status, imageurl
         case v = "__v"
     }
 }

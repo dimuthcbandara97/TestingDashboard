@@ -9,11 +9,9 @@ import UIKit
 
 
 enum Sections: Int {
-    case TrendingMovies = 0
-    case TrendingTv = 1
-    case Popular = 2
-    case Upcoming = 3
-    case TopRated = 4
+    case Nutrition = 0
+    case Exercise = 1
+    case Meditation = 2
 }
 
 class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDataSource {
@@ -38,10 +36,7 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
 //        homeFeedTable.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         
         configureNavBar()
-        
-
-        
-        getTrendingMovies()
+        getNutrientss()
     }
     
     private func configureNavBar(){
@@ -62,7 +57,7 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
         homeFeedTable.frame = view.bounds
     }
     
-    private func getTrendingMovies(){
+    private func getNutrientss(){
         APICaller.shared.gettrendingMoview{ results in
             switch results {
             case .success(let movies):
@@ -93,7 +88,7 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
         }
         
         switch indexPath.section{
-        case Sections.TrendingMovies.rawValue:
+        case Sections.Nutrition.rawValue:
             APICaller.shared.gettrendingMoview{ result in
                 switch result {
                 case .success(let titles):
