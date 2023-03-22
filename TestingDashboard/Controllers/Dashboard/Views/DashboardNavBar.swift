@@ -9,6 +9,8 @@ import UIKit
 
 class DashboardNavBar: BaseView {
     
+    let tableView = UITableView()
+    let cellIdentifier = "CustomCell"
     // title label
     private let titlelabel: UILabel = {
         let label = UILabel()

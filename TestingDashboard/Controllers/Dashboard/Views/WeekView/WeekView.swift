@@ -39,7 +39,7 @@ extension WeekView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -550)
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
 

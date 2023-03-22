@@ -192,7 +192,6 @@
 				A2C1837429C8964100990A02 /* TitleViewModel.swift */,
 				A2C1837629C897FF00990A02 /* CollectionViewTableViewCell.swift */,
 				A2C1837829C898A100990A02 /* Title.swift */,
-				A21EBC6B29CAC3EE00EC1210 /* CustomTableViewCell2.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +231,7 @@
 		A2396E1E29C08B92009206D3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A21EBC6B29CAC3EE00EC1210 /* CustomTableViewCell2.swift */,
 				A28BF1E629C191CB001B8264 /* WeekView */,
 				A2396E2429C08D25009206D3 /* CollectionViews */,
 				A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */,

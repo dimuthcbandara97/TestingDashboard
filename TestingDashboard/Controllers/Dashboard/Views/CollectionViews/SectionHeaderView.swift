@@ -7,43 +7,63 @@
 
 import UIKit
 
-class SectionHeaderView: UICollectionReusableView {
-        
-    static let id = "Dashboard Header"
+
+class SectionHeaderView: BaseView {
     
-    private let title: UILabel = {
-        let lable = UILabel()
-//        lable.font =
-        lable.textColor = .systemBlue
-        lable.textAlignment = .center
-        return lable
+    let tableView = UITableView()
+    let cellIdentifier = "CustomCell"
+    // title label
+    private let titlelabel: UILabel = {
+        let label = UILabel()
+        label.text = "Your Exercises"
+        label.textColor = .black
+        // font should be added
+        return label
     }()
     
-    func configure(with title: String) {
-        self.title.text = title
+    
+    // layout subViews Here
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        //Addig for all subviews!
+        addBottomBorder(with:.systemBlue, height: 1)
     }
+    
+   
 }
 
-private extension SectionHeaderView {
-    
 
-    
-     func setupViews() {
+// Extension of DashboardNavBar
+
+extension SectionHeaderView {
+   
+    override func setupViews() {
+        super.setupViews()
         
-        setupView(title)
-       
+        setupView(titlelabel)
+
     }
-     func constaintViews() {
-  
+   
+    override func constaintViews() {
+        super.constaintViews()
+        
         NSLayoutConstraint.activate([
-            title.centerXAnchor.constraint(equalTo: centerXAnchor),
-            title.centerYAnchor.constraint(equalTo: centerYAnchor),
-          
+
+            
+            titlelabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            
+            
         ])
     }
-    
-    func configureAppeatance() {
-    }
+   
+    override func configureAppearance() {
+        super.configureAppearance()
+     
+        backgroundColor = .white
 
+        
+      
+    }
 }
 
