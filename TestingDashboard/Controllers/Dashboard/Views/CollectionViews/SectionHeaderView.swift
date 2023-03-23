@@ -91,5 +91,12 @@ extension SectionHeaderView: UITableViewDelegate, UITableViewDataSource{
 // Extension of SectioonHesderView
 
 extension SectionHeaderView{
-//    func fe
+//    function to fetchData
+    func fetchData() -> [Video]{
+        let video1 = Video(image: Imagess.noStoryboard! , title: "No Storyboard")
+        let video2 = Video(image: Imagess.softSkills!, title: "Soft Skills")
+        
+        return [video1, video2]
+    }
+
 }
