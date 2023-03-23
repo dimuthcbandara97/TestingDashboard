@@ -17,6 +17,9 @@
 		A21EBC7229CC19CA00EC1210 /* ExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7129CC19CA00EC1210 /* ExerciseViewCell.swift */; };
 		A21EBC7429CC1F4600EC1210 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7329CC1F4600EC1210 /* Video.swift */; };
 		A21EBC7629CC202A00EC1210 /* Imagess.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7529CC202A00EC1210 /* Imagess.swift */; };
+		A21EBC7829CC6D8300EC1210 /* TitlePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7729CC6D8300EC1210 /* TitlePreviewController.swift */; };
+		A21EBC7C29CC6DFA00EC1210 /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7B29CC6DFA00EC1210 /* TitlePreviewViewModel.swift */; };
+		A21EBC7E29CC6E3900EC1210 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7D29CC6E3900EC1210 /* YoutubeSearchResponse.swift */; };
 		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
 		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
 		A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2529C08D63009206D3 /* SectionHeaderView.swift */; };
@@ -103,6 +106,9 @@
 		A21EBC7129CC19CA00EC1210 /* ExerciseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewCell.swift; sourceTree = "<group>"; };
 		A21EBC7329CC1F4600EC1210 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A21EBC7529CC202A00EC1210 /* Imagess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagess.swift; sourceTree = "<group>"; };
+		A21EBC7729CC6D8300EC1210 /* TitlePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewController.swift; sourceTree = "<group>"; };
+		A21EBC7B29CC6DFA00EC1210 /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
+		A21EBC7D29CC6E3900EC1210 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavBar.swift; sourceTree = "<group>"; };
 		A2396E2229C08C15009206D3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A2396E2529C08D63009206D3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 				A2C1837429C8964100990A02 /* TitleViewModel.swift */,
 				A2C1837629C897FF00990A02 /* CollectionViewTableViewCell.swift */,
 				A2C1837829C898A100990A02 /* Title.swift */,
+				A21EBC7729CC6D8300EC1210 /* TitlePreviewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +234,15 @@
 				A21EBC7129CC19CA00EC1210 /* ExerciseViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A21EBC7929CC6DD000EC1210 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A21EBC7B29CC6DFA00EC1210 /* TitlePreviewViewModel.swift */,
+				A21EBC7D29CC6E3900EC1210 /* YoutubeSearchResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A2396E1829C02CB5009206D3 /* Element */ = {
@@ -399,6 +415,7 @@
 		A2537A9E29BF56CC000DED14 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A21EBC7929CC6DD000EC1210 /* Model */,
 				A209554129C6CBD500669668 /* View */,
 				A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */,
 			);
@@ -750,9 +767,11 @@
 				A2C1836A29C86EBC00990A02 /* Progress2View.swift in Sources */,
 				A21EBC7429CC1F4600EC1210 /* Video.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
+				A21EBC7E29CC6E3900EC1210 /* YoutubeSearchResponse.swift in Sources */,
 				A21EBC6029C9CC7B00EC1210 /* RegisterViewController.swift in Sources */,
 				A28BF20C29C1F3ED001B8264 /* MeditationElement.swift in Sources */,
 				A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */,
+				A21EBC7829CC6D8300EC1210 /* TitlePreviewController.swift in Sources */,
 				A2C1837329C8923100990A02 /* TitleTableViewCell.swift in Sources */,
 				A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */,
 				A28BF1F429C1AF8E001B8264 /* PercentView.swift in Sources */,
@@ -778,6 +797,7 @@
 				A28BF1F229C1AF81001B8264 /* ProgressView.swift in Sources */,
 				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
 				A21EBC5E29C9B4B700EC1210 /* CustomButton.swift in Sources */,
+				A21EBC7C29CC6DFA00EC1210 /* TitlePreviewViewModel.swift in Sources */,
 				A28BF20729C1EA76001B8264 /* XAxisView.swift in Sources */,
 				A28BF21229C1F6C7001B8264 /* UserElement.swift in Sources */,
 				A2F34E7629C9970400BBA9BA /* AuthHeaderView.swift in Sources */,

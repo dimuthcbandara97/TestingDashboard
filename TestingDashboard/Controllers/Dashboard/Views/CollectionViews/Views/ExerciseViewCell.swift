@@ -23,6 +23,11 @@ class ExerciseViewCell: UITableViewCell {
         setTitleLabelConstaints()
     }
     
+    func set(video: Video){
+        videoImageView.image = video.image
+        videoTitleLabel.text = video.title
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
