@@ -13,7 +13,9 @@ final class SessionBaseController: BaseController {
     private let statsView = StatsView(with: "STATS")
     private let progress2View = Progress2View(with: "PROGRESS 2")
     
-    private let timerDuration = 5.0
+    private var timerDuration = 300
+    
+    
     
     override func navBarLeftButtonHandler() {
         if timerView.state == .isStopped {
@@ -46,6 +48,7 @@ extension SessionBaseController {
         view.setupView(statsView)
         view.setupView(progress2View)
         view.backgroundColor = .white
+        
     }
     
     override func constaintViews() {
@@ -77,7 +80,7 @@ extension SessionBaseController {
         addNavBarButton(at: .Left, with: "START")
         addNavBarButton(at: .Right, with: "FINISH")
         
-        timerView.configure(with: timerDuration, progress: 0)
+        timerView.configure(with: Double(timerDuration), progress: 0)
         
         timerView.callBack = {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {

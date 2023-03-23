@@ -10,14 +10,12 @@ import UIKit
 
 class SectionHeaderView: BaseView {
     
-    let tableView = UITableView()
-    let cellIdentifier = "CustomCell"
-    // title label
+    var tableView = UITableView()
+
     private let titlelabel: UILabel = {
         let label = UILabel()
         label.text = "Your Exercises"
         label.textColor = .black
-        // font should be added
         return label
     }()
     
@@ -30,29 +28,52 @@ class SectionHeaderView: BaseView {
         addBottomBorder(with:.systemBlue, height: 1)
     }
     
-   
+    
 }
 
 
 // Extension of DashboardNavBar
 
-extension SectionHeaderView {
+extension SectionHeaderView: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
    
     override func setupViews() {
         super.setupViews()
         
         setupView(titlelabel)
-
+        setupView(tableView)
+        setTableViewDelegates()
+//        tableView.pin(to: this.view)
     }
    
+    func setTableViewDelegates() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 100
+        
+        
+        
+    }
     override func constaintViews() {
         super.constaintViews()
         
         NSLayoutConstraint.activate([
 
             
-            titlelabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            
+            titlelabel.topAnchor.constraint(equalTo: topAnchor),
+            tableView.topAnchor.constraint(equalTo: titlelabel.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
         ])
     }
@@ -67,3 +88,8 @@ extension SectionHeaderView {
     }
 }
 
+// Extension of SectioonHesderView
+
+extension SectionHeaderView{
+//    func fe
+}

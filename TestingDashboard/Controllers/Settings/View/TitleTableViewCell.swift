@@ -9,17 +9,7 @@ import Foundation
 import UIKit
 class TitleTableViewCell: UITableViewCell {
 
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
-    
+
     static let identifier = "TitleTableViewCell"
     
     // play title button
@@ -58,7 +48,6 @@ class TitleTableViewCell: UITableViewCell {
             titlesPosterUIImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             titlesPosterUIImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             titlesPosterUIImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
-//            titlesPosterUIImageView.widthAnchor.constraint(equalTo: 100)
             titlesPosterUIImageView.widthAnchor.constraint(equalToConstant: 100)
         ]
         
@@ -76,9 +65,7 @@ class TitleTableViewCell: UITableViewCell {
         }
     
     public func configure(with model:TitleViewModel){
-//        guard let url = URL(string: model.posterURL) else {
-//            return
-//        }
+
         
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model)") else{
             return
