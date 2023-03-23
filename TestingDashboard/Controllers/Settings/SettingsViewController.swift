@@ -97,8 +97,24 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
                     print(error.localizedDescription)
                 }
             }
-//        case Sections.TrendingTv.rawValue:
-//        case Sections.Popular.rawValue:
+        case Sections.Exercise.rawValue:
+            APICaller.shared.gettrendingMoview{ result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        case Sections.Meditation.rawValue:
+            APICaller.shared.gettrendingMoview{ result in
+                switch result {
+                case .success(let titles):
+                    cell.configure(with: titles)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
 //        case Sections.Upcoming.rawValue:
 //        case Sections.TopRated.rawValue:
         default:

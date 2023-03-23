@@ -16,7 +16,7 @@ class TitlePreviewViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.text = "Harry potter"
+        label.text = "Label 01"
         return label
     }()
     
@@ -26,7 +26,7 @@ class TitlePreviewViewController: UIViewController {
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.text = "This is the best movie ever to watch as a kid!"
+        label.text = "Something Special Ingredient"
         return label
     }()
     
