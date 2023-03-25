@@ -13,15 +13,12 @@ class NavBarController: UINavigationController {
         super.viewDidLoad()
 
         // Configure method
-        
     }
     
     private func configureUI() {
-        view.backgroundColor = .white
         navigationBar.isTranslucent = false
-//        navigationBar.standardAppearance.titleTextAttributes = [
-//            .foregroundColor: .systemGray
-//        ]
+        navigationBar.standardAppearance.titleTextAttributes = [    .foregroundColor: UIColor.black]
+
         
         navigationBar.addBottomBorder(with: .blue, height: 1)
     }

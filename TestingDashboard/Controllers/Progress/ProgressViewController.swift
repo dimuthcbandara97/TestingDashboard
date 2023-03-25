@@ -29,6 +29,7 @@ extension ProgressBaseController {
         super.setupViews()
         
         view.setupView(dailyPerformanceView)
+        view.setupView(monthlyPerformanceView)
     }
     
     // Configure Appearance
@@ -41,17 +42,18 @@ extension ProgressBaseController {
         super.constaintViews()
         
         NSLayoutConstraint.activate([
-            
+
             // Daily Performance View
             dailyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             dailyPerformanceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             dailyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             dailyPerformanceView.heightAnchor.constraint(equalTo: dailyPerformanceView.widthAnchor, multiplier: 0.68),
-            
-//            monthlyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-//            monthlyPerformanceView.topAnchor.constraint(equalTo: dailyPerformanceView.bottomAnchor, constant: 15),
-//            monthlyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-//            monthlyPerformanceView.heightAnchor.constraint(equalTo: monthlyPerformanceView.widthAnchor, multiplier: 1.06),
+
+            // Monthly Performance View
+            monthlyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            monthlyPerformanceView.topAnchor.constraint(equalTo: dailyPerformanceView.bottomAnchor, constant: 15),
+            monthlyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            monthlyPerformanceView.heightAnchor.constraint(equalTo: monthlyPerformanceView.widthAnchor, multiplier: 1.06),
 
         ])
         
@@ -63,13 +65,14 @@ extension ProgressBaseController {
                                               .init(value: "D5", heigntMultiplier: 1, title: "FRI"),
                                               .init(value: "D6", heigntMultiplier: 0.6, title: "SAT"),
                                               .init(value: "D7", heigntMultiplier: 0.4, title: "SUN")])
-//        monthlyPerformanceView.configure(with: [.init(value: "D1", heigntMultiplier: 1.0, title: "MON"),
-//                                              .init(value: "D2", heigntMultiplier: 0.4, title: "TUE"),
-//                                              .init(value: "D3", heigntMultiplier: 0.6, title: "WED"),
-//                                              .init(value: "D4", heigntMultiplier: 0.8, title: "THU"),
-//                                              .init(value: "D5", heigntMultiplier: 1, title: "FRI"),
-//                                              .init(value: "D6", heigntMultiplier: 0.6, title: "SAT"),
-//                                              .init(value: "D7", heigntMultiplier: 0.4, title: "SUN")])
-//     
+        
+        monthlyPerformanceView.configure(with: [.init(value: "D1", heigntMultiplier: 1.0, title: "MON"),
+                                              .init(value: "D2", heigntMultiplier: 0.4, title: "TUE"),
+                                              .init(value: "D3", heigntMultiplier: 0.6, title: "WED"),
+                                              .init(value: "D4", heigntMultiplier: 0.8, title: "THU"),
+                                              .init(value: "D5", heigntMultiplier: 1, title: "FRI"),
+                                              .init(value: "D6", heigntMultiplier: 0.6, title: "SAT"),
+                                              .init(value: "D7", heigntMultiplier: 0.4, title: "SUN")])
+     
     }
 }

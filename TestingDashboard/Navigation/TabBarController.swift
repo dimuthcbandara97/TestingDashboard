@@ -27,7 +27,6 @@ class TabBarController: UITabBarController {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureAppearance()
-       
     }
     
     //Selected TabBar item after loading
@@ -39,7 +38,6 @@ class TabBarController: UITabBarController {
     private func configureAppearance() {
 
         // Ading Decorations to TabBar
-        
         // Adding Animations
         let transition = CATransition()
         transition.duration = 0.3

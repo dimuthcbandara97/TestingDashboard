@@ -58,7 +58,7 @@ extension DashboardBaseController {
                    header.topAnchor.constraint(equalTo: navBar.bottomAnchor),
                    header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                    header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                   header.heightAnchor.constraint(equalToConstant: 500)
+                   header.heightAnchor.constraint(equalToConstant: 400)
             
         ])
     }
