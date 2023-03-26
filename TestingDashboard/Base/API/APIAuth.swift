@@ -53,6 +53,37 @@ class APICaller {
         task.resume()
     }
     
+    // CRUD users - insert
+    func insertUser(user: UserElement) {
+        let url = URL(string: Constants.API_KEY_USERS)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let encoder = JSONEncoder()
+        do {
+            let jsonData = try encoder.encode(user)
+            request.httpBody = jsonData
+        } catch {
+            print(error.localizedDescription)
+            return
+        }
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                print("API error")
+                return
+            }
+            // Update UI with new data
+        }
+        task.resume()
+    }
+
+
+
     // CRUD Exercise -> Read
     func loadExercise(completion: @escaping ([ExerciseElement]) -> Void){
            
