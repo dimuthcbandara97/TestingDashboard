@@ -80,14 +80,25 @@ extension SectionHeaderView: UITableViewDelegate, UITableViewDataSource{
         super.constaintViews()
         
         NSLayoutConstraint.activate([
-
             
+//            titlelabel.topAnchor.constraint(equalTo: topAnchor),
+//            titlelabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            titlelabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            titlelabel.heightAnchor.constraint(equalToConstant: 30),
+//            titlelabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+//
+//            tableView.topAnchor.constraint(equalTo: titlelabel.bottomAnchor, constant: 10),
+//            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
             titlelabel.topAnchor.constraint(equalTo: topAnchor),
-            tableView.topAnchor.constraint(equalTo: titlelabel.bottomAnchor, constant: 10),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
+                    titlelabel.heightAnchor.constraint(equalToConstant: 30),
+                    titlelabel.centerXAnchor.constraint(equalTo: centerXAnchor), // Add this line
+                    
+                    tableView.topAnchor.constraint(equalTo: titlelabel.bottomAnchor, constant: 10),
+                    tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                    tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                    tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
    

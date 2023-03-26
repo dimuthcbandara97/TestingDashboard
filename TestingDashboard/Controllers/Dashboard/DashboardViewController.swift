@@ -7,16 +7,17 @@
 
 import UIKit
 
-class DashboardBaseController: BaseController {
 
-    
+
+import UIKit
+
+class DashboardBaseController: BaseController {
     
     // Navbar
     private let navBar = DashboardNavBar()
     
     // Header
     private let header = SectionHeaderView()
-
     
     let cellIdentifier = "CustomCell"
     
@@ -24,50 +25,49 @@ class DashboardBaseController: BaseController {
         super.viewDidLoad()
         view.backgroundColor = .white
     }
-
-
-
-}
-
-extension DashboardBaseController {
     
-    override func setupViews(){
+    override func setupViews() {
         super.setupViews()
         
         title = "Dashboard Main"
         view.setupView(navBar)
         view.setupView(header)
-//        view.addSubview(tableView)
+        // Add any other views as needed
+        
+        // Add the table view if necessary
+        // view.addSubview(tableView)
     }
     
     override func constaintViews() {
         super.constaintViews()
+        
         NSLayoutConstraint.activate([
-            
-//            navBar.topAnchor.constraint(equalTo: view.topAnchor),
-//            navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor ),
-//            navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor ),
-//            navBar.bottomAnchor.constraint(equalTo: view.bottomAnchor) ,
-
             navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                   navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                   navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                   navBar.heightAnchor.constraint(equalToConstant: 300),
-                   
-                   // Constraints for header view
-                   header.topAnchor.constraint(equalTo: navBar.bottomAnchor),
-                   header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                   header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                   header.heightAnchor.constraint(equalToConstant: 400)
-            
+            navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            navBar.heightAnchor.constraint(equalToConstant: 300),
+            navBar.leftAnchor.constraint(equalTo: view.leftAnchor),
+            navBar.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
+
+        // Constraints for header view
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: navBar.bottomAnchor),
+            header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            header.heightAnchor.constraint(equalToConstant: 375),
+            header.leftAnchor.constraint(equalTo: view.leftAnchor),
+            header.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+        
+        // Add any other constraints as needed
+
     }
     
     override func configureAppearance() {
         super.configureAppearance()
         
-        navigationController?.navigationBar.isHidden = true
-
+        // Show or hide the navigation bar as desired
+        navigationController?.navigationBar.isHidden = false
     }
-    
 }

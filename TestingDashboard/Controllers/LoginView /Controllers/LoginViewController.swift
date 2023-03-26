@@ -107,7 +107,8 @@ class LoginViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func didTapSignIn() {
-        let vc = ViewControllerLogin()
+//        let vc = ViewControllerLogin()
+        let vc = TabBarController()
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: false, completion: nil)
