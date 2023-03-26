@@ -31,6 +31,7 @@
 		A240C2A029BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C29F29BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift */; };
 		A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C2B429BC44F200E5DDAC /* Resources.swift */; };
 		A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C2B629BC655100E5DDAC /* HomeViewController.swift */; };
+		A244E44629D058EA00AEBE96 /* ProgressElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A244E44529D058EA00AEBE96 /* ProgressElement.swift */; };
 		A2537A9629BF5515000DED14 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9529BF5515000DED14 /* UIColor.swift */; };
 		A2537A9829BF5575000DED14 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9729BF5575000DED14 /* UIView.swift */; };
 		A2537A9A29BF55A3000DED14 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9929BF55A3000DED14 /* Date.swift */; };
@@ -126,6 +127,7 @@
 		A240C29F29BC3E6700E5DDAC /* TestingDashboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDashboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A240C2B429BC44F200E5DDAC /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		A240C2B629BC655100E5DDAC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A244E44529D058EA00AEBE96 /* ProgressElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressElement.swift; sourceTree = "<group>"; };
 		A2537A9529BF5515000DED14 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A2537A9729BF5575000DED14 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A2537A9929BF55A3000DED14 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				A28BF21329C1F706001B8264 /* TimerElement.swift */,
 				A21EBC7329CC1F4600EC1210 /* Video.swift */,
 				A21EBC7529CC202A00EC1210 /* Imagess.swift */,
+				A244E44529D058EA00AEBE96 /* ProgressElement.swift */,
 			);
 			path = Element;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				A2C1836A29C86EBC00990A02 /* Progress2View.swift in Sources */,
 				A21EBC7429CC1F4600EC1210 /* Video.swift in Sources */,
 				A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */,
+				A244E44629D058EA00AEBE96 /* ProgressElement.swift in Sources */,
 				A21EBC7E29CC6E3900EC1210 /* YoutubeSearchResponse.swift in Sources */,
 				A21EBC6029C9CC7B00EC1210 /* RegisterViewController.swift in Sources */,
 				A28BF20C29C1F3ED001B8264 /* MeditationElement.swift in Sources */,
