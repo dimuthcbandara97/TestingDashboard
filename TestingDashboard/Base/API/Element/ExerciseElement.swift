@@ -10,17 +10,19 @@ import Foundation
 // MARK: - ExerciseElement
 struct ExerciseElement: Codable {
     let id, exerciseName, exerciseType, instructor: String
-    let notes, imageurl: String
+    let notes: String
+    let imageurl, videourl: String
     let v: Int
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case exerciseName = "exercise_name"
         case exerciseType = "exercise_type"
-        case instructor, notes, imageurl
+        case instructor, notes, imageurl, videourl
         case v = "__v"
     }
 }
 
 typealias Exercise = [ExerciseElement]
+
 
