@@ -15,6 +15,7 @@ struct Constants {
     static let API_KEY_NETWORKING = "https://nodemongocrud.onrender.com/api/networking"
     static let API_KEY_NUTRITION = "https://nodemongocrud.onrender.com/api/nutrition"
     static let API_KEY_TIMER = "https://nodemongocrud.onrender.com/api/timer"
+    static let API_KEY_PROGRESS = "https://nodemongocrud.onrender.com/api/progress"
     
     // Testing Image View
     static let API_KEY = "faa8695dc581ea2088374b01596042e2"
@@ -131,6 +132,28 @@ class APICaller {
                 
             do {
                 let results = try JSONDecoder().decode([NutritionElement].self, from: data)
+                completion(results) // passing the results to the completion handler
+            } catch {
+                print(error.localizedDescription)
+            }
+                
+        }
+        task.resume()
+    }
+    
+    // CRUD Progress - Read
+    func loadProgress(completion: @escaping ([ProgressElement]) -> Void){
+           
+        guard let url = URL(string: Constants.API_KEY_PROGRESS) else {return}
+            
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url,timeoutInterval: 30)){ data, _, error in
+                
+            guard let data = data, error == nil else {
+                return
+            }
+                
+            do {
+                let results = try JSONDecoder().decode([ProgressElement].self, from: data)
                 completion(results) // passing the results to the completion handler
             } catch {
                 print(error.localizedDescription)
