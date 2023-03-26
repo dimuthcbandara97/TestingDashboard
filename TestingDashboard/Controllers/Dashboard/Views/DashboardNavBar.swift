@@ -24,8 +24,9 @@ class DashboardNavBar: BaseView {
     private let addButton = UIButton()
     private let allWorkoutButton: BaseButton = {
         let button = BaseButton(with: .secondary)
-        button.setTitle("My Workouts")
+//        button.setTitle("My Workouts")
         button.backgroundColor = .systemPurple
+        
         return button
     }()
     
@@ -61,6 +62,7 @@ extension DashboardNavBar {
         setupView(titlelabel)
         setupView(addButton)
         setupView(weekView)
+       
     }
    
     override func constaintViews() {
@@ -101,10 +103,26 @@ extension DashboardNavBar {
 
         
         allWorkoutButton.setTitle("Workouts")
+//        APICaller.shared.loadExercise { results in
+//                DispatchQueue.main.async {
+//                    // Access the exercise at index 1 and assign its name to the nameLabel text property
+//                    if results.count >= 2 {
+//                        var res1 = results[1].exerciseName
+//                        self.allWorkoutButton.setTitle(res1)
+//                    } else if results.count == 1 {
+////                        self.nameLabel.text = "Only one result found"
+//                        var res1 = results[1].exerciseName
+//                        self.allWorkoutButton.setTitle(res1)
+//                    } else {
+//                        var res1 = results[1].exerciseName
+//                        self.allWorkoutButton.setTitle(res1)
+//                    }
+//                }
+//            }
         
         addButton.setImage(UIImage(systemName: "home"), for: .normal)
         
-      
+        
     }
 }
 

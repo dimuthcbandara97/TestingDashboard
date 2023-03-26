@@ -196,7 +196,7 @@ class APICaller {
     
     // CRUDProgress - Insert
 
-    func insertUser(user: ProgressElement) {
+    func insertProgress(user: ProgressElement) {
         let url = URL(string: Constants.API_KEY_PROGRESS)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

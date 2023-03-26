@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import MusicKit
+import MediaPlayer
+
 
 enum TimerState {
     case isRuning
@@ -14,7 +17,9 @@ enum TimerState {
 }
 
 final class TimerView: BaseInfoView {
-
+    
+    let musicPlayer = MPMusicPlayerController.systemMusicPlayer
+    
     private let elapsedTimeLable: UILabel = {
         let lable = UILabel()
         lable.text = "Remaining Time"
@@ -145,6 +150,26 @@ final class TimerView: BaseInfoView {
             self.configure(with: self.timerDuration, progress: self.timerProgress)
         })
     }
+    
+    func playMusic() {
+        // Set the queue of songs to play
+//        let songsQuery = MPMediaQuery.songs()
+//        let songs = songsQuery.items ?? []
+//        musicPlayer.setQueue(with: songs)
+        
+        let songsQuery = MPMediaQuery.songs()
+        let songs = songsQuery.items?.map { $0.title ?? "" } ?? []
+        musicPlayer.setQueue(with: songs)
+
+        // Start playing the music
+        musicPlayer.play()
+    }
+
+    
+    func pauseMusic() {
+        musicPlayer.pause()
+    }
+
 }
 
 extension TimerView {
