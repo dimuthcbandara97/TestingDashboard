@@ -17,6 +17,8 @@ class CustomTextField: UITextField {
         case username
         case email
         case password
+        case age
+        case gender
     }
     
     // defininf auth Field Type
@@ -53,6 +55,14 @@ class CustomTextField: UITextField {
             self.placeholder = "Password"
             self.textContentType = .oneTimeCode
             self.isSecureTextEntry = true
+        
+        // Age
+        case .age:
+            self.placeholder = "Age"
+        
+        // Gender
+        case .gender:
+            self.placeholder = "Gender"
         }
     }
     

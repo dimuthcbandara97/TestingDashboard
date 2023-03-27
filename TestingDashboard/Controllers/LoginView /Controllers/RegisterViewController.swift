@@ -20,6 +20,9 @@ class RegisterViewController: UIViewController {
     private let emailField = CustomTextField(fieldType: .email)
     private let passwordField = CustomTextField(fieldType: .password)
     
+    private let ageField = CustomTextField(fieldType: .age)
+    private let genderField = CustomTextField(fieldType: .gender)
+    
     // buttons
     private let signUpButton = CustomButton(title: "Sign Up", hasBackground: true, fontSize: .big)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", fontSize: .med)
@@ -70,6 +73,8 @@ class RegisterViewController: UIViewController {
         self.view.addSubview(usernameField)
         self.view.addSubview(emailField)
         self.view.addSubview(passwordField)
+        self.view.addSubview(ageField)
+        self.view.addSubview(genderField)
         self.view.addSubview(signUpButton)
         self.view.addSubview(termsTextView)
         self.view.addSubview(signInButton)
@@ -79,6 +84,8 @@ class RegisterViewController: UIViewController {
         self.usernameField.translatesAutoresizingMaskIntoConstraints = false
         self.emailField.translatesAutoresizingMaskIntoConstraints = false
         self.passwordField.translatesAutoresizingMaskIntoConstraints = false
+        self.ageField.translatesAutoresizingMaskIntoConstraints = false
+        self.genderField.translatesAutoresizingMaskIntoConstraints = false
         self.signUpButton.translatesAutoresizingMaskIntoConstraints = false
         self.termsTextView.translatesAutoresizingMaskIntoConstraints = false
         self.signInButton.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +97,7 @@ class RegisterViewController: UIViewController {
             self.headerView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
             self.headerView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.headerView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.headerView.heightAnchor.constraint(equalToConstant: 222),
+            self.headerView.heightAnchor.constraint(equalToConstant: 170),
             
             // User name
             self.usernameField.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 12),
@@ -109,12 +116,28 @@ class RegisterViewController: UIViewController {
             self.passwordField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
             self.passwordField.heightAnchor.constraint(equalToConstant: 55),
             self.passwordField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-            
-            // sign up
-            self.signUpButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
-            self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
-            self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            // age
+                    self.ageField.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
+                    self.ageField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+                    self.ageField.heightAnchor.constraint(equalToConstant: 55),
+                    self.ageField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+                    
+                    // gender
+                    self.genderField.topAnchor.constraint(equalTo: ageField.bottomAnchor, constant: 22),
+                    self.genderField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+                    self.genderField.heightAnchor.constraint(equalToConstant: 55),
+                    self.genderField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+                    
+                    // sign up
+                    self.signUpButton.topAnchor.constraint(equalTo: genderField.bottomAnchor, constant: 22),
+                    self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+                    self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
+                    self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+//            // sign up
+//            self.signUpButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
+//            self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+//            self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
+//            self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             
             // terms and conditions
             self.termsTextView.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 6),
