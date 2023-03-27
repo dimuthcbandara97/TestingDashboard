@@ -114,28 +114,22 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func didTapSignIn() {
-        // Unwrap email and password fields safely
-        
-        
-        guard let username = username, let password = password else {
-            assertionFailure("Username / password should never be nil")
-            return
-        }
 
-        if username.isEmpty || password.isEmpty {
-            print("Empty")
-            
-            return
-        }
-
-        if username == "dimuth@123.com" && password == "Welcome" {
-            print("Welcome")
-            let vc = TabBarController()
-            let nav = UINavigationController(rootViewController: vc)
-            nav.modalPresentationStyle = .fullScreen
-            self.present(nav, animated: false, completion: nil)
-        } else {
-            print("Fail")
+        APICaller.shared.loadUsers { results in
+            DispatchQueue.main.async {
+                if results.count > 0 {
+                    for user in results {
+                            print(user.email)
+                        if (self.username == user.email ){
+                            print("Email Validation Passed")
+                            print(user.gender)
+                        }
+//
+                    }
+                } else {
+                    print("No results found")
+                }
+            }
         }
     }
 
