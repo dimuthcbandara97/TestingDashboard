@@ -23,10 +23,16 @@ class LoginViewController: UIViewController {
     private let newUserButton = CustomButton(title: "New User? Create Account.", fontSize: .med)
     private let forgotPasswordButton = CustomButton(title: "Forgot Password?", fontSize: .small)
     
+    var username: String? {
+            return emailField.text
+        }
+
+        var password: String? {
+            return passwordField.text
+        }
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setupUI()
         
         // Adding targets to buttons
@@ -34,6 +40,8 @@ class LoginViewController: UIViewController {
         self.newUserButton.addTarget(self, action: #selector(didTapNewUser), for: .touchUpInside)
         self.forgotPasswordButton.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
     }
+    
+    
     
     // View Will Appear
     override func viewWillAppear(_ animated: Bool) {
@@ -105,14 +113,32 @@ class LoginViewController: UIViewController {
         ])
     }
     
-    // MARK: - Selectors
     @objc private func didTapSignIn() {
-//        let vc = ViewControllerLogin()
-        let vc = TabBarController()
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: false, completion: nil)
+        // Unwrap email and password fields safely
+        
+        
+        guard let username = username, let password = password else {
+            assertionFailure("Username / password should never be nil")
+            return
+        }
+
+        if username.isEmpty || password.isEmpty {
+            print("Empty")
+            
+            return
+        }
+
+        if username == "dimuth@123.com" && password == "Welcome" {
+            print("Welcome")
+            let vc = TabBarController()
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: false, completion: nil)
+        } else {
+            print("Fail")
+        }
     }
+
     
     @objc private func didTapNewUser() {
         let vc = RegisterViewController()

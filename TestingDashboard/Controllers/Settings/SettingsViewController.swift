@@ -20,7 +20,6 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
     
     private let homeFeedTable: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
-//        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         return table
     }()
@@ -32,9 +31,6 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
         
         homeFeedTable.delegate = self
         homeFeedTable.dataSource = self
-        
-//        homeFeedTable.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
-        
         configureNavBar()
         getNutrientss()
     }
@@ -44,12 +40,6 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
         image = image?.withRenderingMode(.alwaysOriginal)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
-        
-//        navigationItem.rightBarButtonItems = [
-//            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action:   nil),
-////            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action:   nil),
-//        ]
-//        navigationController?.navigationBar.tintColor = .black
     }
  
     override func viewDidLayoutSubviews() {
@@ -79,10 +69,6 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = "Hello World"
-//        cell.backgroundColor = .systemRed
-//        return cell
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for:indexPath) as? CollectionViewTableViewCell else {
             return UITableViewCell()
         }
@@ -115,8 +101,7 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
                     print(error.localizedDescription)
                 }
             }
-//        case Sections.Upcoming.rawValue:
-//        case Sections.TopRated.rawValue:
+
         default:
             return UITableViewCell()
         }
