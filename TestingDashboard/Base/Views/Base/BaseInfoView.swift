@@ -10,12 +10,18 @@ import Foundation
 
 class BaseInfoView: BaseView {
     
+
     private let titleLabel: UILabel = {
         let label = UILabel()
-//        label.font =
+        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.textColor = .black
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
         return label
     }()
+
     
     private let button = BaseButton(with: .primary)
     
