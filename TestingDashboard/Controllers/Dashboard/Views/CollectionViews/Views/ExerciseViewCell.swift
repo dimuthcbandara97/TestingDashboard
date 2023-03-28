@@ -20,7 +20,7 @@ class ExerciseViewCell: UITableViewCell {
         return video
     }()
     
-    private let videoTitleLabel: UILabel = {
+    public let videoTitleLabel: UILabel = {
         let title = UILabel()
         title.textColor = .systemPink
         title.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -41,9 +41,20 @@ class ExerciseViewCell: UITableViewCell {
         setTitleLabelConstaints()
     }
     
-    func set(video: Video){
-        videoImageView.image = video.image
-        videoTitleLabel.text = video.title
+    
+    func set(exercise: ExerciseElement){
+         let imageUrl = URL(string: exercise.imageurl)!
+//        videoImageView.image = UIImage(data: imageUrl)
+//        videoTitleLabel.text = exercise.exerciseName
+
+                DispatchQueue.global().async {
+                    if let imageData = try? Data(contentsOf: imageUrl) {
+                        DispatchQueue.main.async {
+                            self.videoImageView.image = UIImage(data: imageData)
+                            self.videoTitleLabel.text = exercise.exerciseName
+                        }
+                    }
+                }
     }
     
     required init?(coder: NSCoder) {

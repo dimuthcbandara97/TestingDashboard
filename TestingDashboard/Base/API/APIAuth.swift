@@ -108,6 +108,7 @@ class APICaller {
                 completion(results) // passing the results to the completion handler
             } catch {
                 print(error.localizedDescription)
+                completion([])
             }
                 
         }
