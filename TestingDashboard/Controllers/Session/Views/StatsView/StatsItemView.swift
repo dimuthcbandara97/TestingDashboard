@@ -44,28 +44,42 @@ enum StatsItem {
         let title: String
     }
     
-    private let imageView = UIImageView()
-    
-    private let valueLabel: UILabel = {
-        let label = UILabel()
-//        label.font =
-        label.textColor = .gray
-        return label
-    }()
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-//        label.font =
-        label.textColor = .black
-        return label
-    }()
-    
-    private let stackView: UIStackView = {
-        let viev = UIStackView()
-        viev.axis = .vertical
-        return viev
-    }()
-    
+
+     private let imageView: UIImageView = {
+         let imageView = UIImageView()
+         imageView.contentMode = .scaleAspectFill
+         imageView.clipsToBounds = false
+         imageView.layer.cornerRadius = 8
+         return imageView
+     }()
+//     imageView.contentMode = .scaleAspectFit
+//     imageView.clipsToBounds = true
+
+     private let valueLabel: UILabel = {
+         let label = UILabel()
+         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+         label.textColor = .gray
+         label.textAlignment = .center
+         return label
+     }()
+
+     private let titleLabel: UILabel = {
+         let label = UILabel()
+         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+         label.textColor = .black
+         label.textAlignment = .center
+         return label
+     }()
+
+     private let stackView: UIStackView = {
+         let view = UIStackView()
+         view.axis = .vertical
+         view.alignment = .center
+         view.distribution = .fillProportionally
+         view.spacing = 5
+         return view
+     }()
+
     
     // CONFIGURE FUNC
     func configure(with item: StatsItem) {
