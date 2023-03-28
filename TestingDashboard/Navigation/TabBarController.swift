@@ -40,6 +40,14 @@ class TabBarController: UITabBarController {
     private func configureAppearance() {
 
         // Ading Decorations to TabBar
+        UITabBar.appearance().barTintColor = .white
+
+        UITabBar.appearance().tintColor = .purple
+        let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .regular), NSAttributedString.Key.foregroundColor: UIColor.purple]
+        UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
+        UITabBar.appearance().unselectedItemTintColor = .gray
+//        UITabBar.appearance().selectedImageTintColor = .blue
+
         // Adding Animations
         let transition = CATransition()
         transition.duration = 0.3
