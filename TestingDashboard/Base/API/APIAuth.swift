@@ -54,34 +54,42 @@ class APICaller {
     }
     
     // CRUD users - insert
-    func insertUser(user: UserElement) {
+    func insertUser(userr: UserElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_USERS)!
+        print(url)
         var request = URLRequest(url: url)
+        print(request)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        print(request)
         let encoder = JSONEncoder()
+        print(encoder)
         do {
-            let jsonData = try encoder.encode(user)
+            let jsonData = try encoder.encode(userr)
+            print(jsonData)
             request.httpBody = jsonData
         } catch {
             print(error.localizedDescription)
+            completionHandler(false, error)
             return
         }
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
+                completionHandler(false, error)
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 print("API error")
+                completionHandler(false, nil)
                 return
             }
-            // Update UI with new data
+            // Call the completion handler with success as true
+            completionHandler(true, nil)
         }
         task.resume()
     }
-
 
 
     // CRUD Exercise -> Read
@@ -196,7 +204,7 @@ class APICaller {
     
     // CRUDProgress - Insert
 
-    func insertProgress(user: ProgressElement) {
+    func insertProgress(user: ProgressElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_PROGRESS)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -207,44 +215,27 @@ class APICaller {
             request.httpBody = jsonData
         } catch {
             print(error.localizedDescription)
+            completionHandler(false, error)
             return
         }
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
+                completionHandler(false, error)
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 print("API error")
+                completionHandler(false, nil)
                 return
             }
-            // Update UI with new data
+            // Call the completion handler with success as true
+            completionHandler(true, nil)
         }
         task.resume()
     }
-    
-    // CRUD Timer -> Read
-    func loadTimer(completion: @escaping ([TimerElement]) -> Void){
-           
-        guard let url = URL(string: Constants.API_KEY_TIMER) else {return}
-            
-        let task = URLSession.shared.dataTask(with: URLRequest(url: url,timeoutInterval: 30)){ data, _, error in
-                
-            guard let data = data, error == nil else {
-                return
-            }
-                
-            do {
-                let results = try JSONDecoder().decode([TimerElement].self, from: data)
-                completion(results) // passing the results to the completion handler
-            } catch {
-                print(error.localizedDescription)
-            }
-                
-        }
-        task.resume()
-    }
+
     
    // Testing Image View
     func gettrendingMoview(completion: @escaping (Result<[Title], Error>) -> Void){
@@ -269,4 +260,6 @@ class APICaller {
     
 
 }
+
+
 

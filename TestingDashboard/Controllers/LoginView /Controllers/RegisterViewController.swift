@@ -19,9 +19,49 @@ class RegisterViewController: UIViewController {
     private let usernameField = CustomTextField(fieldType: .username)
     private let emailField = CustomTextField(fieldType: .email)
     private let passwordField = CustomTextField(fieldType: .password)
-    
     private let ageField = CustomTextField(fieldType: .age)
     private let genderField = CustomTextField(fieldType: .gender)
+    //Remaining call
+
+//    // MARK: - UserElement
+//    struct UserElement: Codable {
+//        let id, name, password, email: String
+//        let gender, status: String
+//        let imageurl: String
+//        let v: Int
+//
+//        enum CodingKeys: String, CodingKey {
+//            case id = "_id"
+//            case name, password, email, gender, status, imageurl
+//            case v = "__v"
+//        }
+//    }
+//
+//    typealias User = [UserElement]
+   
+    // Define the variables
+//    var username: String? {
+//        return usernameField.text
+//    }
+//
+//    var email: String? {
+//        return emailField.text
+//    }
+//
+//    var password: String? {
+//        return passwordField.text
+//    }
+//
+//    var age: String? {
+//        return ageField.text
+//    }
+//
+//    var gender: String? {
+//        return genderField.text
+//    }
+
+    // Create a user object with the defined variables
+   
     
     // buttons
     private let signUpButton = CustomButton(title: "Sign Up", hasBackground: true, fontSize: .big)
@@ -133,11 +173,7 @@ class RegisterViewController: UIViewController {
                     self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
                     self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
                     self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-//            // sign up
-//            self.signUpButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
-//            self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-//            self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
-//            self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+
             
             // terms and conditions
             self.termsTextView.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 6),
@@ -153,10 +189,76 @@ class RegisterViewController: UIViewController {
     }
     
     // MARK: - Selectors
+//    @objc func didTapSignUp() {
+//        let userss = UserElement(name: username ?? "uname", password: password ?? "pwd", email: email ?? "email", gender: gender ?? "gender", status: "status", imageurl: "url")
+//        APICaller.shared.insertUser(user:userss) { success, error in
+//            if let error = error {
+//                print("API call failed with error: \(error.localizedDescription)")
+//                return
+//            }
+//            if success {
+//                print("API call successful")
+//            } else {
+//                print("API call failed")
+//            }
+//        }
+//    }
+//    @objc func didTapSignUp() {
+//        guard let username = usernameField.text,
+//              let password = passwordField.text,
+//              let email = emailField.text,
+//              let gender = genderField.text else {
+//            print("Required fields are missing")
+//            return
+//        }
+//
+//        let userr = UserElement(name: username, password: password, email: email, gender: gender, status: "Active", imageurl: "URL")
+//
+//        APICaller.shared.insertUser(user: userr, completionHandler: <#T##(Bool, Error?) -> Void#>){ success, error in
+//            if let error = error{
+//                print("API call failed with error: \(error.localizedDescription)")
+//                return
+//            }
+//
+//            if success {
+//                print("API call successful")
+//                // Handle successful API call
+//            } else {
+//                print("API call failed")
+//                // Handle failed API call
+//            }
+//        }
+//    }
+//
     @objc func didTapSignUp() {
-        print("DEBUG PRINT:", "didTapSignUp")
+        guard let username = usernameField.text,
+              let password = passwordField.text,
+              let email = emailField.text,
+              let gender = genderField.text else {
+            print("Required fields are missing")
+            return
+        }
+        
+        let userr = UserElement(name: username, password: password, email: email, gender: gender, status: "Active", imageurl: "URL")
+        
+        APICaller.shared.insertUser(userr: userr) { success, error in
+            if let error = error {
+                print("API call failed with error: \(error.localizedDescription)")
+                return
+            }
+            
+            if success {
+                print("API call successful")
+                // Handle successful API call
+            } else {
+                print("API call failed")
+                // Handle failed API call
+            }
+        }
     }
-    
+
+  
+
     @objc private func didTapSignIn() {
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -178,6 +280,7 @@ extension RegisterViewController: UITextViewDelegate {
     }
     
     private func showWebViewerController(with urlString: String) {
+        
         let vc = WebViewController(with: urlString)
         let nav = UINavigationController(rootViewController: vc)
         self.present(nav, animated: true, completion: nil)
