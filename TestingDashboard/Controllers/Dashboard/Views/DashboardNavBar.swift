@@ -12,13 +12,23 @@ class DashboardNavBar: BaseView {
     let tableView = UITableView()
     let cellIdentifier = "CustomCell"
     // title label
-    private let titlelabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Dashboard Navigation"
+        label.text = "Dashboard"
         label.textColor = .black
-        // font should be added
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+//        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.backgroundColor = .clear
+        label.shadowColor = .gray
+        label.shadowOffset = CGSize(width: 1.0, height: 1.0)
+//        label.shadowOpacity = 0.5
         return label
     }()
+
     
     // Add Button
     private let addButton = UIButton()
@@ -59,7 +69,7 @@ extension DashboardNavBar {
         super.setupViews()
         
         setupView(allWorkoutButton)
-        setupView(titlelabel)
+        setupView(titleLabel)
         setupView(addButton)
         setupView(weekView)
        
@@ -83,9 +93,9 @@ extension DashboardNavBar {
             allWorkoutButton.heightAnchor.constraint(equalToConstant: 28),
             allWorkoutButton.widthAnchor.constraint(equalToConstant: 130),
             
-            titlelabel.centerYAnchor.constraint(equalTo: addButton.centerYAnchor),
-            titlelabel.trailingAnchor.constraint(equalTo: addButton.leadingAnchor),
-            titlelabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            titleLabel.centerYAnchor.constraint(equalTo: addButton.centerYAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: addButton.leadingAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             
             weekView.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 15),
             weekView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
@@ -103,22 +113,7 @@ extension DashboardNavBar {
 
         
         allWorkoutButton.setTitle("Workouts")
-//        APICaller.shared.loadExercise { results in
-//                DispatchQueue.main.async {
-//                    // Access the exercise at index 1 and assign its name to the nameLabel text property
-//                    if results.count >= 2 {
-//                        var res1 = results[1].exerciseName
-//                        self.allWorkoutButton.setTitle(res1)
-//                    } else if results.count == 1 {
-////                        self.nameLabel.text = "Only one result found"
-//                        var res1 = results[1].exerciseName
-//                        self.allWorkoutButton.setTitle(res1)
-//                    } else {
-//                        var res1 = results[1].exerciseName
-//                        self.allWorkoutButton.setTitle(res1)
-//                    }
-//                }
-//            }
+
         
         addButton.setImage(UIImage(systemName: "home"), for: .normal)
         

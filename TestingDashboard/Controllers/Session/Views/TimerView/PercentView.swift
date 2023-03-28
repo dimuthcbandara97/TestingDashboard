@@ -24,7 +24,7 @@ extension TimerView {
         private let percentLabel: UILabel = {
             let label = UILabel()
             label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-            label.textColor = .black
+            label.textColor = .systemPink
             label.textAlignment = .center
             return label
         }()

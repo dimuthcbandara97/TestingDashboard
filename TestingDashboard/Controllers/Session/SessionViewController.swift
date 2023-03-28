@@ -88,11 +88,6 @@ extension SessionBaseController {
             }
         }
         
-        //        timerView.callBack = { [weak self] in
-        //            self?.navBarRightButtonHandler()
-        //        }
-        
-        
         progress2View.configure(with: [.init(value: "8k", heightMultiplier: 1, title: "2/14"),
                                        .init(value: "7k", heightMultiplier: 0.8, title: "2/15"),
                                        .init(value: "5k", heightMultiplier: 0.6, title: "2/16"),

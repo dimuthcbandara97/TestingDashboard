@@ -23,7 +23,7 @@ final  class BaseBarView: BaseView {
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
-        label.textColor = .gray
+        label.textColor = .purple
         label.textAlignment = .center
         return label
     }()
@@ -38,8 +38,8 @@ final  class BaseBarView: BaseView {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
-        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
+        label.textColor = .black
         label.textAlignment = .center
         return label
     }()

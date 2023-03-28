@@ -9,8 +9,26 @@ import UIKit
 
 class ExerciseViewCell: UITableViewCell {
 
-    var videoImageView = UIImageView()
-    var videoTitleLabel = UILabel()
+//    var videoImageView = UIImageView()
+//    var videoTitleLabel = UILabel()
+    
+    private let videoImageView: UIImageView = {
+        let video = UIImageView()
+//        video.contentMode = .scaleAspectFill
+        video.clipsToBounds = false
+        video.layer.cornerRadius = 4
+        return video
+    }()
+    
+    private let videoTitleLabel: UILabel = {
+        let title = UILabel()
+        title.textColor = .systemPink
+        title.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        title.numberOfLines = 2
+        title.lineBreakMode = .byTruncatingTail
+        return title
+    }()
+   
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

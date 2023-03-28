@@ -58,7 +58,7 @@ enum StatsItem {
      private let valueLabel: UILabel = {
          let label = UILabel()
          label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-         label.textColor = .gray
+         label.textColor = .black
          label.textAlignment = .center
          return label
      }()
@@ -66,7 +66,7 @@ enum StatsItem {
      private let titleLabel: UILabel = {
          let label = UILabel()
          label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-         label.textColor = .black
+         label.textColor = .purple
          label.textAlignment = .center
          return label
      }()

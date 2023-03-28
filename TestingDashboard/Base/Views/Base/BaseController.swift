@@ -55,6 +55,7 @@ extension BaseController {
         button.setTitle(title, for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.setTitleColor(.red, for: .disabled)
+//        button.tintColor = .systemPink
         button.backgroundColor = .white
         button.layer.cornerRadius = 5
         button.layer.borderWidth = 1

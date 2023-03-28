@@ -19,10 +19,26 @@ class SectionHeaderView: BaseView {
         static let exerciseCell = "ExerciseCell"
     }
 
+//    private let titlelabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "Your Exercises"
+//        label.textColor = .black
+//        return label
+//    }()
     private let titlelabel: UILabel = {
         let label = UILabel()
         label.text = "Your Exercises"
         label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.backgroundColor = .clear
+        label.shadowColor = .gray
+        label.shadowOffset = CGSize(width: 1.0, height: 1.0)
+//        label.shadowOpacity = 0.5
         return label
     }()
     
@@ -81,16 +97,6 @@ extension SectionHeaderView: UITableViewDelegate, UITableViewDataSource{
         
         NSLayoutConstraint.activate([
             
-//            titlelabel.topAnchor.constraint(equalTo: topAnchor),
-//            titlelabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            titlelabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            titlelabel.heightAnchor.constraint(equalToConstant: 30),
-//            titlelabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-//
-//            tableView.topAnchor.constraint(equalTo: titlelabel.bottomAnchor, constant: 10),
-//            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
             titlelabel.topAnchor.constraint(equalTo: topAnchor),
                     titlelabel.heightAnchor.constraint(equalToConstant: 30),
                     titlelabel.centerXAnchor.constraint(equalTo: centerXAnchor), // Add this line
