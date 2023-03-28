@@ -20,40 +20,76 @@ final class TimerView: BaseInfoView {
     
     let musicPlayer = MPMusicPlayerController.systemMusicPlayer
     
+//    private let elapsedTimeLable: UILabel = {
+//        let lable = UILabel()
+//        lable.text = "Remaining Time"
+////        lable.font =
+//        lable.textColor = .black
+//        lable.textAlignment = .center
+//        return lable
+//    }()
+//
+//    private let elapsedTimeValueLable: UILabel = {
+//        let lable = UILabel()
+//        lable.text = "02:15"
+////        lable.font =
+//        lable.textColor = .gray
+//        lable.textAlignment = .center
+//        return lable
+//    }()
+//
+//    private let remainingTimeLable: UILabel = {
+//        let lable = UILabel()
+//        lable.text = "Remaining Time"
+////        lable.font =
+//        lable.textColor = .black
+//        lable.textAlignment = .center
+//        return lable
+//    }()
+//
+//    private let remainingTimeValueLable: UILabel = {
+//        let lable = UILabel()
+//        //lable.text = "12:45"
+////        lable.font =
+//        lable.textColor = .black
+//        lable.textAlignment = .center
+//        return lable
+//    }()
+
     private let elapsedTimeLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Remaining Time"
-//        lable.font =
-        lable.textColor = .black
-        lable.textAlignment = .center
-        return lable
+        let label = UILabel()
+        label.text = "Completed Time"
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
     }()
 
     private let elapsedTimeValueLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "02:15"
-//        lable.font =
-        lable.textColor = .gray
-        lable.textAlignment = .center
-        return lable
+        let label = UILabel()
+        label.text = "02:15"
+        label.font = UIFont.monospacedDigitSystemFont(ofSize: 36, weight: .regular)
+        label.textColor = .gray
+        label.textAlignment = .center
+        return label
     }()
 
     private let remainingTimeLable: UILabel = {
-        let lable = UILabel()
-        lable.text = "Remaining Time"
-//        lable.font =
-        lable.textColor = .black
-        lable.textAlignment = .center
-        return lable
+        let label = UILabel()
+        label.text = "Remaining Time"
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
     }()
 
     private let remainingTimeValueLable: UILabel = {
-        let lable = UILabel()
-        //lable.text = "12:45"
-//        lable.font =
-        lable.textColor = .black
-        lable.textAlignment = .center
-        return lable
+        let label = UILabel()
+        label.text = "12:45"
+        label.font = UIFont.monospacedDigitSystemFont(ofSize: 36, weight: .regular)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
     }()
 
     private let timeStackView: UIStackView = {
@@ -102,8 +138,8 @@ final class TimerView: BaseInfoView {
 
         elapsedTimeValueLable.text = getDisplayedString(from: Int(tempCurrentValue))
         remainingTimeValueLable.text = getDisplayedString(from: Int(duration - tempCurrentValue))
-        completedPercentView.configure(with: "Completed", andValue: roundedPercent)
-        remainingPercentView.configure(with: "Remaining", andValue: 100 - roundedPercent)
+        completedPercentView.configure(with: "COMP", andValue: roundedPercent)
+        remainingPercentView.configure(with: "REM", andValue: 100 - roundedPercent)
         progressView.drawProgress(with: CGFloat(percent))
     }
 

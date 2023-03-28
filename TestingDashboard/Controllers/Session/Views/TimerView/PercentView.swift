@@ -12,7 +12,6 @@ extension TimerView {
     
     final class PercentView: BaseView {
          
-        // Stack View
         private let stackView: UIStackView = {
             let view = UIStackView()
             view.axis = .vertical
@@ -20,24 +19,28 @@ extension TimerView {
             view.spacing = 5
             return view
         }()
-        
+
         // Percent
         private let percentLabel: UILabel = {
             let label = UILabel()
-//            label.font =
+            label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
             label.textColor = .black
             label.textAlignment = .center
             return label
         }()
-        
+
         // Subtitle
         private let subtitleLabel: UILabel = {
             let label = UILabel()
-//            label.font =
-            label.textColor = .black
+            label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+            label.textColor = .gray
             label.textAlignment = .center
+            label.adjustsFontSizeToFitWidth = true
+            label.minimumScaleFactor = 0.5
+            label.numberOfLines = 1
             return label
         }()
+
 
         
      // Setting Up
