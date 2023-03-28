@@ -17,9 +17,20 @@ final class BaseButton: UIButton {
     
     private var type: WAButtonType = .primary
     
+
     private let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.backgroundColor = .white
+        label.layer.cornerRadius = 10
+        label.layer.shadowColor = UIColor.gray.cgColor
+        label.layer.shadowOffset = CGSize(width: 0, height: 2)
+        label.layer.shadowOpacity = 0.4
+        label.layer.shadowRadius = 4
         return label
     }()
     
@@ -93,8 +104,14 @@ private extension BaseButton {
         
         case .primary:
             label.textColor = .blue
-//            lable.font =
+            label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+            label.numberOfLines = 0 // allow label to have multiple lines
+            label.lineBreakMode = .byWordWrapping // wrap the text at word boundaries
+
             iconView.tintColor = .systemPurple
+            iconView.contentMode = .scaleAspectFit // adjust the icon's content mode
+            iconView.clipsToBounds = true // clip the icon's contents to its bounds
+
             
         
         case .secondary:
