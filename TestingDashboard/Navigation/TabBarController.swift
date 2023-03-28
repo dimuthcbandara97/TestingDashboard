@@ -35,6 +35,8 @@ class TabBarController: UITabBarController {
     }
     
     
+    
+    
     private func configureAppearance() {
 
         // Ading Decorations to TabBar
@@ -58,6 +60,7 @@ class TabBarController: UITabBarController {
         setViewControllers(controllers, animated: true)
 
     }
+    
     }
     private func tabController(for tab: Tabs) -> BaseController {
         

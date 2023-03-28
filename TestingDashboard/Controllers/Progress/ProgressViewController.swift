@@ -58,21 +58,21 @@ extension ProgressBaseController {
         ])
         
         // Daily Performance View
-        dailyPerformanceView.configure(with: [.init(value: "D1", heigntMultiplier: 1.0, title: "MON"),
-                                              .init(value: "D2", heigntMultiplier: 0.4, title: "TUE"),
-                                              .init(value: "D3", heigntMultiplier: 0.6, title: "WED"),
-                                              .init(value: "D4", heigntMultiplier: 0.8, title: "THU"),
-                                              .init(value: "D5", heigntMultiplier: 1, title: "FRI"),
-                                              .init(value: "D6", heigntMultiplier: 0.6, title: "SAT"),
-                                              .init(value: "D7", heigntMultiplier: 0.4, title: "SUN")])
+        dailyPerformanceView.configure(with: [.init(value: "D1", heightMultiplier: 1.0, title: "MON"),
+                                              .init(value: "D2", heightMultiplier: 0.4, title: "TUE"),
+                                              .init(value: "D3", heightMultiplier: 0.6, title: "WED"),
+                                              .init(value: "D4", heightMultiplier: 0.8, title: "THU"),
+                                              .init(value: "D5", heightMultiplier: 1, title: "FRI"),
+                                              .init(value: "D6", heightMultiplier: 0.6, title: "SAT"),
+                                              .init(value: "D7", heightMultiplier: 0.4, title: "SUN")])
         
-        monthlyPerformanceView.configure(with: [.init(value: "D1", heigntMultiplier: 1.0, title: "MON"),
-                                              .init(value: "D2", heigntMultiplier: 0.4, title: "TUE"),
-                                              .init(value: "D3", heigntMultiplier: 0.6, title: "WED"),
-                                              .init(value: "D4", heigntMultiplier: 0.8, title: "THU"),
-                                              .init(value: "D5", heigntMultiplier: 1, title: "FRI"),
-                                              .init(value: "D6", heigntMultiplier: 0.6, title: "SAT"),
-                                              .init(value: "D7", heigntMultiplier: 0.4, title: "SUN")])
+        monthlyPerformanceView.configure(with: [.init(value: "D1", heightMultiplier: 1.0, title: "MON"),
+                                                .init(value: "D2", heightMultiplier: 0.4, title: "TUE"),
+                                                .init(value: "D3", heightMultiplier: 0.6, title: "WED"),
+                                                .init(value: "D4", heightMultiplier: 0.8, title: "THU"),
+                                                .init(value: "D5", heightMultiplier: 1, title: "FRI"),
+                                                .init(value: "D6", heightMultiplier: 0.6, title: "SAT"),
+                                                .init(value: "D7", heightMultiplier: 0.4, title: "SUN")])
      
     }
 }

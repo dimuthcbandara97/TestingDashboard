@@ -115,16 +115,18 @@ class LoginViewController: UIViewController {
     
     @objc private func didTapSignIn() {
 
+        
         APICaller.shared.loadUsers { results in
             DispatchQueue.main.async {
                 if results.count > 0 {
                     for user in results {
                             print(user.email)
-                        if (self.username == user.email ){
-                            print("Email Validation Passed")
-                            print(user.gender)
+                        if (self.username == user.email && self.password == user.password){
+                            let vc = TabBarController()
+                            let nav = UINavigationController(rootViewController: vc)
+                            nav.modalPresentationStyle = .fullScreen
+                            self.present(nav, animated: false, completion: nil)
                         }
-//
                     }
                 } else {
                     print("No results found")
