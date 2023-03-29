@@ -48,15 +48,23 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
     }
     
     private func getNutrientss(){
-        APICaller.shared.gettrendingMoview{ results in
-            switch results {
-            case .success(let movies):
-                print(movies)
-            case .failure(let error):
-                print(error)
+//        APICaller.shared.gettrendingMoview{ results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+        APICaller.shared.loadExercise { results in
+            DispatchQueue.main.async {
+                if results.count > 0 {
+                   print(results)
+                } else {
+                    print("No results found")
+                }
             }
         }
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -83,6 +91,12 @@ class SettingsBaseController: BaseController, UITableViewDelegate, UITableViewDa
                     print(error.localizedDescription)
                 }
             }
+//            APICaller.shared.loadExercise { results in
+//                DispatchQueue.main.async {
+//                    let titles = results.count
+//                    cell.configure(with: titles)
+//                }
+//            }
         case Sections.Exercise.rawValue:
             APICaller.shared.gettrendingMoview{ result in
                 switch result {

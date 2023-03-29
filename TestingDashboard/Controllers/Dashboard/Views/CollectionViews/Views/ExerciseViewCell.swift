@@ -37,7 +37,7 @@ class ExerciseViewCell: UITableViewCell {
         
         configureImageView()
         configureTitleLabel()
-        setImageConstaints()
+        setImageConstraints()
         setTitleLabelConstaints()
     }
     
@@ -69,10 +69,10 @@ class ExerciseViewCell: UITableViewCell {
         videoTitleLabel.numberOfLines = 0
         videoTitleLabel.adjustsFontSizeToFitWidth = true
     }
-    func setImageConstaints(){
+    func setImageConstraints(){
         videoImageView.translatesAutoresizingMaskIntoConstraints = false
         videoImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        videoImageView.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 12).isActive = true
+        videoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
         videoImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         videoImageView.widthAnchor.constraint(equalTo: videoImageView.heightAnchor, multiplier: 16/9).isActive = true
     }
