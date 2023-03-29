@@ -16,6 +16,7 @@ struct Constants {
     static let API_KEY_NUTRITION = "https://nodemongocrud.onrender.com/api/nutrition"
     static let API_KEY_TIMER = "https://nodemongocrud.onrender.com/api/timer"
     static let API_KEY_PROGRESS = "https://nodemongocrud.onrender.com/api/progress"
+    static let API_KEY_STATS = "https://nodemongocrud.onrender.com/api/stats"
     
     // Testing Image View
     static let API_KEY = "faa8695dc581ea2088374b01596042e2"
@@ -259,6 +260,26 @@ class APICaller {
         task.resume()
     }
     
+    func loadStats(completion: @escaping ([StatssElement]) -> Void){
+           
+        guard let url = URL(string: Constants.API_KEY_STATS) else {return}
+            
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url,timeoutInterval: 30)){ data, _, error in
+                
+            guard let data = data, error == nil else {
+                return
+            }
+                
+            do {
+                let results = try JSONDecoder().decode([StatssElement].self, from: data)
+                completion(results) // passing the results to the completion handler
+            } catch {
+                print(error.localizedDescription)
+            }
+                
+        }
+        task.resume()
+    }
 
 }
 
