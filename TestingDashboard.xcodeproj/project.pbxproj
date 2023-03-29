@@ -51,6 +51,8 @@
 		A274D6D929C3552900ED848D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */; };
 		A282E09C29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E09B29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift */; };
 		A282E09E29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E09D29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift */; };
+		A282E0A029D40C8E0036B9C2 /* CollectionViewTableViewCellNutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E09F29D40C8E0036B9C2 /* CollectionViewTableViewCellNutrition.swift */; };
+		A282E0A229D40CB00036B9C2 /* NutritionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E0A129D40CB00036B9C2 /* NutritionCollectionViewCell.swift */; };
 		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E729C191DF001B8264 /* WeekView.swift */; };
 		A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E929C1924E001B8264 /* WeekDayView.swift */; };
@@ -147,6 +149,8 @@
 		A274D6CA29C32FFD00ED848D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		A282E09B29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCellExercise.swift; sourceTree = "<group>"; };
 		A282E09D29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
+		A282E09F29D40C8E0036B9C2 /* CollectionViewTableViewCellNutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCellNutrition.swift; sourceTree = "<group>"; };
+		A282E0A129D40CB00036B9C2 /* NutritionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A28BF1DD29C177F8001B8264 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A28BF1E729C191DF001B8264 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		A28BF1E929C1924E001B8264 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
@@ -535,6 +539,7 @@
 			children = (
 				A2C1837629C897FF00990A02 /* CollectionViewTableViewCell.swift */,
 				A282E09B29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift */,
+				A282E09F29D40C8E0036B9C2 /* CollectionViewTableViewCellNutrition.swift */,
 			);
 			path = CollectionViewTableViewCells;
 			sourceTree = "<group>";
@@ -544,6 +549,7 @@
 			children = (
 				A2C1836B29C88A8E00990A02 /* TitleCollectionViewCell.swift */,
 				A282E09D29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift */,
+				A282E0A129D40CB00036B9C2 /* NutritionCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -819,12 +825,14 @@
 				A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */,
 				A28BF1F429C1AF8E001B8264 /* PercentView.swift in Sources */,
 				A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */,
+				A282E0A029D40C8E0036B9C2 /* CollectionViewTableViewCellNutrition.swift in Sources */,
 				A282E09C29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift in Sources */,
 				A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */,
 				A274D6CB29C32FFD00ED848D /* StatsView.swift in Sources */,
 				A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */,
 				A28BF21029C1F50E001B8264 /* ExerciseElement.swift in Sources */,
 				A240C27D29BC3E6600E5DDAC /* AppDelegate.swift in Sources */,
+				A282E0A229D40CB00036B9C2 /* NutritionCollectionViewCell.swift in Sources */,
 				A21EBC7229CC19CA00EC1210 /* ExerciseViewCell.swift in Sources */,
 				A21EBC5C29C9A54600EC1210 /* CustomTextField.swift in Sources */,
 				A2537A9629BF5515000DED14 /* UIColor.swift in Sources */,
