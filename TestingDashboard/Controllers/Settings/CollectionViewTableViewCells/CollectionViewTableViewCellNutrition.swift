@@ -20,7 +20,7 @@ class CollectionViewTableViewCellNutrition: UITableViewCell {
         layout.itemSize = CGSize(width: 140, height: 200)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifer)
+        collectionView.register(NutritionCollectionViewCell.self, forCellWithReuseIdentifier: NutritionCollectionViewCell.identifer)
         return collectionView
     }()
 
@@ -56,11 +56,11 @@ extension CollectionViewTableViewCellNutrition: UICollectionViewDelegate, UIColl
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifer, for: indexPath) as? TitleCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NutritionCollectionViewCell.identifer, for: indexPath) as? NutritionCollectionViewCell else {
             return UICollectionViewCell()
         }
         
-        guard let model = titles[indexPath.row].poster_path else {
+        guard exerciseName[indexPath.row].imageurl != nil else {
             return UICollectionViewCell()
         }
         
@@ -69,7 +69,7 @@ extension CollectionViewTableViewCellNutrition: UICollectionViewDelegate, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        return exerciseName.count
     }
 
 }
