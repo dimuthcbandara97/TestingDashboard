@@ -10,7 +10,7 @@ import UIKit
 final class SessionBaseController: BaseController {
     
     private let timerView = TimerView()
-    private let statsView = StatsView(with: "STATS")
+    private let statsView = StatsView(with: "STANDARD RATES")
     private let progress2View = Progress2View(with: "PROGRESS 2")
     
     private var timerDuration = 300

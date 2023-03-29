@@ -55,6 +55,7 @@
 		A282E0A229D40CB00036B9C2 /* NutritionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E0A129D40CB00036B9C2 /* NutritionCollectionViewCell.swift */; };
 		A282E0A429D40E650036B9C2 /* MeditationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E0A329D40E650036B9C2 /* MeditationCollectionViewCell.swift */; };
 		A282E0A629D40EC70036B9C2 /* CollectionViewTableViewCellMeditation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E0A529D40EC70036B9C2 /* CollectionViewTableViewCellMeditation.swift */; };
+		A282E0A829D41D490036B9C2 /* StatssElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E0A729D41D490036B9C2 /* StatssElement.swift */; };
 		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E729C191DF001B8264 /* WeekView.swift */; };
 		A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E929C1924E001B8264 /* WeekDayView.swift */; };
@@ -155,6 +156,7 @@
 		A282E0A129D40CB00036B9C2 /* NutritionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A282E0A329D40E650036B9C2 /* MeditationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationCollectionViewCell.swift; sourceTree = "<group>"; };
 		A282E0A529D40EC70036B9C2 /* CollectionViewTableViewCellMeditation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCellMeditation.swift; sourceTree = "<group>"; };
+		A282E0A729D41D490036B9C2 /* StatssElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatssElement.swift; sourceTree = "<group>"; };
 		A28BF1DD29C177F8001B8264 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A28BF1E729C191DF001B8264 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		A28BF1E929C1924E001B8264 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				A21EBC7329CC1F4600EC1210 /* Video.swift */,
 				A21EBC7529CC202A00EC1210 /* Imagess.swift */,
 				A244E44529D058EA00AEBE96 /* ProgressElement.swift */,
+				A282E0A729D41D490036B9C2 /* StatssElement.swift */,
 			);
 			path = Element;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A282E0A829D41D490036B9C2 /* StatssElement.swift in Sources */,
 				A274D6D929C3552900ED848D /* SettingsViewController.swift in Sources */,
 				A282E09E29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift in Sources */,
 				A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */,
