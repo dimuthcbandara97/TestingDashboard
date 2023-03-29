@@ -49,8 +49,8 @@
 		A274D6D729C34FB100ED848D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A240C28529BC3E6700E5DDAC /* Assets.xcassets */; };
 		A274D6D829C3505300ED848D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A240C28729BC3E6700E5DDAC /* LaunchScreen.storyboard */; };
 		A274D6D929C3552900ED848D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */; };
-		A282E08F29D3EEAB0036B9C2 /* CollectionViewTableViewCellNutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E08E29D3EEAB0036B9C2 /* CollectionViewTableViewCellNutrition.swift */; };
-		A282E09629D3F2D00036B9C2 /* NutritionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E09529D3F2D00036B9C2 /* NutritionCollectionViewCell.swift */; };
+		A282E09C29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E09B29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift */; };
+		A282E09E29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E09D29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift */; };
 		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E729C191DF001B8264 /* WeekView.swift */; };
 		A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E929C1924E001B8264 /* WeekDayView.swift */; };
@@ -145,8 +145,8 @@
 		A2537ABE29BF5E36000DED14 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		A274D6C829C327E800ED848D /* StatsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsItemView.swift; sourceTree = "<group>"; };
 		A274D6CA29C32FFD00ED848D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
-		A282E08E29D3EEAB0036B9C2 /* CollectionViewTableViewCellNutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCellNutrition.swift; sourceTree = "<group>"; };
-		A282E09529D3F2D00036B9C2 /* NutritionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionCollectionViewCell.swift; sourceTree = "<group>"; };
+		A282E09B29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCellExercise.swift; sourceTree = "<group>"; };
+		A282E09D29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		A28BF1DD29C177F8001B8264 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		A28BF1E729C191DF001B8264 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		A28BF1E929C1924E001B8264 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
@@ -534,7 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C1837629C897FF00990A02 /* CollectionViewTableViewCell.swift */,
-				A282E08E29D3EEAB0036B9C2 /* CollectionViewTableViewCellNutrition.swift */,
+				A282E09B29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift */,
 			);
 			path = CollectionViewTableViewCells;
 			sourceTree = "<group>";
@@ -543,7 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C1836B29C88A8E00990A02 /* TitleCollectionViewCell.swift */,
-				A282E09529D3F2D00036B9C2 /* NutritionCollectionViewCell.swift */,
+				A282E09D29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -781,6 +781,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A274D6D929C3552900ED848D /* SettingsViewController.swift in Sources */,
+				A282E09E29D40AC50036B9C2 /* ExerciseCollectionViewCell.swift in Sources */,
 				A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */,
 				A28BF1F829C1B2F1001B8264 /* DailyPerformanceView.swift in Sources */,
 				A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */,
@@ -818,6 +819,7 @@
 				A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */,
 				A28BF1F429C1AF8E001B8264 /* PercentView.swift in Sources */,
 				A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */,
+				A282E09C29D40A340036B9C2 /* CollectionViewTableViewCellExercise.swift in Sources */,
 				A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */,
 				A274D6CB29C32FFD00ED848D /* StatsView.swift in Sources */,
 				A2537AAB29BF597B000DED14 /* DashboardViewController.swift in Sources */,
@@ -837,10 +839,8 @@
 				A28BF20A29C1F355001B8264 /* NutritionElement.swift in Sources */,
 				A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */,
 				A28BF1F229C1AF81001B8264 /* ProgressView.swift in Sources */,
-				A282E09629D3F2D00036B9C2 /* NutritionCollectionViewCell.swift in Sources */,
 				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
 				A21EBC5E29C9B4B700EC1210 /* CustomButton.swift in Sources */,
-				A282E08F29D3EEAB0036B9C2 /* CollectionViewTableViewCellNutrition.swift in Sources */,
 				A21EBC7C29CC6DFA00EC1210 /* TitlePreviewViewModel.swift in Sources */,
 				A28BF20729C1EA76001B8264 /* XAxisView.swift in Sources */,
 				A28BF21229C1F6C7001B8264 /* UserElement.swift in Sources */,

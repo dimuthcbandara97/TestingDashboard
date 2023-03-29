@@ -1,5 +1,5 @@
 //
-//  CollectionViewTableViewCellNutrition.swift
+//  CollectionViewTableViewCellExercise.swift
 //  TestingDashboard
 //
 //  Created by Dimuth Bandara on 2023-03-29.
@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-class CollectionViewTableViewCellNutrition: UITableViewCell {
+class CollectionViewTableViewCellExercise: UITableViewCell {
 
-    static let identifier = "CollectionViewTableViewCellNutrition"
+    static let identifier = "CollectionViewTableViewCellExercise"
     
-    private var exerciseName: [ExerciseElement] = [ExerciseElement]()
+    private var exercises: [ExerciseElement] = [ExerciseElement]()
 
     private let collectionView: UICollectionView = {
 
@@ -20,7 +20,7 @@ class CollectionViewTableViewCellNutrition: UITableViewCell {
         layout.itemSize = CGSize(width: 140, height: 200)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(NutritionCollectionViewCell.self, forCellWithReuseIdentifier: NutritionCollectionViewCell.identifer)
+        collectionView.register(ExerciseCollectionViewCell.self, forCellWithReuseIdentifier: ExerciseCollectionViewCell.identifer)
         return collectionView
     }()
 
@@ -42,8 +42,8 @@ class CollectionViewTableViewCellNutrition: UITableViewCell {
         collectionView.frame = contentView.bounds
     }
     
-    public func configure(with exerciseName: [ExerciseElement]){
-        self.exerciseName = exerciseName
+    public func configure(with exercises: [ExerciseElement]){
+        self.exercises = exercises
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
         }
@@ -52,15 +52,15 @@ class CollectionViewTableViewCellNutrition: UITableViewCell {
 }
 
 
-extension CollectionViewTableViewCellNutrition: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CollectionViewTableViewCellExercise: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NutritionCollectionViewCell.identifer, for: indexPath) as? NutritionCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExerciseCollectionViewCell.identifer, for: indexPath) as? ExerciseCollectionViewCell else {
             return UICollectionViewCell()
         }
         
-        guard exerciseName[indexPath.row].imageurl != nil else {
+        guard exercises[indexPath.row].imageurl != nil else {
             return UICollectionViewCell()
         }
         
@@ -69,7 +69,7 @@ extension CollectionViewTableViewCellNutrition: UICollectionViewDelegate, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return exerciseName.count
+        return exercises.count
     }
 
 }

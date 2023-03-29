@@ -1,5 +1,5 @@
 //
-//  NutritionCollectionViewCell.swift
+//  ExerciseCollectionViewCell.swift
 //  TestingDashboard
 //
 //  Created by Dimuth Bandara on 2023-03-29.
@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class NutritionCollectionViewCell: UICollectionViewCell {
+class ExerciseCollectionViewCell: UICollectionViewCell {
     
-    static let identifer = "NutritionCollectionViewCell"
+    static let identifer = "ExerciseCollectionViewCell"
     
     private let postImageView: UIImageView = {
         let imageView = UIImageView()
