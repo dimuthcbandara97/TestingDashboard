@@ -17,21 +17,21 @@ enum StatsItem {
     var data: StatsItemView.ItemData {
         switch self {
         case .topic01(let value):
-            return StatsItemView.ItemData(image: UIImage(systemName: "square.and.arrow.up"),
-                                          value: value + " 01",
-                                          title: "Title 01")
+            return StatsItemView.ItemData(image: UIImage(systemName: "bolt.heart"),
+                                          value: value + "",
+                                          title: "B.Pressure")
         case .topic02(let value):
-            return StatsItemView.ItemData(image: UIImage(systemName: "person.2"),
-                                          value: value + " 02",
-                                          title: "Title 02")
+            return StatsItemView.ItemData(image: UIImage(systemName: "heart.fill"),
+                                          value: value + "",
+                                          title: "Heart Rate")
         case .topic03(let value):
-            return StatsItemView.ItemData(image: UIImage(systemName: "exclamationmark.circle"),
-                                          value: value + " 03",
-                                          title: "Title 03")
+            return StatsItemView.ItemData(image: UIImage(systemName: "chart.bar.xaxis"),
+                                          value: value + "",
+                                          title: "BMI")
         case .topic04(let value):
-            return StatsItemView.ItemData(image: UIImage(systemName: "doc.text"),
+            return StatsItemView.ItemData(image: UIImage(systemName: "figure.walk.circle"),
                                           value: value,
-                                          title: "Title 04")
+                                          title: "Body Fat")
         }
     }
 }
@@ -57,7 +57,7 @@ enum StatsItem {
 
      private let valueLabel: UILabel = {
          let label = UILabel()
-         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
          label.textColor = .black
          label.textAlignment = .center
          return label
@@ -65,7 +65,7 @@ enum StatsItem {
 
      private let titleLabel: UILabel = {
          let label = UILabel()
-         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
          label.textColor = .purple
          label.textAlignment = .center
          return label

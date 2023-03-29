@@ -87,16 +87,29 @@ extension SessionBaseController {
                 self.navBarRightButtonHanler()
             }
         }
-        
+ 
+//        APICaller.shared.loadStats { results in
+//                DispatchQueue.main.async {
+//
+//                }
+//            }
         progress2View.configure(with: [.init(value: "8k", heightMultiplier: 1, title: "2/14"),
                                        .init(value: "7k", heightMultiplier: 0.8, title: "2/15"),
                                        .init(value: "5k", heightMultiplier: 0.6, title: "2/16"),
                                        .init(value: "6k", heightMultiplier: 0.7, title: "2/17"),])
         
-        statsView.configure(with: [.topic01(value: "155"),
-                                   .topic02(value: "8'20''"),
-                                   .topic03(value: "7,682"),
-                                   .topic04(value: "8.25")])
+
+        APICaller.shared.loadStats { results in
+            DispatchQueue.main.async {
+                // Update statsView with retrieved data
+                // For example:
+                self.statsView.configure(with: [.topic01(value: results[0].bloodpressure),
+                                           .topic02(value: results[0].heartrate),
+                                           .topic03(value: results[0].bmi),
+                                           .topic04(value: results[0].bodyfat)])
+            }
+        }
+
         
         
     }
