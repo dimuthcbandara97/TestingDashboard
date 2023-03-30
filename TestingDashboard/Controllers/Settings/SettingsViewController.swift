@@ -13,10 +13,12 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
 
     private let tableView: UITableView = {
         let table = UITableView()
-//        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         table.register(CollectionTableViewCell.self, forCellReuseIdentifier: CollectionTableViewCell.identifier)
+        table.register(CustomTableViewCell3.self, forCellReuseIdentifier: CustomTableViewCell3.identifier)
+        table.register(CustomTableViewCell4.self, forCellReuseIdentifier: CustomTableViewCell4.identifier)
         return table
     }()
+
 
     private let viewModels: [CollectionTableViewCellViewModel] = [
         CollectionTableViewCellViewModel(viewModels: [
@@ -30,9 +32,16 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
         ])
     ]
     
+//    private let customViewModels: [CustomTableViewCellViewModel] = [
+//        CustomTableViewCellViewModel(title: "Custom Item 1", subtitle: "Custom Subtitle 1"),
+//        CustomTableViewCellViewModel(title: "Custom Item 2", subtitle: "Custom Subtitle 2"),
+//        CustomTableViewCellViewModel(title: "Custom Item 3", subtitle: "Custom Subtitle 3"),
+//    ]
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Section Background Decoration View"
+        navigationItem.title = "Health Controller"
      
     }
     
@@ -49,23 +58,67 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count
+        if section == 0 {
+            return viewModels.count
+        } else if section == 1 {
+//            return customViewModels.count
+            return viewModels.count
+        } else {
+            return viewModels.count
+        }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = "Hello Dimuth"
-        let viewModel = viewModels[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else {fatalError()}
-        cell.delegate = self
-        cell.configure(with: viewModel)
-        return cell
+        if indexPath.section == 0 {
+            let viewModel = viewModels[indexPath.row]
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else {fatalError()}
+            cell.delegate = self
+            cell.configure(with: viewModel)
+            return cell
+        } else  if indexPath.section == 1 {
+//            let viewModel = customViewModels[indexPath.row]
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell3.identifier, for: indexPath) as? CustomTableViewCell else {fatalError()}
+//            cell.textLabel?.text = viewModel.title
+//            cell.detailTextLabel?.text = viewModel.subtitle
+//            return cell
+            let viewModel = viewModels[indexPath.row]
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else {fatalError()}
+            cell.delegate = self
+            cell.configure(with: viewModel)
+            return cell
+        } else {
+            let viewModel = viewModels[indexPath.row]
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else {fatalError()}
+            cell.delegate = self
+            cell.configure(with: viewModel)
+            return cell
+        }
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.frame.size.width/2
+        if indexPath.section == 0 {
+            return view.frame.size.width/2
+        } else if indexPath.section == 1{
+            return UITableView.automaticDimension
+        } else {
+            return UITableView.automaticDimension
+        }
     }
-    
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Exericse Section"
+        } else if section == 1 {
+            return "Nutrition Section"
+        } else {
+            return "Meditation Section"
+        }
+    }
+
 }
 
 extension SettingsBaseController: CollectionTableViewCellDelegate{
