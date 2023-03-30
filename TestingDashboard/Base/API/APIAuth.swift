@@ -237,31 +237,7 @@ class APICaller {
         }
         task.resume()
     }
-
-    
-   // Testing Image View
-    func gettrendingMoview(completion: @escaping (Result<[Title], Error>) -> Void){
-        guard let url = URL(string: "\(Constants.baseURL)/3/trending/movie/day?api_key=\(Constants.API_KEY)") else { return}
         
-        let task = URLSession.shared.dataTask(with: URLRequest(url: url)){ data, _, error in
-            
-            guard let data = data, error == nil else {
-                return
-            }
-            
-            do {
-                                let results = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-                                print(results)
-                
-            } catch {
-                                print(error.localizedDescription)
-//                completion(.failure(APIError.failedToGetData))
-            }
-        }
-        task.resume()
-    }
-    
-    
     
     func loadStats(completion: @escaping ([StatssElement]) -> Void){
            

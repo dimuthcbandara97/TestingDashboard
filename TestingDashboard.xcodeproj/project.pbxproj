@@ -17,7 +17,6 @@
 		A21EBC7229CC19CA00EC1210 /* ExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7129CC19CA00EC1210 /* ExerciseViewCell.swift */; };
 		A21EBC7429CC1F4600EC1210 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7329CC1F4600EC1210 /* Video.swift */; };
 		A21EBC7629CC202A00EC1210 /* Imagess.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7529CC202A00EC1210 /* Imagess.swift */; };
-		A21EBC7829CC6D8300EC1210 /* TitlePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7729CC6D8300EC1210 /* TitlePreviewController.swift */; };
 		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
 		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
 		A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2529C08D63009206D3 /* SectionHeaderView.swift */; };
@@ -70,8 +69,6 @@
 		A2C1836A29C86EBC00990A02 /* Progress2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1836929C86EBC00990A02 /* Progress2View.swift */; };
 		A2C1836F29C88C9900990A02 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1836E29C88C9900990A02 /* SDWebImage */; };
 		A2C1837129C88CD400990A02 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1837029C88CD400990A02 /* SDWebImageMapKit */; };
-		A2C1837329C8923100990A02 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1837229C8923100990A02 /* TitleTableViewCell.swift */; };
-		A2C1837929C898A100990A02 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1837829C898A100990A02 /* Title.swift */; };
 		A2F34E7629C9970400BBA9BA /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,7 +100,6 @@
 		A21EBC7129CC19CA00EC1210 /* ExerciseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewCell.swift; sourceTree = "<group>"; };
 		A21EBC7329CC1F4600EC1210 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A21EBC7529CC202A00EC1210 /* Imagess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagess.swift; sourceTree = "<group>"; };
-		A21EBC7729CC6D8300EC1210 /* TitlePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewController.swift; sourceTree = "<group>"; };
 		A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavBar.swift; sourceTree = "<group>"; };
 		A2396E2229C08C15009206D3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		A2396E2529C08D63009206D3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
@@ -158,8 +154,6 @@
 		A28BF21129C1F6C7001B8264 /* UserElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserElement.swift; sourceTree = "<group>"; };
 		A28BF21329C1F706001B8264 /* TimerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerElement.swift; sourceTree = "<group>"; };
 		A2C1836929C86EBC00990A02 /* Progress2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress2View.swift; sourceTree = "<group>"; };
-		A2C1837229C8923100990A02 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
-		A2C1837829C898A100990A02 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,15 +184,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A209554129C6CBD500669668 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A2C1837229C8923100990A02 /* TitleTableViewCell.swift */,
-				A21EBC7729CC6D8300EC1210 /* TitlePreviewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		A21EBC6329C9CF4200EC1210 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,17 +211,9 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A21EBC7929CC6DD000EC1210 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		A2396E1829C02CB5009206D3 /* Element */ = {
 			isa = PBXGroup;
 			children = (
-				A2C1837829C898A100990A02 /* Title.swift */,
 				A28BF20929C1F355001B8264 /* NutritionElement.swift */,
 				A28BF20B29C1F3ED001B8264 /* MeditationElement.swift */,
 				A28BF20D29C1F461001B8264 /* NetworkingElement.swift */,
@@ -406,12 +383,6 @@
 		A2537A9E29BF56CC000DED14 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A282E09229D3F0200036B9C2 /* PreviewControllers */,
-				A282E09129D3EFD20036B9C2 /* ViewModels */,
-				A282E09029D3EF080036B9C2 /* CollectionViewCells */,
-				A282E08D29D3EE400036B9C2 /* CollectionViewTableViewCells */,
-				A21EBC7929CC6DD000EC1210 /* Model */,
-				A209554129C6CBD500669668 /* View */,
 				A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -516,34 +487,6 @@
 				A274D6CA29C32FFD00ED848D /* StatsView.swift */,
 			);
 			path = StatsView;
-			sourceTree = "<group>";
-		};
-		A282E08D29D3EE400036B9C2 /* CollectionViewTableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionViewTableViewCells;
-			sourceTree = "<group>";
-		};
-		A282E09029D3EF080036B9C2 /* CollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CollectionViewCells;
-			sourceTree = "<group>";
-		};
-		A282E09129D3EFD20036B9C2 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		A282E09229D3F0200036B9C2 /* PreviewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PreviewControllers;
 			sourceTree = "<group>";
 		};
 		A28BF1E629C191CB001B8264 /* WeekView */ = {
@@ -794,8 +737,6 @@
 				A21EBC6029C9CC7B00EC1210 /* RegisterViewController.swift in Sources */,
 				A28BF20C29C1F3ED001B8264 /* MeditationElement.swift in Sources */,
 				A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */,
-				A21EBC7829CC6D8300EC1210 /* TitlePreviewController.swift in Sources */,
-				A2C1837329C8923100990A02 /* TitleTableViewCell.swift in Sources */,
 				A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */,
 				A28BF1F429C1AF8E001B8264 /* PercentView.swift in Sources */,
 				A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */,
@@ -811,7 +752,6 @@
 				A28BF1EE29C1ACAE001B8264 /* BaseInfoView.swift in Sources */,
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
 				A2396E2329C08C15009206D3 /* BaseView.swift in Sources */,
-				A2C1837929C898A100990A02 /* Title.swift in Sources */,
 				A21EBC6729C9DC2B00EC1210 /* ViewControllerLogin.swift in Sources */,
 				A28BF20A29C1F355001B8264 /* NutritionElement.swift in Sources */,
 				A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */,
