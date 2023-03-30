@@ -41,6 +41,8 @@
 		A2537AB429BF5CB0000DED14 /* APIAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB329BF5CB0000DED14 /* APIAuth.swift */; };
 		A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */; };
 		A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537ABE29BF5E36000DED14 /* BaseController.swift */; };
+		A26640E229D5415500563379 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26640E129D5415500563379 /* CollectionTableViewCell.swift */; };
+		A26640E429D548A000563379 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26640E329D548A000563379 /* TitleCollectionViewCell.swift */; };
 		A274D6C929C327E800ED848D /* StatsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6C829C327E800ED848D /* StatsItemView.swift */; };
 		A274D6CB29C32FFD00ED848D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A274D6CA29C32FFD00ED848D /* StatsView.swift */; };
 		A274D6D729C34FB100ED848D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A240C28529BC3E6700E5DDAC /* Assets.xcassets */; };
@@ -131,6 +133,8 @@
 		A2537AB329BF5CB0000DED14 /* APIAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuth.swift; sourceTree = "<group>"; };
 		A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		A2537ABE29BF5E36000DED14 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		A26640E129D5415500563379 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		A26640E329D548A000563379 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		A274D6C829C327E800ED848D /* StatsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsItemView.swift; sourceTree = "<group>"; };
 		A274D6CA29C32FFD00ED848D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		A282E0A729D41D490036B9C2 /* StatssElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatssElement.swift; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 		A2537A9E29BF56CC000DED14 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A26640E029D5412400563379 /* Views */,
 				A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -478,6 +483,15 @@
 				A28BF1FF29C1DC58001B8264 /* BaseBarsView.swift */,
 			);
 			path = BarsViews;
+			sourceTree = "<group>";
+		};
+		A26640E029D5412400563379 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A26640E129D5415500563379 /* CollectionTableViewCell.swift */,
+				A26640E329D548A000563379 /* TitleCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A274D6C729C327D400ED848D /* StatsView */ = {
@@ -708,6 +722,7 @@
 				A282E0A829D41D490036B9C2 /* StatssElement.swift in Sources */,
 				A274D6D929C3552900ED848D /* SettingsViewController.swift in Sources */,
 				A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */,
+				A26640E429D548A000563379 /* TitleCollectionViewCell.swift in Sources */,
 				A28BF1F829C1B2F1001B8264 /* DailyPerformanceView.swift in Sources */,
 				A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */,
 				A28BF1FE29C1B4E7001B8264 /* BaseBarView.swift in Sources */,
@@ -760,6 +775,7 @@
 				A21EBC5E29C9B4B700EC1210 /* CustomButton.swift in Sources */,
 				A28BF20729C1EA76001B8264 /* XAxisView.swift in Sources */,
 				A28BF21229C1F6C7001B8264 /* UserElement.swift in Sources */,
+				A26640E229D5415500563379 /* CollectionTableViewCell.swift in Sources */,
 				A2F34E7629C9970400BBA9BA /* AuthHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
