@@ -45,26 +45,17 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     // edit this
     private let viewModels3: [CollectionTableViewCellViewModel3] = [
         CollectionTableViewCellViewModel3(viewModels: [
-            TitleCollectionViewCellViewModel3(name: "Model 01", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel3(name: "Model 02", backgroundColor: .systemRed),
-            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemOrange),
-            
-            TitleCollectionViewCellViewModel3(name: "Model 04", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel3(name: "Model 05", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel3(name: "Model 06", backgroundColor: .systemPink),
+            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
+            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
+            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
         ])
     ]
     
     // edit this
     private let viewModels4: [CollectionTableViewCellViewModel4] = [
         CollectionTableViewCellViewModel4(viewModels: [
-            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemRed),
-            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemOrange),
-            
-            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink),
+            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink, imageURL: URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
+            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink, imageURL: URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
         ])
     ]
 //    private let customViewModels: [CustomTableViewCellViewModel] = [
