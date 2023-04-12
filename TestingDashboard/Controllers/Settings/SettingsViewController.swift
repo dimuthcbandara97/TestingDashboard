@@ -35,13 +35,10 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
 
     private let viewModels: [CollectionTableViewCellViewModel] = [
         CollectionTableViewCellViewModel(viewModels: [
-            TitleCollectionViewCellViewModel(name: "Topic 01", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel(name: "Topic 02", backgroundColor: .systemRed),
-            TitleCollectionViewCellViewModel(name: "Topic 03", backgroundColor: .systemOrange),
+            TitleCollectionViewCellViewModel(name: "Topic 01", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
+            TitleCollectionViewCellViewModel(name: "Topic 01", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
+            TitleCollectionViewCellViewModel(name: "Topic 01", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
             
-            TitleCollectionViewCellViewModel(name: "Topic 0", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel(name: "Topic 0", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel(name: "Topic 0", backgroundColor: .systemPink),
         ])
     ]
     
@@ -133,14 +130,14 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return view.frame.size.width/3
+            return view.frame.size.width/2.5
 //            return UITableView.automaticDimension
         } else if indexPath.section == 1{
 //            return UITableView.automaticDimension
-            return view.frame.size.width/3
+            return view.frame.size.width/2.5
         } else {
 //            return UITableView.automaticDimension
-            return view.frame.size.width/3
+            return view.frame.size.width/2.5
         }
     }
 

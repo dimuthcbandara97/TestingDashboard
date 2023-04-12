@@ -64,8 +64,7 @@ class CollectionTableViewCell: UITableViewCell , UICollectionViewDelegate, UICol
         cell.configure(with: viewModels[indexPath.row])
         return cell
     }
-    
-    
+        
     
     func configure(with viewModel: CollectionTableViewCellViewModel){
         self.viewModels = viewModel.viewModels
