@@ -33,29 +33,15 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     }()
 
 
-    private let viewModels: [CollectionTableViewCellViewModel] = [
-        CollectionTableViewCellViewModel(viewModels: [
-            TitleCollectionViewCellViewModel(name: "Topic 01", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-            TitleCollectionViewCellViewModel(name: "Topic 01", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-            TitleCollectionViewCellViewModel(name: "Topic 01", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-            
-        ])
-    ]
     
-    // edit this
-    
-//    private let viewModels3: [CollectionTableViewCellViewModel3] = [
-//
-//        CollectionTableViewCellViewModel3(viewModels: [
-//            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-//            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-//            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-//        ])
-//    ]
     private let apiCaller = APICaller()
+    private var viewModels: [CollectionTableViewCellViewModel] = []
     private var viewModels3: [CollectionTableViewCellViewModel3] = []
+    private var viewModels4: [CollectionTableViewCellViewModel4] = []
 
     func fetchData() {
+        
+        // Load Nutrition
         apiCaller.loadNutrition { [weak self] nutritionElements in
             guard let self = self else { return }
             
@@ -69,16 +55,52 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             self.viewModels3 = collectionViewModels
             
             // Reload the table view to display the new data
-            self.tableView.reloadData()
+//            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        // Load Exercise
+        apiCaller.loadExercise { [weak self] nutritionElements in
+            guard let self = self else { return }
+            
+            // Convert the exercise elements to view models
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl)) }
+            
+            // Create the collection view cell view models
+            let collectionViewModels = [CollectionTableViewCellViewModel(viewModels: titleViewModels)]
+            
+            // Assign the view models to the property
+            self.viewModels = collectionViewModels
+            
+            // Reload the table view to display the new data
+//            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        apiCaller.loadMeditation { [weak self] nutritionElements in
+            guard let self = self else { return }
+            
+            // Convert the exercise elements to view models
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel4(name: $0.meditationName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl)) }
+            
+            // Create the collection view cell view models
+            let collectionViewModels = [CollectionTableViewCellViewModel4(viewModels: titleViewModels)]
+            
+            // Assign the view models to the property
+            self.viewModels4 = collectionViewModels
+            
+            // Reload the table view to display the new data
+//            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
-    // edit this
-    private let viewModels4: [CollectionTableViewCellViewModel4] = [
-        CollectionTableViewCellViewModel4(viewModels: [
-            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink, imageURL: URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink, imageURL: URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-        ])
-    ]
+
 
     
     override func viewDidLoad() {
