@@ -43,14 +43,35 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     ]
     
     // edit this
-    private let viewModels3: [CollectionTableViewCellViewModel3] = [
-        CollectionTableViewCellViewModel3(viewModels: [
-            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
-        ])
-    ]
     
+//    private let viewModels3: [CollectionTableViewCellViewModel3] = [
+//
+//        CollectionTableViewCellViewModel3(viewModels: [
+//            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
+//            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
+//            TitleCollectionViewCellViewModel3(name: "Model 03", backgroundColor: .systemRed, imageURL:URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
+//        ])
+//    ]
+    private let apiCaller = APICaller()
+    private var viewModels3: [CollectionTableViewCellViewModel3] = []
+
+    func fetchData() {
+        apiCaller.loadNutrition { [weak self] nutritionElements in
+            guard let self = self else { return }
+            
+            // Convert the exercise elements to view models
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel3(name: $0.foodName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl)) }
+            
+            // Create the collection view cell view models
+            let collectionViewModels = [CollectionTableViewCellViewModel3(viewModels: titleViewModels)]
+            
+            // Assign the view models to the property
+            self.viewModels3 = collectionViewModels
+            
+            // Reload the table view to display the new data
+            self.tableView.reloadData()
+        }
+    }
     // edit this
     private let viewModels4: [CollectionTableViewCellViewModel4] = [
         CollectionTableViewCellViewModel4(viewModels: [
@@ -58,17 +79,12 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink, imageURL: URL(string: "https://images.unsplash.com/photo-1632179008519-c1dd068f9bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")),
         ])
     ]
-//    private let customViewModels: [CustomTableViewCellViewModel] = [
-//        CustomTableViewCellViewModel(title: "Custom Item 1", subtitle: "Custom Subtitle 1"),
-//        CustomTableViewCellViewModel(title: "Custom Item 2", subtitle: "Custom Subtitle 2"),
-//        CustomTableViewCellViewModel(title: "Custom Item 3", subtitle: "Custom Subtitle 3"),
-//    ]
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Health Controller"
-     
+     fetchData()
     }
     
     

@@ -119,25 +119,4 @@ extension SectionHeaderView: UITableViewDelegate, UITableViewDataSource{
     }
 }
 
-// Extension of SectioonHesderView
 
-extension SectionHeaderView{
-//    function to fetchData
-    
-    func fetchData() -> [ExerciseElement]{
-        let video1 = Video(image: Imagess.noStoryboard! , title: "No Storyboard")
-        let video2 = Video(image: Imagess.xcode!, title: "Soft Skills")
-        let video3 = Video(image: Imagess.patreon!, title: "Soft Skills")
-        let video4 = Video(image: Imagess.raise!, title: "Soft Skills")
-        let video5 = Video(image: Imagess.shake!, title: "Soft Skills")
-        let video6 = Video(image: Imagess.salaries!, title: "Soft Skills")
-        let video7 = Video(image: Imagess.wireless!, title: "Soft Skills")
-        let video8 = Video(image: Imagess.softSkills!, title: "Soft Skills")
-        let video9 = Video(image: Imagess.swiftNews!, title: "Soft Skills")
-        let video10 = Video(image: Imagess.ninety!, title: "Soft Skills")
-
-        return []
-        
-    }
-
-}
