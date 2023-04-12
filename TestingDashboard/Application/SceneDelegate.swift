@@ -14,23 +14,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-//        guard let tabBarScene = (scene as? UIWindowScene) else { return }
-//        let tabBarController = TabBarController()
-//        window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
-//        window?.windowScene = tabBarScene
-//        window?.rootViewController = tabBarController
-//        window?.makeKeyAndVisible()
+        guard let tabBarScene = (scene as? UIWindowScene) else { return }
+        let tabBarController = TabBarController()
+        window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
+        window?.windowScene = tabBarScene
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
 
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-
-        let vc = TitlePreviewViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-
-        window.rootViewController = nav
-        self.window = window
-        self.window?.makeKeyAndVisible()
+//        guard let windowScene = (scene as? UIWindowScene) else { return }
+//        let window = UIWindow(windowScene: windowScene)
+//
+//        let vc = TitlePreviewViewController()
+//        let nav = UINavigationController(rootViewController: vc)
+//        nav.modalPresentationStyle = .fullScreen
+//
+//        window.rootViewController = nav
+//        self.window = window
+//        self.window?.makeKeyAndVisible()
     }
     
 
