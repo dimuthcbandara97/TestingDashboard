@@ -7,9 +7,6 @@
 
 import UIKit
 
-
-import UIKit
-
 struct CollectionTableViewCellViewModel3 {
     let viewModels: [TitleCollectionViewCellViewModel3]
 }

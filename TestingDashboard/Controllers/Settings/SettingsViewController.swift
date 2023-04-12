@@ -8,7 +8,13 @@
 import UIKit
 
 
-class SettingsBaseController: BaseController, UITableViewDataSource, UITableViewDelegate, CollectionTableViewCellDelegate3 {
+class SettingsBaseController: BaseController, UITableViewDataSource, UITableViewDelegate, CollectionTableViewCellDelegate3, CollectionTableViewCellDelegate4 {
+    func collectionTableViewCellDidTapItem(with viewModel4: TitleCollectionViewCellViewModel4) {
+        let alert = UIAlertController(title: viewModel4.name, message: "Selected", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
+        present(alert,animated: true)
+    }
+    
     
     func collectionTableViewCellDidTapItem(with viewModel3: TitleCollectionViewCellViewModel3) {
         let alert = UIAlertController(title: viewModel3.name, message: "Selected", preferredStyle: .alert)
@@ -22,7 +28,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
         let table = UITableView()
         table.register(CollectionTableViewCell.self, forCellReuseIdentifier: CollectionTableViewCell.identifier)
         table.register(CollectionTableViewCell3.self, forCellReuseIdentifier: CollectionTableViewCell3.identifier)
-        table.register(CustomTableViewCell4.self, forCellReuseIdentifier: CustomTableViewCell4.identifier)
+        table.register(CollectionTableViewCell4.self, forCellReuseIdentifier: CollectionTableViewCell4.identifier)
         return table
     }()
 
@@ -53,15 +59,15 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     ]
     
     // edit this
-    private let viewModels4: [CollectionTableViewCellViewModel] = [
-        CollectionTableViewCellViewModel(viewModels: [
-            TitleCollectionViewCellViewModel(name: "Topic 01", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel(name: "Topic 02", backgroundColor: .systemRed),
-            TitleCollectionViewCellViewModel(name: "Topic 03", backgroundColor: .systemOrange),
+    private let viewModels4: [CollectionTableViewCellViewModel4] = [
+        CollectionTableViewCellViewModel4(viewModels: [
+            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink),
+            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemRed),
+            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemOrange),
             
-            TitleCollectionViewCellViewModel(name: "Topic 0", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel(name: "Topic 0", backgroundColor: .systemPink),
-            TitleCollectionViewCellViewModel(name: "Topic 0", backgroundColor: .systemPink),
+            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink),
+            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink),
+            TitleCollectionViewCellViewModel4(name: "04", backgroundColor: .systemPink),
         ])
     ]
 //    private let customViewModels: [CustomTableViewCellViewModel] = [
@@ -96,11 +102,12 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
 //            return customViewModels.count
             return viewModels3.count
         } else {
-            return viewModels.count
+            return viewModels4.count
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Section 01 -> Exercise Section 
         if indexPath.section == 0 {
             let viewModel = viewModels[indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else {fatalError()}
@@ -114,9 +121,10 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             cell.delegate = self
             cell.configure(with: viewModel)
             return cell
-        } else {
-            let viewModel = viewModels[indexPath.row]
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else {fatalError()}
+        }
+        else {
+            let viewModel = viewModels4[indexPath.row]
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell4.identifier, for: indexPath) as? CollectionTableViewCell4 else {fatalError()}
             cell.delegate = self
             cell.configure(with: viewModel)
             return cell

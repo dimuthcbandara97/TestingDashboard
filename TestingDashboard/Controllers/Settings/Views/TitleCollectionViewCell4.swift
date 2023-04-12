@@ -15,7 +15,7 @@ struct TitleCollectionViewCellViewModel4 {
 
 class TitleCollectionViewCell4: UICollectionViewCell {
     
-    static let identifier = "TitleCollectionViewCell"
+    static let identifier = "TitleCollectionViewCell4"
     private let label: UILabel = {
        let label = UILabel()
         label.textColor = .white
