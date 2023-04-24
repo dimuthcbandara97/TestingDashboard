@@ -10,5 +10,7 @@ https://www.figma.com/file/6V2JJVXwfdUpOKcpSYCrw5/iOS-Application?node-id=0%3A1&
 
 # Folder Structre
 This code structure is designed using MVVM architecture
+![image](https://user-images.githubusercontent.com/107378946/233929906-1b813542-1445-491c-9c6b-bce231177364.png)
+
 
 
