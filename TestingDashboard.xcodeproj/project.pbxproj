@@ -41,6 +41,7 @@
 		A2537AB429BF5CB0000DED14 /* APIAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB329BF5CB0000DED14 /* APIAuth.swift */; };
 		A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */; };
 		A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537ABE29BF5E36000DED14 /* BaseController.swift */; };
+		A259A8E22A069771009271E8 /* UserLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A259A8E12A069771009271E8 /* UserLoaderTests.swift */; };
 		A26640E229D5415500563379 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26640E129D5415500563379 /* CollectionTableViewCell.swift */; };
 		A26640E429D548A000563379 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26640E329D548A000563379 /* TitleCollectionViewCell.swift */; };
 		A26640E729D57ACF00563379 /* CustomTableViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26640E629D57ACF00563379 /* CustomTableViewCell3.swift */; };
@@ -138,6 +139,7 @@
 		A2537AB329BF5CB0000DED14 /* APIAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuth.swift; sourceTree = "<group>"; };
 		A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		A2537ABE29BF5E36000DED14 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		A259A8E12A069771009271E8 /* UserLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoaderTests.swift; sourceTree = "<group>"; };
 		A26640E129D5415500563379 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		A26640E329D548A000563379 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		A26640E629D57ACF00563379 /* CustomTableViewCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell3.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				A240C29329BC3E6700E5DDAC /* TestingDashboardTests.swift */,
+				A259A8E12A069771009271E8 /* UserLoaderTests.swift */,
 			);
 			path = TestingDashboardTests;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A240C29429BC3E6700E5DDAC /* TestingDashboardTests.swift in Sources */,
+				A259A8E22A069771009271E8 /* UserLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
