@@ -12,6 +12,7 @@ struct TitleCollectionViewCellViewModel {
     let name: String
     let backgroundColor: UIColor
     let imageURL: URL?
+    let details: String
 }
 
 class TitleCollectionViewCell: UICollectionViewCell {

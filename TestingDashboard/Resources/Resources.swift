@@ -34,16 +34,36 @@ enum OverallController {
         enum Login2{
             // user name
             static let usernameLabel = "User Name"
-            static let usernamePlaceholder = "Enter your placeholder"
+            static let usernamePlaceholder = "Enter your username"
             // password
+            static let password = "Enter Your Password"
             // Button
+            static let button = "Login Here"
         }
         enum SignUp2{
             // First Name
+            static let firstNameLabel = "First Name"
             // Last Name
+            static let lastNameLabel = "Last Name"
             // Password
+            static let passwordLabel = "Password"
             // Confirm password
+            static let confirmPasswordLabel = "Confirm Password"
             // Button
+            static let signup = "Sign Up"
+        }
+        
+        enum BMI {
+            static let age = "Your Age"
+            static let gender = "Your Gender"
+            static let weight = "Wegihts in Killograms"
+            static let height = "Height in meters"
+            
+            // For the output
+            static let underweight = "You are underweight !"
+            static let normalweight = "You are in range. Keep it up"
+            static let overweight = "You are overweight"
+            static let obese = "You are obese! you are in daanger Zone"
         }
     }
     enum Images {

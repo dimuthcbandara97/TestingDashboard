@@ -10,15 +10,15 @@ import UIKit
 
 class SettingsBaseController: BaseController, UITableViewDataSource, UITableViewDelegate, CollectionTableViewCellDelegate3, CollectionTableViewCellDelegate4 {
     func collectionTableViewCellDidTapItem(with viewModel4: TitleCollectionViewCellViewModel4) {
-        let alert = UIAlertController(title: viewModel4.name, message: "Selected", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: viewModel4.name, message: viewModel4.details, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "View Video", style: .cancel, handler: nil))
         present(alert,animated: true)
     }
     
     
     func collectionTableViewCellDidTapItem(with viewModel3: TitleCollectionViewCellViewModel3) {
-        let alert = UIAlertController(title: viewModel3.name, message: "Selected", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: viewModel3.name, message: viewModel3.details, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "View Video", style: .cancel, handler: nil))
         present(alert,animated: true)
     }
     
@@ -46,7 +46,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel3(name: $0.foodName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl)) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel3(name: $0.foodName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.value) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel3(viewModels: titleViewModels)]
@@ -66,7 +66,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl)) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel(viewModels: titleViewModels)]
@@ -85,7 +85,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel4(name: $0.meditationName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl)) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel4(name: $0.meditationName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel4(viewModels: titleViewModels)]
@@ -188,8 +188,8 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
 
 extension SettingsBaseController: CollectionTableViewCellDelegate{
     func collectionTableViewCellDidTapItem(with viewModel: TitleCollectionViewCellViewModel) {
-        let alert = UIAlertController(title: viewModel.name, message: "Selected", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: viewModel.name, message: viewModel.details, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "View Video", style: .cancel, handler: nil))
         present(alert,animated: true)
     }
 }
