@@ -1,14 +1,15 @@
 //
-//  RegisterViewController.swift
+//  RegisterDetailsController.swift
 //  TestingDashboard
 //
-//  Created by Dimuth Bandara on 2023-03-21.
+//  Created by Dimuth Bandara on 2023-05-08.
 //
+
 
 import Foundation
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterDetailsController: UIViewController, UITextViewDelegate {
     
     // MARK: - UI Components
     
@@ -19,8 +20,8 @@ class RegisterViewController: UIViewController {
     private let usernameField = CustomTextField(fieldType: .username)
     private let emailField = CustomTextField(fieldType: .email)
     private let passwordField = CustomTextField(fieldType: .password)
-    private let ageField = CustomTextField(fieldType: .age)
     private let genderField = CustomTextField(fieldType: .gender)
+    private let imageurlField = CustomTextField(fieldType: .imageurl)
     //Remaining call
 
 //    // MARK: - UserElement
@@ -64,7 +65,7 @@ class RegisterViewController: UIViewController {
    
     
     // buttons
-    private let signUpButton = CustomButton(title: "Next", hasBackground: true, fontSize: .big)
+    private let signUpButton = CustomButton(title: "Sign Up", hasBackground: true, fontSize: .big)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", fontSize: .med)
     
     // terms and conditions
@@ -113,7 +114,6 @@ class RegisterViewController: UIViewController {
         self.view.addSubview(usernameField)
         self.view.addSubview(emailField)
         self.view.addSubview(passwordField)
-        self.view.addSubview(ageField)
         self.view.addSubview(genderField)
         self.view.addSubview(signUpButton)
         self.view.addSubview(termsTextView)
@@ -124,7 +124,7 @@ class RegisterViewController: UIViewController {
         self.usernameField.translatesAutoresizingMaskIntoConstraints = false
         self.emailField.translatesAutoresizingMaskIntoConstraints = false
         self.passwordField.translatesAutoresizingMaskIntoConstraints = false
-        self.ageField.translatesAutoresizingMaskIntoConstraints = false
+        self.imageurlField.translatesAutoresizingMaskIntoConstraints = false
         self.genderField.translatesAutoresizingMaskIntoConstraints = false
         self.signUpButton.translatesAutoresizingMaskIntoConstraints = false
         self.termsTextView.translatesAutoresizingMaskIntoConstraints = false
@@ -157,13 +157,13 @@ class RegisterViewController: UIViewController {
             self.passwordField.heightAnchor.constraint(equalToConstant: 55),
             self.passwordField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             // age
-                    self.ageField.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
-                    self.ageField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.ageField.heightAnchor.constraint(equalToConstant: 55),
-                    self.ageField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+                    self.imageurlField.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
+                    self.imageurlField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+                    self.imageurlField.heightAnchor.constraint(equalToConstant: 55),
+                    self.imageurlField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
                     
                     // gender
-                    self.genderField.topAnchor.constraint(equalTo: ageField.bottomAnchor, constant: 22),
+                    self.genderField.topAnchor.constraint(equalTo: imageurlField.bottomAnchor, constant: 22),
                     self.genderField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
                     self.genderField.heightAnchor.constraint(equalToConstant: 55),
                     self.genderField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
@@ -234,7 +234,9 @@ class RegisterViewController: UIViewController {
         guard let username = usernameField.text,
               let password = passwordField.text,
               let email = emailField.text,
-              let gender = genderField.text else {
+              let gender = genderField.text
+              let imageurl = imageurlField.text
+        else {
             print("Required fields are missing")
             return
         }
@@ -265,7 +267,7 @@ class RegisterViewController: UIViewController {
     
 }
 
-extension RegisterViewController: UITextViewDelegate {
+extension RegisterDetailsController {
     
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         

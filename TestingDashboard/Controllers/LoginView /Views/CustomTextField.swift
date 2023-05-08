@@ -19,6 +19,11 @@ class CustomTextField: UITextField {
         case password
         case age
         case gender
+        case imageurl
+        case status
+        case height
+        case weight
+        case fitness_goal
     }
     
     // defininf auth Field Type
@@ -63,7 +68,21 @@ class CustomTextField: UITextField {
         // Gender
         case .gender:
             self.placeholder = "Gender"
+            
+        case .imageurl:
+            self.placeholder = "Image Url"
+        case .status:
+            self.placeholder = "Job Role"
+        case .height:
+            self.placeholder = "Height"
+        case .weight:
+            self.placeholder = "Weight"
+        case .fitness_goal:
+            self.placeholder = "Fitness Goal"
         }
+        
+        
+    
     }
     
     required init?(coder: NSCoder) {

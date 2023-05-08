@@ -79,6 +79,7 @@
 		A2C1836F29C88C9900990A02 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1836E29C88C9900990A02 /* SDWebImage */; };
 		A2C1837129C88CD400990A02 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1837029C88CD400990A02 /* SDWebImageMapKit */; };
 		A2EFB7A82A08CD2400BED7C3 /* UserDetailssElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EFB7A72A08CD2400BED7C3 /* UserDetailssElement.swift */; };
+		A2EFB7AA2A08D46600BED7C3 /* RegisterDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EFB7A92A08D46600BED7C3 /* RegisterDetailsController.swift */; };
 		A2F34E7629C9970400BBA9BA /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +175,7 @@
 		A28BF21329C1F706001B8264 /* TimerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerElement.swift; sourceTree = "<group>"; };
 		A2C1836929C86EBC00990A02 /* Progress2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress2View.swift; sourceTree = "<group>"; };
 		A2EFB7A72A08CD2400BED7C3 /* UserDetailssElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailssElement.swift; sourceTree = "<group>"; };
+		A2EFB7A92A08D46600BED7C3 /* RegisterDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailsController.swift; sourceTree = "<group>"; };
 		A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 				A21EBC5F29C9CC7B00EC1210 /* RegisterViewController.swift */,
 				A21EBC6429C9DBA500EC1210 /* ForgetPasswordViewController.swift */,
 				A21EBC6629C9DC2B00EC1210 /* ViewControllerLogin.swift */,
+				A2EFB7A92A08D46600BED7C3 /* RegisterDetailsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				A28BF1F229C1AF81001B8264 /* ProgressView.swift in Sources */,
 				A2537A9D29BF56BA000DED14 /* LoginViewController.swift in Sources */,
 				A21EBC5E29C9B4B700EC1210 /* CustomButton.swift in Sources */,
+				A2EFB7AA2A08D46600BED7C3 /* RegisterDetailsController.swift in Sources */,
 				A28BF20729C1EA76001B8264 /* XAxisView.swift in Sources */,
 				A26640F029D5B12700563379 /* TitleCollectionViewCell4.swift in Sources */,
 				A28BF21229C1F6C7001B8264 /* UserElement.swift in Sources */,
