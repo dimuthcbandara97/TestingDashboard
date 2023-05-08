@@ -55,25 +55,56 @@ class APICaller {
     }
     
     // CRUD users - insert
+//    func insertUser(userr: UserElement, completionHandler: @escaping (Bool, Error?) -> Void) {
+//        let url = URL(string: Constants.API_KEY_USERS)!
+//        print(url)
+//        var request = URLRequest(url: url)
+//        print(request)
+//        request.httpMethod = "POST"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        print(request)
+//        let encoder = JSONEncoder()
+//        print(encoder)
+//        do {
+//            let jsonData = try encoder.encode(userr)
+//            print(jsonData)
+//            request.httpBody = jsonData
+//        } catch {
+//            print(error.localizedDescription)
+//            completionHandler(false, error)
+//            return
+//        }
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                completionHandler(false, error)
+//                return
+//            }
+//            guard let httpResponse = response as? HTTPURLResponse,
+//                  (200...299).contains(httpResponse.statusCode) else {
+//                print("API error")
+//                completionHandler(false, nil)
+//                return
+//            }
+//            // Call the completion handler with success as true
+//            completionHandler(true, nil)
+//        }
+//        task.resume()
+//    }
+
     func insertUser(userr: UserElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_USERS)!
         print(url)
         var request = URLRequest(url: url)
         print(request)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         print(request)
-        let encoder = JSONEncoder()
-        print(encoder)
-        do {
-            let jsonData = try encoder.encode(userr)
-            print(jsonData)
-            request.httpBody = jsonData
-        } catch {
-            print(error.localizedDescription)
-            completionHandler(false, error)
-            return
-        }
+
+        let parameters = "name=\(userr.name)&email=\(userr.email)&phone=\(userr.email)" // create the parameters string using the data in the UserElement
+
+        request.httpBody = parameters.data(using: .utf8) // set the httpBody of the request
+
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
@@ -92,6 +123,7 @@ class APICaller {
         task.resume()
     }
 
+    
 
     // CRUD Exercise -> Read
     func loadExercise(completion: @escaping ([ExerciseElement]) -> Void){

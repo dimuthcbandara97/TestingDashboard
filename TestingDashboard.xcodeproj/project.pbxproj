@@ -78,6 +78,7 @@
 		A2C1836A29C86EBC00990A02 /* Progress2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1836929C86EBC00990A02 /* Progress2View.swift */; };
 		A2C1836F29C88C9900990A02 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1836E29C88C9900990A02 /* SDWebImage */; };
 		A2C1837129C88CD400990A02 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1837029C88CD400990A02 /* SDWebImageMapKit */; };
+		A2EFB7A82A08CD2400BED7C3 /* UserDetailssElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EFB7A72A08CD2400BED7C3 /* UserDetailssElement.swift */; };
 		A2F34E7629C9970400BBA9BA /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +173,7 @@
 		A28BF21129C1F6C7001B8264 /* UserElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserElement.swift; sourceTree = "<group>"; };
 		A28BF21329C1F706001B8264 /* TimerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerElement.swift; sourceTree = "<group>"; };
 		A2C1836929C86EBC00990A02 /* Progress2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress2View.swift; sourceTree = "<group>"; };
+		A2EFB7A72A08CD2400BED7C3 /* UserDetailssElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailssElement.swift; sourceTree = "<group>"; };
 		A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +244,7 @@
 				A21EBC7529CC202A00EC1210 /* Imagess.swift */,
 				A244E44529D058EA00AEBE96 /* ProgressElement.swift */,
 				A282E0A729D41D490036B9C2 /* StatssElement.swift */,
+				A2EFB7A72A08CD2400BED7C3 /* UserDetailssElement.swift */,
 			);
 			path = Element;
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 				A26640EC29D59A4500563379 /* TitlePreviewController.swift in Sources */,
 				A28BF1F029C1AF04001B8264 /* TimerView.swift in Sources */,
 				A21EBC7629CC202A00EC1210 /* Imagess.swift in Sources */,
+				A2EFB7A82A08CD2400BED7C3 /* UserDetailssElement.swift in Sources */,
 				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A26640EE29D5B10D00563379 /* TitleCollectionViewCell3.swift in Sources */,
 				A28BF20229C1E97D001B8264 /* MonthlyPerformanceView.swift in Sources */,

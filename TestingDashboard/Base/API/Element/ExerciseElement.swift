@@ -13,6 +13,7 @@ struct ExerciseElement: Codable {
     let notes: String
     let imageurl, videourl: String
     let v: Int
+    let affectingArea: String
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -20,9 +21,8 @@ struct ExerciseElement: Codable {
         case exerciseType = "exercise_type"
         case instructor, notes, imageurl, videourl
         case v = "__v"
+        case affectingArea = "affecting_area"
     }
 }
 
 typealias Exercise = [ExerciseElement]
-
-

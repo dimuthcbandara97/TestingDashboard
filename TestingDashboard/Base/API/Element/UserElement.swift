@@ -9,15 +9,16 @@ import Foundation
 
 // MARK: - UserElement
 struct UserElement: Codable {
-    let name, password, email: String
-    let gender, status: String
+    let id, name, password, email: String
+    let gender: String
     let imageurl: String
+    let v: Int
 
     enum CodingKeys: String, CodingKey {
-        case name, password, email, gender, status, imageurl
-
+        case id = "_id"
+        case name, password, email, gender, imageurl
+        case v = "__v"
     }
 }
 
 typealias User = [UserElement]
-
