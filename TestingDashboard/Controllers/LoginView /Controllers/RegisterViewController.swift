@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController {
     // MARK: - UI Components
     
     // header View
-    private let headerView = AuthHeaderView(title: "Sign Up", subTitle: "Create your account")
+    private let headerView = AuthHeaderView(title: "Register", subTitle: "Create your account")
     
     // name Fields
     private let usernameField = CustomTextField(fieldType: .username)
@@ -64,7 +64,7 @@ class RegisterViewController: UIViewController {
    
     
     // buttons
-    private let signUpButton = CustomButton(title: "Next", hasBackground: true, fontSize: .big)
+    private let signUpButton = CustomButton(title: "Register", hasBackground: true, fontSize: .big)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", fontSize: .med)
     
     // terms and conditions
@@ -231,30 +231,32 @@ class RegisterViewController: UIViewController {
 //    }
 //
     @objc func didTapSignUp() {
-        guard let username = usernameField.text,
-              let password = passwordField.text,
-              let email = emailField.text,
-              let gender = genderField.text else {
-            print("Required fields are missing")
-            return
-        }
-        
-        let userr = UserElement(id:"",name: username, password: password, email: email, gender: gender, imageurl: "URL", v: 12)
-        
-        APICaller.shared.insertUser(userr: userr) { success, error in
-            if let error = error {
-                print("API call failed with error: \(error.localizedDescription)")
-                return
-            }
-            
-            if success {
-                print("API call successful")
-                // Handle successful API call
-            } else {
-                print("API call failed")
-                // Handle failed API call
-            }
-        }
+//        guard let username = usernameField.text,
+//              let password = passwordField.text,
+//              let email = emailField.text,
+//              let gender = genderField.text else {
+//            print("Required fields are missing")
+//            return
+//        }
+//
+//        let userr = UserElement(id:"",name: username, password: password, email: email, gender: gender, imageurl: "URL", v: 12)
+//
+//        APICaller.shared.insertUser(userr: userr) { success, error in
+//            if let error = error {
+//                print("API call failed with error: \(error.localizedDescription)")
+//                return
+//            }
+//
+//            if success {
+//                print("API call successful")
+//                // Handle successful API call
+//            } else {
+//                print("API call failed")
+//                // Handle failed API call
+//            }
+//        }
+        let vc = RegisterDetailsController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
   

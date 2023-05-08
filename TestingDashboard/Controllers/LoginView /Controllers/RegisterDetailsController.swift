@@ -9,21 +9,20 @@
 import Foundation
 import UIKit
 
-class RegisterDetailsController: UIViewController, UITextViewDelegate {
+class RegisterDetailsController: UIViewController {
     
     // MARK: - UI Components
     
     // header View
-    private let headerView = AuthHeaderView(title: "Sign Up", subTitle: "Create your account")
+    private let headerView = AuthHeaderView(title: "Enter Your Details", subTitle: "Create your account")
     
     // name Fields
-    private let usernameField = CustomTextField(fieldType: .username)
-    private let emailField = CustomTextField(fieldType: .email)
-    private let passwordField = CustomTextField(fieldType: .password)
-    private let genderField = CustomTextField(fieldType: .gender)
-    private let imageurlField = CustomTextField(fieldType: .imageurl)
+    private let statusField = CustomTextField(fieldType: .status)
+    private let heightField = CustomTextField(fieldType: .height)
+    private let weightField = CustomTextField(fieldType: .weight)
+    private let ageField = CustomTextField(fieldType: .age)
+    private let fitnessGoal = CustomTextField(fieldType: .fitness_goal)
     //Remaining call
-
 //    // MARK: - UserElement
 //    struct UserElement: Codable {
 //        let id, name, password, email: String
@@ -60,33 +59,14 @@ class RegisterDetailsController: UIViewController, UITextViewDelegate {
 //    var gender: String? {
 //        return genderField.text
 //    }
-
     // Create a user object with the defined variables
    
     
     // buttons
-    private let signUpButton = CustomButton(title: "Sign Up", hasBackground: true, fontSize: .big)
+    private let signUpButton = CustomButton(title: "Continue", hasBackground: true, fontSize: .big)
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", fontSize: .med)
     
-    // terms and conditions
-    private let termsTextView: UITextView = {
-        let attributedString = NSMutableAttributedString(string: "By creating an account, you agree to our Terms & Conditions and you acknowledge that you have read our Privacy Policy.")
-        
-        attributedString.addAttribute(.link, value: "terms://termsAndConditions", range: (attributedString.string as NSString).range(of: "Terms & Conditions"))
-        
-        attributedString.addAttribute(.link, value: "privacy://privacyPolicy", range: (attributedString.string as NSString).range(of: "Privacy Policy"))
-        
-        let tv = UITextView()
-        tv.linkTextAttributes = [.foregroundColor: UIColor.systemBlue]
-        tv.backgroundColor = .clear
-        tv.attributedText = attributedString
-        tv.textColor = .label
-        tv.isSelectable = true
-        tv.isEditable = false
-        tv.delaysContentTouches = false
-        tv.isScrollEnabled = false
-        return tv
-    }()
+    
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -94,7 +74,7 @@ class RegisterDetailsController: UIViewController, UITextViewDelegate {
         
         self.setupUI()
         
-        self.termsTextView.delegate = self
+//        self.termsTextView.delegate = self
         
         self.signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         self.signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
@@ -111,23 +91,24 @@ class RegisterDetailsController: UIViewController, UITextViewDelegate {
         
         // Adding sub views
         self.view.addSubview(headerView)
-        self.view.addSubview(usernameField)
-        self.view.addSubview(emailField)
-        self.view.addSubview(passwordField)
-        self.view.addSubview(genderField)
+        self.view.addSubview(statusField)
+        self.view.addSubview(heightField)
+        self.view.addSubview(weightField)
+        self.view.addSubview(ageField)
+        self.view.addSubview(fitnessGoal)
         self.view.addSubview(signUpButton)
-        self.view.addSubview(termsTextView)
+//        self.view.addSubview(termsTextView)
         self.view.addSubview(signInButton)
         
         // Setting translatesAutoresizingMaskIntoConstraints
         self.headerView.translatesAutoresizingMaskIntoConstraints = false
-        self.usernameField.translatesAutoresizingMaskIntoConstraints = false
-        self.emailField.translatesAutoresizingMaskIntoConstraints = false
-        self.passwordField.translatesAutoresizingMaskIntoConstraints = false
-        self.imageurlField.translatesAutoresizingMaskIntoConstraints = false
-        self.genderField.translatesAutoresizingMaskIntoConstraints = false
+        self.statusField.translatesAutoresizingMaskIntoConstraints = false
+        self.heightField.translatesAutoresizingMaskIntoConstraints = false
+        self.weightField.translatesAutoresizingMaskIntoConstraints = false
+        self.ageField.translatesAutoresizingMaskIntoConstraints = false
+        self.fitnessGoal.translatesAutoresizingMaskIntoConstraints = false
         self.signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        self.termsTextView.translatesAutoresizingMaskIntoConstraints = false
+//        self.termsTextView.translatesAutoresizingMaskIntoConstraints = false
         self.signInButton.translatesAutoresizingMaskIntoConstraints = false
 
         // Setting up constraints
@@ -140,48 +121,48 @@ class RegisterDetailsController: UIViewController, UITextViewDelegate {
             self.headerView.heightAnchor.constraint(equalToConstant: 170),
             
             // User name
-            self.usernameField.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 12),
-            self.usernameField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            self.usernameField.heightAnchor.constraint(equalToConstant: 55),
-            self.usernameField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            self.statusField.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 12),
+            self.statusField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            self.statusField.heightAnchor.constraint(equalToConstant: 55),
+            self.statusField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             
             // email
-            self.emailField.topAnchor.constraint(equalTo: usernameField.bottomAnchor, constant: 22),
-            self.emailField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            self.emailField.heightAnchor.constraint(equalToConstant: 55),
-            self.emailField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            self.heightField.topAnchor.constraint(equalTo: statusField.bottomAnchor, constant: 22),
+            self.heightField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            self.heightField.heightAnchor.constraint(equalToConstant: 55),
+            self.heightField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             
             // password
-            self.passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 22),
-            self.passwordField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            self.passwordField.heightAnchor.constraint(equalToConstant: 55),
-            self.passwordField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            self.weightField.topAnchor.constraint(equalTo: heightField.bottomAnchor, constant: 22),
+            self.weightField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            self.weightField.heightAnchor.constraint(equalToConstant: 55),
+            self.weightField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             // age
-                    self.imageurlField.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
-                    self.imageurlField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.imageurlField.heightAnchor.constraint(equalToConstant: 55),
-                    self.imageurlField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+                    self.ageField.topAnchor.constraint(equalTo: weightField.bottomAnchor, constant: 22),
+                    self.ageField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+                    self.ageField.heightAnchor.constraint(equalToConstant: 55),
+                    self.ageField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
                     
                     // gender
-                    self.genderField.topAnchor.constraint(equalTo: imageurlField.bottomAnchor, constant: 22),
-                    self.genderField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.genderField.heightAnchor.constraint(equalToConstant: 55),
-                    self.genderField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+                    self.fitnessGoal.topAnchor.constraint(equalTo: ageField.bottomAnchor, constant: 22),
+                    self.fitnessGoal.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+                    self.fitnessGoal.heightAnchor.constraint(equalToConstant: 55),
+                    self.fitnessGoal.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
                     
                     // sign up
-                    self.signUpButton.topAnchor.constraint(equalTo: genderField.bottomAnchor, constant: 22),
+                    self.signUpButton.topAnchor.constraint(equalTo: fitnessGoal.bottomAnchor, constant: 22),
                     self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
                     self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
                     self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
 
             
             // terms and conditions
-            self.termsTextView.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 6),
-            self.termsTextView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            self.termsTextView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+//            self.termsTextView.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 6),
+//            self.termsTextView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+//            self.termsTextView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             
             // Sign In Button
-            self.signInButton.topAnchor.constraint(equalTo: termsTextView.bottomAnchor, constant: 11),
+            self.signInButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 11),
             self.signInButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
             self.signInButton.heightAnchor.constraint(equalToConstant: 44),
             self.signInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
@@ -231,32 +212,21 @@ class RegisterDetailsController: UIViewController, UITextViewDelegate {
 //    }
 //
     @objc func didTapSignUp() {
-        guard let username = usernameField.text,
-              let password = passwordField.text,
-              let email = emailField.text,
-              let gender = genderField.text
-              let imageurl = imageurlField.text
-        else {
-            print("Required fields are missing")
+        guard let status = statusField.text,
+              let weightStr = weightField.text,
+              let heightStr = heightField.text,
+              let ageStr = ageField.text,
+              let fitnessGoal = fitnessGoal.text,
+              let weight = Int(weightStr),
+              let height = Int(heightStr),
+              let age = Int(ageStr) else {
+            print("Required fields are missing or invalid")
             return
         }
         
-        let userr = UserElement(id:"",name: username, password: password, email: email, gender: gender, imageurl: "URL", v: 12)
+        let userr = UserDetailssElement(id: "", status: status,height: height, weight: weight, age:age, fitnessGoal: fitnessGoal, v: 98)
         
-        APICaller.shared.insertUser(userr: userr) { success, error in
-            if let error = error {
-                print("API call failed with error: \(error.localizedDescription)")
-                return
-            }
-            
-            if success {
-                print("API call successful")
-                // Handle successful API call
-            } else {
-                print("API call failed")
-                // Handle failed API call
-            }
-        }
+        
     }
 
   
@@ -267,7 +237,7 @@ class RegisterDetailsController: UIViewController, UITextViewDelegate {
     
 }
 
-extension RegisterDetailsController {
+extension RegisterDetailsController: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
         
