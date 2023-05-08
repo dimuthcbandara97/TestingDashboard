@@ -16,15 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 //        guard let tabBarScene = (scene as? UIWindowScene) else { return }
 //        let tabBarController = TabBarController()
+////        let tabBarController = LoginViewController()
 //        window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
 //        window?.windowScene = tabBarScene
-//        window?.rootViewController = tabBarcontroller
+//        window?.rootViewController = tabBarController
 //        window?.makeKeyAndVisible()
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         window.frame = windowScene.coordinateSpace.bounds
-        
+
         let vc = LoginViewController()
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
@@ -32,6 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = nav
         self.window = window
         self.window?.makeKeyAndVisible()
+        
+//        3333333
+       
     }
     
 

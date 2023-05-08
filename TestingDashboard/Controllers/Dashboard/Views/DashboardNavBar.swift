@@ -36,7 +36,7 @@ class DashboardNavBar: BaseView {
         let button = BaseButton(with: .secondary)
 //        button.setTitle("My Workouts")
         button.backgroundColor = .systemPurple
-        
+//        button.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
         return button
     }()
     
@@ -51,13 +51,33 @@ class DashboardNavBar: BaseView {
         addBottomBorder(with:.systemBlue, height: 1)
     }
     
-    func addAllWorkoutsAction(_ action: Selector, with target: Any?) {
-        allWorkoutButton.addTarget(target, action: action, for: .touchUpInside)
+//    func addAllWorkoutsAction(_ action: Selector, with target: Any?) {
+//        allWorkoutButton.addTarget(target, action: action, for: .touchUpInside)
+//    }
+//    
+//    func addButtonAction(_ action: Selector, with target: Any?) {
+//        addButton.addTarget(target, action: action, for: .touchUpInside)
+//    }
+    @objc func showAlert() {
+        let alertController = UIAlertController(title: "Workout Selection", message: nil, preferredStyle: .alert)
+        
+        let runningAction = UIAlertAction(title: "Running", style: .default, handler: nil)
+        let liftingAction = UIAlertAction(title: "Lifting", style: .default, handler: nil)
+        let swimmingAction = UIAlertAction(title: "Swimming", style: .default, handler: nil)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(runningAction)
+        alertController.addAction(liftingAction)
+        alertController.addAction(swimmingAction)
+        alertController.addAction(cancelAction)
+        
+        // present the alert controller from the current view controller
+        if let currentViewController = UIApplication.shared.windows.first?.rootViewController {
+            currentViewController.present(alertController, animated: true, completion: nil)
+        }
     }
-    
-    func addButtonAction(_ action: Selector, with target: Any?) {
-        addButton.addTarget(target, action: action, for: .touchUpInside)
-    }
+
 }
 
 
@@ -112,10 +132,13 @@ extension DashboardNavBar {
         backgroundColor = .white
 
         
+
         allWorkoutButton.setTitle("Workouts")
 
         
         addButton.setImage(UIImage(systemName: "home"), for: .normal)
+        
+        allWorkoutButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
         
         
     }
