@@ -29,6 +29,8 @@
 		A240C2B529BC44F200E5DDAC /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C2B429BC44F200E5DDAC /* Resources.swift */; };
 		A240C2B729BC655100E5DDAC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240C2B629BC655100E5DDAC /* HomeViewController.swift */; };
 		A244E44629D058EA00AEBE96 /* ProgressElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A244E44529D058EA00AEBE96 /* ProgressElement.swift */; };
+		A24BE2AD2A0A176F00F5A4AE /* CustomSchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BE2AC2A0A176F00F5A4AE /* CustomSchedulePage.swift */; };
+		A24BE2B02A0A199200F5A4AE /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = A24BE2AF2A0A199200F5A4AE /* CalendarKit */; };
 		A2537A9629BF5515000DED14 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9529BF5515000DED14 /* UIColor.swift */; };
 		A2537A9829BF5575000DED14 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9729BF5575000DED14 /* UIView.swift */; };
 		A2537A9A29BF55A3000DED14 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9929BF55A3000DED14 /* Date.swift */; };
@@ -129,6 +131,7 @@
 		A240C2B429BC44F200E5DDAC /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		A240C2B629BC655100E5DDAC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A244E44529D058EA00AEBE96 /* ProgressElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressElement.swift; sourceTree = "<group>"; };
+		A24BE2AC2A0A176F00F5A4AE /* CustomSchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSchedulePage.swift; sourceTree = "<group>"; };
 		A2537A9529BF5515000DED14 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A2537A9729BF5575000DED14 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A2537A9929BF55A3000DED14 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C1837129C88CD400990A02 /* SDWebImageMapKit in Frameworks */,
+				A24BE2B02A0A199200F5A4AE /* CalendarKit in Frameworks */,
 				A2C1836F29C88C9900990A02 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +450,7 @@
 			children = (
 				A2396E1E29C08B92009206D3 /* Views */,
 				A2537AAA29BF597B000DED14 /* DashboardViewController.swift */,
+				A24BE2AC2A0A176F00F5A4AE /* CustomSchedulePage.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -651,6 +656,7 @@
 			packageProductDependencies = (
 				A2C1836E29C88C9900990A02 /* SDWebImage */,
 				A2C1837029C88CD400990A02 /* SDWebImageMapKit */,
+				A24BE2AF2A0A199200F5A4AE /* CalendarKit */,
 			);
 			productName = TestingDashboard;
 			productReference = A240C27929BC3E6600E5DDAC /* TestingDashboard.app */;
@@ -727,6 +733,7 @@
 			packageReferences = (
 				A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				A24BE2AE2A0A199200F5A4AE /* XCRemoteSwiftPackageReference "CalendarKit" */,
 			);
 			productRefGroup = A240C27A29BC3E6600E5DDAC /* Products */;
 			projectDirPath = "";
@@ -796,6 +803,7 @@
 				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A26640EE29D5B10D00563379 /* TitleCollectionViewCell3.swift in Sources */,
 				A28BF20229C1E97D001B8264 /* MonthlyPerformanceView.swift in Sources */,
+				A24BE2AD2A0A176F00F5A4AE /* CustomSchedulePage.swift in Sources */,
 				A21EBC6C29CAC3EE00EC1210 /* CustomTableViewCell2.swift in Sources */,
 				A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */,
 				A21EBC6529C9DBA500EC1210 /* ForgetPasswordViewController.swift in Sources */,
@@ -1164,6 +1172,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A24BE2AE2A0A199200F5A4AE /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -1183,6 +1199,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A24BE2AF2A0A199200F5A4AE /* CalendarKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A24BE2AE2A0A199200F5A4AE /* XCRemoteSwiftPackageReference "CalendarKit" */;
+			productName = CalendarKit;
+		};
 		A2C1836E29C88C9900990A02 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */;

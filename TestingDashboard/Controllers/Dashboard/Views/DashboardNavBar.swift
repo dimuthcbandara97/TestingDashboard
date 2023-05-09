@@ -51,13 +51,13 @@ class DashboardNavBar: BaseView {
         addBottomBorder(with:.systemBlue, height: 1)
     }
     
-//    func addAllWorkoutsAction(_ action: Selector, with target: Any?) {
-//        allWorkoutButton.addTarget(target, action: action, for: .touchUpInside)
-//    }
-//    
-//    func addButtonAction(_ action: Selector, with target: Any?) {
-//        addButton.addTarget(target, action: action, for: .touchUpInside)
-//    }
+    func addAllWorkoutsAction(_ action: Selector, with target: Any?) {
+        allWorkoutButton.addTarget(target, action: action, for: .touchUpInside)
+    }
+
+    func addButtonAction(_ action: Selector, with target: Any?) {
+        addButton.addTarget(target, action: action, for: .touchUpInside)
+    }
     @objc func showAlert() {
         let alertController = UIAlertController(title: "Workout Selection", message: nil, preferredStyle: .alert)
         
