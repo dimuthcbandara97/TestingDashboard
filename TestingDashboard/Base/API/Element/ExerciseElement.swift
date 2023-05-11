@@ -8,12 +8,15 @@
 import Foundation
 
 // MARK: - ExerciseElement
+import Foundation
+
+// MARK: - ExerciseElement
 struct ExerciseElement: Codable {
     let id, exerciseName, exerciseType, instructor: String
     let notes: String
     let imageurl, videourl: String
     let v: Int
-    let affectingArea: String
+    let affectingArea, bmiRange: String
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -22,7 +25,9 @@ struct ExerciseElement: Codable {
         case instructor, notes, imageurl, videourl
         case v = "__v"
         case affectingArea = "affecting_area"
+        case bmiRange = "bmi_range"
     }
 }
 
 typealias Exercise = [ExerciseElement]
+

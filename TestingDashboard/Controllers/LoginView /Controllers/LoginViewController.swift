@@ -139,6 +139,7 @@ class LoginViewController: UIViewController {
     @objc private func didTapNewUser() {
         let vc = RegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+        //        let vc = CustomSchedulePage()
     }
     
     @objc private func didTapForgotPassword() {
