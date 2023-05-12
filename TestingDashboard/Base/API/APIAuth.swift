@@ -56,42 +56,6 @@ class APICaller {
     }
     
     // CRUD users - insert
-//    func insertUser(userr: UserElement, completionHandler: @escaping (Bool, Error?) -> Void) {
-//        let url = URL(string: Constants.API_KEY_USERS)!
-//        print(url)
-//        var request = URLRequest(url: url)
-//        print(request)
-//        request.httpMethod = "POST"
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        print(request)
-//        let encoder = JSONEncoder()
-//        print(encoder)
-//        do {
-//            let jsonData = try encoder.encode(userr)
-//            print(jsonData)
-//            request.httpBody = jsonData
-//        } catch {
-//            print(error.localizedDescription)
-//            completionHandler(false, error)
-//            return
-//        }
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                completionHandler(false, error)
-//                return
-//            }
-//            guard let httpResponse = response as? HTTPURLResponse,
-//                  (200...299).contains(httpResponse.statusCode) else {
-//                print("API error")
-//                completionHandler(false, nil)
-//                return
-//            }
-//            // Call the completion handler with success as true
-//            completionHandler(true, nil)
-//        }
-//        task.resume()
-//    }
 
     func insertUser(userr: UserElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_USERS)!
@@ -168,6 +132,8 @@ class APICaller {
         }
         task.resume()
     }
+    
+    // insert Exercise
     
     // CRUD Meditation -> Read
     func loadMeditation(completion: @escaping ([MeditationElement]) -> Void){
@@ -259,6 +225,7 @@ class APICaller {
     
     // CRUDProgress - Insert
 
+    // insert progress
     func insertProgress(user: ProgressElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_PROGRESS)!
         var request = URLRequest(url: url)
@@ -291,7 +258,7 @@ class APICaller {
         task.resume()
     }
         
-    
+    // Loading the stats
     func loadStats(completion: @escaping ([StatssElement]) -> Void){
            
         guard let url = URL(string: Constants.API_KEY_STATS) else {return}
@@ -312,6 +279,8 @@ class APICaller {
         }
         task.resume()
     }
+    
+    // creating the stats
 
 }
 
