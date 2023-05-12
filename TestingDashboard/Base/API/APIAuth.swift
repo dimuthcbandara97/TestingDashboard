@@ -102,7 +102,7 @@ class APICaller {
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         print(request)
 
-        let parameters = "name=\(userr.name)&email=\(userr.email)&phone=\(userr.email)" // create the parameters string using the data in the UserElement
+        let parameters = "name=\(userr.name)&password=\(userr.password)&email=\(userr.email)&gender=\(userr.gender)&imageurl=\(userr.imageurl)" // create the parameters string using the data in the UserElement
 
         request.httpBody = parameters.data(using: .utf8) // set the httpBody of the request
 

@@ -19,7 +19,7 @@ class RegisterViewController: UIViewController {
     private let usernameField = CustomTextField(fieldType: .username)
     private let emailField = CustomTextField(fieldType: .email)
     private let passwordField = CustomTextField(fieldType: .password)
-    private let ageField = CustomTextField(fieldType: .age)
+    private let imageurlField = CustomTextField(fieldType: .imageurl)
     private let genderField = CustomTextField(fieldType: .gender)
     //Remaining call
 
@@ -113,7 +113,7 @@ class RegisterViewController: UIViewController {
         self.view.addSubview(usernameField)
         self.view.addSubview(emailField)
         self.view.addSubview(passwordField)
-        self.view.addSubview(ageField)
+        self.view.addSubview(imageurlField)
         self.view.addSubview(genderField)
         self.view.addSubview(signUpButton)
         self.view.addSubview(termsTextView)
@@ -124,7 +124,7 @@ class RegisterViewController: UIViewController {
         self.usernameField.translatesAutoresizingMaskIntoConstraints = false
         self.emailField.translatesAutoresizingMaskIntoConstraints = false
         self.passwordField.translatesAutoresizingMaskIntoConstraints = false
-        self.ageField.translatesAutoresizingMaskIntoConstraints = false
+        self.imageurlField.translatesAutoresizingMaskIntoConstraints = false
         self.genderField.translatesAutoresizingMaskIntoConstraints = false
         self.signUpButton.translatesAutoresizingMaskIntoConstraints = false
         self.termsTextView.translatesAutoresizingMaskIntoConstraints = false
@@ -157,13 +157,13 @@ class RegisterViewController: UIViewController {
             self.passwordField.heightAnchor.constraint(equalToConstant: 55),
             self.passwordField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             // age
-                    self.ageField.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
-                    self.ageField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.ageField.heightAnchor.constraint(equalToConstant: 55),
-                    self.ageField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+                    self.imageurlField.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
+                    self.imageurlField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+                    self.imageurlField.heightAnchor.constraint(equalToConstant: 55),
+                    self.imageurlField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
                     
                     // gender
-                    self.genderField.topAnchor.constraint(equalTo: ageField.bottomAnchor, constant: 22),
+                    self.genderField.topAnchor.constraint(equalTo: imageurlField.bottomAnchor, constant: 22),
                     self.genderField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
                     self.genderField.heightAnchor.constraint(equalToConstant: 55),
                     self.genderField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
@@ -258,18 +258,30 @@ class RegisterViewController: UIViewController {
 
         let username = usernameField.text!
         let email = emailField.text!
-        let passowrd = passwordField.text!
-        let age = ageField.text!
+        let password = passwordField.text!
+        let imageurl = imageurlField.text!
         let gender = genderField.text!
         
         
         print(username)
         print(email)
-        print(passowrd)
-        print(age)
+        print(password)
+        print(imageurl)
         print(gender)
         
+        let userss = UserElement(name: username , password: password , email: email , gender: gender , imageurl: imageurl)
         
+        APICaller.shared.insertUser(userr:userss) { success, error in
+                    if let error = error {
+                        print("API call failed with error: \(error.localizedDescription)")
+                        return
+                    }
+                    if success {
+                        print("API call successful")
+                    } else {
+                        print("API call failed")
+                    }
+                }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             // Code to be executed after a 2 second delay
