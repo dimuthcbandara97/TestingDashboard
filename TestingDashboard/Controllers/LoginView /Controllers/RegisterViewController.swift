@@ -255,8 +255,29 @@ class RegisterViewController: UIViewController {
 //                // Handle failed API call
 //            }
 //        }
-        let vc = RegisterDetailsController()
-        self.navigationController?.pushViewController(vc, animated: true)
+
+        let username = usernameField.text!
+        let email = emailField.text!
+        let passowrd = passwordField.text!
+        let age = ageField.text!
+        let gender = genderField.text!
+        
+        
+        print(username)
+        print(email)
+        print(passowrd)
+        print(age)
+        print(gender)
+        
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            // Code to be executed after a 2 second delay
+            
+            let vc = RegisterDetailsController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+
     }
 
   

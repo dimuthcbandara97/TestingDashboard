@@ -81,6 +81,7 @@
 		A2C1836A29C86EBC00990A02 /* Progress2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C1836929C86EBC00990A02 /* Progress2View.swift */; };
 		A2C1836F29C88C9900990A02 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1836E29C88C9900990A02 /* SDWebImage */; };
 		A2C1837129C88CD400990A02 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2C1837029C88CD400990A02 /* SDWebImageMapKit */; };
+		A2EA15212A0D49C1008C1D92 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AAA29BF597B000DED14 /* DashboardViewController.swift */; };
 		A2EFB7A82A08CD2400BED7C3 /* UserDetailssElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EFB7A72A08CD2400BED7C3 /* UserDetailssElement.swift */; };
 		A2EFB7AA2A08D46600BED7C3 /* RegisterDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EFB7A92A08D46600BED7C3 /* RegisterDetailsController.swift */; };
 		A2F34E7629C9970400BBA9BA /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F34E7529C9970400BBA9BA /* AuthHeaderView.swift */; };
@@ -865,6 +866,7 @@
 				A240C29429BC3E6700E5DDAC /* TestingDashboardTests.swift in Sources */,
 				A259A8E22A069771009271E8 /* UserLoaderTests.swift in Sources */,
 				A259A8E42A069C86009271E8 /* UserInsertTests.swift in Sources */,
+				A2EA15212A0D49C1008C1D92 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

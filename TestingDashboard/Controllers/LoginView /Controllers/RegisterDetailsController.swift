@@ -156,11 +156,6 @@ class RegisterDetailsController: UIViewController {
                     self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
 
             
-            // terms and conditions
-//            self.termsTextView.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 6),
-//            self.termsTextView.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-//            self.termsTextView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-            
             // Sign In Button
             self.signInButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 11),
             self.signInButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
@@ -224,8 +219,12 @@ class RegisterDetailsController: UIViewController {
             return
         }
         
-        let userr = UserDetailssElement(id: "", status: status,height: height, weight: weight, age:age, fitnessGoal: fitnessGoal, v: 98)
-        
+//        let userr = UserDetailssElement(id: "", status: status,height: height, weight: weight, age:age, fitnessGoal: fitnessGoal, v: 98)
+        print(status)
+        print(weight)
+        print(height)
+        print(fitnessGoal)
+        print(age)
         
     }
 
@@ -238,25 +237,6 @@ class RegisterDetailsController: UIViewController {
 }
 
 extension RegisterDetailsController: UITextViewDelegate {
-    
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        
-        // Google Terms and Conditions
-        if URL.scheme == "terms" {
-            self.showWebViewerController(with: "https://policies.google.com/terms?hl=en")
-        } else if URL.scheme == "privacy" {
-            self.showWebViewerController(with: "https://policies.google.com/privacy?hl=en")
-        }
-        
-        return true
-    }
-    
-    private func showWebViewerController(with urlString: String) {
-        
-        let vc = WebViewController(with: urlString)
-        let nav = UINavigationController(rootViewController: vc)
-        self.present(nav, animated: true, completion: nil)
-    }
     
     func textViewDidChangeSelection(_ textView: UITextView) {
         textView.delegate = nil
