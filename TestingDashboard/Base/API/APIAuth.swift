@@ -18,6 +18,7 @@ struct Constants {
     static let API_KEY_PROGRESS = "https://nodemongocrud.onrender.com/api/progress"
     static let API_KEY_STATS = "https://nodemongocrud.onrender.com/api/stats"
     static let API_KEY_USER_DETAILS = "https://nodemongocrud.onrender.com/api/stats"
+    static let API_KEY_FAVOURITES = "https://nodemongocrud.onrender.com/api/favourites"
     
     // Testing Image View
 //    static let API_KEY = "faa8695dc581ea2088374b01596042e2"
@@ -106,6 +107,42 @@ class APICaller {
                 print(error.localizedDescription)
             }
                 
+        }
+        task.resume()
+    }
+    
+    // Insert User Details
+    func insertUserDetails(userr: UserDetailssElement, completionHandler: @escaping (Bool, Error?) -> Void) {
+        let url = URL(string: Constants.API_KEY_USER_DETAILS)!
+        print(url)
+        var request = URLRequest(url: url)
+        print(request)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        print(request)
+        
+//        let status: String
+//        let height, weight, age: Int
+//        let fitnessGoal: String
+
+        let parameters = "status=\(userr.status)&height=\(userr.height)&weight=\(userr.weight)&age=\(userr.age)&fitness_goal=\(userr.fitnessGoal)" // create the parameters string using the data in the UserElement
+
+        request.httpBody = parameters.data(using: .utf8) // set the httpBody of the request
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completionHandler(false, error)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                print("API error")
+                completionHandler(false, nil)
+                return
+            }
+            // Call the completion handler with success as true
+            completionHandler(true, nil)
         }
         task.resume()
     }
