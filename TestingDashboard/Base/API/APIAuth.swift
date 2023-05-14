@@ -224,22 +224,21 @@ class APICaller {
     }
     
     // CRUDProgress - Insert
-
+    
     // insert progress
-    func insertProgress(user: ProgressElement, completionHandler: @escaping (Bool, Error?) -> Void) {
+    func insertProgress(progresss: ProgressElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_PROGRESS)!
+        print(url)
         var request = URLRequest(url: url)
+        print(request)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let encoder = JSONEncoder()
-        do {
-            let jsonData = try encoder.encode(user)
-            request.httpBody = jsonData
-        } catch {
-            print(error.localizedDescription)
-            completionHandler(false, error)
-            return
-        }
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        print(request)
+
+        let parameters = "progress_name=\(progresss.progressName)&daily_count=\(progresss.dailyCount)&date=\(progresss.date)&month=\(progresss.month)" // create the parameters string using the data in the UserElement
+
+        request.httpBody = parameters.data(using: .utf8) // set the httpBody of the request
+
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print(error.localizedDescription)
