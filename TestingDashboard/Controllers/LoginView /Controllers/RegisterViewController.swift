@@ -187,75 +187,8 @@ class RegisterViewController: UIViewController {
             self.signInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
         ])
     }
-    
-    // MARK: - Selectors
-//    @objc func didTapSignUp() {
-//        let userss = UserElement(name: username ?? "uname", password: password ?? "pwd", email: email ?? "email", gender: gender ?? "gender", status: "status", imageurl: "url")
-//        APICaller.shared.insertUser(user:userss) { success, error in
-//            if let error = error {
-//                print("API call failed with error: \(error.localizedDescription)")
-//                return
-//            }
-//            if success {
-//                print("API call successful")
-//            } else {
-//                print("API call failed")
-//            }
-//        }
-//    }
-//    @objc func didTapSignUp() {
-//        guard let username = usernameField.text,
-//              let password = passwordField.text,
-//              let email = emailField.text,
-//              let gender = genderField.text else {
-//            print("Required fields are missing")
-//            return
-//        }
-//
-//        let userr = UserElement(name: username, password: password, email: email, gender: gender, status: "Active", imageurl: "URL")
-//
-//        APICaller.shared.insertUser(user: userr, completionHandler: <#T##(Bool, Error?) -> Void#>){ success, error in
-//            if let error = error{
-//                print("API call failed with error: \(error.localizedDescription)")
-//                return
-//            }
-//
-//            if success {
-//                print("API call successful")
-//                // Handle successful API call
-//            } else {
-//                print("API call failed")
-//                // Handle failed API call
-//            }
-//        }
-//    }
-//
-    @objc func didTapSignUp() {
-//        guard let username = usernameField.text,
-//              let password = passwordField.text,
-//              let email = emailField.text,
-//              let gender = genderField.text else {
-//            print("Required fields are missing")
-//            return
-//        }
-//
-//        let userr = UserElement(id:"",name: username, password: password, email: email, gender: gender, imageurl: "URL", v: 12)
-//
-//        APICaller.shared.insertUser(userr: userr) { success, error in
-//            if let error = error {
-//                print("API call failed with error: \(error.localizedDescription)")
-//                return
-//            }
-//
-//            if success {
-//                print("API call successful")
-//                // Handle successful API call
-//            } else {
-//                print("API call failed")
-//                // Handle failed API call
-//            }
-//        }
 
+    @objc func didTapSignUp() {
         let username = usernameField.text!
         let email = emailField.text!
         let password = passwordField.text!

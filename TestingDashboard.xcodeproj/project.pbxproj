@@ -413,13 +413,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		A245CF3029DE727300491894 /* CRUD */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CRUD;
-			sourceTree = "<group>";
-		};
 		A2537A9B29BF5694000DED14 /* LoginView  */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,7 +481,6 @@
 		A2537AB229BF5C8F000DED14 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A245CF3029DE727300491894 /* CRUD */,
 				A2396E1829C02CB5009206D3 /* Element */,
 				A2537AB329BF5CB0000DED14 /* APIAuth.swift */,
 			);

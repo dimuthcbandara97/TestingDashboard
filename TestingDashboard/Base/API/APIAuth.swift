@@ -120,10 +120,6 @@ class APICaller {
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         print(request)
-        
-//        let status: String
-//        let height, weight, age: Int
-//        let fitnessGoal: String
 
         let parameters = "status=\(userr.status)&height=\(userr.height)&weight=\(userr.weight)&age=\(userr.age)&fitness_goal=\(userr.fitnessGoal)" // create the parameters string using the data in the UserElement
 
@@ -171,6 +167,40 @@ class APICaller {
     }
     
     // insert Exercise
+    func insertExercise(exerr: ExerciseElement, completionHandler: @escaping (Bool, Error?) -> Void) {
+        let url = URL(string: Constants.API_KEY_EXERCISE)!
+        print(url)
+        var request = URLRequest(url: url)
+        print(request)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        print(request)
+
+//        let exerciseName, exerciseType, instructor: String
+//        let notes: String
+//        let imageurl, videourl: String
+//        let affectingArea, bmiRange: String
+        let parameters = "exercise_name=\(exerr.exerciseName)&exercise_type=\(exerr.exerciseType)&instructor=\(exerr.instructor)&notes=\(exerr.notes)&imageurl=\(exerr.imageurl)&videourl=\(exerr.videourl)&affecting_area=\(exerr.affectingArea)&bmi_range=\(exerr.bmiRange)" // create the parameters string using the data in the UserElement
+
+        request.httpBody = parameters.data(using: .utf8) // set the httpBody of the request
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completionHandler(false, error)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                print("API error")
+                completionHandler(false, nil)
+                return
+            }
+            // Call the completion handler with success as true
+            completionHandler(true, nil)
+        }
+        task.resume()
+    }
     
     // CRUD Meditation -> Read
     func loadMeditation(completion: @escaping ([MeditationElement]) -> Void){
