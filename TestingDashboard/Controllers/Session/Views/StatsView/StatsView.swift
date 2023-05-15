@@ -32,10 +32,10 @@ class StatsView: BaseInfoView {
 extension StatsView {
    override func setupViews() {
        super.setupViews()
-       
        setupView(stackView)
    }
-   
+    
+    // MARK: Constraints
    override func constaintViews(){
        super.constaintViews()
      

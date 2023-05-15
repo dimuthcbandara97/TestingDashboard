@@ -26,6 +26,7 @@ extension DailyPerformanceView {
       setupView(barsView)
   }
   
+    // MARK: Constraints
   override func constaintViews(){
       super.constaintViews()
     

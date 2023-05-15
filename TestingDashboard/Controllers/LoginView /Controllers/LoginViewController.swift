@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     private let newUserButton = CustomButton(title: "New User? Create Account.", fontSize: .med)
     private let forgotPasswordButton = CustomButton(title: "Forgot Password?", fontSize: .small)
     
+    // MARK: - Validations
     var username: String? {
             return emailField.text
         }
@@ -72,6 +73,7 @@ class LoginViewController: UIViewController {
         newUserButton.translatesAutoresizingMaskIntoConstraints = false
         forgotPasswordButton.translatesAutoresizingMaskIntoConstraints = false
 
+        // MARK: - Constraints
         // Adding constraints
         NSLayoutConstraint.activate([
             
@@ -113,9 +115,9 @@ class LoginViewController: UIViewController {
         ])
     }
     
+    // MARK: - Sign In
     @objc private func didTapSignIn() {
 
-        
         APICaller.shared.loadUsers { results in
             DispatchQueue.main.async {
                 if results.count > 0 {
@@ -135,13 +137,14 @@ class LoginViewController: UIViewController {
         }
     }
 
-    
+    // MARK: - New User
     @objc private func didTapNewUser() {
         let vc = RegisterViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         //        let vc = CustomSchedulePage()
     }
     
+    // MARK: - Forget Password
     @objc private func didTapForgotPassword() {
         let vc = ForgetPasswordViewController()
         self.navigationController?.pushViewController(vc, animated: true)

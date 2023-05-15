@@ -43,7 +43,7 @@ extension TimerView {
 
 
         
-     // Setting Up
+        // MARK: Setup Views
     override func setupViews() {
         super.setupViews()
         setupView(stackView)
@@ -51,7 +51,7 @@ extension TimerView {
         stackView.addArrangedSubview(subtitleLabel)
     }
      
-    // Constraint Views
+        // MARK: Constraints
     override func constaintViews() {
         
         super.constaintViews()

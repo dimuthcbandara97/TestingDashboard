@@ -12,7 +12,6 @@ import UIKit
 final class WeekView: BaseView {
     
     private let calendar = Calendar.current
-    
     private let stackView = UIStackView()
  
 }
@@ -20,21 +19,14 @@ final class WeekView: BaseView {
 
 extension WeekView {
   
+    // MARK: Setup Views
     override func setupViews(){
         super.setupViews()
-
        setupView(stackView)
     }
 
     override func constaintViews() {
         super.constaintViews()
-        // StackView constraints
-//        NSLayoutConstraint.activate([
-//            stackView.topAnchor.constraint(equalTo: topAnchor),
-//            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-//        ])
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
@@ -45,8 +37,7 @@ extension WeekView {
 
     override func configureAppearance() {
         super.configureAppearance()
-
-        // StackView spacing and distribution
+        
         stackView.spacing = 7
         stackView.distribution = .fillEqually
 

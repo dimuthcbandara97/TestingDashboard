@@ -28,8 +28,7 @@ extension WeekView {
             
             nameLabel.text = name.uppercased()
             nameLabel.textColor = isTooday ? .white : .black
-            
-            
+                        
             dateLabel.text = "\(day)"
             dateLabel.textColor = isTooday ? .white : .blue
         }

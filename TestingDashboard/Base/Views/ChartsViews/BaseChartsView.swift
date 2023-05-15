@@ -15,6 +15,7 @@ extension BaseChartsView {
     }
 }
 
+// MARK: Base Charts View Extension
 final class BaseChartsView: BaseView {
 
     private let xAxisView = XAxisView()
@@ -26,17 +27,16 @@ final class BaseChartsView: BaseView {
     }
 
 extension BaseChartsView {
+
+    // MARK: Setup Views
     override func setupViews() {
         super.setupViews()
-        
         setupView(xAxisView)
-
-            
     }
     
+    // MARK: Adding Constraints
     override func constaintViews() {
         super.constaintViews()
-        
         NSLayoutConstraint.activate([
 
             
@@ -49,7 +49,6 @@ extension BaseChartsView {
     
     override func configureAppearance() {
         super.configureAppearance()
-        
         backgroundColor = .clear
     }
 }

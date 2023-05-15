@@ -12,7 +12,6 @@ final class Progress2View: BaseInfoView {
    
      private let barsView = BaseBarsView()
      
-   
      func configure(with items: [BaseBarView.Data]) {
          barsView.configureX(with: items)
            }
@@ -28,7 +27,8 @@ extension Progress2View {
        setupView(barsView)
    }
    
-   override func constaintViews(){
+    // MARK: Add Constraints
+    override func constaintViews(){
        super.constaintViews()
      
        NSLayoutConstraint.activate([

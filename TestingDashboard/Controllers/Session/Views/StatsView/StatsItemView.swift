@@ -35,7 +35,9 @@ enum StatsItem {
         }
     }
 }
- class StatsItemView: BaseView {
+ 
+// MARK: Extension
+class StatsItemView: BaseView {
     
     // CONFIGURE STRUC
     struct ItemData {
@@ -90,6 +92,8 @@ enum StatsItem {
 }
 
 extension StatsItemView {
+    
+    // MARK: Setup Views
     override func setupViews(){
         super.setupViews()
         
@@ -99,6 +103,7 @@ extension StatsItemView {
         stackView.addArrangedSubview(titleLabel)
     }
    
+    // MARK: Constraint Views
     override func constaintViews(){
         super.constaintViews()
         

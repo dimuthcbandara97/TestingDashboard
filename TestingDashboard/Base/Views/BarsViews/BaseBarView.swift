@@ -20,6 +20,7 @@ final  class BaseBarView: BaseView {
     
     private let heightMultiplier: Double
     
+    // MARK: - Setting Up
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
@@ -61,6 +62,7 @@ final  class BaseBarView: BaseView {
 
 extension BaseBarView {
     
+    // MARK: Setup Views
     override func setupViews() {
         super.setupViews()
         
@@ -69,6 +71,7 @@ extension BaseBarView {
         setupView(titleLabel)
     }
     
+    // MARK: Constraint Views
     override func constaintViews() {
         super.constaintViews()
         
@@ -91,6 +94,7 @@ extension BaseBarView {
         ])
     }
     
+    // MARK: Configure Appearance
     override func configureAppearance() {
         super.configureAppearance()
         

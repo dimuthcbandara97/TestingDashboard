@@ -15,11 +15,10 @@ class NavBarController: UINavigationController {
         // Configure method
     }
     
+    // MARK: - Configure UI
     private func configureUI() {
         navigationBar.isTranslucent = false
         navigationBar.standardAppearance.titleTextAttributes = [    .foregroundColor: UIColor.black]
-
-        
         navigationBar.addBottomBorder(with: .blue, height: 0)
     }
 

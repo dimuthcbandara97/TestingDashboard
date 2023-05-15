@@ -16,7 +16,6 @@
 		A21EBC6C29CAC3EE00EC1210 /* CustomTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6B29CAC3EE00EC1210 /* CustomTableViewCell2.swift */; };
 		A21EBC7229CC19CA00EC1210 /* ExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7129CC19CA00EC1210 /* ExerciseViewCell.swift */; };
 		A21EBC7429CC1F4600EC1210 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7329CC1F4600EC1210 /* Video.swift */; };
-		A21EBC7629CC202A00EC1210 /* Imagess.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7529CC202A00EC1210 /* Imagess.swift */; };
 		A238FAB12A0B9F0600806A6C /* EkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A238FAB02A0B9F0600806A6C /* EkWrapper.swift */; };
 		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
 		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
@@ -42,7 +41,6 @@
 		A2537AAD29BF5AA3000DED14 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AAC29BF5AA3000DED14 /* TabBarController.swift */; };
 		A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AAE29BF5AEA000DED14 /* NavBarController.swift */; };
 		A2537AB429BF5CB0000DED14 /* APIAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB329BF5CB0000DED14 /* APIAuth.swift */; };
-		A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */; };
 		A2537ABF29BF5E36000DED14 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537ABE29BF5E36000DED14 /* BaseController.swift */; };
 		A259A8E22A069771009271E8 /* UserLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A259A8E12A069771009271E8 /* UserLoaderTests.swift */; };
 		A259A8E42A069C86009271E8 /* UserInsertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A259A8E32A069C86009271E8 /* UserInsertTests.swift */; };
@@ -114,7 +112,6 @@
 		A21EBC6B29CAC3EE00EC1210 /* CustomTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell2.swift; sourceTree = "<group>"; };
 		A21EBC7129CC19CA00EC1210 /* ExerciseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewCell.swift; sourceTree = "<group>"; };
 		A21EBC7329CC1F4600EC1210 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		A21EBC7529CC202A00EC1210 /* Imagess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagess.swift; sourceTree = "<group>"; };
 		A238FAB02A0B9F0600806A6C /* EkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EkWrapper.swift; sourceTree = "<group>"; };
 		A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardNavBar.swift; sourceTree = "<group>"; };
 		A2396E2229C08C15009206D3 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -146,7 +143,6 @@
 		A2537AAC29BF5AA3000DED14 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A2537AAE29BF5AEA000DED14 /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		A2537AB329BF5CB0000DED14 /* APIAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuth.swift; sourceTree = "<group>"; };
-		A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		A2537ABE29BF5E36000DED14 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		A259A8E12A069771009271E8 /* UserLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoaderTests.swift; sourceTree = "<group>"; };
 		A259A8E32A069C86009271E8 /* UserInsertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInsertTests.swift; sourceTree = "<group>"; };
@@ -252,7 +248,6 @@
 				A28BF21129C1F6C7001B8264 /* UserElement.swift */,
 				A28BF21329C1F706001B8264 /* TimerElement.swift */,
 				A21EBC7329CC1F4600EC1210 /* Video.swift */,
-				A21EBC7529CC202A00EC1210 /* Imagess.swift */,
 				A244E44529D058EA00AEBE96 /* ProgressElement.swift */,
 				A282E0A729D41D490036B9C2 /* StatssElement.swift */,
 				A2EFB7A72A08CD2400BED7C3 /* UserDetailssElement.swift */,
@@ -389,7 +384,6 @@
 			isa = PBXGroup;
 			children = (
 				A2537AB229BF5C8F000DED14 /* API */,
-				A2537AB129BF5C65000DED14 /* Applications */,
 				A2537AB029BF5C19000DED14 /* Views */,
 			);
 			path = Base;
@@ -462,14 +456,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A2537AB129BF5C65000DED14 /* Applications */ = {
-			isa = PBXGroup;
-			children = (
-				A2537AB729BF5CD3000DED14 /* Firebase */,
-			);
-			path = Applications;
-			sourceTree = "<group>";
-		};
 		A2537AB229BF5C8F000DED14 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,14 +463,6 @@
 				A2537AB329BF5CB0000DED14 /* APIAuth.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		A2537AB729BF5CD3000DED14 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				A2537AB829BF5CEA000DED14 /* FirebaseAuth.swift */,
-			);
-			path = Firebase;
 			sourceTree = "<group>";
 		};
 		A2537ABB29BF5DBB000DED14 /* Base */ = {
@@ -794,7 +772,6 @@
 				A28BF20029C1DC58001B8264 /* BaseBarsView.swift in Sources */,
 				A26640EC29D59A4500563379 /* TitlePreviewController.swift in Sources */,
 				A28BF1F029C1AF04001B8264 /* TimerView.swift in Sources */,
-				A21EBC7629CC202A00EC1210 /* Imagess.swift in Sources */,
 				A2EFB7A82A08CD2400BED7C3 /* UserDetailssElement.swift in Sources */,
 				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A26640EE29D5B10D00563379 /* TitleCollectionViewCell3.swift in Sources */,
@@ -810,7 +787,6 @@
 				A244E44629D058EA00AEBE96 /* ProgressElement.swift in Sources */,
 				A21EBC6029C9CC7B00EC1210 /* RegisterViewController.swift in Sources */,
 				A28BF20C29C1F3ED001B8264 /* MeditationElement.swift in Sources */,
-				A2537AB929BF5CEA000DED14 /* FirebaseAuth.swift in Sources */,
 				A2396E2629C08D63009206D3 /* SectionHeaderView.swift in Sources */,
 				A28BF1F429C1AF8E001B8264 /* PercentView.swift in Sources */,
 				A2537AAF29BF5AEA000DED14 /* NavBarController.swift in Sources */,

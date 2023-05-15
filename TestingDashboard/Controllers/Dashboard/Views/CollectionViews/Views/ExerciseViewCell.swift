@@ -9,8 +9,6 @@ import UIKit
 
 class ExerciseViewCell: UITableViewCell {
 
-//    var videoImageView = UIImageView()
-//    var videoTitleLabel = UILabel()
     
     private let videoImageView: UIImageView = {
         let video = UIImageView()
@@ -44,8 +42,6 @@ class ExerciseViewCell: UITableViewCell {
     
     func set(exercise: ExerciseElement){
          let imageUrl = URL(string: exercise.imageurl)!
-//        videoImageView.image = UIImage(data: imageUrl)
-//        videoTitleLabel.text = exercise.exerciseName
 
                 DispatchQueue.global().async {
                     if let imageData = try? Data(contentsOf: imageUrl) {
@@ -61,14 +57,19 @@ class ExerciseViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Configure Image
     func configureImageView(){
         videoImageView.layer.cornerRadius = 10
         videoImageView.clipsToBounds = true
     }
+    
+    // MARK: Configure Title
     func configureTitleLabel(){
         videoTitleLabel.numberOfLines = 0
         videoTitleLabel.adjustsFontSizeToFitWidth = true
     }
+    
+    // MARK: Image Constaints
     func setImageConstraints(){
         videoImageView.translatesAutoresizingMaskIntoConstraints = false
         videoImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
@@ -76,6 +77,8 @@ class ExerciseViewCell: UITableViewCell {
         videoImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         videoImageView.widthAnchor.constraint(equalTo: videoImageView.heightAnchor, multiplier: 16/9).isActive = true
     }
+    
+    // MARK: Label Constraints
     func setTitleLabelConstaints(){
         videoTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         videoTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true

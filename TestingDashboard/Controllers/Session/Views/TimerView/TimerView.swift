@@ -19,42 +19,6 @@ enum TimerState {
 final class TimerView: BaseInfoView {
     
     let musicPlayer = MPMusicPlayerController.systemMusicPlayer
-    
-//    private let elapsedTimeLable: UILabel = {
-//        let lable = UILabel()
-//        lable.text = "Remaining Time"
-////        lable.font =
-//        lable.textColor = .black
-//        lable.textAlignment = .center
-//        return lable
-//    }()
-//
-//    private let elapsedTimeValueLable: UILabel = {
-//        let lable = UILabel()
-//        lable.text = "02:15"
-////        lable.font =
-//        lable.textColor = .gray
-//        lable.textAlignment = .center
-//        return lable
-//    }()
-//
-//    private let remainingTimeLable: UILabel = {
-//        let lable = UILabel()
-//        lable.text = "Remaining Time"
-////        lable.font =
-//        lable.textColor = .black
-//        lable.textAlignment = .center
-//        return lable
-//    }()
-//
-//    private let remainingTimeValueLable: UILabel = {
-//        let lable = UILabel()
-//        //lable.text = "12:45"
-////        lable.font =
-//        lable.textColor = .black
-//        lable.textAlignment = .center
-//        return lable
-//    }()
 
     private let elapsedTimeLable: UILabel = {
         let label = UILabel()
@@ -117,8 +81,6 @@ final class TimerView: BaseInfoView {
     }()
     
     private let progressView = ProgressView()
-    
-   
 
     private var timer = Timer()
     private var timerProgress: CGFloat = 0
@@ -145,7 +107,6 @@ final class TimerView: BaseInfoView {
 
     func startTimer() {
         timer.invalidate()
-  
 
         timer = Timer.scheduledTimer(withTimeInterval: 0.01,
                                      repeats: true,

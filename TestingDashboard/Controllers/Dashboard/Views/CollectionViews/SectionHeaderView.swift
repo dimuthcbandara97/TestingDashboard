@@ -110,12 +110,8 @@ extension SectionHeaderView: UITableViewDelegate, UITableViewDataSource{
     }
    
     override func configureAppearance() {
-        super.configureAppearance()
-     
+        super.configureAppearance()     
         backgroundColor = .white
-
-        
-      
     }
 }
 

@@ -19,12 +19,13 @@ final class MonthlyPerformanceView: BaseInfoView {
 
 extension MonthlyPerformanceView {
   
+    // MARK: Setup Views
    override func setupViews() {
       super.setupViews()
-      
       setupView(barsView)
   }
   
+    // MARK: Constraints
   override func constaintViews(){
       super.constaintViews()
     
@@ -36,6 +37,7 @@ extension MonthlyPerformanceView {
       ])
   }
   
+    // MARK: Configure Appearance
   override func configureAppearance(){
       super.configureAppearance()
   }

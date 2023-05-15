@@ -17,30 +17,23 @@ class BaseController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         setupViews()
         constaintViews()
         configureAppearance()
-        
         
     }
 }
 
 @objc extension BaseController {
    
-    
     func setupViews(){}
     func constaintViews(){}
     func configureAppearance(){
-        view.backgroundColor = .white
+    view.backgroundColor = .white
     
     }
     
-    
-    
     func navBarLeftButtonHandler(){ print("NavBar Lefight button tapped") }
-    
     func navBarRightButtonHanler(){ print("NavBar Right button tapped") }
 }
 
@@ -50,7 +43,6 @@ extension BaseController {
 
     func addNavBarButton(at position: NavBarPosition, with title: String) {
         
-
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -65,9 +57,6 @@ extension BaseController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
 //        button.titleLabel?.highlightedFont = UIFont.systemFont(ofSize: 18, weight: .bold)
 
-
-
-//
         switch position {
         case .Left:
             button.addTarget(self, action: #selector(navBarLeftButtonHandler), for: .touchUpInside)

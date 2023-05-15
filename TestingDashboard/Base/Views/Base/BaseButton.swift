@@ -13,6 +13,7 @@ public enum WAButtonType {
     case secondary
 }
 
+// MARK: Base Button Configuration
 final class BaseButton: UIButton {
     
     private var type: WAButtonType = .primary
@@ -44,14 +45,12 @@ final class BaseButton: UIButton {
     init(with type: WAButtonType) {
         super.init(frame: .zero)
         self.type = type
-        
         configureAll()
     }
     
     // initiailization -> NScoder
     required init?(coder: NSCoder) {
         super.init(frame: .zero)
-        
         configureAll()
     }
     
@@ -69,12 +68,13 @@ final class BaseButton: UIButton {
 
 private extension BaseButton {
     
+    // MARK: Setup Views
     func setupViews() {
-        // labe
         setupView(label)
         setupView(iconView)
     }
     
+    // MARK: Constraints Setup
     func constaintViews() {
         
         // horisontalOffset is a computed property
@@ -85,6 +85,7 @@ private extension BaseButton {
             }
         }
         
+        // MARK: Layout Constriants
         NSLayoutConstraint.activate([
             
             iconView.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -98,6 +99,7 @@ private extension BaseButton {
         ])
     }
     
+    // MARK: Configure Appearance
     func configureAppearance() {
         
         switch type {
@@ -112,7 +114,6 @@ private extension BaseButton {
             iconView.contentMode = .scaleAspectFit // adjust the icon's content mode
             iconView.clipsToBounds = true // clip the icon's contents to its bounds
 
-            
         
         case .secondary:
             backgroundColor = .systemBackground

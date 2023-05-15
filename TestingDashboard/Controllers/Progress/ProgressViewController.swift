@@ -24,7 +24,7 @@ class ProgressBaseController: BaseController {
 
 extension ProgressBaseController {
     
-    // Setup Views
+    // MARK: Setup Views
     override func setupViews() {
         super.setupViews()
         
@@ -32,12 +32,12 @@ extension ProgressBaseController {
         view.setupView(monthlyPerformanceView)
     }
     
-    // Configure Appearance
+    // MARK: Configure Appearance
     override func configureAppearance() {
         super.configureAppearance()
     }
     
-    // constaintViews
+    // MARK: Constraints
     override func constaintViews() {
         super.constaintViews()
         

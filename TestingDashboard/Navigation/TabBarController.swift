@@ -14,6 +14,7 @@ enum Tabs: Int, CaseIterable {
     case nutrition
 }
 
+// MARK: - Tab Bar Controller
 class TabBarController: UITabBarController {
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -34,9 +35,7 @@ class TabBarController: UITabBarController {
         selectedIndex = tab.rawValue
     }
     
-    
-    
-    
+    // MARK: - Configuring the Appearance
     private func configureAppearance() {
 
         // Ading Decorations to TabBar
@@ -70,6 +69,8 @@ class TabBarController: UITabBarController {
     }
     
     }
+
+// MARK: - Tab Controller
     private func tabController(for tab: Tabs) -> BaseController {
         
         switch tab {

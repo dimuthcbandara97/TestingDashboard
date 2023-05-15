@@ -99,6 +99,7 @@ extension SessionBaseController {
                                        .init(value: "1k", heightMultiplier: 0.1, title: "2/17"),])
         
 
+        // MARK: From API
         APICaller.shared.loadStats { results in
             DispatchQueue.main.async {
                 // Update statsView with retrieved data

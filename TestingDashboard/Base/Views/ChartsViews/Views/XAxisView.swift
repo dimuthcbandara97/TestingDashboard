@@ -10,12 +10,14 @@ import UIKit
 
 final  class XAxisView: BaseView {
     
+    // MARK: Stack View
     private let stackView: UIStackView = {
         let view = UIStackView()
         view.distribution = .equalSpacing
         return view
     }()
     
+    // MARK: Configure Appeaance
     func configure(with data: [BaseChartsView.Data]) {
         stackView.arrangedSubviews.forEach {
             $0.removeFromSuperview()

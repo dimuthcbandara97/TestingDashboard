@@ -32,10 +32,6 @@ class DashboardBaseController: BaseController {
         title = "Dashboard Main"
         view.setupView(navBar)
         view.setupView(header)
-        // Add any other views as needed
-        
-        // Add the table view if necessary
-        // view.addSubview(tableView)
     }
     
     override func constaintViews() {
@@ -59,8 +55,6 @@ class DashboardBaseController: BaseController {
             header.leftAnchor.constraint(equalTo: view.leftAnchor),
             header.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
-        
-        // Add any other constraints as needed
 
     }
     

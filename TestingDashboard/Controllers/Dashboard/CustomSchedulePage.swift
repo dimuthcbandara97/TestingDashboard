@@ -16,12 +16,11 @@ class CustomSchedulePage: DayViewController, EKEventEditViewDelegate {
     
     private var eventStore = EKEventStore()
         
+    // MARK: Did Load
         override func viewDidLoad() {
             super.viewDidLoad()
             title = "Calendar"
-           
             requestAccessToCalendar()
-            
             subscribeToNotifications()
         }
 
@@ -31,6 +30,7 @@ class CustomSchedulePage: DayViewController, EKEventEditViewDelegate {
             navigationController?.setToolbarHidden(true, animated: false)
         }
         
+    // MARK: Request Access
         private func requestAccessToCalendar() {
             
             eventStore.requestAccess(to: .event) { [weak self] granted, error in
@@ -43,7 +43,8 @@ class CustomSchedulePage: DayViewController, EKEventEditViewDelegate {
                 }
             }
         }
-        
+       
+    // MARK: Subscribe Notifications
         private func subscribeToNotifications() {
             NotificationCenter.default.addObserver(self,
                                                    selector: #selector(storeChanged(_:)),
@@ -60,8 +61,7 @@ class CustomSchedulePage: DayViewController, EKEventEditViewDelegate {
         }
         
         // MARK: - DayViewDataSource
-        
-        
+    
         override func eventsForDate(_ date: Date) -> [EventDescriptor] {
             
             let startDate = date

@@ -14,6 +14,7 @@ class CustomTableViewCell2: UITableViewCell {
     let subheadLabel = UILabel()
     let customImageView = UIImageView()
     
+    // MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -24,9 +25,7 @@ class CustomTableViewCell2: UITableViewCell {
         contentView.addSubview(topicLabel)
         contentView.addSubview(subheadLabel)
         contentView.addSubview(customImageView)
-        
-        // Add constraints to position the views as desired
-        // ...
+
     }
     
     required init?(coder aDecoder: NSCoder) {

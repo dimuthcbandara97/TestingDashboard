@@ -9,6 +9,7 @@
 import Foundation
 
 struct Constants {
+    // 
     static let API_KEY_USERS = "https://nodemongocrud.onrender.com/api/users"
     static let API_KEY_EXERCISE = "https://nodemongocrud.onrender.com/api/exercise"
     static let API_KEY_MEDITATION = "https://nodemongocrud.onrender.com/api/meditation"
@@ -34,7 +35,7 @@ class APICaller {
     
     static let shared = APICaller()
     
-    // CRUD Users -> Read
+    // MARK: Load Users
     func loadUsers(completion: @escaping ([UserElement]) -> Void){
            
         guard let url = URL(string: Constants.API_KEY_USERS) else {return}
@@ -56,8 +57,7 @@ class APICaller {
         task.resume()
     }
     
-    // CRUD users - insert
-
+    // MARK: Insert Users
     func insertUser(userr: UserElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_USERS)!
         print(url)
@@ -89,7 +89,7 @@ class APICaller {
         task.resume()
     }
 
-    
+    // MARK: Load User Details
     func loadUserDetails(completion: @escaping ([UserDetailssElement]) -> Void){
            
         guard let url = URL(string: Constants.API_KEY_USER_DETAILS) else {return}
@@ -111,7 +111,7 @@ class APICaller {
         task.resume()
     }
     
-    // Insert User Details
+    // MARK: Insert User Details
     func insertUserDetails(userr: UserDetailssElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_USER_DETAILS)!
         print(url)
@@ -143,7 +143,7 @@ class APICaller {
         task.resume()
     }
     
-    // CRUD Exercise -> Read
+    // MARK: Load Exercises
     func loadExercise(completion: @escaping ([ExerciseElement]) -> Void){
            
         guard let url = URL(string: Constants.API_KEY_EXERCISE) else {return}
@@ -166,7 +166,7 @@ class APICaller {
         task.resume()
     }
     
-    // insert Exercise
+    // MARK: Insert Exercises
     func insertExercise(exerr: ExerciseElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_EXERCISE)!
         print(url)
@@ -176,10 +176,6 @@ class APICaller {
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         print(request)
 
-//        let exerciseName, exerciseType, instructor: String
-//        let notes: String
-//        let imageurl, videourl: String
-//        let affectingArea, bmiRange: String
         let parameters = "exercise_name=\(exerr.exerciseName)&exercise_type=\(exerr.exerciseType)&instructor=\(exerr.instructor)&notes=\(exerr.notes)&imageurl=\(exerr.imageurl)&videourl=\(exerr.videourl)&affecting_area=\(exerr.affectingArea)&bmi_range=\(exerr.bmiRange)" // create the parameters string using the data in the UserElement
 
         request.httpBody = parameters.data(using: .utf8) // set the httpBody of the request
@@ -202,7 +198,7 @@ class APICaller {
         task.resume()
     }
     
-    // CRUD Meditation -> Read
+    // MARK: Load Meditation
     func loadMeditation(completion: @escaping ([MeditationElement]) -> Void){
            
         guard let url = URL(string: Constants.API_KEY_MEDITATION) else {return}
@@ -224,7 +220,7 @@ class APICaller {
         task.resume()
     }
     
-    // CRUD Networking -> Read
+    // MARK: Load Networking
     func loadNetworking(completion: @escaping ([NetworkingElement]) -> Void){
            
         guard let url = URL(string: Constants.API_KEY_NETWORKING) else {return}
@@ -246,7 +242,7 @@ class APICaller {
         task.resume()
     }
     
-    // CRUD Nutrition -> Read
+    // MARK: Load Nurition
     func loadNutrition(completion: @escaping ([NutritionElement]) -> Void){
            
         guard let url = URL(string: Constants.API_KEY_NUTRITION) else {return}
@@ -268,7 +264,7 @@ class APICaller {
         task.resume()
     }
     
-    // CRUD Progress - Read
+    // MARK: Load Progress
     func loadProgress(completion: @escaping ([ProgressElement]) -> Void){
            
         guard let url = URL(string: Constants.API_KEY_PROGRESS) else {return}
@@ -290,9 +286,7 @@ class APICaller {
         task.resume()
     }
     
-    // CRUDProgress - Insert
-    
-    // insert progress
+    // MARK: Insert Progress
     func insertProgress(progresss: ProgressElement, completionHandler: @escaping (Bool, Error?) -> Void) {
         let url = URL(string: Constants.API_KEY_PROGRESS)!
         print(url)
@@ -324,7 +318,7 @@ class APICaller {
         task.resume()
     }
         
-    // Loading the stats
+    // MARK: Load Stats
     func loadStats(completion: @escaping ([StatssElement]) -> Void){
            
         guard let url = URL(string: Constants.API_KEY_STATS) else {return}
@@ -345,8 +339,6 @@ class APICaller {
         }
         task.resume()
     }
-    
-    // creating the stats
 
 }
 
