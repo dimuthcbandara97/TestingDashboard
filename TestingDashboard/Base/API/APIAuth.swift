@@ -17,7 +17,7 @@ struct Constants {
     static let API_KEY_TIMER = "https://nodemongocrud.onrender.com/api/timer"
     static let API_KEY_PROGRESS = "https://nodemongocrud.onrender.com/api/progress"
     static let API_KEY_STATS = "https://nodemongocrud.onrender.com/api/stats"
-    static let API_KEY_USER_DETAILS = "https://nodemongocrud.onrender.com/api/stats"
+    static let API_KEY_USER_DETAILS = "https://nodemongocrud.onrender.com/api/user_details"
     static let API_KEY_FAVOURITES = "https://nodemongocrud.onrender.com/api/favourites"
     
     // Testing Image View

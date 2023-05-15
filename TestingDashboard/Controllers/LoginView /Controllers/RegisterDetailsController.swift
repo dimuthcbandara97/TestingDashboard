@@ -129,17 +129,7 @@ class RegisterDetailsController: UIViewController {
     // MARK: - Selectors
 
     @objc func didTapSignUp() {
-//        let username = usernameField.text!
-//        let email = emailField.text!
-//        let password = passwordField.text!
-//        let imageurl = imageurlField.text!
-//        let gender = genderField.text!
-        
-//        self.view.addSubview(statusField)
-//        self.view.addSubview(heightField)
-//        self.view.addSubview(weightField)
-//        self.view.addSubview(ageField)
-//        self.view.addSubview(fitnessGoal)
+
         
         guard let status = statusField.text,
                     let weightStr = weightField.text,

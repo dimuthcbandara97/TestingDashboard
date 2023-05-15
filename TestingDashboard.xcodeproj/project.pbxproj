@@ -226,13 +226,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		A21EBC6A29CAB3C800EC1210 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
 		A21EBC7029CC19A500EC1210 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,7 +366,6 @@
 		A240C2B029BC43E100E5DDAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A21EBC6A29CAB3C800EC1210 /* Onboarding */,
 				A2537AA329BF5909000DED14 /* Dashboard */,
 				A2537AA229BF58F9000DED14 /* Session */,
 				A2537AA129BF58ED000DED14 /* Progress */,
