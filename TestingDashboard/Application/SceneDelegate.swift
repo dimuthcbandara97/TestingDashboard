@@ -14,13 +14,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-//        guard let tabBarScene = (scene as? UIWindowScene) else { return }
-////        let tabBarController = TabBarController()
-//        let tabBarController = LoginViewController()
-//        window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
-//        window?.windowScene = tabBarScene
-//        window?.rootViewController = tabBarController
-//        window?.makeKeyAndVisible()
+        guard let tabBarScene = (scene as? UIWindowScene) else { return }
+//        let tabBarController = TabBarController()
+        let tabBarController = TabBarController()
+        window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
+        window?.windowScene = tabBarScene
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
         
         
 
@@ -39,13 +39,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
 //        3333333
         
-        guard let tabBarScene = (scene as? UIWindowScene) else { return }
-        let loginViewController = LoginViewController()
-        let navigationController = UINavigationController(rootViewController: loginViewController)
-        window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
-        window?.windowScene = tabBarScene
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+//        guard let tabBarScene = (scene as? UIWindowScene) else { return }
+//        let loginViewController = LoginViewController()
+////        let loginViewController = CustomSchedulePage()
+//        let navigationController = UINavigationController(rootViewController: loginViewController)
+//        window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
+//        window?.windowScene = tabBarScene
+//        window?.rootViewController = navigationController
+//        window?.makeKeyAndVisible()
        
     }
     

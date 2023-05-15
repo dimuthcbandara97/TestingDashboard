@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol UserSelectionDelegate{
+    func didSelectProduct(email:String, password: String)
+    func didActionTwo()
+}
+
 class LoginViewController: UIViewController {
     
+    var delegate:UserSelectionDelegate?
     // MARK: - UI Components
-    
     // header View
     private let headerView = AuthHeaderView(title: "Sign In", subTitle: "Sign in to your account")
     
@@ -41,8 +46,6 @@ class LoginViewController: UIViewController {
         self.newUserButton.addTarget(self, action: #selector(didTapNewUser), for: .touchUpInside)
         self.forgotPasswordButton.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
     }
-    
-    
     
     // View Will Appear
     override func viewWillAppear(_ animated: Bool) {
@@ -118,6 +121,7 @@ class LoginViewController: UIViewController {
     // MARK: - Sign In
     @objc private func didTapSignIn() {
 
+        // MARK: Load Users
         APICaller.shared.loadUsers { results in
             DispatchQueue.main.async {
                 if results.count > 0 {
