@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 
 enum NavBarPosition {
     case Left
@@ -20,7 +20,49 @@ class BaseController: UIViewController {
         setupViews()
         constaintViews()
         configureAppearance()
+        checkForPermission()
+    }
+    
+    func checkForPermission(){
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings{ settings in
+            switch settings.authorizationStatus{
+            case .authorized:
+                self .dispatchNotification()
+            case .denied:
+                return
+            case .notDetermined:
+                notificationCenter.requestAuthorization(options:[.alert,.sound]){ didAllow, error in
+                    if didAllow{
+                        self.dispatchNotification()
+                    }
+                }
+            default:
+                return
+            }
+        }
+    }
+    
+    func dispatchNotification(){
+        let title = "Testing Title"
+        let body = "Testing Body"
+        let hour = 16
+        let minute = 39
+        let isDaily = true
         
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        let calender = Calendar.current
+        var dateComponenets = DateComponents(calendar: calender, timeZone: TimeZone.current)
+        dateComponenets.hour = hour
+        dateComponenets.minute = minute
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponenets, repeats: isDaily)
     }
 }
 

@@ -131,7 +131,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Health Controller"
-     fetchData()
+        fetchData()
     }
     
     
