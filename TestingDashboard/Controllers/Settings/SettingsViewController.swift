@@ -9,21 +9,46 @@ import UIKit
 
 
 class SettingsBaseController: BaseController, UITableViewDataSource, UITableViewDelegate, CollectionTableViewCellDelegate3, CollectionTableViewCellDelegate4 {
+    
+    // MARK: DidTap -> Model 04
     func collectionTableViewCellDidTapItem(with viewModel4: TitleCollectionViewCellViewModel4) {
+
         let alert = UIAlertController(title: viewModel4.name, message: viewModel4.details, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "View Video", style: .cancel, handler: nil))
-        present(alert,animated: true)
+        
+        // Add action to open YouTube
+        alert.addAction(UIAlertAction(title: "View Video", style: .default, handler: { _ in
+            // Open YouTube URL
+            if let youtubeURL = viewModel4.videoURL {
+                UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+            }
+        }))
+        
+        // Add cancel action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true)
     }
     
-    
+    // MARK: DidTap -> Model 05
     func collectionTableViewCellDidTapItem(with viewModel3: TitleCollectionViewCellViewModel3) {
         let alert = UIAlertController(title: viewModel3.name, message: viewModel3.details, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "View Video", style: .cancel, handler: nil))
-        present(alert,animated: true)
+        
+        // Add action to open YouTube
+        alert.addAction(UIAlertAction(title: "View Video", style: .default, handler: { _ in
+            // Open YouTube URL
+            if let youtubeURL = viewModel3.videoURL {
+                UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+            }
+        }))
+        
+        // Add cancel action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true)
     }
     
     
-
+    // MARK: Table View
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(CollectionTableViewCell.self, forCellReuseIdentifier: CollectionTableViewCell.identifier)
@@ -33,7 +58,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     }()
 
 
-    
+    // MARK: Variable Declartion
     private let apiCaller = APICaller()
     private var viewModels: [CollectionTableViewCellViewModel] = []
     private var viewModels3: [CollectionTableViewCellViewModel3] = []
@@ -46,7 +71,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel3(name: $0.foodName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.value) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel3(name: $0.foodName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.value, videoURL: URL(string: $0.videourl)) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel3(viewModels: titleViewModels)]
@@ -66,7 +91,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl)) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel(viewModels: titleViewModels)]
@@ -85,7 +110,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel4(name: $0.meditationName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel4(name: $0.meditationName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl)) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel4(viewModels: titleViewModels)]
@@ -197,7 +222,7 @@ extension SettingsBaseController: CollectionTableViewCellDelegate{
         // Add action to open YouTube
         alert.addAction(UIAlertAction(title: "View Video", style: .default, handler: { _ in
             // Open YouTube URL
-            if let youtubeURL = URL(string: "https://www.youtube.com/") {
+            if let youtubeURL =  viewModel.videoURL {
                 UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
             }
         }))

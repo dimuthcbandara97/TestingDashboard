@@ -14,6 +14,7 @@ struct TitleCollectionViewCellViewModel3 {
     let backgroundColor: UIColor
     let imageURL: URL?
     let details: String
+    let videoURL: URL?
 }
 
 class TitleCollectionViewCell3: UICollectionViewCell {
