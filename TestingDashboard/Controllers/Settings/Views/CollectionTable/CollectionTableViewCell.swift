@@ -15,6 +15,7 @@ protocol CollectionTableViewCellDelegate: AnyObject {
     func collectionTableViewCellDidTapItem(with viewModel: TitleCollectionViewCellViewModel)
 }
 
+// MARK: CollectionTableViewCell
 class CollectionTableViewCell: UITableViewCell , UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     static let identifier = "CollectionTableViewCell"

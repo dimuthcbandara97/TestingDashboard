@@ -133,7 +133,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Section 01 -> Exercise Section 
+        //MARK: Exercise Section
         if indexPath.section == 0 {
             let viewModel = viewModels[indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell.identifier, for: indexPath) as? CollectionTableViewCell else {fatalError()}
@@ -141,6 +141,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             cell.configure(with: viewModel)
             return cell
         }
+        // MARK: Nutrition Section
         else  if indexPath.section == 1 {
             let viewModel = viewModels3[indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell3.identifier, for: indexPath) as? CollectionTableViewCell3 else {fatalError()}
@@ -148,6 +149,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             cell.configure(with: viewModel)
             return cell
         }
+        // MARK: Other Section
         else {
             let viewModel = viewModels4[indexPath.row]
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionTableViewCell4.identifier, for: indexPath) as? CollectionTableViewCell4 else {fatalError()}
@@ -157,6 +159,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
         }
     }
 
+    // MARK: TableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return view.frame.size.width/2.5
@@ -187,9 +190,21 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
 }
 
 extension SettingsBaseController: CollectionTableViewCellDelegate{
+
     func collectionTableViewCellDidTapItem(with viewModel: TitleCollectionViewCellViewModel) {
         let alert = UIAlertController(title: viewModel.name, message: viewModel.details, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "View Video", style: .cancel, handler: nil))
-        present(alert,animated: true)
+        
+        // Add action to open YouTube
+        alert.addAction(UIAlertAction(title: "View Video", style: .default, handler: { _ in
+            // Open YouTube URL
+            if let youtubeURL = URL(string: "https://www.youtube.com/") {
+                UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+            }
+        }))
+        
+        // Add cancel action
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true)
     }
 }

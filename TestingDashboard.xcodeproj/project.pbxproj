@@ -57,6 +57,7 @@
 		A274D6D829C3505300ED848D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A240C28729BC3E6700E5DDAC /* LaunchScreen.storyboard */; };
 		A274D6D929C3552900ED848D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9F29BF57C0000DED14 /* SettingsViewController.swift */; };
 		A282E0A829D41D490036B9C2 /* StatssElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282E0A729D41D490036B9C2 /* StatssElement.swift */; };
+		A28743362A1259B70007779E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = A28743352A1259B70007779E /* FSCalendar */; };
 		A28BF1DE29C177F8001B8264 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1DD29C177F8001B8264 /* BaseButton.swift */; };
 		A28BF1E829C191DF001B8264 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E729C191DF001B8264 /* WeekView.swift */; };
 		A28BF1EA29C1924E001B8264 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BF1E929C1924E001B8264 /* WeekDayView.swift */; };
@@ -187,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C1837129C88CD400990A02 /* SDWebImageMapKit in Frameworks */,
+				A28743362A1259B70007779E /* FSCalendar in Frameworks */,
 				A24BE2B02A0A199200F5A4AE /* CalendarKit in Frameworks */,
 				A2C1836F29C88C9900990A02 /* SDWebImage in Frameworks */,
 			);
@@ -631,6 +633,7 @@
 				A2C1836E29C88C9900990A02 /* SDWebImage */,
 				A2C1837029C88CD400990A02 /* SDWebImageMapKit */,
 				A24BE2AF2A0A199200F5A4AE /* CalendarKit */,
+				A28743352A1259B70007779E /* FSCalendar */,
 			);
 			productName = TestingDashboard;
 			productReference = A240C27929BC3E6600E5DDAC /* TestingDashboard.app */;
@@ -708,6 +711,7 @@
 				A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				A24BE2AE2A0A199200F5A4AE /* XCRemoteSwiftPackageReference "CalendarKit" */,
+				A28743342A1259B70007779E /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = A240C27A29BC3E6600E5DDAC /* Products */;
 			projectDirPath = "";
@@ -1164,6 +1168,14 @@
 				kind = branch;
 			};
 		};
+		A28743342A1259B70007779E /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		A2E2889329BEC43D008921E4 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/supabase/supabase-swift.git";
@@ -1179,6 +1191,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A24BE2AE2A0A199200F5A4AE /* XCRemoteSwiftPackageReference "CalendarKit" */;
 			productName = CalendarKit;
+		};
+		A28743352A1259B70007779E /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A28743342A1259B70007779E /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 		A2C1836E29C88C9900990A02 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
