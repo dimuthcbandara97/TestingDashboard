@@ -89,6 +89,28 @@ class APICaller {
         task.resume()
     }
 
+    // MARK: Filter Exercises Based on BMI
+    func filterExercisesByBMIRange(bmiRange: String, completion: @escaping (Exercise) -> Void) {
+        guard let url = URL(string: Constants.API_KEY_EXERCISE) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url, timeoutInterval: 30)) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            do {
+                let exercises = try JSONDecoder().decode(Exercise.self, from: data)
+                let filteredExercises = exercises.filter { $0.bmiRange == bmiRange }
+                completion(filteredExercises)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
+    
     // MARK: Load User Details
     func loadUserDetails(completion: @escaping ([UserDetailssElement]) -> Void){
            

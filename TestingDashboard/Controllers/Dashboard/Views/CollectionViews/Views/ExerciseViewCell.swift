@@ -10,7 +10,7 @@ import UIKit
 class ExerciseViewCell: UITableViewCell {
 
     
-    private let videoImageView: UIImageView = {
+    private let exerciseImageView: UIImageView = {
         let video = UIImageView()
 //        video.contentMode = .scaleAspectFill
         video.clipsToBounds = false
@@ -18,7 +18,7 @@ class ExerciseViewCell: UITableViewCell {
         return video
     }()
     
-    public let videoTitleLabel: UILabel = {
+    public let exerciseTitleLabel: UILabel = {
         let title = UILabel()
         title.textColor = .systemPink
         title.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -30,8 +30,8 @@ class ExerciseViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(videoImageView)
-        addSubview(videoTitleLabel)
+        addSubview(exerciseImageView)
+        addSubview(exerciseTitleLabel)
         
         configureImageView()
         configureTitleLabel()
@@ -46,8 +46,8 @@ class ExerciseViewCell: UITableViewCell {
                 DispatchQueue.global().async {
                     if let imageData = try? Data(contentsOf: imageUrl) {
                         DispatchQueue.main.async {
-                            self.videoImageView.image = UIImage(data: imageData)
-                            self.videoTitleLabel.text = exercise.exerciseName
+                            self.exerciseImageView.image = UIImage(data: imageData)
+                            self.exerciseTitleLabel.text = exercise.exerciseName
                         }
                     }
                 }
@@ -59,32 +59,32 @@ class ExerciseViewCell: UITableViewCell {
     
     // MARK: Configure Image
     func configureImageView(){
-        videoImageView.layer.cornerRadius = 10
-        videoImageView.clipsToBounds = true
+        exerciseImageView.layer.cornerRadius = 10
+        exerciseImageView.clipsToBounds = true
     }
     
     // MARK: Configure Title
     func configureTitleLabel(){
-        videoTitleLabel.numberOfLines = 0
-        videoTitleLabel.adjustsFontSizeToFitWidth = true
+        exerciseTitleLabel.numberOfLines = 0
+        exerciseTitleLabel.adjustsFontSizeToFitWidth = true
     }
     
     // MARK: Image Constaints
     func setImageConstraints(){
-        videoImageView.translatesAutoresizingMaskIntoConstraints = false
-        videoImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        videoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
-        videoImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        videoImageView.widthAnchor.constraint(equalTo: videoImageView.heightAnchor, multiplier: 16/9).isActive = true
+        exerciseImageView.translatesAutoresizingMaskIntoConstraints = false
+        exerciseImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        exerciseImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
+        exerciseImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        exerciseImageView.widthAnchor.constraint(equalTo: exerciseImageView.heightAnchor, multiplier: 16/9).isActive = true
     }
     
     // MARK: Label Constraints
     func setTitleLabelConstaints(){
-        videoTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        videoTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        videoTitleLabel.leadingAnchor.constraint(equalTo: videoImageView.trailingAnchor, constant: 20).isActive = true
-        videoTitleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        videoTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        exerciseTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        exerciseTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        exerciseTitleLabel.leadingAnchor.constraint(equalTo: exerciseImageView.trailingAnchor, constant: 20).isActive = true
+        exerciseTitleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        exerciseTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
     }
 }
 
