@@ -44,10 +44,12 @@ class BaseController: UIViewController {
     }
     
     func dispatchNotification(){
+        
+        let identifier = "Your Time Table"
         let title = "Testing Title"
         let body = "Testing Body"
-        let hour = 16
-        let minute = 39
+        let hour = 07
+        let minute = 10
         let isDaily = true
         
         let notificationCenter = UNUserNotificationCenter.current()
@@ -63,6 +65,11 @@ class BaseController: UIViewController {
         dateComponenets.minute = minute
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponenets, repeats: isDaily)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+        
+        notificationCenter.add(request)
     }
 }
 
