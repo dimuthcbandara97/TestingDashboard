@@ -9,26 +9,25 @@ import UIKit
 import EventKit
 
 
-
 class DashboardNavBar: BaseView {
 
     let tableView = UITableView()
     let cellIdentifier = "CustomCell"
     
-    // title label
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Dashboard"
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.backgroundColor = .clear
-        label.shadowColor = .gray
-        label.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        return label
+
+    private let titleButton: BaseButton = {
+        let button = BaseButton(with: .primary)
+        button.setTitle("View Scheudle", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.minimumScaleFactor = 0.5
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.lineBreakMode = .byWordWrapping
+        button.backgroundColor = .clear
+        button.titleLabel?.shadowColor = .gray
+        button.titleLabel?.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        return button
     }()
 
     var navigationController: UINavigationController?
@@ -97,85 +96,6 @@ class DashboardNavBar: BaseView {
             }
         }
     }
-//    @objc func showAllWorkouts(from viewController: UIViewController) {
-//            let alertController = UIAlertController(title: "Add Workout Event", message: nil, preferredStyle: .alert)
-//
-//            alertController.addTextField { textField in
-//                textField.placeholder = "Workout Title"
-//            }
-//
-//            alertController.addTextField { textField in
-//                textField.placeholder = "Event Notes"
-//            }
-//
-//            let addAction = UIAlertAction(title: "Add", style: .default) { _ in
-//                guard let titleTextField = alertController.textFields?.first,
-//                      let notesTextField = alertController.textFields?.last,
-//                      let title = titleTextField.text,
-//                      let notes = notesTextField.text else {
-//                    return
-//                }
-//
-//                let eventStore = EKEventStore()
-//
-//                eventStore.requestAccess(to: .event) { granted, error in
-//                    guard granted && error == nil else {
-//                        // Access denied or error occurred
-//                        let errorMessage = error?.localizedDescription ?? "Failed to request access to calendar."
-//                        DispatchQueue.main.async {
-//                            self.showAlert(from: viewController, title: "Access Denied", message: errorMessage)
-//                        }
-//                        return
-//                    }
-//
-//                    // Access granted, proceed with adding the event
-//                    let event = EKEvent(eventStore: eventStore)
-//                    event.title = title
-//                    event.startDate = Date() // Set the start date for the event
-//                    event.endDate = Date().addingTimeInterval(3600) // Set the end date for the event (1 hour after start date)
-//                    event.notes = notes
-//
-//                    // Set the calendar for the event
-//                    let calendars = eventStore.calendars(for: .event)
-//                    if let defaultCalendar = calendars.first {
-//                        event.calendar = defaultCalendar
-//                    } else {
-//                        DispatchQueue.main.async {
-//                            self.showAlert(from: viewController, title: "Error", message: "No calendars found.")
-//                        }
-//                        return
-//                    }
-//
-//                    do {
-//                        try eventStore.save(event, span: .thisEvent)
-//                        DispatchQueue.main.async {
-//                            self.showAlert(from: viewController, title: "Success", message: "Event added to calendar!")
-//                        }
-//                    } catch {
-//                        DispatchQueue.main.async {
-//                            self.showAlert(from: viewController, title: "Error", message: "Failed to save event to calendar: \(error.localizedDescription)")
-//                        }
-//                    }
-//                }
-//            }
-//
-//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//
-//            alertController.addAction(addAction)
-//            alertController.addAction(cancelAction)
-//
-//            // Present the alert controller on the specified view controller
-//            viewController.present(alertController, animated: true, completion: nil)
-//        }
-//
-//        func showAlert(from viewController: UIViewController, title: String, message: String) {
-//            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//            alertController.addAction(okAction)
-//            viewController.present(alertController, animated: true, completion: nil)
-//        }
-
-
 
     func showAlert(title: String, message: String) {
         guard let keyWindow = UIApplication.shared.keyWindow else {
@@ -189,13 +109,84 @@ class DashboardNavBar: BaseView {
         keyWindow.rootViewController?.present(alertController, animated: true, completion: nil)
     }
 
+    @objc func showCalendar() {
+        let alertController = UIAlertController(title: "Select a Date", message: nil, preferredStyle: .alert)
+        
+        // Configure alert title
+        let titleAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 18, weight: .bold),
+            .foregroundColor: UIColor.black
+        ]
+        let attributedTitle = NSAttributedString(string: "Select a Date", attributes: titleAttributes)
+        alertController.setValue(attributedTitle, forKey: "attributedTitle")
+        
+        // Configure alert message
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        
+        let messageAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 14),
+            .foregroundColor: UIColor.gray,
+            .paragraphStyle: paragraphStyle
+        ]
+        let attributedMessage = NSAttributedString(string: "Please choose a date", attributes: messageAttributes)
+        alertController.setValue(attributedMessage, forKey: "attributedMessage")
+        
+        // Create and add the date picker
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        alertController.view.addSubview(datePicker)
+        
+        // Set date picker constraints
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 40),
+            datePicker.leadingAnchor.constraint(equalTo: alertController.view.leadingAnchor),
+            datePicker.trailingAnchor.constraint(equalTo: alertController.view.trailingAnchor)
+        ])
+        
+        // Configure cancel action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor.red, forKey: "titleTextColor") // Change cancel action text color
+        alertController.addAction(cancelAction)
+        
+        // Configure select action
+        let selectAction = UIAlertAction(title: "Select", style: .default) { _ in
+            let selectedDate = datePicker.date
+            
+            // Open the calendar app with the selected date
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year, .month, .day], from: selectedDate)
+            
+            var dateComponents = DateComponents()
+            dateComponents.year = components.year
+            dateComponents.month = components.month
+            dateComponents.day = components.day
+            
+            if let date = calendar.date(from: dateComponents) {
+                let url = URL(string: "calshow:\(date.timeIntervalSinceReferenceDate)")!
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        alertController.addAction(selectAction)
+        
+        // Customize alert appearance
+        alertController.view.tintColor = .systemPurple // Change the alert's tint color
+        alertController.view.backgroundColor = .white // Change the alert's background color
+        
+        // Present the alert controller
+        if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
+            rootViewController.present(alertController, animated: true, completion: nil)
+        }
+    }
+
 
 
     // MARK: Setup Views
     override func setupViews() {
         super.setupViews()
         setupView(allWorkoutButton)
-        setupView(titleLabel)
+        setupView(titleButton)
         setupView(addButton)
         setupView(weekView)
     }
@@ -203,20 +194,21 @@ class DashboardNavBar: BaseView {
     // MARK: Constraint Views
     override func constaintViews() {
         super.constaintViews()
+
         NSLayoutConstraint.activate([
             addButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             addButton.heightAnchor.constraint(equalToConstant: 28),
             addButton.widthAnchor.constraint(equalToConstant: 28),
-            
+
             allWorkoutButton.topAnchor.constraint(equalTo: addButton.topAnchor),
             allWorkoutButton.trailingAnchor.constraint(equalTo: addButton.leadingAnchor, constant: -15),
             allWorkoutButton.heightAnchor.constraint(equalToConstant: 28),
-            allWorkoutButton.widthAnchor.constraint(equalToConstant:             130),
-            
-            titleLabel.centerYAnchor.constraint(equalTo: addButton.centerYAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: addButton.leadingAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            allWorkoutButton.widthAnchor.constraint(equalToConstant: 130),
+
+            titleButton.centerYAnchor.constraint(equalTo: addButton.centerYAnchor),
+            titleButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15), // Adjusted leading constraint
+            titleButton.trailingAnchor.constraint(equalTo: allWorkoutButton.leadingAnchor, constant: -8), // Adjusted trailing constraint
 
             weekView.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 15),
             weekView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
@@ -224,6 +216,7 @@ class DashboardNavBar: BaseView {
             weekView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
             weekView.heightAnchor.constraint(equalToConstant: 47)
         ])
+
     }
 
     // MARK: Configure Appearance
@@ -234,6 +227,8 @@ class DashboardNavBar: BaseView {
         allWorkoutButton.setTitle("Workouts")
 
         addButton.setImage(UIImage(systemName: "home"), for: .normal)
+        titleButton.addTarget(self, action: #selector(showCalendar), for: .touchUpInside)
+        
         allWorkoutButton.addTarget(self, action: #selector(showAllWorkouts), for: .touchUpInside)
     }
 }
