@@ -11,10 +11,9 @@ final class SessionBaseController: BaseController {
     
     private let timerView = TimerView()
     private let statsView = StatsView(with: "STANDARD RATES")
-    private let progress2View = Progress2View(with: "PROGRESS 2")
+    private let progress2View = Progress2View(with: "YOUR HEALTH")
     
-    private var timerDuration = 300
-    
+    private var timerDuration = 5
     
     
     override func navBarLeftButtonHandler() {
@@ -70,9 +69,34 @@ extension SessionBaseController {
         ])
     }
     
+    func showAlert() {
+        let alert = UIAlertController(title: "Your Time is UP", message: "You have completed 30 seconds of exercise", preferredStyle: .alert)
+        
+        // Customize alert title appearance
+        let titleFont = UIFont.boldSystemFont(ofSize: 20)
+        let titleAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: titleFont, NSAttributedString.Key.foregroundColor: UIColor.red]
+        let attributedTitle = NSAttributedString(string: "Your Time is UP", attributes: titleAttributes)
+        alert.setValue(attributedTitle, forKey: "attributedTitle")
+        
+        // Customize alert message appearance
+        let messageFont = UIFont.systemFont(ofSize: 17)
+        let messageAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: messageFont, NSAttributedString.Key.foregroundColor: UIColor.darkGray]
+        let attributedMessage = NSAttributedString(string: "You have completed 30 seconds of exercise", attributes: messageAttributes)
+        alert.setValue(attributedMessage, forKey: "attributedMessage")
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
+
     
     override func configureAppearance() {
+        
+        
+        
         super.configureAppearance()
+        
+        
         
         title = OverallController.Strings.NavBar.session
         navigationController?.tabBarItem.title = OverallController.Strings.TabBar.title(for: .session)
@@ -82,28 +106,27 @@ extension SessionBaseController {
         
         timerView.configure(with: Double(timerDuration), progress: 0)
         
-        timerView.callBack = {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                self.navBarRightButtonHanler()
-            }
-        }
- 
-//        APICaller.shared.loadStats { results in
-//                DispatchQueue.main.async {
-//
-//                }
+//        timerView.callBack = {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+//                self.navBarRightButtonHanler()
 //            }
-        progress2View.configure(with: [.init(value: "1k", heightMultiplier: 1, title: "2/14"),
-                                       .init(value: "1k", heightMultiplier: 0.1, title: "2/15"),
-                                       .init(value: "1k", heightMultiplier: 0.1, title: "2/16"),
-                                       .init(value: "1k", heightMultiplier: 0.1, title: "2/17"),])
-        
+//        }
+        timerView.callBack = {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.navBarRightButtonHanler()
+                    self.showAlert() // Add this line to display the alert
+                }
+            }
+
+        // MARK: Progress View (Sensors)
+        progress2View.configure(with: [.topic01(value: "results[0].bloodpressure"),
+                                             .topic02(value: "results[0].heartrate"),
+                                             .topic03(value: "results[0].bmi"),
+                                             .topic04(value: "results[0].bodyfat")])
 
         // MARK: From API
         APICaller.shared.loadStats { results in
             DispatchQueue.main.async {
-                // Update statsView with retrieved data
-                // For example:
                 self.statsView.configure(with: [.topic01(value: results[0].bloodpressure),
                                            .topic02(value: results[0].heartrate),
                                            .topic03(value: results[0].bmi),
