@@ -114,7 +114,30 @@ extension SessionBaseController {
         timerView.callBack = {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     self.navBarRightButtonHanler()
-                    self.showAlert() // Add this line to display the alert
+//
+                    
+                    let calendar = Calendar.current
+                    let currentDate = Date()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+
+                    let formattedDate = formatter.string(from: currentDate)
+                    let currentMonth = calendar.component(.month, from: currentDate)
+
+                    let progress = ProgressElement(progressName: "Progress", dailyCount: 30, date: formattedDate, month: currentMonth)
+
+                    APICaller.shared.insertProgress(progresss: progress) { success, error in
+                        if let error = error {
+                            print("API call failed with error: \(error.localizedDescription)")
+                            return
+                        }
+                        if success {
+                            print("API call successful")
+//                            self.showAlert()
+                        } else {
+                            print("API call failed")
+                        }
+                    }
                 }
             }
 
