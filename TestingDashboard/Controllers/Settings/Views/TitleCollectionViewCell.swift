@@ -14,6 +14,8 @@ struct TitleCollectionViewCellViewModel {
     let imageURL: URL?
     let details: String
     let videoURL: URL?
+    let exerciseTime: Int
+    let repCount: Int
 }
 
 class TitleCollectionViewCell: UICollectionViewCell {

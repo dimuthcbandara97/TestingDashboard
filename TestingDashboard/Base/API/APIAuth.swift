@@ -198,7 +198,7 @@ class APICaller {
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         print(request)
 
-        let parameters = "exercise_name=\(exerr.exerciseName)&exercise_type=\(exerr.exerciseType)&instructor=\(exerr.instructor)&notes=\(exerr.notes)&imageurl=\(exerr.imageurl)&videourl=\(exerr.videourl)&affecting_area=\(exerr.affectingArea)&bmi_range=\(exerr.bmiRange)" // create the parameters string using the data in the UserElement
+        let parameters = "exercise_name=\(exerr.exerciseName)&exercise_type=\(exerr.exerciseType)&instructor=\(exerr.instructor)&notes=\(exerr.notes)&imageurl=\(exerr.imageurl)&videourl=\(exerr.videourl)&affecting_area=\(exerr.affectingArea)&bmi_range=\(exerr.bmiRange)&exercise_time=\(exerr.exerciseTime)&tep_count=\(exerr.repCount)" // create the parameters string using the data in the UserElement
 
         request.httpBody = parameters.data(using: .utf8) // set the httpBody of the request
 

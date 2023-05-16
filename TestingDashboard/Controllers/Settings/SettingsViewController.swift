@@ -91,7 +91,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl)) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl),exerciseTime: $0.exerciseTime, repCount: $0.repCount) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel(viewModels: titleViewModels)]
@@ -217,7 +217,11 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
 extension SettingsBaseController: CollectionTableViewCellDelegate{
 
     func collectionTableViewCellDidTapItem(with viewModel: TitleCollectionViewCellViewModel) {
-        let alert = UIAlertController(title: viewModel.name, message: viewModel.details, preferredStyle: .alert)
+        
+        let exerciseTimeString = String(viewModel.exerciseTime)
+        let repCokuntString = String(viewModel.repCount)
+        let alert = UIAlertController(title: viewModel.name, message: "Time Period  (Seconds) = "+exerciseTimeString+"\n Rep Count =  "+repCokuntString+"\n\n"+viewModel.details, preferredStyle: .alert)
+        
         
         // Add action to open YouTube
         alert.addAction(UIAlertAction(title: "View Video", style: .default, handler: { _ in
