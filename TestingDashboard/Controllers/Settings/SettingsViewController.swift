@@ -13,7 +13,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     // MARK: DidTap -> Model 04
     func collectionTableViewCellDidTapItem(with viewModel4: TitleCollectionViewCellViewModel4) {
 
-        let alert = UIAlertController(title: viewModel4.name, message: viewModel4.details, preferredStyle: .alert)
+        let alert = UIAlertController(title: viewModel4.name, message: "Fitness Goal: "+viewModel4.fitnessGoal+"\n\n"+viewModel4.details, preferredStyle: .alert)
         
         // Add action to open YouTube
         alert.addAction(UIAlertAction(title: "View Video", style: .default, handler: { _ in
@@ -31,7 +31,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     
     // MARK: DidTap -> Model 05
     func collectionTableViewCellDidTapItem(with viewModel3: TitleCollectionViewCellViewModel3) {
-        let alert = UIAlertController(title: viewModel3.name, message: viewModel3.details, preferredStyle: .alert)
+        let alert = UIAlertController(title: viewModel3.name, message: "Fitness Goal: "+viewModel3.fitnessGoal+"\n\n"+viewModel3.details, preferredStyle: .alert)
         
         // Add action to open YouTube
         alert.addAction(UIAlertAction(title: "View Video", style: .default, handler: { _ in
@@ -71,7 +71,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel3(name: $0.foodName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.value, videoURL: URL(string: $0.videourl)) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel3(name: $0.foodName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.value, videoURL: URL(string: $0.videourl), fitnessGoal: $0.fitnessGoal) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel3(viewModels: titleViewModels)]
@@ -91,7 +91,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl),exerciseTime: $0.exerciseTime, repCount: $0.repCount) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl),exerciseTime: $0.exerciseTime, repCount: $0.repCount, fitnessGoal: $0.fitnessGoal) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel(viewModels: titleViewModels)]
@@ -110,7 +110,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             guard let self = self else { return }
             
             // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel4(name: $0.meditationName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl)) }
+            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel4(name: $0.meditationName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl), fitnessGoal: $0.fitnessGoal) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel4(viewModels: titleViewModels)]
@@ -220,7 +220,7 @@ extension SettingsBaseController: CollectionTableViewCellDelegate{
         
         let exerciseTimeString = String(viewModel.exerciseTime)
         let repCokuntString = String(viewModel.repCount)
-        let alert = UIAlertController(title: viewModel.name, message: "Time Period  (Seconds) = "+exerciseTimeString+"\n Rep Count =  "+repCokuntString+"\n\n"+viewModel.details, preferredStyle: .alert)
+        let alert = UIAlertController(title: viewModel.name, message: "Time Period  (Seconds) = "+exerciseTimeString+"\n Rep Count =  "+repCokuntString+"\n"+"Fitness Goal: "+viewModel.fitnessGoal+"\n\n"+viewModel.details, preferredStyle: .alert)
         
         
         // Add action to open YouTube

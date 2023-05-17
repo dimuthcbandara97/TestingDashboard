@@ -7,13 +7,20 @@
 
 import Foundation
 
+
 // MARK: - ExerciseElement
 struct ExerciseElement: Codable {
-    let exerciseName, exerciseType, instructor: String
+    let exerciseName: String
+    let exerciseType: String
+    let instructor: String
     let notes: String
-    let imageurl, videourl: String
-    let affectingArea, bmiRange: String
-    let exerciseTime, repCount: Int
+    let imageurl: String
+    let videourl: String
+    let affectingArea: String
+    let bmiRange: String
+    let exerciseTime: Int
+    let repCount: Int
+    let fitnessGoal: String
 
     enum CodingKeys: String, CodingKey {
         case exerciseName = "exercise_name"
@@ -23,8 +30,10 @@ struct ExerciseElement: Codable {
         case bmiRange = "bmi_range"
         case exerciseTime = "exercise_time"
         case repCount = "rep_count"
+        case fitnessGoal = "fitness_goal"
     }
 }
 
 typealias Exercise = [ExerciseElement]
+
 

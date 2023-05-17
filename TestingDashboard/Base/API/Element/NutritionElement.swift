@@ -9,9 +9,13 @@ import Foundation
 
 // MARK: - NutritionElement
 struct NutritionElement: Codable {
-    let foodName, value, recomendedBy: String
+    let foodName: String
+    let value: String
+    let recomendedBy: String
     let whyRecomended: String
-    let imageurl, videourl: String
+    let imageurl: String
+    let videourl: String
+    let fitnessGoal: String
 
     enum CodingKeys: String, CodingKey {
         case foodName = "food_name"
@@ -19,8 +23,10 @@ struct NutritionElement: Codable {
         case recomendedBy = "recomended_by"
         case whyRecomended = "why_recomended"
         case imageurl, videourl
+        case fitnessGoal = "fitness_goal"
     }
 }
 
 typealias Nutrition = [NutritionElement]
+
 

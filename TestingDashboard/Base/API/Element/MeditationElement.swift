@@ -7,17 +7,22 @@
 
 import Foundation
 
+// MARK: - MeditationElement
 struct MeditationElement: Codable {
-    let meditationName, meditationType, instructor: String
+    let meditationName: String
+    let meditationType: String
+    let instructor: String
     let notes: String
-    let imageurl, videourl: String
+    let imageurl: String
+    let videourl: String
+    let fitnessGoal: String
 
     enum CodingKeys: String, CodingKey {
         case meditationName = "meditation_name"
         case meditationType = "meditation_type"
         case instructor, notes, imageurl, videourl
+        case fitnessGoal = "fitness_goal"
     }
 }
 
 typealias Meditation = [MeditationElement]
-
