@@ -7,18 +7,19 @@
 
 import Foundation
 
-
 // MARK: - UserDetailssElement
 struct UserDetailssElement: Codable {
     let status: String
     let height, weight, age: Int
-    let fitnessGoal: String
+    let fitnessGoal, email: String
 
     enum CodingKeys: String, CodingKey {
         case status, height, weight, age
         case fitnessGoal = "fitness_goal"
+        case email
     }
 }
 
 typealias UserDetailss = [UserDetailssElement]
+
 

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftKeychainWrapper
 
 class RegisterViewController: UIViewController {
     
@@ -201,6 +202,13 @@ class RegisterViewController: UIViewController {
         print(password)
         print(imageurl)
         print(gender)
+        
+        let keychain = KeychainWrapper.standard
+        keychain.set(username, forKey: "UserNameRegister")
+        keychain.set(email, forKey: "EmailRegister")
+        keychain.set(password, forKey: "PasswordRegister")
+        keychain.set(imageurl, forKey: "ImageURLRegister")
+        keychain.set(gender, forKey: "GenderRegister")
         
         let userss = UserElement(name: username , password: password , email: email , gender: gender , imageurl: imageurl)
         

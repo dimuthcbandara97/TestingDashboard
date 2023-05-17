@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import SwiftKeychainWrapper
+
 
 class RegisterDetailsController: UIViewController {
     
@@ -22,6 +24,8 @@ class RegisterDetailsController: UIViewController {
     private let weightField = CustomTextField(fieldType: .weight)
     private let ageField = CustomTextField(fieldType: .age)
     private let fitnessGoal = CustomTextField(fieldType: .fitness_goal)
+    
+    
    
     
     // buttons
@@ -40,6 +44,7 @@ class RegisterDetailsController: UIViewController {
         
         self.signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         self.signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -143,8 +148,19 @@ class RegisterDetailsController: UIViewController {
                   return
               }
         
-        let userss = UserDetailssElement(status: status, height: height, weight: weight, age: age, fitnessGoal: fitnessGoal)
+        print(status)
+        print(weightStr)
+        print(heightStr)
+        print(ageStr)
+        print(fitnessGoal)
         
+        let keychain = KeychainWrapper.standard
+        if let emailRegister = keychain.string(forKey: "EmailRegister") {
+            print("Email: \(emailRegister)")
+        }
+
+        let userss = UserDetailssElement(status: status, height: height, weight: weight, age: age, fitnessGoal: fitnessGoal, email: "dimuthchathu101@gmail.com")
+
         APICaller.shared.insertUserDetails(userr:userss) { success, error in
                     if let error = error {
                         print("API call failed with error: \(error.localizedDescription)")
@@ -160,7 +176,7 @@ class RegisterDetailsController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             // Code to be executed after a 2 second delay
             
-            let vc = RegisterDetailsController()
+            let vc = LoginViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
         }
