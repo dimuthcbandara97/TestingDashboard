@@ -14,28 +14,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-        guard let tabBarScene = (scene as? UIWindowScene) else { return }
+//        guard let tabBarScene = (scene as? UIWindowScene) else { return }
+////        let tabBarController = TabBarController()
 //        let tabBarController = TabBarController()
-        let tabBarController = TabBarController()
-        window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
-        window?.windowScene = tabBarScene
-        window?.rootViewController = tabBarController
-        window?.makeKeyAndVisible()
+//        window = UIWindow(frame: tabBarScene.coordinateSpace.bounds)
+//        window?.windowScene = tabBarScene
+//        window?.rootViewController = tabBarController
+//        window?.makeKeyAndVisible()
         
         
 
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//        let window = UIWindow(windowScene: windowScene)
-//        window.frame = windowScene.coordinateSpace.bounds
-//
-//        let vc = LoginViewController()
-////        let vc = CustomSchedulePage()
-//        let nav = UINavigationController(rootViewController: vc)
-//        nav.modalPresentationStyle = .fullScreen
-//
-//        window.rootViewController = nav
-//        self.window = window
-//        self.window?.makeKeyAndVisible()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        window.frame = windowScene.coordinateSpace.bounds
+
+        let vc = LoginViewController()
+//        let vc = CustomSchedulePage()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+
+        window.rootViewController = nav
+        self.window = window
+        self.window?.makeKeyAndVisible()
         
 //        3333333
         

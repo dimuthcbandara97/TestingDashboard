@@ -61,7 +61,9 @@ class DashboardNavBar: BaseView {
                 // Access denied or error occurred
                 let errorMessage = error?.localizedDescription ?? "Failed to request access to calendar."
                 DispatchQueue.main.async {
-                    self?.showAlert(title: "Access Denied", message: errorMessage)
+                    if let viewController = self?.getVisibleViewController() {
+                        self?.showAlert(title: "Access Denied", message: errorMessage, viewController: viewController)
+                    }
                 }
                 return
             }
@@ -79,7 +81,9 @@ class DashboardNavBar: BaseView {
                 event.calendar = defaultCalendar
             } else {
                 DispatchQueue.main.async {
-                    self?.showAlert(title: "Error", message: "No calendars found.")
+                    if let viewController = self?.getVisibleViewController() {
+                        self?.showAlert(title: "Error", message: "No calendars found.", viewController: viewController)
+                    }
                 }
                 return
             }
@@ -87,27 +91,38 @@ class DashboardNavBar: BaseView {
             do {
                 try eventStore.save(event, span: .thisEvent)
                 DispatchQueue.main.async {
-                    self?.showAlert(title: "Success", message: "Event added to calendar!")
+                    if let viewController = self?.getVisibleViewController() {
+                        self?.showAlert(title: "Success", message: "Event added to calendar!", viewController: viewController)
+                    }
                 }
             } catch {
                 DispatchQueue.main.async {
-                    self?.showAlert(title: "Error", message: "Failed to save event to calendar: \(error.localizedDescription)")
+                    if let viewController = self?.getVisibleViewController() {
+                        self?.showAlert(title: "Error", message: "Failed to save event to calendar: \(error.localizedDescription)", viewController: viewController)
+                    }
                 }
             }
         }
     }
 
-    func showAlert(title: String, message: String) {
-        guard let keyWindow = UIApplication.shared.keyWindow else {
-            return
-        }
-        
+    func showAlert(title: String, message: String, viewController: UIViewController) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        
-        keyWindow.rootViewController?.present(alertController, animated: true, completion: nil)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+        viewController.present(alertController, animated: true, completion: nil)
     }
+
+    func getVisibleViewController() -> UIViewController? {
+        if let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
+            let rootViewController = keyWindow.rootViewController {
+            var visibleViewController = rootViewController
+            while let presentedViewController = visibleViewController.presentedViewController {
+                visibleViewController = presentedViewController
+            }
+            return visibleViewController
+        }
+        return nil
+    }
+
 
     @objc func showCalendar() {
         let alertController = UIAlertController(title: "Select a Date", message: nil, preferredStyle: .alert)
@@ -174,13 +189,11 @@ class DashboardNavBar: BaseView {
         alertController.view.tintColor = .systemPurple // Change the alert's tint color
         alertController.view.backgroundColor = .white // Change the alert's background color
         
-        // Present the alert controller
-        if let rootViewController = UIApplication.shared.keyWindow?.rootViewController {
-            rootViewController.present(alertController, animated: true, completion: nil)
+        // Get the topmost presented view controller
+        if let topViewController = UIApplication.shared.windows.first?.rootViewController?.topmostPresentedViewController() {
+            topViewController.present(alertController, animated: true, completion: nil)
         }
     }
-
-
 
     // MARK: Setup Views
     override func setupViews() {
@@ -232,4 +245,27 @@ class DashboardNavBar: BaseView {
         allWorkoutButton.addTarget(self, action: #selector(showAllWorkouts), for: .touchUpInside)
     }
 }
+
+extension UIViewController {
+    func topmostPresentedViewController() -> UIViewController {
+        if let presentedViewController = presentedViewController {
+            return presentedViewController.topmostPresentedViewController()
+        }
+        
+        if let navigationController = self as? UINavigationController {
+            return navigationController.visibleViewController?.topmostPresentedViewController() ?? navigationController
+        }
+        
+        if let tabBarController = self as? UITabBarController {
+            return tabBarController.selectedViewController?.topmostPresentedViewController() ?? tabBarController
+        }
+        
+        return self
+    }
+}
+
+
+
+
+
 
