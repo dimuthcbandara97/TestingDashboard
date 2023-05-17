@@ -57,20 +57,8 @@ extension ProgressBaseController {
 
         ])
         
-        // Daily Performance View
-//        APICaller.shared.loadProgress { results in
-//            DispatchQueue.main.async {
-//                if results.count > 0 {
-////                    user.date
-//                    for user in results {
-//                        self.dailyPerformanceView.configure(with: [
-//                            .init(value: String(user.dailyCount), heightMultiplier: Double((user.dailyCount))/100, title: "Day")])
-//                    }
-//                } else {
-//                    print("No results found")
-//                }
-//            }
-//        }
+        // MARK: Daily Perfromance View
+
         APICaller.shared.loadProgress { results in
             DispatchQueue.main.async {
                 if results.count > 0 {
@@ -94,13 +82,25 @@ extension ProgressBaseController {
 
 
         
-        monthlyPerformanceView.configure(with: [.init(value: "D1", heightMultiplier: 1.0, title: "MON"),
-                                                .init(value: "D2", heightMultiplier: 0.4, title: "TUE"),
-                                                .init(value: "D3", heightMultiplier: 0.6, title: "WED"),
-                                                .init(value: "D4", heightMultiplier: 0.8, title: "THU"),
-                                                .init(value: "D5", heightMultiplier: 1, title: "FRI"),
-                                                .init(value: "D6", heightMultiplier: 0.6, title: "SAT"),
-                                                .init(value: "D7", heightMultiplier: 0.4, title: "SUN")])
+        
+        APICaller.shared.loadProgress { results in
+            DispatchQueue.main.async {
+                if results.count > 0 {
+                    let currentDate = Date() // Get the current date
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+//                    let currentDateString = dateFormatter.string(from: currentDate)
+                    
+                    for user in results  {
+                            self.monthlyPerformanceView.configure(with: [
+                                                                    .init(value: String(user.dailyCount), heightMultiplier: Double(user.dailyCount) / 100, title: "Week")])
+                        
+                    }
+                } else {
+                    print("No results found")
+                }
+            }
+        }
      
     }
 }

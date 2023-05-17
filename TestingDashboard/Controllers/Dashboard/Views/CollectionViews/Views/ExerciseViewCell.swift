@@ -40,18 +40,24 @@ class ExerciseViewCell: UITableViewCell {
     }
     
     
-    func set(exercise: ExerciseElement){
-         let imageUrl = URL(string: exercise.imageurl)!
-
-                DispatchQueue.global().async {
-                    if let imageData = try? Data(contentsOf: imageUrl) {
-                        DispatchQueue.main.async {
-                            self.exerciseImageView.image = UIImage(data: imageData)
-                            self.exerciseTitleLabel.text = exercise.exerciseName
-                        }
+    func set(exercise: ExerciseElement) {
+        let imageUrl = URL(string: exercise.imageurl)!
+        
+        DispatchQueue.global().async {
+            if let imageData = try? Data(contentsOf: imageUrl) {
+                DispatchQueue.main.async {
+                    // Placeholder condition for filtering based on BMI
+                    let shouldDisplayExercise = exercise.bmiRange == "Normal"
+                    
+                    if shouldDisplayExercise {
+                        self.exerciseImageView.image = UIImage(data: imageData)
+                        self.exerciseTitleLabel.text = exercise.exerciseName
                     }
                 }
+            }
+        }
     }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
