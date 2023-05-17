@@ -24,28 +24,7 @@ class DashboardBaseController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        let keychain = KeychainWrapper.standard
-
-        // Getter methods for retrieving values from the keychain
-        if let userEmail = keychain.string(forKey: "UserEmail") {
-            print("User Email Keychain: \(userEmail)")
-        }
-
-        if let userPassword = keychain.string(forKey: "UserPassword") {
-            print("User Password Keychain: \(userPassword)")
-        }
-
-        if let userGender = keychain.string(forKey: "UserGender") {
-            print("User Gender KeyChain : \(userGender)")
-        }
-
-        if let userImageURL = keychain.string(forKey: "UserImageURL") {
-            print("User Image URLKC: \(userImageURL)")
-        }
-
-        if let userName = keychain.string(forKey: "UserName") {
-            print("User Name KC: \(userName)")
-        }
+        
 
     }
     

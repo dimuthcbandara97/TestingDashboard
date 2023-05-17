@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
+
 
 class ExerciseViewCell: UITableViewCell {
 
@@ -41,6 +43,56 @@ class ExerciseViewCell: UITableViewCell {
     
     
     func set(exercise: ExerciseElement) {
+        let keychain = KeychainWrapper.standard
+
+        // Getter methods for retrieving values from the keychain
+        
+
+        if let userPassword = keychain.string(forKey: "UserPassword") {
+            print("User Password Keychain: \(userPassword)")
+        }
+
+        if let userGender = keychain.string(forKey: "UserGender") {
+            print("User Gender KeyChain : \(userGender)")
+        }
+
+        if let userImageURL = keychain.string(forKey: "UserImageURL") {
+            print("User Image URLKC: \(userImageURL)")
+        }
+
+        if let userName = keychain.string(forKey: "UserName") {
+            print("User Name KC: \(userName)")
+        }
+       
+        if let userEmail = keychain.string(forKey: "UserEmail") {
+            print("User Email Keychain: \(userEmail)")
+
+            APICaller.shared.loadUserDetails { results in
+                DispatchQueue.main.async {
+                    if results.count > 0 {
+                        let filteredResults = results.filter { $0.email == userEmail }
+                        if filteredResults.count > 0 {
+                            for user in filteredResults {
+                                print(user.email)
+                                print(user.weight)
+                                print(user.fitnessGoal)
+                                print(user.height)
+                                print(user.status)
+                            }
+                        } else {
+                            print("No results found for the user email: \(userEmail)")
+                        }
+                    } else {
+                        print("No results found")
+                    }
+                }
+            }
+        } else {
+            print("User email not found in Keychain")
+            // Handle the error case appropriately
+            // ...
+        }
+        
         let imageUrl = URL(string: exercise.imageurl)!
         
         DispatchQueue.global().async {
