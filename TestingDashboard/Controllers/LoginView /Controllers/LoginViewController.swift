@@ -124,31 +124,6 @@ class LoginViewController: UIViewController {
     @objc private func didTapSignIn() {
 
         // MARK: Load Users
-//        APICaller.shared.loadUsers { results in
-//            DispatchQueue.main.async {
-//                if results.count > 0 {
-//                    for user in results {
-//                        if user.email == self.username { // Replace 'enteredEmail' with the variable storing the user-entered email
-//
-//
-//                            if (self.username == user.email && self.password == user.password) {
-//                                print("Email: \(user.email)")
-//                                print("Password: \(user.password)")
-//                                print("Gender: \(user.gender)")
-//                                print("ImageURL: \(user.imageurl)")
-//                                print("Name: \(user.name)")
-//                                let vc = TabBarController()
-//                                let nav = UINavigationController(rootViewController: vc)
-//                                nav.modalPresentationStyle = .fullScreen
-//                                self.present(nav, animated: false, completion: nil)
-//                            }
-//                        }
-//                    }
-//                } else {
-//                    print("No results found")
-//                }
-//            }
-//        }
         APICaller.shared.loadUsers { results in
             DispatchQueue.main.async {
                 if results.count > 0 {

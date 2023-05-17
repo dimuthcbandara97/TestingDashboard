@@ -13,7 +13,9 @@ final class SessionBaseController: BaseController {
     private let statsView = StatsView(with: "STANDARD RATES")
     private let progress2View = Progress2View(with: "YOUR HEALTH")
     
-    private var timerDuration = 5
+    
+   
+    private var timerDuration = 30
     
     
     override func navBarLeftButtonHandler() {
@@ -100,8 +102,19 @@ extension SessionBaseController {
         addNavBarButton(at: .Left, with: "START")
         addNavBarButton(at: .Right, with: "FINISH")
         
-        timerView.configure(with: Double(timerDuration), progress: 0)
+//        APICaller.shared.loadExercise { results in
+//            DispatchQueue.main.async {
+//                if results.count > 0 {
+//                    for user in results {
+//                        
+//                    }
+//                } else {
+//                    print("No results found")
+//                }
+//            }
+//        }
         
+        timerView.configure(with: Double(timerDuration), progress: 0)
         timerView.callBack = {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 self.navBarRightButtonHanler()
@@ -128,6 +141,7 @@ extension SessionBaseController {
                         print("API call failed")
                     }
                 }
+                self.showAlert()
             }
         }
 

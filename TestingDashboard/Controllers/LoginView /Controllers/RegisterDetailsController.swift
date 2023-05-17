@@ -154,24 +154,34 @@ class RegisterDetailsController: UIViewController {
         print(ageStr)
         print(fitnessGoal)
         
+
         let keychain = KeychainWrapper.standard
+
         if let emailRegister = keychain.string(forKey: "EmailRegister") {
             print("Email: \(emailRegister)")
+
+            let userss = UserDetailssElement(status: status, height: height, weight: weight, age: age, fitnessGoal: fitnessGoal, email: emailRegister)
+
+            // Use the 'userss' object as needed
+            // ...
+
+            APICaller.shared.insertUserDetails(userr: userss) { success, error in
+                if let error = error {
+                    print("API call failed with error: \(error.localizedDescription)")
+                    return
+                }
+                if success {
+                    print("API call successful")
+                } else {
+                    print("API call failed")
+                }
+            }
+        } else {
+            print("Email not found in keychain")
+            // Handle the error case appropriately
+            // ...
         }
 
-        let userss = UserDetailssElement(status: status, height: height, weight: weight, age: age, fitnessGoal: fitnessGoal, email: "dimuthchathu101@gmail.com")
-
-        APICaller.shared.insertUserDetails(userr:userss) { success, error in
-                    if let error = error {
-                        print("API call failed with error: \(error.localizedDescription)")
-                        return
-                    }
-                    if success {
-                        print("API call successful")
-                    } else {
-                        print("API call failed")
-                    }
-                }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             // Code to be executed after a 2 second delay
