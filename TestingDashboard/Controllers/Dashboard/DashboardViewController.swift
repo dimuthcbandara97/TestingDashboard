@@ -53,7 +53,7 @@ class DashboardBaseController: BaseController {
             header.topAnchor.constraint(equalTo: navBar.bottomAnchor),
             header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            header.heightAnchor.constraint(equalToConstant: 375),
+            header.heightAnchor.constraint(equalToConstant: 350),
             header.leftAnchor.constraint(equalTo: view.leftAnchor),
             header.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])

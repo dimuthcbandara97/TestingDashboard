@@ -55,20 +55,37 @@ extension SessionBaseController {
     override func constaintViews() {
         super.constaintViews()
         
+//        NSLayoutConstraint.activate([
+//            timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+//            timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+//            timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+//
+//            statsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+//            statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 10),
+//            statsView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -7.5),
+//
+//            progress2View.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 7.5),
+//            progress2View.topAnchor.constraint(equalTo: statsView.topAnchor),
+//            progress2View.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+//            progress2View.heightAnchor.constraint(equalTo: statsView.heightAnchor),
+//        ])
         NSLayoutConstraint.activate([
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            
+            timerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4), // Adjust the multiplier as needed
+
             statsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 10),
             statsView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -7.5),
-            
+
             progress2View.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 7.5),
             progress2View.topAnchor.constraint(equalTo: statsView.topAnchor),
             progress2View.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             progress2View.heightAnchor.constraint(equalTo: statsView.heightAnchor),
         ])
+
+
     }
     
     func showAlert() {

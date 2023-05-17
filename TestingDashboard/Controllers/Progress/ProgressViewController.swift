@@ -41,22 +41,49 @@ extension ProgressBaseController {
     override func constaintViews() {
         super.constaintViews()
         
+//        NSLayoutConstraint.activate([
+//
+//            // Daily Performance View
+//            dailyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+//            dailyPerformanceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+//            dailyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+//            dailyPerformanceView.heightAnchor.constraint(equalTo: dailyPerformanceView.widthAnchor, multiplier: 0.68),
+//
+//            // Monthly Performance View
+//            monthlyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+//            monthlyPerformanceView.topAnchor.constraint(equalTo: dailyPerformanceView.bottomAnchor, constant: 15),
+//            monthlyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+//            monthlyPerformanceView.heightAnchor.constraint(equalTo: monthlyPerformanceView.widthAnchor, multiplier: 1.06),
+//
+//        ])
+//        NSLayoutConstraint.activate([
+//            // Daily Performance View
+//            dailyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            dailyPerformanceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            dailyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            dailyPerformanceView.heightAnchor.constraint(equalTo: dailyPerformanceView.widthAnchor, multiplier: 0.68),
+//
+//            // Monthly Performance View
+//            monthlyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            monthlyPerformanceView.topAnchor.constraint(equalTo: dailyPerformanceView.bottomAnchor, constant: 15),
+//            monthlyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            monthlyPerformanceView.heightAnchor.constraint(equalTo: monthlyPerformanceView.widthAnchor, multiplier: 1.06),
+//        ])
+        
         NSLayoutConstraint.activate([
-
             // Daily Performance View
-            dailyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            dailyPerformanceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
-            dailyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            dailyPerformanceView.heightAnchor.constraint(equalTo: dailyPerformanceView.widthAnchor, multiplier: 0.68),
+            dailyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            dailyPerformanceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            dailyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            dailyPerformanceView.heightAnchor.constraint(equalTo: dailyPerformanceView.widthAnchor, multiplier: 0.5), // Adjust the multiplier as needed
 
             // Monthly Performance View
-            monthlyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            monthlyPerformanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             monthlyPerformanceView.topAnchor.constraint(equalTo: dailyPerformanceView.bottomAnchor, constant: 15),
-            monthlyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            monthlyPerformanceView.heightAnchor.constraint(equalTo: monthlyPerformanceView.widthAnchor, multiplier: 1.06),
-
+            monthlyPerformanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            monthlyPerformanceView.heightAnchor.constraint(equalTo: monthlyPerformanceView.widthAnchor, multiplier: 0.9), // Adjust the multiplier as needed
         ])
-        
+
         // MARK: Daily Perfromance View
 
         APICaller.shared.loadProgress { results in

@@ -130,7 +130,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Health Controller"
+        navigationItem.title = "Details"
         fetchData()
     }
     
@@ -187,14 +187,14 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     // MARK: TableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return view.frame.size.width/2.5
+            return view.frame.size.width/2.6
 //            return UITableView.automaticDimension
         } else if indexPath.section == 1{
 //            return UITableView.automaticDimension
-            return view.frame.size.width/2.5
+            return view.frame.size.width/2.6
         } else {
 //            return UITableView.automaticDimension
-            return view.frame.size.width/2.5
+            return view.frame.size.width/2.6
         }
     }
 
