@@ -91,13 +91,9 @@ extension SessionBaseController {
 
     
     override func configureAppearance() {
-        
-        
-        
+            
         super.configureAppearance()
-        
-        
-        
+                
         title = OverallController.Strings.NavBar.session
         navigationController?.tabBarItem.title = OverallController.Strings.TabBar.title(for: .session)
         
@@ -106,40 +102,35 @@ extension SessionBaseController {
         
         timerView.configure(with: Double(timerDuration), progress: 0)
         
-//        timerView.callBack = {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-//                self.navBarRightButtonHanler()
-//            }
-//        }
         timerView.callBack = {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.navBarRightButtonHanler()
-//
-                    
-                    let calendar = Calendar.current
-                    let currentDate = Date()
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy-MM-dd"
-
-                    let formattedDate = formatter.string(from: currentDate)
-                    let currentMonth = calendar.component(.month, from: currentDate)
-
-                    let progress = ProgressElement(progressName: "Progress", dailyCount: 30, date: formattedDate, month: currentMonth)
-
-                    APICaller.shared.insertProgress(progresss: progress) { success, error in
-                        if let error = error {
-                            print("API call failed with error: \(error.localizedDescription)")
-                            return
-                        }
-                        if success {
-                            print("API call successful")
-//                            self.showAlert()
-                        } else {
-                            print("API call failed")
-                        }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.navBarRightButtonHanler()
+                
+                let calendar = Calendar.current
+                let currentDate = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss" // Updated date format
+                
+                let formattedDate = formatter.string(from: currentDate)
+                let currentMonth = calendar.component(.month, from: currentDate)
+                
+                let progress = ProgressElement(progressName: "Progress", dailyCount: 30, date: formattedDate, month: currentMonth)
+                
+                APICaller.shared.insertProgress(progresss: progress) { success, error in
+                    if let error = error {
+                        print("API call failed with error: \(error.localizedDescription)")
+                        return
+                    }
+                    if success {
+                        print("API call successful")
+                        // self.showAlert()
+                    } else {
+                        print("API call failed")
                     }
                 }
             }
+        }
+
 
         // MARK: Progress View (Sensors)
         progress2View.configure(with: [.topic01(value: "results[0].bloodpressure"),

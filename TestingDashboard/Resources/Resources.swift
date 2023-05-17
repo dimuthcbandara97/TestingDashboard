@@ -16,10 +16,10 @@ enum OverallController {
         enum TabBar {
             static func title(for tab: Tabs) -> String {
                 switch tab {
-                case .dashboard: return "Exercise Dashboard"
-                case .session: return "Your Session"
-                case .progress: return "Your Progress"
-                case .nutrition: return "Health"
+                case .dashboard: return "Home"
+                case .session: return "Session"
+                case .progress: return "Progress"
+                case .details: return "Details"
                 }
             }
         }
@@ -28,7 +28,7 @@ enum OverallController {
             static let dashboard = "Hello"
             static let session = "Load Your Exercise"
             static let progress = "Your Progress"
-            static let nutrition = "Health"
+            static let nutrition = "Exercise Details"
         }
         // For Login Contrller
         enum Login2{
@@ -74,7 +74,8 @@ enum OverallController {
                     case .dashboard: return UIImage(systemName: "house")
                     case .session: return UIImage(systemName: "bolt")
                     case .progress: return UIImage(systemName: "chart.bar.xaxis")
-                    case .nutrition: return UIImage(systemName: "leaf")
+                    case .details: return UIImage(systemName: "info.circle")
+
                 }
             }
         }

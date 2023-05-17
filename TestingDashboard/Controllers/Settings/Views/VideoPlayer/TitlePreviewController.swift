@@ -5,8 +5,6 @@
 //  Created by Dimuth Bandara on 2023-03-30.
 //
 
-import UIKit
-import AVKit
 
 import UIKit
 import AVKit

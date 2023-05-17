@@ -6,17 +6,22 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
+
+
 
 enum Tabs: Int, CaseIterable {
     case dashboard
     case session
     case progress
-    case nutrition
+    case details
 }
 
 // MARK: - Tab Bar Controller
 class TabBarController: UITabBarController {
 
+    
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
    
@@ -46,7 +51,6 @@ class TabBarController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
         UITabBar.appearance().unselectedItemTintColor = .gray
 //        UITabBar.appearance().selectedImageTintColor = .blue
-
         // Adding Animations
         let transition = CATransition()
         transition.duration = 0.3
@@ -77,7 +81,7 @@ class TabBarController: UITabBarController {
         case .dashboard: return DashboardBaseController()
         case .session: return SessionBaseController()
         case .progress: return ProgressBaseController()
-        case .nutrition: return SettingsBaseController()
+        case .details: return SettingsBaseController()
         }
     }
 

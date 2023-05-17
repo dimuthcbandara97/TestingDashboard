@@ -16,6 +16,7 @@
 		A21EBC6C29CAC3EE00EC1210 /* CustomTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC6B29CAC3EE00EC1210 /* CustomTableViewCell2.swift */; };
 		A21EBC7229CC19CA00EC1210 /* ExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7129CC19CA00EC1210 /* ExerciseViewCell.swift */; };
 		A21EBC7429CC1F4600EC1210 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21EBC7329CC1F4600EC1210 /* Video.swift */; };
+		A22C32332A1484D700CBBA72 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = A22C32322A1484D700CBBA72 /* SwiftKeychainWrapper */; };
 		A238FAB12A0B9F0600806A6C /* EkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A238FAB02A0B9F0600806A6C /* EkWrapper.swift */; };
 		A2396E2029C08BCF009206D3 /* DashboardNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E1F29C08BCF009206D3 /* DashboardNavBar.swift */; };
 		A2396E2329C08C15009206D3 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2396E2229C08C15009206D3 /* BaseView.swift */; };
@@ -189,6 +190,7 @@
 			files = (
 				A2C1837129C88CD400990A02 /* SDWebImageMapKit in Frameworks */,
 				A28743362A1259B70007779E /* FSCalendar in Frameworks */,
+				A22C32332A1484D700CBBA72 /* SwiftKeychainWrapper in Frameworks */,
 				A24BE2B02A0A199200F5A4AE /* CalendarKit in Frameworks */,
 				A2C1836F29C88C9900990A02 /* SDWebImage in Frameworks */,
 			);
@@ -634,6 +636,7 @@
 				A2C1837029C88CD400990A02 /* SDWebImageMapKit */,
 				A24BE2AF2A0A199200F5A4AE /* CalendarKit */,
 				A28743352A1259B70007779E /* FSCalendar */,
+				A22C32322A1484D700CBBA72 /* SwiftKeychainWrapper */,
 			);
 			productName = TestingDashboard;
 			productReference = A240C27929BC3E6600E5DDAC /* TestingDashboard.app */;
@@ -712,6 +715,7 @@
 				A274D6D229C3407500ED848D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				A24BE2AE2A0A199200F5A4AE /* XCRemoteSwiftPackageReference "CalendarKit" */,
 				A28743342A1259B70007779E /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				A22C32312A1484D700CBBA72 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = A240C27A29BC3E6600E5DDAC /* Products */;
 			projectDirPath = "";
@@ -1152,6 +1156,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A22C32312A1484D700CBBA72 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		A24BE2AE2A0A199200F5A4AE /* XCRemoteSwiftPackageReference "CalendarKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/richardtop/CalendarKit.git";
@@ -1187,6 +1199,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A22C32322A1484D700CBBA72 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A22C32312A1484D700CBBA72 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
 		A24BE2AF2A0A199200F5A4AE /* CalendarKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A24BE2AE2A0A199200F5A4AE /* XCRemoteSwiftPackageReference "CalendarKit" */;
