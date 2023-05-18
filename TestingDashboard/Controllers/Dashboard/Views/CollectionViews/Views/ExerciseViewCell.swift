@@ -104,6 +104,9 @@ class ExerciseViewCell: UITableViewCell {
                     if shouldDisplayExercise {
                         self.exerciseImageView.image = UIImage(data: imageData)
                         self.exerciseTitleLabel.text = exercise.exerciseName
+                    } else {
+                        self.exerciseImageView.image = UIImage(data: imageData)
+                        self.exerciseTitleLabel.text = exercise.exerciseName+"(Extra)"
                     }
                 }
             }

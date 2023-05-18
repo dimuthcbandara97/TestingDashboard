@@ -71,39 +71,76 @@ class DashboardNavBar: BaseView {
             // Access granted, proceed with adding the event
             let event = EKEvent(eventStore: eventStore)
             event.title = "Workout"
-            event.startDate = Date() // Set the start date for the event
-            event.endDate = Date().addingTimeInterval(3600) // Set the end date for the event (1 hour after start date)
             event.notes = "Don't forget to exercise!"
 
-            // Set the calendar for the event
-            let calendars = eventStore.calendars(for: .event)
-            if let defaultCalendar = calendars.first {
-                event.calendar = defaultCalendar
-            } else {
-                DispatchQueue.main.async {
-                    if let viewController = self?.getVisibleViewController() {
-                        self?.showAlert(title: "Error", message: "No calendars found.", viewController: viewController)
-                    }
-                }
-                return
-            }
+            DispatchQueue.main.async {
+                // Prompt the user to select a date and time
+                let alertController = UIAlertController(title: "Choose Date and Time", message: nil, preferredStyle: .alert)
 
-            do {
-                try eventStore.save(event, span: .thisEvent)
-                DispatchQueue.main.async {
-                    if let viewController = self?.getVisibleViewController() {
-                        self?.showAlert(title: "Success", message: "Event added to calendar!", viewController: viewController)
+                // Create and configure the date picker
+                let datePicker = UIDatePicker()
+                datePicker.datePickerMode = .dateAndTime
+
+                // Add the date picker to the alert controller
+                alertController.view.addSubview(datePicker)
+
+                // Add OK action
+                let addAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    DispatchQueue.main.async {
+                        event.startDate = datePicker.date
+                        event.endDate = datePicker.date.addingTimeInterval(600)
+
+                        // Set the calendar for the event
+                        let calendars = eventStore.calendars(for: .event)
+                        if let defaultCalendar = calendars.first {
+                            event.calendar = defaultCalendar
+                        } else {
+                            if let viewController = self?.getVisibleViewController() {
+                                self?.showAlert(title: "Error", message: "No calendars found.", viewController: viewController)
+                            }
+                            return
+                        }
+
+                        do {
+                            try eventStore.save(event, span: .thisEvent)
+                            if let viewController = self?.getVisibleViewController() {
+                                self?.showAlert(title: "Success", message: "Event added to calendar!", viewController: viewController)
+                            }
+                        } catch {
+                            if let viewController = self?.getVisibleViewController() {
+                                self?.showAlert(title: "Error", message: "Failed to save event to calendar: \(error.localizedDescription)", viewController: viewController)
+                            }
+                        }
                     }
                 }
-            } catch {
-                DispatchQueue.main.async {
-                    if let viewController = self?.getVisibleViewController() {
-                        self?.showAlert(title: "Error", message: "Failed to save event to calendar: \(error.localizedDescription)", viewController: viewController)
-                    }
+                alertController.addAction(addAction)
+
+                // Add cancel action
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alertController.addAction(cancelAction)
+
+                // Customize alert controller appearance
+                alertController.view.tintColor = .systemGreen
+                alertController.view.backgroundColor = .white
+                alertController.view.layer.cornerRadius = 10
+
+                // Customize date picker appearance
+                datePicker.setValue(UIColor.systemGreen, forKey: "textColor")
+
+                // Add padding to the top constraint of the alert controller's view
+                let paddingTop: CGFloat = 16
+                if let alertControllerView = alertController.view.subviews.first?.subviews.first {
+                    alertControllerView.topAnchor.constraint(equalTo: alertControllerView.superview!.topAnchor, constant: paddingTop).isActive = true
+                }
+
+                if let viewController = self?.getVisibleViewController() {
+                    viewController.present(alertController, animated: true, completion: nil)
                 }
             }
         }
     }
+
+
 
     func showAlert(title: String, message: String, viewController: UIViewController) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -123,7 +160,6 @@ class DashboardNavBar: BaseView {
         return nil
     }
 
-
     @objc func showCalendar() {
         let alertController = UIAlertController(title: "Select a Date", message: nil, preferredStyle: .alert)
         
@@ -138,32 +174,31 @@ class DashboardNavBar: BaseView {
         // Configure alert message
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left
+        paragraphStyle.lineSpacing = 4 // Add line spacing
         
         let messageAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 14),
             .foregroundColor: UIColor.gray,
             .paragraphStyle: paragraphStyle
         ]
-        let attributedMessage = NSAttributedString(string: "Please choose a date", attributes: messageAttributes)
+        let attributedMessage = NSAttributedString(string: "", attributes: messageAttributes)
         alertController.setValue(attributedMessage, forKey: "attributedMessage")
         
         // Create and add the date picker
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        
         alertController.view.addSubview(datePicker)
         
         // Set date picker constraints
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 40),
-            datePicker.leadingAnchor.constraint(equalTo: alertController.view.leadingAnchor),
-            datePicker.trailingAnchor.constraint(equalTo: alertController.view.trailingAnchor)
+            datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 20 + 15), // Adjust top constraint value with padding
+            datePicker.leadingAnchor.constraint(equalTo: alertController.view.leadingAnchor, constant: 20 + 15), // Adjust leading constraint value with padding
+            datePicker.trailingAnchor.constraint(equalTo: alertController.view.trailingAnchor, constant: -20 - 15), // Adjust trailing constraint value with padding
+            datePicker.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -20 - 15) // Adjust bottom constraint value with padding
         ])
-        
-        // Configure cancel action
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        cancelAction.setValue(UIColor.red, forKey: "titleTextColor") // Change cancel action text color
-        alertController.addAction(cancelAction)
         
         // Configure select action
         let selectAction = UIAlertAction(title: "Select", style: .default) { _ in
@@ -185,6 +220,11 @@ class DashboardNavBar: BaseView {
         }
         alertController.addAction(selectAction)
         
+        // Configure cancel action
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        cancelAction.setValue(UIColor.red, forKey: "titleTextColor") // Change cancel action text color
+        alertController.addAction(cancelAction)
+        
         // Customize alert appearance
         alertController.view.tintColor = .systemPurple // Change the alert's tint color
         alertController.view.backgroundColor = .white // Change the alert's background color
@@ -194,6 +234,9 @@ class DashboardNavBar: BaseView {
             topViewController.present(alertController, animated: true, completion: nil)
         }
     }
+
+
+
 
     // MARK: Setup Views
     override func setupViews() {
@@ -223,12 +266,13 @@ class DashboardNavBar: BaseView {
             titleButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15), // Adjusted leading constraint
             titleButton.trailingAnchor.constraint(equalTo: allWorkoutButton.leadingAnchor, constant: -8), // Adjusted trailing constraint
 
-            weekView.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 15),
+            weekView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50), // Adjusted top constraint
             weekView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             weekView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             weekView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
             weekView.heightAnchor.constraint(equalToConstant: 47)
         ])
+
 
     }
 
