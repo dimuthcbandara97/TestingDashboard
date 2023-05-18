@@ -51,8 +51,10 @@ extension ProgressBaseController {
         
         view.setupView(dailyPerformanceView)
         view.setupView(monthlyPerformanceView)
+        
     }
     
+   
     // MARK: Configure Appearance
     override func configureAppearance() {
         super.configureAppearance()

@@ -165,12 +165,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
         }
     }
 
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        navigationItem.title = "Details"
-//        fetchData()
-//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

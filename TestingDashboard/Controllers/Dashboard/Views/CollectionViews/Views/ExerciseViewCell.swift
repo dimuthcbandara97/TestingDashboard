@@ -43,25 +43,28 @@ class ExerciseViewCell: UITableViewCell {
     
     
     func set(exercise: ExerciseElement) {
-        let keychain = KeychainWrapper.standard
-
-        // Getter methods for retrieving values from the keychain
         
 
-        if let userPassword = keychain.string(forKey: "UserPassword") {
-            print("User Password Keychain: \(userPassword)")
+        let keychain = KeychainWrapper.standard
+    //
+        func getUserDetailsFitnessGoal() -> String? {
+            return keychain.string(forKey: "userDetailsFitnessGoal")
         }
 
-        if let userGender = keychain.string(forKey: "UserGender") {
-            print("User Gender KeyChain : \(userGender)")
+        func getUserDetailsHeight() -> Int? {
+            return keychain.integer(forKey: "userDetailsHeight")
         }
 
-        if let userImageURL = keychain.string(forKey: "UserImageURL") {
-            print("User Image URLKC: \(userImageURL)")
+        func getUserDetailsWeight() -> Int? {
+            return keychain.integer(forKey: "userDetialsWeight")
         }
 
-        if let userName = keychain.string(forKey: "UserName") {
-            print("User Name KC: \(userName)")
+        func getUserDetailsAge() -> Int? {
+            return keychain.integer(forKey: "userDetialsAge")
+        }
+
+        func getUserDetailsStatus() -> String? {
+            return keychain.string(forKey: "userDetialsStatus")
         }
        
         if let userEmail = keychain.string(forKey: "UserEmail") {
@@ -98,19 +101,46 @@ class ExerciseViewCell: UITableViewCell {
         DispatchQueue.global().async {
             if let imageData = try? Data(contentsOf: imageUrl) {
                 DispatchQueue.main.async {
+                    let userDetailsHeight = getUserDetailsHeight() ?? 0
+                    let userDetailsWeight = getUserDetailsWeight() ?? 0
+                    
+                    // Calculate BMI based on height and weight
+                    let bmi = calculateBMI(height: userDetailsHeight, weight: userDetailsWeight)
+                    
                     // Placeholder condition for filtering based on BMI
-                    let shouldDisplayExercise = exercise.bmiRange == "Normal"
+                    let shouldDisplayExercise: Bool
+                    
+                    switch bmi {
+                    case ..<18.5: // Underweight
+                        shouldDisplayExercise = exercise.bmiRange == "Underweight"
+                    case 18.5..<25: // Normal
+                        shouldDisplayExercise = exercise.bmiRange == "Normal"
+                    case 25..<30: // Overweight
+                        shouldDisplayExercise = exercise.bmiRange == "Overweight"
+                    case 30...: // Obese
+                        shouldDisplayExercise = exercise.bmiRange == "Obese"
+                    default:
+                        shouldDisplayExercise = false
+                    }
                     
                     if shouldDisplayExercise {
                         self.exerciseImageView.image = UIImage(data: imageData)
                         self.exerciseTitleLabel.text = exercise.exerciseName
                     } else {
                         self.exerciseImageView.image = UIImage(data: imageData)
-                        self.exerciseTitleLabel.text = exercise.exerciseName+"(Extra)"
+                        self.exerciseTitleLabel.text = exercise.exerciseName + " (Extra)"
                     }
                 }
             }
         }
+
+        func calculateBMI(height: Int, weight: Int) -> Double {
+            let heightInMeters = Double(height) / 100.0 // Convert height to meters
+            let bmi = Double(weight) / (heightInMeters * heightInMeters) // Calculate BMI using the formula
+            
+            return bmi
+        }
+
     }
 
     
