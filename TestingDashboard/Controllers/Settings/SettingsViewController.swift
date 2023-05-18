@@ -66,13 +66,42 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     private var viewModels4: [CollectionTableViewCellViewModel4] = []
 
     func fetchData() {
-        
+        let keychain = KeychainWrapper.standard
+    //
+        func getUserDetailsFitnessGoal() -> String? {
+            return keychain.string(forKey: "userDetailsFitnessGoal")
+        }
+
+        func getUserDetailsHeight() -> Int? {
+            return keychain.integer(forKey: "userDetailsHeight")
+        }
+
+        func getUserDetailsWeight() -> Int? {
+            return keychain.integer(forKey: "userDetialsWeight")
+        }
+
+        func getUserDetailsAge() -> Int? {
+            return keychain.integer(forKey: "userDetialsAge")
+        }
+
+        func getUserDetailsStatus() -> String? {
+            return keychain.string(forKey: "userDetialsStatus")
+        }
         // Load Nutrition
         apiCaller.loadNutrition { [weak self] nutritionElements in
             guard let self = self else { return }
             
-            // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel3(name: $0.foodName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.value, videoURL: URL(string: $0.videourl), fitnessGoal: $0.fitnessGoal) }
+            // Get the fitness goal from keychain
+            guard let fitnessGoal = getUserDetailsFitnessGoal() else {
+                // Fitness goal not found in keychain, handle the error case
+                return
+            }
+            
+            // Filter the nutrition elements based on fitness goal
+            let filteredElements = nutritionElements.filter { $0.fitnessGoal == fitnessGoal }
+            
+            // Convert the filtered exercise elements to view models
+            let titleViewModels = filteredElements.map { TitleCollectionViewCellViewModel3(name: $0.foodName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.value, videoURL: URL(string: $0.videourl), fitnessGoal: $0.fitnessGoal) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel3(viewModels: titleViewModels)]
@@ -81,18 +110,27 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             self.viewModels3 = collectionViewModels
             
             // Reload the table view to display the new data
-//            self.tableView.reloadData()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+
         
         // Load Exercise
         apiCaller.loadExercise { [weak self] nutritionElements in
             guard let self = self else { return }
             
-            // Convert the exercise elements to view models
-            let titleViewModels = nutritionElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl),exerciseTime: $0.exerciseTime, repCount: $0.repCount, fitnessGoal: $0.fitnessGoal) }
+            // Get the fitness goal from keychain
+            guard let fitnessGoal = getUserDetailsFitnessGoal() else {
+                // Fitness goal not found in keychain, handle the error case
+                return
+            }
+            
+            // Filter the nutrition elements based on fitness goal
+            let filteredElements = nutritionElements.filter { $0.fitnessGoal == fitnessGoal }
+            
+            // Convert the filtered exercise elements to view models
+            let titleViewModels = filteredElements.map { TitleCollectionViewCellViewModel(name: $0.exerciseName, backgroundColor: .systemRed, imageURL: URL(string: $0.imageurl), details: $0.notes, videoURL: URL(string: $0.videourl), exerciseTime: $0.exerciseTime, repCount: $0.repCount, fitnessGoal: $0.fitnessGoal) }
             
             // Create the collection view cell view models
             let collectionViewModels = [CollectionTableViewCellViewModel(viewModels: titleViewModels)]
@@ -101,11 +139,11 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             self.viewModels = collectionViewModels
             
             // Reload the table view to display the new data
-//            self.tableView.reloadData()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+
         
         apiCaller.loadMeditation { [weak self] nutritionElements in
             guard let self = self else { return }
@@ -127,38 +165,17 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
         }
     }
 
-    let keychain = KeychainWrapper.standard
-//
-    func getUserDetailsFitnessGoal() -> String? {
-        return keychain.string(forKey: "userDetailsFitnessGoal")
-    }
-
-    func getUserDetailsHeight() -> Int? {
-        return keychain.integer(forKey: "userDetailsHeight")
-    }
-
-    func getUserDetailsWeight() -> Int? {
-        return keychain.integer(forKey: "userDetialsWeight")
-    }
-
-    func getUserDetailsAge() -> Int? {
-        return keychain.integer(forKey: "userDetialsAge")
-    }
-
-    func getUserDetailsStatus() -> String? {
-        return keychain.string(forKey: "userDetialsStatus")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Details"
         fetchData()
-        
-        if("Goal" == getUserDetailsFitnessGoal()){
-            print("Goals Matching ")
-        } else {
-            print("Goals Doesn't match")
-        }
+//
+//        if("Goal" == getUserDetailsFitnessGoal()){
+//            print("Goals Matching ")
+//        } else {
+//            print("Goals Doesn't match")
+//        }
     }
     
     
@@ -177,7 +194,6 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
         if section == 0 {
             return viewModels.count
         } else if section == 1 {
-//            return customViewModels.count
             return viewModels3.count
         } else {
             return viewModels4.count
