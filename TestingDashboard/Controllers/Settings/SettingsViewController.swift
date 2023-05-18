@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 
 class SettingsBaseController: BaseController, UITableViewDataSource, UITableViewDelegate, CollectionTableViewCellDelegate3, CollectionTableViewCellDelegate4 {
@@ -126,12 +127,38 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
         }
     }
 
+    let keychain = KeychainWrapper.standard
+//
+    func getUserDetailsFitnessGoal() -> String? {
+        return keychain.string(forKey: "userDetailsFitnessGoal")
+    }
 
+    func getUserDetailsHeight() -> Int? {
+        return keychain.integer(forKey: "userDetailsHeight")
+    }
+
+    func getUserDetailsWeight() -> Int? {
+        return keychain.integer(forKey: "userDetialsWeight")
+    }
+
+    func getUserDetailsAge() -> Int? {
+        return keychain.integer(forKey: "userDetialsAge")
+    }
+
+    func getUserDetailsStatus() -> String? {
+        return keychain.string(forKey: "userDetialsStatus")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Details"
         fetchData()
+        
+        if("Goal" == getUserDetailsFitnessGoal()){
+            print("Goals Matching ")
+        } else {
+            print("Goals Doesn't match")
+        }
     }
     
     

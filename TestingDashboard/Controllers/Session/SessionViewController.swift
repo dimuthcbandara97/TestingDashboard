@@ -55,20 +55,6 @@ extension SessionBaseController {
     override func constaintViews() {
         super.constaintViews()
         
-//        NSLayoutConstraint.activate([
-//            timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-//            timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
-//            timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-//
-//            statsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-//            statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 10),
-//            statsView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -7.5),
-//
-//            progress2View.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 7.5),
-//            progress2View.topAnchor.constraint(equalTo: statsView.topAnchor),
-//            progress2View.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-//            progress2View.heightAnchor.constraint(equalTo: statsView.heightAnchor),
-//        ])
         NSLayoutConstraint.activate([
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
@@ -119,17 +105,6 @@ extension SessionBaseController {
         addNavBarButton(at: .Left, with: "START")
         addNavBarButton(at: .Right, with: "FINISH")
         
-//        APICaller.shared.loadExercise { results in
-//            DispatchQueue.main.async {
-//                if results.count > 0 {
-//                    for user in results {
-//                        
-//                    }
-//                } else {
-//                    print("No results found")
-//                }
-//            }
-//        }
         
         timerView.configure(with: Double(timerDuration), progress: 0)
         timerView.callBack = {

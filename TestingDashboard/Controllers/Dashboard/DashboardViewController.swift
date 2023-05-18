@@ -11,8 +11,6 @@ import SwiftKeychainWrapper
 
 class DashboardBaseController: BaseController {
     
-
-    
     // Navbar
     private let navBar = DashboardNavBar()
     
@@ -21,11 +19,38 @@ class DashboardBaseController: BaseController {
     
     let cellIdentifier = "CustomCell"
     
+     // MARK: Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+        let keychain = KeychainWrapper.standard
 
+        if let userEmail = keychain.string(forKey: "UserEmail") {
+            APICaller.shared.loadUserDetails { results in
+                DispatchQueue.main.async {
+                    if results.count > 0 {
+                        for user in results {
+                            if user.email == userEmail {
+                                
+                                    // Store user credentials in Keychain
+                                keychain.set(user.fitnessGoal, forKey: "userDetailsFitnessGoal")
+                                keychain.set(user.height, forKey: "userDetailsHeight")
+                                keychain.set(user.weight, forKey: "userDetialsWeight")
+                                keychain.set(user.age, forKey: "userDetialsAge")
+                                keychain.set(user.status, forKey: "userDetialsStatus")
+                                
+                            } else {
+                                print("User Emails Doesn't match")
+                            }
+                        }
+                    } else {
+                        print("No results found")
+                    }
+                }
+            }
+        }
+       
+        
     }
     
     override func setupViews() {
