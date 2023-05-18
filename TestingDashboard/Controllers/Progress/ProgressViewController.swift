@@ -17,8 +17,29 @@ class ProgressBaseController: BaseController {
                                                                 buttonTitle: "This Month")
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "Progress"
+
+        // Create a container view to hold the titleLabel
+        let containerView = UIView()
+
+        // Create a custom UILabel for the navigation title
+        let titleLabel = UILabel()
+        titleLabel.text = "Progress"
+        titleLabel.textColor = UIColor.red
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 26)
+
+        // Add the titleLabel to the containerView
+        containerView.addSubview(titleLabel)
+
+        // Apply constraints to position the titleLabel within the containerView
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -30)
+        ])
+
+        // Set the containerView as the titleView of the navigation item
+        navigationItem.titleView = containerView
+
     }
 }
 

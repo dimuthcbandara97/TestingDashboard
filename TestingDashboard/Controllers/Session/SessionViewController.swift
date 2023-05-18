@@ -105,7 +105,6 @@ extension SessionBaseController {
         addNavBarButton(at: .Left, with: "START")
         addNavBarButton(at: .Right, with: "FINISH")
         
-        
         timerView.configure(with: Double(timerDuration), progress: 0)
         timerView.callBack = {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {

@@ -53,19 +53,43 @@ class DashboardBaseController: BaseController {
         
     }
     
+
     override func setupViews() {
         super.setupViews()
         
-        title = "Dashboard Main"
+        title = "Home"
+        
+        // Customize the navigation bar title
+        let titleLabel = UILabel()
+        titleLabel.text = "Home"
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 26)
+        titleLabel.textColor = .red
+        
+        // Create a container view for the title label
+        let titleView = UIView()
+        titleView.addSubview(titleLabel)
+        
+        // Add constraints to position the title label
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: titleView.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: -50) // Adjust the top constraint value as needed
+        ])
+        
+        // Set the custom title view for the navigation item
+        navigationItem.titleView = titleView
+        
         view.setupView(navBar)
         view.setupView(header)
     }
+
+
     
     override func constaintViews() {
         super.constaintViews()
         
         NSLayoutConstraint.activate([
-            navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            navBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -80),
             navBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             navBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             navBar.heightAnchor.constraint(equalToConstant: 300),
@@ -75,10 +99,10 @@ class DashboardBaseController: BaseController {
 
         // Constraints for header view
         NSLayoutConstraint.activate([
-            header.topAnchor.constraint(equalTo: navBar.bottomAnchor),
+            header.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: -10),
             header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            header.heightAnchor.constraint(equalToConstant: 350),
+            header.heightAnchor.constraint(equalToConstant: 400),
             header.leftAnchor.constraint(equalTo: view.leftAnchor),
             header.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])

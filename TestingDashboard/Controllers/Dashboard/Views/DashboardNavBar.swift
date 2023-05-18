@@ -237,7 +237,7 @@ class DashboardNavBar: BaseView {
         super.configureAppearance()
         backgroundColor = .white
 
-        allWorkoutButton.setTitle("Workouts")
+        allWorkoutButton.setTitle("MARK")
 
         addButton.setImage(UIImage(systemName: "home"), for: .normal)
         titleButton.addTarget(self, action: #selector(showCalendar), for: .touchUpInside)

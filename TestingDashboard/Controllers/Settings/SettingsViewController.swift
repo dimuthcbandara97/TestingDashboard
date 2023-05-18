@@ -166,25 +166,50 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     }
 
     
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        navigationItem.title = "Details"
+//        fetchData()
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Details"
+
+        // Create a container view to hold the titleLabel
+        let containerView = UIView()
+
+        // Create a custom UILabel for the navigation title
+        let titleLabel = UILabel()
+        titleLabel.text = "Details"
+        titleLabel.textColor = UIColor.red
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 26)
+
+        // Add the titleLabel to the containerView
+        containerView.addSubview(titleLabel)
+
+        // Apply constraints to position the titleLabel within the containerView
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -30)  
+        ])
+
+        // Set the containerView as the titleView of the navigation item
+        navigationItem.titleView = containerView
+
         fetchData()
-//
-//        if("Goal" == getUserDetailsFitnessGoal()){
-//            print("Goals Matching ")
-//        } else {
-//            print("Goals Doesn't match")
-//        }
     }
-    
-    
+
     override func setupViews() {
         super.setupViews()
+        
         view.setupView(tableView)
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Adjust the content inset of the table view
+        tableView.contentInset = UIEdgeInsets(top: -25, left: 0, bottom: 0, right: 0)
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
@@ -230,14 +255,14 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     // MARK: TableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return view.frame.size.width/2.6
+            return view.frame.size.width/2.5
 //            return UITableView.automaticDimension
         } else if indexPath.section == 1{
 //            return UITableView.automaticDimension
-            return view.frame.size.width/2.6
+            return view.frame.size.width/2.5
         } else {
 //            return UITableView.automaticDimension
-            return view.frame.size.width/2.6
+            return view.frame.size.width/2.5
         }
     }
 
@@ -247,11 +272,11 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Exericse Section"
+            return "Exercises To Gain Your Goal"
         } else if section == 1 {
-            return "Nutrition Section"
+            return "Nutrition To Gain Your Goal"
         } else {
-            return "Meditation Section"
+            return "Meditation To Gain Your Goal"
         }
     }
 
