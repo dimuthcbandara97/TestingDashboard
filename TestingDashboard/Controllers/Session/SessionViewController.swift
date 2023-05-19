@@ -11,12 +11,10 @@ import SwiftKeychainWrapper
 final class SessionBaseController: BaseController {
     
     private let timerView = TimerView()
-    private let statsView = StatsView(with: "STANDARD RATES")
-    private let progress2View = Progress2View(with: "YOUR HEALTH")
-    
-    
-   
-    private var timerDuration = 30
+        private let statsView = StatsView(with: "STANDARD RATES")
+        private let progress2View = Progress2View(with: "YOUR HEALTH")
+        
+        private var timerDuration = 30
     
     
     override func navBarLeftButtonHandler() {
@@ -52,13 +50,11 @@ extension SessionBaseController {
         view.backgroundColor = .white
         
         
-
-        
     }
     
     override func constaintViews() {
         super.constaintViews()
-        
+         
         NSLayoutConstraint.activate([
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5), // Adjust the constant as needed
@@ -125,7 +121,7 @@ extension SessionBaseController {
                 let formattedDate = formatter.string(from: currentDate)
                 let currentMonth = calendar.component(.month, from: currentDate)
                 
-                let progress = ProgressElement(progressName: "Progress", dailyCount: 30, date: formattedDate, month: currentMonth)
+                let progress = ProgressElement(progressName: "Progress", dailyCount: 30, date: formattedDate, month: currentMonth, email: "dimuthcbandara97@gmail.com")
                 
                 APICaller.shared.insertProgress(progresss: progress) { success, error in
                     if let error = error {
@@ -199,24 +195,24 @@ extension SessionBaseController {
         print(getUserDetailsFitnessGoal())
         
         APICaller.shared.loadExercise { results in
-            DispatchQueue.main.async {
-                if results.count > 0 {
-                    for user in results {
-                        if user.fitnessGoal == getUserDetailsFitnessGoal() {
-                            print(user.exerciseName)
-                            print(user.repCount)
-                            print(user.exerciseTime)
-                            
-                            // Update the timerDuration value
-                            self.timerDuration = user.exerciseTime
-                            self.timerView.configure(with: Double(self.timerDuration), progress: 0)
+                    DispatchQueue.main.async {
+                        if results.count > 0 {
+                            for user in results {
+                                if user.fitnessGoal == getUserDetailsFitnessGoal() {
+                                    print(user.exerciseName)
+                                    print(user.repCount)
+                                    print(user.exerciseTime)
+                                    
+                                    // Update the timerDuration value
+                                    self.timerDuration = user.exerciseTime
+                                    self.timerView.configure(with: Double(self.timerDuration), progress: 0)
+                                }
+                            }
+                        } else {
+                            print("No results found")
                         }
                     }
-                } else {
-                    print("No results found")
                 }
-            }
-        }
         
         // Reduce the rep count
         

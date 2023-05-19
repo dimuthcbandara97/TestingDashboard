@@ -14,11 +14,13 @@ struct ProgressElement: Codable {
     let dailyCount: Int
     let date: String
     let month: Int
+    let email: String
 
     enum CodingKeys: String, CodingKey {
         case progressName = "progress_name"
         case dailyCount = "daily_count"
         case date, month
+        case email
     }
 }
 
