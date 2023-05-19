@@ -16,7 +16,7 @@ struct NutritionElement: Codable {
     let imageurl: String
     let videourl: String
     let fitnessGoal: String
-
+    
     enum CodingKeys: String, CodingKey {
         case foodName = "food_name"
         case value

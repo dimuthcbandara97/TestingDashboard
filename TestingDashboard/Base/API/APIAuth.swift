@@ -165,6 +165,35 @@ class APICaller {
         task.resume()
     }
     
+    // MARK: Update By User Email
+    func updateByEmailUser(email: String, updatedUserDetails: UserDetailssElement, completionHandler: @escaping (Bool, Error?) -> Void) {
+        let url = URL(string: Constants.API_KEY_USER_DETAILS)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let parameters = "email=\(email)&status=\(updatedUserDetails.status)&height=\(updatedUserDetails.height)&weight=\(updatedUserDetails.weight)&age=\(updatedUserDetails.age)&fitness_goal=\(updatedUserDetails.fitnessGoal)"
+
+        request.httpBody = parameters.data(using: .utf8)
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completionHandler(false, error)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                print("API error")
+                completionHandler(false, nil)
+                return
+            }
+            completionHandler(true, nil)
+        }
+
+        task.resume()
+    }
+    
     // MARK: Load Exercises
     func loadExercise(completion: @escaping ([ExerciseElement]) -> Void){
            
@@ -219,6 +248,36 @@ class APICaller {
         }
         task.resume()
     }
+    
+    // MARK: Update By Email -> Exercise
+    func updateByEmailExercise(email: String, updatedExercise: ExerciseElement, completionHandler: @escaping (Bool, Error?) -> Void) {
+        let url = URL(string: Constants.API_KEY_EXERCISE)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let parameters = "email=\(email)&exercise_name=\(updatedExercise.exerciseName)&exercise_type=\(updatedExercise.exerciseType)&instructor=\(updatedExercise.instructor)&notes=\(updatedExercise.notes)&imageurl=\(updatedExercise.imageurl)&videourl=\(updatedExercise.videourl)&affecting_area=\(updatedExercise.affectingArea)&bmi_range=\(updatedExercise.bmiRange)&exercise_time=\(updatedExercise.exerciseTime)&tep_count=\(updatedExercise.repCount)"
+
+        request.httpBody = parameters.data(using: .utf8)
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completionHandler(false, error)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                print("API error")
+                completionHandler(false, nil)
+                return
+            }
+            completionHandler(true, nil)
+        }
+
+        task.resume()
+    }
+
     
     // MARK: Load Meditation
     func loadMeditation(completion: @escaping ([MeditationElement]) -> Void){
@@ -340,6 +399,35 @@ class APICaller {
         task.resume()
     }
         
+    // MARK: Update By Progress Name
+    func updateByProgressName(progressName: String, updatedProgress: ProgressElement, completionHandler: @escaping (Bool, Error?) -> Void) {
+        let url = URL(string: Constants.API_KEY_PROGRESS)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        let parameters = "progress_name=\(progressName)&daily_count=\(updatedProgress.dailyCount)&date=\(updatedProgress.date)&month=\(updatedProgress.month)"
+
+        request.httpBody = parameters.data(using: .utf8)
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                completionHandler(false, error)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                print("API error")
+                completionHandler(false, nil)
+                return
+            }
+            completionHandler(true, nil)
+        }
+
+        task.resume()
+    }
+
     // MARK: Load Stats
     func loadStats(completion: @escaping ([StatssElement]) -> Void){
            

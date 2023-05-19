@@ -10,7 +10,7 @@ import Foundation
 
 class BaseInfoView: BaseView {
     
-
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -21,14 +21,14 @@ class BaseInfoView: BaseView {
         label.minimumScaleFactor = 0.5
         return label
     }()
-
+    
     
     private let button = BaseButton(with: .primary)
     
     let contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-//        view.layer.borderColor = .red
+        //        view.layer.borderColor = .red
         view.layer.borderWidth = 1
         view.layer.cornerRadius = 5
         return view

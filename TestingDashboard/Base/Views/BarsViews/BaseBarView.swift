@@ -28,7 +28,7 @@ final  class BaseBarView: BaseView {
         label.textAlignment = .center
         return label
     }()
-
+    
     private let barView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemTeal
@@ -36,7 +36,7 @@ final  class BaseBarView: BaseView {
         view.layer.masksToBounds = true
         return view
     }()
-
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
@@ -44,7 +44,7 @@ final  class BaseBarView: BaseView {
         label.textAlignment = .center
         return label
     }()
-
+    
     init(data: Data) {
         self.heightMultiplier = data.heightMultiplier
         super.init(frame: .zero)
