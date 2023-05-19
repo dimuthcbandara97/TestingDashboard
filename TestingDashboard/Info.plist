@@ -33,5 +33,8 @@
 		<string>remote-notification</string>
 		<string>voip</string>
 	</array>
+    <key>NSRemindersUsageDescription</key>
+    <string>We need access to your reminders in order to add workout reminders.</string>
+
 </dict>
 </plist>
