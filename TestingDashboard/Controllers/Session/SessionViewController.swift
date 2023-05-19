@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 final class SessionBaseController: BaseController {
     
@@ -75,7 +76,7 @@ extension SessionBaseController {
     }
     
     func showAlert() {
-        let alert = UIAlertController(title: "Your Time is UP", message: "You have completed 30 seconds of exercise", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Your Time is UP", message: "You have completed your exercise", preferredStyle: .alert)
         
         // Customize alert title appearance
         let titleFont = UIFont.boldSystemFont(ofSize: 20)
@@ -98,6 +99,8 @@ extension SessionBaseController {
     override func configureAppearance() {
             
         super.configureAppearance()
+        
+        timerView.configure(with: Double(timerDuration), progress: 0)
                 
         title = OverallController.Strings.NavBar.session
         navigationController?.tabBarItem.title = OverallController.Strings.TabBar.title(for: .session)
@@ -153,6 +156,28 @@ extension SessionBaseController {
             }
         }
 
+
+        APICaller.shared.loadExercise { results in
+            DispatchQueue.main.async {
+                if results.count > 0 {
+                    for user in results {
+                        if user.fitnessGoal == "gain_weight" {
+                            print(user.exerciseName)
+                            print(user.repCount)
+                            print(user.exerciseTime)
+                            
+                            // Update the timerDuration value
+                            self.timerDuration = user.exerciseTime
+                            self.timerView.configure(with: Double(self.timerDuration), progress: 0)
+                        }
+                    }
+                } else {
+                    print("No results found")
+                }
+            }
+        }
+
+        // Reduce the rep count
         
         
     }

@@ -11,10 +11,10 @@ class ProgressBaseController: BaseController {
 
     // Daily PerformanceView
     private let dailyPerformanceView = DailyPerformanceView(with: "Daily Perfomance",
-                                                            buttonTitle: "Some Days")
+                                                            buttonTitle: "Refresh")
     // Monthly Performance View
-    private let monthlyPerformanceView = MonthlyPerformanceView(with: "Monthly Performance",
-                                                                buttonTitle: "This Month")
+    private let monthlyPerformanceView = MonthlyPerformanceView(with: "Recent 15 Performances",
+                                                                buttonTitle: "Refresh")
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,10 +89,12 @@ extension ProgressBaseController {
                     dateFormatter.dateFormat = "yyyy-MM-dd"
                     let currentDateString = dateFormatter.string(from: currentDate)
                     
-                    for user in results {
+                    for (index, user) in results.enumerated() {
                         if user.date.hasPrefix(currentDateString) {
+                            let title = "\(index + 1)" // Customize the title to display the number
+                            
                             self.dailyPerformanceView.configure(with: [
-                                .init(value: String(user.dailyCount), heightMultiplier: Double(user.dailyCount) / 100, title: "Day")
+                                .init(value: String(user.dailyCount), heightMultiplier: Double(user.dailyCount) / 1000, title: title)
                             ])
                         }
                     }
@@ -103,26 +105,25 @@ extension ProgressBaseController {
         }
 
 
-        
-        
+
         APICaller.shared.loadProgress { results in
             DispatchQueue.main.async {
                 if results.count > 0 {
-                    let currentDate = Date() // Get the current date
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-//                    let currentDateString = dateFormatter.string(from: currentDate)
+                    let startIndex = max(0, results.count - 15) // Calculate the starting index
                     
-                    for user in results  {
-                            self.monthlyPerformanceView.configure(with: [
-                                                                    .init(value: String(user.dailyCount), heightMultiplier: Double(user.dailyCount) / 100, title: "Week")])
+                    for (index, user) in results.enumerated().suffix(15).enumerated() {
+                        let title = "\(index + 1)" // Customize the title to display the number
                         
+                        self.monthlyPerformanceView.configure(with: [
+                            .init(value: String(user.element.dailyCount), heightMultiplier: Double(user.element.dailyCount) / 550, title: title)
+                        ])
                     }
                 } else {
                     print("No results found")
                 }
             }
         }
+
      
     }
 }
