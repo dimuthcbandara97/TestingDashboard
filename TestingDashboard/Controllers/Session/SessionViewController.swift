@@ -51,6 +51,27 @@ extension SessionBaseController {
         view.setupView(progress2View)
         view.backgroundColor = .white
         
+        let keychain = KeychainWrapper.standard
+//        
+//        func getBMIValues() -> (Double?, Double?, Double?, Double?) {
+//            let underweightString = KeychainWrapper.standard.string(forKey: "Underweight")
+//            let normalString = KeychainWrapper.standard.string(forKey: "Normal")
+//            let overweightString = KeychainWrapper.standard.string(forKey: "Overweight")
+//            let obeseString = KeychainWrapper.standard.string(forKey: "Obese")
+//
+//            let underweight = Double(underweightString ?? "")
+//            let normal = Double(normalString ?? "")
+//            let overweight = Double(overweightString ?? "")
+//            let obese = Double(obeseString ?? "")
+//
+//            return (underweight, normal, overweight, obese)
+//        }
+//        let bmiValues = getBMIValues()
+//        print("Underweight BMI: \(bmiValues.0 ?? 0)")
+//        print("Normal BMI: \(bmiValues.1 ?? 0)")
+//        print("Overweight BMI: \(bmiValues.2 ?? 0)")
+//        print("Obese BMI: \(bmiValues.3 ?? 0)")
+        
     }
     
     override func constaintViews() {

@@ -14,33 +14,33 @@ final class MonthlyPerformanceView: BaseInfoView {
     
     func configure(with items: [BaseBarView.Data]) {
         barsView.configureX(with: items)
-          }
-      }
+    }
+}
 
 extension MonthlyPerformanceView {
-  
-    // MARK: Setup Views
-   override func setupViews() {
-      super.setupViews()
-      setupView(barsView)
-  }
-  
-    // MARK: Constraints
-  override func constaintViews(){
-      super.constaintViews()
     
-      NSLayoutConstraint.activate([
-       barsView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-       barsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-       barsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-       barsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -80),
-      ])
-  }
-  
+    // MARK: Setup Views
+    override func setupViews() {
+        super.setupViews()
+        setupView(barsView)
+    }
+    
+    // MARK: Constraints
+    override func constaintViews(){
+        super.constaintViews()
+        
+        NSLayoutConstraint.activate([
+            barsView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            barsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            barsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            barsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -80),
+        ])
+    }
+    
     // MARK: Configure Appearance
-  override func configureAppearance(){
-      super.configureAppearance()
-  }
+    override func configureAppearance(){
+        super.configureAppearance()
+    }
 }
 
 //test commit

@@ -98,6 +98,28 @@ class ExerciseViewCell: UITableViewCell {
         
         let imageUrl = URL(string: exercise.imageurl)!
         
+        func setBMIValue(_ value: Double, forBMIRange range: String) {
+            // Use the appropriate key based on the BMI range
+            let key: String
+            
+            switch range {
+            case "Underweight":
+                key = "Underweight"
+            case "Normal":
+                key = "Normal"
+            case "Overweight":
+                key = "Overweight"
+            case "Obese":
+                key = "Obese"
+            default:
+                return // Invalid BMI range, do nothing
+            }
+            
+            // Set the BMI value in the keychain
+            keychain.set(value, forKey: key)
+        }
+
+
         DispatchQueue.global().async {
             if let imageData = try? Data(contentsOf: imageUrl) {
                 DispatchQueue.main.async {
@@ -113,6 +135,7 @@ class ExerciseViewCell: UITableViewCell {
                     switch bmi {
                     case ..<18.5: // Underweight
                         shouldDisplayExercise = exercise.bmiRange == "Underweight"
+                        setBMIValue(bmi, forBMIRange: "Underweight")
                     case 18.5..<25: // Normal
                         shouldDisplayExercise = exercise.bmiRange == "Normal"
                     case 25..<30: // Overweight
@@ -130,6 +153,7 @@ class ExerciseViewCell: UITableViewCell {
                         self.exerciseImageView.image = UIImage(data: imageData)
                         self.exerciseTitleLabel.text = exercise.exerciseName + " (Extra)"
                     }
+
                 }
             }
         }
