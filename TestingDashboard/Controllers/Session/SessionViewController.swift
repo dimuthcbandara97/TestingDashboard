@@ -51,26 +51,8 @@ extension SessionBaseController {
         view.setupView(progress2View)
         view.backgroundColor = .white
         
-        let keychain = KeychainWrapper.standard
-//        
-//        func getBMIValues() -> (Double?, Double?, Double?, Double?) {
-//            let underweightString = KeychainWrapper.standard.string(forKey: "Underweight")
-//            let normalString = KeychainWrapper.standard.string(forKey: "Normal")
-//            let overweightString = KeychainWrapper.standard.string(forKey: "Overweight")
-//            let obeseString = KeychainWrapper.standard.string(forKey: "Obese")
-//
-//            let underweight = Double(underweightString ?? "")
-//            let normal = Double(normalString ?? "")
-//            let overweight = Double(overweightString ?? "")
-//            let obese = Double(obeseString ?? "")
-//
-//            return (underweight, normal, overweight, obese)
-//        }
-//        let bmiValues = getBMIValues()
-//        print("Underweight BMI: \(bmiValues.0 ?? 0)")
-//        print("Normal BMI: \(bmiValues.1 ?? 0)")
-//        print("Overweight BMI: \(bmiValues.2 ?? 0)")
-//        print("Obese BMI: \(bmiValues.3 ?? 0)")
+        
+
         
     }
     
@@ -79,12 +61,12 @@ extension SessionBaseController {
         
         NSLayoutConstraint.activate([
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
+            timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5), // Adjust the constant as needed
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             timerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4), // Adjust the multiplier as needed
 
             statsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 10),
+            statsView.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 5), // Adjust the constant as needed
             statsView.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -7.5),
 
             progress2View.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 7.5),
@@ -92,6 +74,7 @@ extension SessionBaseController {
             progress2View.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             progress2View.heightAnchor.constraint(equalTo: statsView.heightAnchor),
         ])
+
 
 
     }
@@ -160,13 +143,40 @@ extension SessionBaseController {
             }
         }
 
+        let keychain = KeychainWrapper.standard
+        
+        func getUserDetailsHeight() -> Int? {
+            return keychain.integer(forKey: "userDetailsHeight")
+        }
+
+        func getUserDetailsWeight() -> Int? {
+            return keychain.integer(forKey: "userDetialsWeight")
+        }
+        
+        func getUserDetailsAge() -> Int? {
+            return keychain.integer(forKey: "userDetialsAge")
+        }
+
+        func calculateBMI(height: Int, weight: Int) -> String {
+            let heightInMeters = Double(height) / 100.0 // Convert height to meters
+            let bmi = Double(weight) / (heightInMeters * heightInMeters) // Calculate BMI using the formula
+            
+            let formattedBMI = String(format: "%.4f", bmi)
+            return formattedBMI
+        }
 
         // MARK: Progress View (Sensors)
-        progress2View.configure(with: [.topic01(value: "results[0].bloodpressure"),
-                                             .topic02(value: "results[0].heartrate"),
-                                             .topic03(value: "results[0].bmi"),
-                                             .topic04(value: "results[0].bodyfat")])
+        let userDetailsHeight = getUserDetailsHeight() ?? 0
+        let userDetailsWeight = getUserDetailsWeight() ?? 0
+        let bmi = calculateBMI(height: userDetailsHeight, weight: userDetailsWeight)
 
+        progress2View.configure(with: [
+            .topic01(value: "\(getUserDetailsAge() ?? 0)"),
+            .topic02(value: "\(getUserDetailsHeight() ?? 0)"),
+            .topic03(value: "\(getUserDetailsWeight() ?? 0)"),
+            .topic04(value: "\(bmi)")
+        ])
+        
         // MARK: From API
         APICaller.shared.loadStats { results in
             DispatchQueue.main.async {
@@ -177,12 +187,22 @@ extension SessionBaseController {
             }
         }
 
-
+       
+        
+        
+        func getUserDetailsFitnessGoal() -> String? {
+            return keychain.string(forKey: "userDetailsFitnessGoal")
+        }
+        
+       
+        
+        print(getUserDetailsFitnessGoal())
+        
         APICaller.shared.loadExercise { results in
             DispatchQueue.main.async {
                 if results.count > 0 {
                     for user in results {
-                        if user.fitnessGoal == "gain_weight" {
+                        if user.fitnessGoal == getUserDetailsFitnessGoal() {
                             print(user.exerciseName)
                             print(user.repCount)
                             print(user.exerciseTime)
@@ -197,7 +217,7 @@ extension SessionBaseController {
                 }
             }
         }
-
+        
         // Reduce the rep count
         
         
