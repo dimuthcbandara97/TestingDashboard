@@ -29,6 +29,8 @@ class TitleCollectionViewCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()
+   
+
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()

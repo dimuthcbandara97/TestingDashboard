@@ -33,7 +33,7 @@ extension MonthlyPerformanceView {
             barsView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             barsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             barsView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            barsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -80),
+            barsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
         ])
     }
     

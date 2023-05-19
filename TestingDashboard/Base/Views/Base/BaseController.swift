@@ -360,7 +360,7 @@ extension UIView {
             topAnchor.constraint(equalTo: superView.topAnchor),
             leadingAnchor.constraint(equalTo: superView.leadingAnchor),
             trailingAnchor.constraint(equalTo: superView.trailingAnchor),
-                                      bottomAnchor.constraint(equalTo: superView.bottomAnchor)
-                                  ])
-                              }
-                          }
+            bottomAnchor.constraint(equalTo: superView.bottomAnchor)
+        ])
+    }
+}

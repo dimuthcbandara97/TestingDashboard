@@ -18,21 +18,46 @@ final  class XAxisView: BaseView {
     }()
     
     // MARK: Configure Appeaance
+//    func configure(with data: [BaseChartsView.Data]) {
+//        stackView.arrangedSubviews.forEach {
+//            $0.removeFromSuperview()
+//        }
+//        data.reversed().forEach {
+//            let lable = UILabel()
+////            lable.font =
+//            lable.textColor = .black
+//            lable.textAlignment = .center
+//            //lable.textAlignment = .center
+//            lable.text = $0.title.uppercased() //TODO: Remake calculated interval
+//
+//            stackView.addArrangedSubview(lable)
+//        }
+//    }
     func configure(with data: [BaseChartsView.Data]) {
         stackView.arrangedSubviews.forEach {
             $0.removeFromSuperview()
         }
-        data.reversed().forEach {
-            let lable = UILabel()
-//            lable.font =
-            lable.textColor = .black
-            lable.textAlignment = .center
-            //lable.textAlignment = .center
-            lable.text = $0.title.uppercased() //TODO: Remake calculated interval
+        
+        data.reversed().forEach { dataItem in
+            let label = UILabel()
+            label.font = UIFont.boldSystemFont(ofSize: 14) // Custom font styling
+            label.textColor = .black
+            label.textAlignment = .center
+            label.text = dataItem.title.uppercased()
             
-            stackView.addArrangedSubview(lable)
+            // Additional label decorations
+            label.layer.cornerRadius = 8
+            label.layer.borderWidth = 1
+            label.layer.borderColor = UIColor.lightGray.cgColor
+            label.clipsToBounds = true
+            
+            // Add spacing between labels
+            label.setContentHuggingPriority(.required, for: .vertical)
+            
+            stackView.addArrangedSubview(label)
         }
     }
+
     
 }
 

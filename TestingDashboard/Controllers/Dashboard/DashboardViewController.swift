@@ -54,6 +54,7 @@ class DashboardBaseController: BaseController {
     }
     
 
+
     override func setupViews() {
         super.setupViews()
         
@@ -73,7 +74,7 @@ class DashboardBaseController: BaseController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: titleView.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: -30) // Adjust the top constraint value as needed
+            titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: -40) // Adjust the top constraint value as needed
         ])
         
         // Set the custom title view for the navigation item
@@ -82,6 +83,7 @@ class DashboardBaseController: BaseController {
         view.setupView(navBar)
         view.setupView(header)
     }
+
 
 
     

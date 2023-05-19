@@ -22,7 +22,7 @@ class ExerciseViewCell: UITableViewCell {
     
     public let exerciseTitleLabel: UILabel = {
         let title = UILabel()
-        title.textColor = .systemPink
+        title.textColor = .black
         title.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         title.numberOfLines = 2
         title.lineBreakMode = .byTruncatingTail

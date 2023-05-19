@@ -30,11 +30,12 @@ class SectionHeaderView: BaseView {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.backgroundColor = .clear
-        label.shadowColor = .gray
-        label.shadowOffset = CGSize(width: 1.0, height: 1.0)
-//        label.shadowOpacity = 0.5
+        label.layer.shadowColor = UIColor.clear.cgColor  // Remove shadow
+        label.layer.masksToBounds = true  // Add padding
+        
         return label
     }()
+
     
   
             

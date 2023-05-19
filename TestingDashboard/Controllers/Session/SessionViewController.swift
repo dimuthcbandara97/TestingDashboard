@@ -102,12 +102,18 @@ extension SessionBaseController {
         
         timerView.configure(with: Double(timerDuration), progress: 0)
                 
-        title = OverallController.Strings.NavBar.session
+//        title = OverallController.Strings.NavBar.session?
+        title = " 🎯 Loading Your Timer"
         navigationController?.tabBarItem.title = OverallController.Strings.TabBar.title(for: .session)
         
         addNavBarButton(at: .Left, with: "START")
         addNavBarButton(at: .Right, with: "FINISH")
         
+        let keychain = KeychainWrapper.standard
+        
+        func getEmailUser() -> String? {
+            return keychain.string(forKey: "UserEmail")
+        }
         timerView.configure(with: Double(timerDuration), progress: 0)
         timerView.callBack = {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
@@ -121,7 +127,7 @@ extension SessionBaseController {
                 let formattedDate = formatter.string(from: currentDate)
                 let currentMonth = calendar.component(.month, from: currentDate)
                 
-                let progress = ProgressElement(progressName: "Progress", dailyCount: 30, date: formattedDate, month: currentMonth, email: "dimuthcbandara97@gmail.com")
+                let progress = ProgressElement(progressName: "Progress", dailyCount: 30, date: formattedDate, month: currentMonth, email: getEmailUser() ?? "dimuthcbandara97@gmail.com")
                 
                 APICaller.shared.insertProgress(progresss: progress) { success, error in
                     if let error = error {
@@ -139,7 +145,7 @@ extension SessionBaseController {
             }
         }
 
-        let keychain = KeychainWrapper.standard
+        
         
         func getUserDetailsHeight() -> Int? {
             return keychain.integer(forKey: "userDetailsHeight")
