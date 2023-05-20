@@ -68,5 +68,9 @@
     
     <key>NSHealthShareUsageDescription</key>
     <string>NOTIFICATION_CATEGORY_IDENTIFIER</string>
+    
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>We need access to your heart rate data to save the measurements.</string>
+
 </dict>
 </plist>

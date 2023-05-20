@@ -60,7 +60,8 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
 
     
     @objc private func logoutButtonTapped() {
-        let vc = ChangeDetailsUserController()
+//        let vc = ChangeDetailsUserController()
+        let vc = SensorReadingsController()
         self.navigationController?.pushViewController(vc, animated: true)
        }
     
