@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.frame = windowScene.coordinateSpace.bounds
         
-        let vc = LoginViewController()
+//        let vc = LoginViewController()
+        let vc = SensorReadingsController()
         //        let vc = CustomSchedulePage()
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen

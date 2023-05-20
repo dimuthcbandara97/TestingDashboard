@@ -12,6 +12,58 @@ import AVKit
 
 class SettingsBaseController: BaseController, UITableViewDataSource, UITableViewDelegate, CollectionTableViewCellDelegate3, CollectionTableViewCellDelegate4 {
     
+//    private let logoutButton: UIButton = {
+//        let button = UIButton(type: .system)
+//        button.setTitle("Logout", for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+//        button.setTitleColor(.red, for: .normal)
+//        button.backgroundColor = .white
+//        button.layer.cornerRadius = 8
+//        button.layer.borderWidth = 1
+//        button.layer.borderColor = UIColor.red.cgColor
+//        button.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        return button
+//    }()
+    private let changeDetailsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Change Details", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.setTitleColor(.blue, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 8
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.blue.cgColor
+        button.addTarget(self, action: #selector(changeDetailsButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    @objc private func changeDetailsButtonTapped() {
+        // Handle the change details button tap event here
+    }
+
+    private let logoutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Change User Details", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.setTitleColor(.red, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 8
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.red.cgColor
+        button.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+
+    
+    @objc private func logoutButtonTapped() {
+        let vc = ChangeDetailsUserController()
+        self.navigationController?.pushViewController(vc, animated: true)
+       }
+    
     // MARK: DidTap -> Model 04
     func collectionTableViewCellDidTapItem(with viewModel4: TitleCollectionViewCellViewModel4) {
         
@@ -164,6 +216,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
             }
         }
+        
     }
     
     
@@ -193,6 +246,17 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
         navigationItem.titleView = containerView
         
         fetchData()
+        view.addSubview(logoutButton)
+               
+        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            logoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            logoutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            logoutButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -5),
+            logoutButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+
+
     }
     
     override func setupViews() {
@@ -251,11 +315,11 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     // MARK: TableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return view.frame.size.width/2.5
+            return view.frame.size.width/2.7
         } else if indexPath.section == 1{
-            return view.frame.size.width/2.5
+            return view.frame.size.width/2.7
         } else {
-            return view.frame.size.width/2.5
+            return view.frame.size.width/2.7
         }
     }
     

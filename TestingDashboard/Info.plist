@@ -45,5 +45,28 @@
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>Requesting access to save photos and videos to the photo library</string>
 
+    <key>UIUserNotificationCategories</key>
+    <array>
+        <dict>
+            <key>UIUserNotificationCategoryOptionNone</key>
+            <array>
+                <dict>
+                    <key>UIUserNotificationActionContextDefault</key>
+                    <string>YES</string>
+                    <key>UIUserNotificationActionActivationModeForeground</key>
+                    <string>YES</string>
+                    <key>UIUserNotificationActionTitle</key>
+                    <string>View</string>
+                    <key>UIUserNotificationActionIdentifier</key>
+                    <string>VIEW_IDENTIFIER</string>
+                </dict>
+            </array>
+            <key>UIUserNotificationCategoryIdentifier</key>
+            <string>NOTIFICATION_CATEGORY_IDENTIFIER</string>
+        </dict>
+    </array>
+    
+    <key>NSHealthShareUsageDescription</key>
+    <string>NOTIFICATION_CATEGORY_IDENTIFIER</string>
 </dict>
 </plist>

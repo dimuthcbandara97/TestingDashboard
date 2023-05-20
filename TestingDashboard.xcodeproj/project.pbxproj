@@ -36,6 +36,8 @@
 		A24886D52A189F3900D356B5 /* NutritionLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24886D42A189F3900D356B5 /* NutritionLoaderTests.swift */; };
 		A24886D72A18A1BD00D356B5 /* ProgressLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24886D62A18A1BD00D356B5 /* ProgressLoaderTests.swift */; };
 		A24886D92A18A30600D356B5 /* StatsLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24886D82A18A30600D356B5 /* StatsLoaderTests.swift */; };
+		A24886DB2A18E56500D356B5 /* ChangeDetailsUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24886DA2A18E56500D356B5 /* ChangeDetailsUserController.swift */; };
+		A24886DE2A18F62D00D356B5 /* SensorReadingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24886DD2A18F62D00D356B5 /* SensorReadingsController.swift */; };
 		A24BE2AD2A0A176F00F5A4AE /* CustomSchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BE2AC2A0A176F00F5A4AE /* CustomSchedulePage.swift */; };
 		A24BE2B02A0A199200F5A4AE /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = A24BE2AF2A0A199200F5A4AE /* CalendarKit */; };
 		A2537A9629BF5515000DED14 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9529BF5515000DED14 /* UIColor.swift */; };
@@ -146,6 +148,9 @@
 		A24886D42A189F3900D356B5 /* NutritionLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionLoaderTests.swift; sourceTree = "<group>"; };
 		A24886D62A18A1BD00D356B5 /* ProgressLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLoaderTests.swift; sourceTree = "<group>"; };
 		A24886D82A18A30600D356B5 /* StatsLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsLoaderTests.swift; sourceTree = "<group>"; };
+		A24886DA2A18E56500D356B5 /* ChangeDetailsUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDetailsUserController.swift; sourceTree = "<group>"; };
+		A24886DD2A18F62D00D356B5 /* SensorReadingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorReadingsController.swift; sourceTree = "<group>"; };
+		A24886DF2A19014B00D356B5 /* TestingDashboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestingDashboard.entitlements; sourceTree = "<group>"; };
 		A24BE2AC2A0A176F00F5A4AE /* CustomSchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSchedulePage.swift; sourceTree = "<group>"; };
 		A2537A9529BF5515000DED14 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A2537A9729BF5575000DED14 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -236,6 +241,7 @@
 				A21EBC6429C9DBA500EC1210 /* ForgetPasswordViewController.swift */,
 				A21EBC6629C9DC2B00EC1210 /* ViewControllerLogin.swift */,
 				A2EFB7A92A08D46600BED7C3 /* RegisterDetailsController.swift */,
+				A24886DA2A18E56500D356B5 /* ChangeDetailsUserController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 		A240C27B29BC3E6600E5DDAC /* TestingDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				A24886DF2A19014B00D356B5 /* TestingDashboard.entitlements */,
 				A240C2B329BC440E00E5DDAC /* Application */,
 				A240C2B229BC440600E5DDAC /* Base */,
 				A240C2B129BC43F000E5DDAC /* Navigation */,
@@ -380,6 +387,7 @@
 		A240C2B029BC43E100E5DDAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A24886DC2A18F5F500D356B5 /* SensorReadings */,
 				A2537AA329BF5909000DED14 /* Dashboard */,
 				A2537AA229BF58F9000DED14 /* Session */,
 				A2537AA129BF58ED000DED14 /* Progress */,
@@ -445,6 +453,14 @@
 			children = (
 			);
 			path = Updating;
+			sourceTree = "<group>";
+		};
+		A24886DC2A18F5F500D356B5 /* SensorReadings */ = {
+			isa = PBXGroup;
+			children = (
+				A24886DD2A18F62D00D356B5 /* SensorReadingsController.swift */,
+			);
+			path = SensorReadings;
 			sourceTree = "<group>";
 		};
 		A2537A9B29BF5694000DED14 /* LoginView  */ = {
@@ -828,6 +844,7 @@
 				A2EFB7A82A08CD2400BED7C3 /* UserDetailssElement.swift in Sources */,
 				A2537AA929BF5964000DED14 /* SessionViewController.swift in Sources */,
 				A26640EE29D5B10D00563379 /* TitleCollectionViewCell3.swift in Sources */,
+				A24886DE2A18F62D00D356B5 /* SensorReadingsController.swift in Sources */,
 				A28BF20229C1E97D001B8264 /* MonthlyPerformanceView.swift in Sources */,
 				A24BE2AD2A0A176F00F5A4AE /* CustomSchedulePage.swift in Sources */,
 				A21EBC6C29CAC3EE00EC1210 /* CustomTableViewCell2.swift in Sources */,
@@ -856,6 +873,7 @@
 				A28BF1EE29C1ACAE001B8264 /* BaseInfoView.swift in Sources */,
 				A240C27F29BC3E6600E5DDAC /* SceneDelegate.swift in Sources */,
 				A2396E2329C08C15009206D3 /* BaseView.swift in Sources */,
+				A24886DB2A18E56500D356B5 /* ChangeDetailsUserController.swift in Sources */,
 				A21EBC6729C9DC2B00EC1210 /* ViewControllerLogin.swift in Sources */,
 				A28BF20A29C1F355001B8264 /* NutritionElement.swift in Sources */,
 				A26640E929D5953900563379 /* CustomTableViewCell4.swift in Sources */,
@@ -1045,6 +1063,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TestingDashboard/TestingDashboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1072,6 +1091,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TestingDashboard/TestingDashboard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

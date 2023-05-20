@@ -24,10 +24,10 @@ final class BaseButton: UIButton {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
-        label.textColor = .black
+        label.textColor = .white
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.backgroundColor = .white
+//        label.backgroundColor = .white
         label.layer.cornerRadius = 10
         label.layer.shadowColor = UIColor.gray.cgColor
         label.layer.shadowOffset = CGSize(width: 0, height: 2)
