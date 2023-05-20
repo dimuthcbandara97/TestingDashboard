@@ -32,6 +32,8 @@
 		A244E44629D058EA00AEBE96 /* ProgressElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A244E44529D058EA00AEBE96 /* ProgressElement.swift */; };
 		A24886CF2A1898BC00D356B5 /* UserDetailsLoadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24886CE2A1898BC00D356B5 /* UserDetailsLoadTest.swift */; };
 		A24886D12A1899F400D356B5 /* ExerciseLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24886D02A1899F400D356B5 /* ExerciseLoaderTests.swift */; };
+		A24886D32A189E7900D356B5 /* MeditationLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24886D22A189E7900D356B5 /* MeditationLoaderTests.swift */; };
+		A24886D52A189F3900D356B5 /* NutritionLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24886D42A189F3900D356B5 /* NutritionLoaderTests.swift */; };
 		A24BE2AD2A0A176F00F5A4AE /* CustomSchedulePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24BE2AC2A0A176F00F5A4AE /* CustomSchedulePage.swift */; };
 		A24BE2B02A0A199200F5A4AE /* CalendarKit in Frameworks */ = {isa = PBXBuildFile; productRef = A24BE2AF2A0A199200F5A4AE /* CalendarKit */; };
 		A2537A9629BF5515000DED14 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2537A9529BF5515000DED14 /* UIColor.swift */; };
@@ -138,6 +140,8 @@
 		A244E44529D058EA00AEBE96 /* ProgressElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressElement.swift; sourceTree = "<group>"; };
 		A24886CE2A1898BC00D356B5 /* UserDetailsLoadTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsLoadTest.swift; sourceTree = "<group>"; };
 		A24886D02A1899F400D356B5 /* ExerciseLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseLoaderTests.swift; sourceTree = "<group>"; };
+		A24886D22A189E7900D356B5 /* MeditationLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationLoaderTests.swift; sourceTree = "<group>"; };
+		A24886D42A189F3900D356B5 /* NutritionLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionLoaderTests.swift; sourceTree = "<group>"; };
 		A24BE2AC2A0A176F00F5A4AE /* CustomSchedulePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSchedulePage.swift; sourceTree = "<group>"; };
 		A2537A9529BF5515000DED14 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A2537A9729BF5575000DED14 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -416,6 +420,8 @@
 				A259A8E12A069771009271E8 /* UserLoaderTests.swift */,
 				A24886CE2A1898BC00D356B5 /* UserDetailsLoadTest.swift */,
 				A24886D02A1899F400D356B5 /* ExerciseLoaderTests.swift */,
+				A24886D22A189E7900D356B5 /* MeditationLoaderTests.swift */,
+				A24886D42A189F3900D356B5 /* NutritionLoaderTests.swift */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -868,8 +874,10 @@
 				A24886CF2A1898BC00D356B5 /* UserDetailsLoadTest.swift in Sources */,
 				A240C29429BC3E6700E5DDAC /* TestingDashboardTests.swift in Sources */,
 				A259A8E22A069771009271E8 /* UserLoaderTests.swift in Sources */,
+				A24886D52A189F3900D356B5 /* NutritionLoaderTests.swift in Sources */,
 				A259A8E42A069C86009271E8 /* UserInsertTests.swift in Sources */,
 				A2EA15212A0D49C1008C1D92 /* DashboardViewController.swift in Sources */,
+				A24886D32A189E7900D356B5 /* MeditationLoaderTests.swift in Sources */,
 				A24886D12A1899F400D356B5 /* ExerciseLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
