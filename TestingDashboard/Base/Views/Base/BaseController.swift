@@ -22,6 +22,7 @@ class BaseController: UIViewController {
         configureAppearance()
     }
     
+    
 }
 
 @objc extension BaseController {

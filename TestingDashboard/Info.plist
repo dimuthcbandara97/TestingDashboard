@@ -35,6 +35,15 @@
 	</array>
     <key>NSRemindersUsageDescription</key>
     <string>We need access to your reminders in order to add workout reminders.</string>
+    
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Requesting access to microphone for audio recording</string>
+
+    <key>NSCameraUsageDescription</key>
+    <string>Requesting access to camera for video recording</string>
+
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Requesting access to save photos and videos to the photo library</string>
 
 </dict>
 </plist>

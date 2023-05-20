@@ -49,6 +49,58 @@ class LoginViewController: UIViewController {
         newUserButton.addTarget(self, action: #selector(didTapNewUser), for: .touchUpInside)
         forgotPasswordButton.addTarget(self, action: #selector(didTapForgotPassword), for: .touchUpInside)
     }
+    // MARK: Asking Permission For Notification
+    func checkForPermission() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .authorized:
+                self.dispatchNotification()
+            case .denied:
+                print("Access Denied")
+                return
+            case .notDetermined:
+                notificationCenter.requestAuthorization(options: [.alert, .sound]) { didAllow, error in
+                    if didAllow {
+                        self.dispatchNotification()
+                    }
+                }
+            default:
+                break
+            }
+        }
+    }
+    
+    func dispatchNotification() {
+        let title = "Your Workout"
+        let body = "Testing Workout"
+        let hour = 15
+        let minute = 43
+        let isDaily = true
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isDaily)
+        
+        let request = UNNotificationRequest(identifier: "MyNotification", content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { error in
+            if let error = error {
+                print("Failed to schedule notification: \(error.localizedDescription)")
+            } else {
+                print("Notification scheduled successfully!")
+            }
+        }
+    }
     
     // View Will Appear
     override func viewWillAppear(_ animated: Bool) {
@@ -157,7 +209,7 @@ class LoginViewController: UIViewController {
                         if user.email == username {
                             if (username == user.email && password == user.password) {
                                 // Rest of your code...
-                                
+                                self?.checkForPermission()
                                 let vc = TabBarController()
                                 let nav = UINavigationController(rootViewController: vc)
                                 nav.modalPresentationStyle = .fullScreen

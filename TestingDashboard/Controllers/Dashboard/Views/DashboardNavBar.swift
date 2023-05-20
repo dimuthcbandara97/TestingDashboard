@@ -51,139 +51,140 @@ class DashboardNavBar: BaseView {
         addBottomBorder(with: .systemBlue, height: 1)
     }
     
-    
-    // MARK: Show All Workouts
-    
-    @objc func showAllWorkouts() {
-        let eventStore = EKEventStore()
         
-        // Requesting access -> .event
-        eventStore.requestAccess(to: .event) { [weak self] eventAccessGranted, eventError in
-            guard eventAccessGranted && eventError == nil else {
-                // Access to events denied or error occurred
-                let eventErrorMessage = eventError?.localizedDescription ?? "Failed to request access to the calendar."
-                DispatchQueue.main.async {
-                    if let viewController = self?.getVisibleViewController() {
-                        self?.showAlert(title: "Access Denied", message: eventErrorMessage, viewController: viewController)
-                    }
-                }
-                return
-            }
+        @objc func showAllWorkouts() {
+            let eventStore = EKEventStore()
             
-            // Request Access -> .reminder
-            eventStore.requestAccess(to: .reminder) { [weak self] reminderAccessGranted, reminderError in
-                guard reminderAccessGranted && reminderError == nil else {
-                    // Access to reminders denied or error occurred
-                    let reminderErrorMessage = reminderError?.localizedDescription ?? "Failed to request access to reminders."
+            // Requesting access -> .event
+            eventStore.requestAccess(to: .event) { [weak self] eventAccessGranted, eventError in
+                guard eventAccessGranted && eventError == nil else {
+                    // Access to events denied or error occurred
+                    let eventErrorMessage = eventError?.localizedDescription ?? "Failed to request access to the calendar."
                     DispatchQueue.main.async {
                         if let viewController = self?.getVisibleViewController() {
-                            self?.showAlert(title: "Access Denied", message: reminderErrorMessage, viewController: viewController)
+                            self?.showAlert(title: "Access Denied", message: eventErrorMessage, viewController: viewController)
                         }
                     }
                     return
                 }
                 
-                // Access granted, proceed with adding the event and reminder
-                let event = EKEvent(eventStore: eventStore)
-                event.title = "Workout"
-                event.notes = "Don't forget to exercise!"
-                
-                DispatchQueue.main.async {
-                    // Prompt the user to select a date and time
-                    let alertController = UIAlertController(title: "Choose Date and Time", message: nil, preferredStyle: .alert)
-                    
-                    // Create and configure the date picker
-                    let datePicker = UIDatePicker()
-                    datePicker.datePickerMode = .dateAndTime
-                    
-                    // Add the date picker to the alert controller
-                    alertController.view.addSubview(datePicker)
-                    
-                    // Add OK action
-                    let addAction = UIAlertAction(title: "OK", style: .default) { _ in
+                // Request Access -> .reminder
+                eventStore.requestAccess(to: .reminder) { [weak self] reminderAccessGranted, reminderError in
+                    guard reminderAccessGranted && reminderError == nil else {
+                        // Access to reminders denied or error occurred
+                        let reminderErrorMessage = reminderError?.localizedDescription ?? "Failed to request access to reminders."
                         DispatchQueue.main.async {
-                            event.startDate = datePicker.date
-                            event.endDate = datePicker.date.addingTimeInterval(600)
-                            
-                            // Set the calendar for the event
-                            let calendars = eventStore.calendars(for: .event)
-                            if let defaultCalendar = calendars.first {
-                                event.calendar = defaultCalendar
-                            } else {
-                                if let viewController = self?.getVisibleViewController() {
-                                    self?.showAlert(title: "Error", message: "No calendars found.", viewController: viewController)
-                                }
-                                return
+                            if let viewController = self?.getVisibleViewController() {
+                                self?.showAlert(title: "Access Denied", message: reminderErrorMessage, viewController: viewController)
                             }
-                            
-                            do {
-                                try eventStore.save(event, span: .thisEvent)
-                                if let viewController = self?.getVisibleViewController() {
-                                    //                                    self?.showAlert(title: "Success", message: "Event added to calendar!", viewController: viewController)
+                        }
+                        return
+                    }
+                    
+                    // Access granted, proceed with adding the event and reminder
+                    let event = EKEvent(eventStore: eventStore)
+                    event.title = "Workout"
+                    event.notes = "Don't forget to exercise!"
+                    
+                    DispatchQueue.main.async {
+                        // Prompt the user to select a date and time
+                        let alertController = UIAlertController(title: "Choose Date and Time", message: nil, preferredStyle: .alert)
+                        
+                        // Create and configure the date picker
+                        let datePicker = UIDatePicker()
+                        datePicker.datePickerMode = .dateAndTime
+                        
+                        // Add the date picker to the alert controller
+                        alertController.view.addSubview(datePicker)
+                        
+                        // Add OK action
+                        let addAction = UIAlertAction(title: "OK", style: .default) { _ in
+                            DispatchQueue.main.async {
+                                event.startDate = datePicker.date
+                                event.endDate = datePicker.date.addingTimeInterval(600)
+                                
+                                // Set the calendar for the event
+                                let calendars = eventStore.calendars(for: .event)
+                                if let defaultCalendar = calendars.first {
+                                    event.calendar = defaultCalendar
+                                } else {
+                                    if let viewController = self?.getVisibleViewController() {
+                                        self?.showAlert(title: "Error", message: "No calendars found.", viewController: viewController)
+                                    }
+                                    return
                                 }
-                                
-                                // Add a reminder for the event
-                                let reminder = EKReminder(eventStore: eventStore)
-                                reminder.title = "Workout Reminder"
-                                reminder.calendar = eventStore.defaultCalendarForNewReminders()
-                                
-                                let alarm = EKAlarm(absoluteDate: event.startDate)
-                                reminder.addAlarm(alarm)
                                 
                                 do {
-                                    try eventStore.save(reminder, commit: true)
+                                    try eventStore.save(event, span: .thisEvent)
                                     if let viewController = self?.getVisibleViewController() {
-                                        self?.showAlert(title: "Success", message: "Event and reminder added to calendar!", viewController: viewController)
+                                        // self?.showAlert(title: "Success", message: "Event added to calendar!", viewController: viewController)
+
+                                    }
+                                    
+                                    // Add a reminder for the event
+                                    let reminder = EKReminder(eventStore: eventStore)
+                                    reminder.title = "Workout Reminder"
+                                    reminder.calendar = eventStore.defaultCalendarForNewReminders()
+                                    
+                                    let alarm = EKAlarm(absoluteDate: event.startDate)
+                                    reminder.addAlarm(alarm)
+                                    
+                                    do {
+                                        try eventStore.save(reminder, commit: true)
+                                        if let viewController = self?.getVisibleViewController() {
+                                            self?.showAlert(title: "Success", message: "Event and reminder added to calendar!", viewController: viewController)
+                                        }
+                                    } catch {
+                                        if let viewController = self?.getVisibleViewController() {
+                                            self?.showAlert(title: "Error", message: "Failed to save reminder to calendar: \(error.localizedDescription)", viewController: viewController)
+                                        }
                                     }
                                 } catch {
                                     if let viewController = self?.getVisibleViewController() {
-                                        self?.showAlert(title: "Error", message: "Failed to save reminder to calendar: \(error.localizedDescription)", viewController: viewController)
+                                        self?.showAlert(title: "Error", message: "Failed to save event to calendar: \(error.localizedDescription)", viewController: viewController)
                                     }
-                                }
-                            } catch {
-                                if let viewController = self?.getVisibleViewController() {
-                                    self?.showAlert(title: "Error", message: "Failed to save event to calendar: \(error.localizedDescription)", viewController: viewController)
                                 }
                             }
                         }
+                        alertController.addAction(addAction)
+                        
+                        // Add cancel action
+                        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                        alertController.addAction(cancelAction)
+                        
+                        // Customize alert controller appearance
+                        alertController.view.tintColor = .systemGreen
+                        alertController.view.backgroundColor = .white
+                        alertController.view.layer.cornerRadius = 10
+                        
+                        // Customize date picker appearance
+                        datePicker.setValue(UIColor.systemGreen, forKey: "textColor")
+                        
+                        // Add padding to the top constraint of the alert controller's view
+                        let paddingTop: CGFloat = 30
+                        if let alertControllerView = alertController.view.subviews.first?.subviews.first {
+                            alertControllerView.topAnchor.constraint(equalTo: alertControllerView.superview!.topAnchor, constant: paddingTop).isActive = true
+                        }
+                        
+                        if let viewController = self?.getVisibleViewController() {
+                            viewController.present(alertController, animated: true, completion: nil)
+                        }
+                        
+                        datePicker.translatesAutoresizingMaskIntoConstraints = false
+                        
+                        NSLayoutConstraint.activate([
+                            datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 20 + 15 + 40), // Adjust top constraint value with padding
+                            datePicker.leadingAnchor.constraint(equalTo: alertController.view.leadingAnchor, constant: 20 + 15 + 40), // Adjust leading constraint value with padding
+                            datePicker.trailingAnchor.constraint(equalTo: alertController.view.trailingAnchor, constant: -20 - 15 - 40), // Adjust trailing constraint value with padding
+                            datePicker.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -20 - 15 - 40) // Adjust bottom constraint value with padding
+                        ])
                     }
-                    alertController.addAction(addAction)
-                    
-                    // Add cancel action
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                    alertController.addAction(cancelAction)
-                    
-                    // Customize alert controller appearance
-                    alertController.view.tintColor = .systemGreen
-                    alertController.view.backgroundColor = .white
-                    alertController.view.layer.cornerRadius = 10
-                    
-                    // Customize date picker appearance
-                    datePicker.setValue(UIColor.systemGreen, forKey: "textColor")
-                    
-                    // Add padding to the top constraint of the alert controller's view
-                    let paddingTop: CGFloat = 30
-                    if let alertControllerView = alertController.view.subviews.first?.subviews.first {
-                        alertControllerView.topAnchor.constraint(equalTo: alertControllerView.superview!.topAnchor, constant: paddingTop).isActive = true
-                    }
-                    
-                    if let viewController = self?.getVisibleViewController() {
-                        viewController.present(alertController, animated: true, completion: nil)
-                    }
-                    
-                    datePicker.translatesAutoresizingMaskIntoConstraints = false
-                    
-                    NSLayoutConstraint.activate([
-                        datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 20 + 15 + 40), // Adjust top constraint value with padding
-                        datePicker.leadingAnchor.constraint(equalTo: alertController.view.leadingAnchor, constant: 20 + 15 + 40), // Adjust leading constraint value with padding
-                        datePicker.trailingAnchor.constraint(equalTo: alertController.view.trailingAnchor, constant: -20 - 15 - 40), // Adjust trailing constraint value with padding
-                        datePicker.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -20 - 15 - 40) // Adjust bottom constraint value with padding
-                    ])
                 }
             }
         }
-    }
-    
+        
+
+
     
     // MARK: Show Alert
     func showAlert(title: String, message: String, viewController: UIViewController) {
