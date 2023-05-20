@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import AVKit
 
 
 class SettingsBaseController: BaseController, UITableViewDataSource, UITableViewDelegate, CollectionTableViewCellDelegate3, CollectionTableViewCellDelegate4 {
@@ -251,12 +252,9 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return view.frame.size.width/2.5
-//            return UITableView.automaticDimension
         } else if indexPath.section == 1{
-//            return UITableView.automaticDimension
             return view.frame.size.width/2.5
         } else {
-//            return UITableView.automaticDimension
             return view.frame.size.width/2.5
         }
     }
@@ -293,6 +291,7 @@ extension SettingsBaseController: CollectionTableViewCellDelegate{
                 UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
             }
         }))
+
         
         // Add cancel action
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

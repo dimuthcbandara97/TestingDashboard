@@ -31,11 +31,11 @@ class CollectionTableViewCell3: UITableViewCell , UICollectionViewDelegate, UICo
         layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.collectionView.register(TitleCollectionViewCell3.self, forCellWithReuseIdentifier: TitleCollectionViewCell3.identifier)
-        self.collectionView.backgroundColor = .systemBackground
+        self.collectionView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.backgroundColor = .systemBackground
+        self.collectionView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         contentView.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self

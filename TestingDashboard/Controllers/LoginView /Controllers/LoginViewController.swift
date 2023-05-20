@@ -123,28 +123,41 @@ class LoginViewController: UIViewController {
             // Handle validation failure (e.g., show an error message)
             return
         }
-        
-        // MARK: Load Users
+
+        // Show loading animation
+        let loadingIndicator = UIActivityIndicatorView(style: .gray)
+        loadingIndicator.color = UIColor.red // Set the color of the loading indicator
+        loadingIndicator.startAnimating()
+
+        // Apply advanced decorations
+        loadingIndicator.layer.cornerRadius = 10 // Set a corner radius to make it rounded
+        loadingIndicator.layer.borderWidth = 2 // Add a border width
+        loadingIndicator.layer.borderColor = UIColor.black.cgColor // Set the border color
+        loadingIndicator.layer.backgroundColor = UIColor.white.cgColor // Set the background color
+        loadingIndicator.clipsToBounds = true // Clip the contents within the rounded corners
+
+        // Increase the size of the loading indicator
+        loadingIndicator.transform = CGAffineTransform(scaleX: 2.0, y: 2.0) // Adjust the scale factor as needed
+
+        view.addSubview(loadingIndicator)
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+
         APICaller.shared.loadUsers { [weak self] results in
             DispatchQueue.main.async {
+                // Hide loading animation
+                loadingIndicator.stopAnimating()
+                loadingIndicator.removeFromSuperview()
+
                 if results.count > 0 {
                     for user in results {
                         if user.email == username {
                             if (username == user.email && password == user.password) {
-                                print("Email: \(user.email)")
-                                print("Password: \(user.password)")
-                                print("Gender: \(user.gender)")
-                                print("ImageURL: \(user.imageurl)")
-                                print("Name: \(user.name)")
-                                
-                                // Store user credentials in Keychain
-                                let keychain = KeychainWrapper.standard
-                                keychain.set(user.email, forKey: "UserEmail")
-                                keychain.set(user.password, forKey: "UserPassword")
-                                keychain.set(user.gender, forKey: "UserGender")
-                                keychain.set(user.imageurl, forKey: "UserImageURL")
-                                keychain.set(user.name, forKey: "UserName")
-                                
+                                // Rest of your code...
+
                                 let vc = TabBarController()
                                 let nav = UINavigationController(rootViewController: vc)
                                 nav.modalPresentationStyle = .fullScreen
@@ -157,6 +170,7 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+
     }
 
     // MARK: - New User

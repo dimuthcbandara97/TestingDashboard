@@ -125,13 +125,13 @@ class ExerciseViewCell: UITableViewCell {
                 DispatchQueue.main.async {
                     let userDetailsHeight = getUserDetailsHeight() ?? 0
                     let userDetailsWeight = getUserDetailsWeight() ?? 0
-                    
+
                     // Calculate BMI based on height and weight
                     let bmi = calculateBMI(height: userDetailsHeight, weight: userDetailsWeight)
-                    
+
                     // Placeholder condition for filtering based on BMI
                     let shouldDisplayExercise: Bool
-                    
+
                     switch bmi {
                     case ..<18.5: // Underweight
                         shouldDisplayExercise = exercise.bmiRange == "Underweight"
@@ -145,7 +145,7 @@ class ExerciseViewCell: UITableViewCell {
                     default:
                         shouldDisplayExercise = false
                     }
-                    
+
                     if shouldDisplayExercise {
                         self.exerciseImageView.image = UIImage(data: imageData)
                         self.exerciseTitleLabel.text = exercise.exerciseName
@@ -157,6 +157,7 @@ class ExerciseViewCell: UITableViewCell {
                 }
             }
         }
+        
 
         func calculateBMI(height: Int, weight: Int) -> Double {
             let heightInMeters = Double(height) / 100.0 // Convert height to meters

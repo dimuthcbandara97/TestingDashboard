@@ -103,7 +103,7 @@ extension SessionBaseController {
         timerView.configure(with: Double(timerDuration), progress: 0)
                 
 //        title = OverallController.Strings.NavBar.session?
-        title = " 🎯 Loading Your Timer"
+        title = " Loading Your Timer"
         navigationController?.tabBarItem.title = OverallController.Strings.TabBar.title(for: .session)
         
         addNavBarButton(at: .Left, with: "START")
