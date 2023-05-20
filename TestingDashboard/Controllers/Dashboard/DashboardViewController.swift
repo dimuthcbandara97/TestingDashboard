@@ -19,12 +19,12 @@ class DashboardBaseController: BaseController {
     
     let cellIdentifier = "CustomCell"
     
-     // MARK: Did Load
+    // MARK: Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         let keychain = KeychainWrapper.standard
-
+        
         if let userEmail = keychain.string(forKey: "UserEmail") {
             APICaller.shared.loadUserDetails { results in
                 DispatchQueue.main.async {
@@ -32,7 +32,7 @@ class DashboardBaseController: BaseController {
                         for user in results {
                             if user.email == userEmail {
                                 
-                                    // Store user credentials in Keychain
+                                // Store user credentials in Keychain
                                 keychain.set(user.fitnessGoal, forKey: "userDetailsFitnessGoal")
                                 keychain.set(user.height, forKey: "userDetailsHeight")
                                 keychain.set(user.weight, forKey: "userDetialsWeight")
@@ -49,12 +49,12 @@ class DashboardBaseController: BaseController {
                 }
             }
         }
-       
+        
         
     }
     
-
-
+    
+    
     override func setupViews() {
         super.setupViews()
         
@@ -83,10 +83,9 @@ class DashboardBaseController: BaseController {
         view.setupView(navBar)
         view.setupView(header)
     }
-
-
-
     
+    
+    // MARK: Constraints
     override func constaintViews() {
         super.constaintViews()
         
@@ -98,7 +97,7 @@ class DashboardBaseController: BaseController {
             navBar.leftAnchor.constraint(equalTo: view.leftAnchor),
             navBar.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
-
+        
         // Constraints for header view
         NSLayoutConstraint.activate([
             header.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: -10),
@@ -108,7 +107,7 @@ class DashboardBaseController: BaseController {
             header.leftAnchor.constraint(equalTo: view.leftAnchor),
             header.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
-
+        
     }
     
     override func configureAppearance() {

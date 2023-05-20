@@ -10,11 +10,10 @@ import SwiftKeychainWrapper
 
 
 class ExerciseViewCell: UITableViewCell {
-
+    
     
     private let exerciseImageView: UIImageView = {
         let video = UIImageView()
-//        video.contentMode = .scaleAspectFill
         video.clipsToBounds = false
         video.layer.cornerRadius = 4
         return video
@@ -28,7 +27,7 @@ class ExerciseViewCell: UITableViewCell {
         title.lineBreakMode = .byTruncatingTail
         return title
     }()
-   
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -44,32 +43,34 @@ class ExerciseViewCell: UITableViewCell {
     
     func set(exercise: ExerciseElement) {
         
-
+        
+        // MARK: Load Keychains
         let keychain = KeychainWrapper.standard
-    //
+        //
         func getUserDetailsFitnessGoal() -> String? {
             return keychain.string(forKey: "userDetailsFitnessGoal")
         }
-
+        
         func getUserDetailsHeight() -> Int? {
             return keychain.integer(forKey: "userDetailsHeight")
         }
-
+        
         func getUserDetailsWeight() -> Int? {
             return keychain.integer(forKey: "userDetialsWeight")
         }
-
+        
         func getUserDetailsAge() -> Int? {
             return keychain.integer(forKey: "userDetialsAge")
         }
-
+        
         func getUserDetailsStatus() -> String? {
             return keychain.string(forKey: "userDetialsStatus")
         }
-       
+        
         if let userEmail = keychain.string(forKey: "UserEmail") {
             print("User Email Keychain: \(userEmail)")
-
+            
+            // API Caller -> Load User Details
             APICaller.shared.loadUserDetails { results in
                 DispatchQueue.main.async {
                     if results.count > 0 {
@@ -98,6 +99,7 @@ class ExerciseViewCell: UITableViewCell {
         
         let imageUrl = URL(string: exercise.imageurl)!
         
+        // MARK: SET BMI Value
         func setBMIValue(_ value: Double, forBMIRange range: String) {
             // Use the appropriate key based on the BMI range
             let key: String
@@ -118,20 +120,20 @@ class ExerciseViewCell: UITableViewCell {
             // Set the BMI value in the keychain
             keychain.set(value, forKey: key)
         }
-
-
+        
+        // MARK: Display Exercises according to BMI
         DispatchQueue.global().async {
             if let imageData = try? Data(contentsOf: imageUrl) {
                 DispatchQueue.main.async {
                     let userDetailsHeight = getUserDetailsHeight() ?? 0
                     let userDetailsWeight = getUserDetailsWeight() ?? 0
-
+                    
                     // Calculate BMI based on height and weight
                     let bmi = calculateBMI(height: userDetailsHeight, weight: userDetailsWeight)
-
+                    
                     // Placeholder condition for filtering based on BMI
                     let shouldDisplayExercise: Bool
-
+                    
                     switch bmi {
                     case ..<18.5: // Underweight
                         shouldDisplayExercise = exercise.bmiRange == "Underweight"
@@ -145,7 +147,7 @@ class ExerciseViewCell: UITableViewCell {
                     default:
                         shouldDisplayExercise = false
                     }
-
+                    
                     if shouldDisplayExercise {
                         self.exerciseImageView.image = UIImage(data: imageData)
                         self.exerciseTitleLabel.text = exercise.exerciseName
@@ -153,21 +155,21 @@ class ExerciseViewCell: UITableViewCell {
                         self.exerciseImageView.image = UIImage(data: imageData)
                         self.exerciseTitleLabel.text = exercise.exerciseName + " (Extra)"
                     }
-
+                    
                 }
             }
         }
         
-
+        // MARK: calculate BMI
         func calculateBMI(height: Int, weight: Int) -> Double {
             let heightInMeters = Double(height) / 100.0 // Convert height to meters
             let bmi = Double(weight) / (heightInMeters * heightInMeters) // Calculate BMI using the formula
             
             return bmi
         }
-
+        
     }
-
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

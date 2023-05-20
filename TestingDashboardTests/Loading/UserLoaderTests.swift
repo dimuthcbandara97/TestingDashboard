@@ -48,10 +48,10 @@ struct UserElement: Codable {
     let name, password, email: String
     let gender, status: String
     let imageurl: String
-
+    
     enum CodingKeys: String, CodingKey {
         case name, password, email, gender, status, imageurl
-
+        
     }
 }
 

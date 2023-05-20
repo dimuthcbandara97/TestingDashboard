@@ -71,11 +71,11 @@ enum OverallController {
         enum TabBar {
             static func icon(for tab: Tabs) -> UIImage? {
                 switch tab {
-                    case .dashboard: return UIImage(systemName: "house")
-                    case .session: return UIImage(systemName: "bolt")
-                    case .progress: return UIImage(systemName: "chart.bar.xaxis")
-                    case .details: return UIImage(systemName: "info.circle")
-
+                case .dashboard: return UIImage(systemName: "house")
+                case .session: return UIImage(systemName: "bolt")
+                case .progress: return UIImage(systemName: "chart.bar.xaxis")
+                case .details: return UIImage(systemName: "info.circle")
+                    
                 }
             }
         }

@@ -35,7 +35,7 @@ enum StatsItem {
         }
     }
 }
- 
+
 // MARK: Extension
 class StatsItemView: BaseView {
     
@@ -46,42 +46,42 @@ class StatsItemView: BaseView {
         let title: String
     }
     
-
-     private let imageView: UIImageView = {
-         let imageView = UIImageView()
-         imageView.contentMode = .scaleAspectFill
-         imageView.clipsToBounds = false
-         imageView.layer.cornerRadius = 8
-         return imageView
-     }()
-//     imageView.contentMode = .scaleAspectFit
-//     imageView.clipsToBounds = true
-
-     private let valueLabel: UILabel = {
-         let label = UILabel()
-         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-         label.textColor = .black
-         label.textAlignment = .center
-         return label
-     }()
-
-     private let titleLabel: UILabel = {
-         let label = UILabel()
-         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-         label.textColor = .purple
-         label.textAlignment = .center
-         return label
-     }()
-
-     private let stackView: UIStackView = {
-         let view = UIStackView()
-         view.axis = .vertical
-         view.alignment = .center
-         view.distribution = .fillProportionally
-         view.spacing = 5
-         return view
-     }()
-
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = false
+        imageView.layer.cornerRadius = 8
+        return imageView
+    }()
+    //     imageView.contentMode = .scaleAspectFit
+    //     imageView.clipsToBounds = true
+    
+    private let valueLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.textColor = .purple
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let stackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.alignment = .center
+        view.distribution = .fillProportionally
+        view.spacing = 5
+        return view
+    }()
+    
     
     // CONFIGURE FUNC
     func configure(with item: StatsItem) {
@@ -102,7 +102,7 @@ extension StatsItemView {
         stackView.addArrangedSubview(valueLabel)
         stackView.addArrangedSubview(titleLabel)
     }
-   
+    
     // MARK: Constraint Views
     override func constaintViews(){
         super.constaintViews()

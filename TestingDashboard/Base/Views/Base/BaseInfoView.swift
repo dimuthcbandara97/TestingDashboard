@@ -11,6 +11,7 @@ import Foundation
 class BaseInfoView: BaseView {
     
     
+    // Title Label
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
@@ -22,9 +23,10 @@ class BaseInfoView: BaseView {
         return label
     }()
     
-    
+    // Button
     private let button = BaseButton(with: .primary)
     
+    // Content View
     let contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -51,6 +53,7 @@ class BaseInfoView: BaseView {
         super.init(frame: .zero)
     }
     
+    // MARK: Add Button Target
     func addButtonTarget(target: Any?, action: Selector) {
         button.addTarget(action, action: action, for: .touchUpInside)
     }
@@ -65,6 +68,7 @@ extension BaseInfoView {
         setupView(contentView)
     }
     
+    // MARK: Constaint Views
     override func constaintViews() {
         super.constaintViews()
         

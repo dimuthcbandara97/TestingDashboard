@@ -16,9 +16,10 @@ public enum WAButtonType {
 // MARK: Base Button Configuration
 final class BaseButton: UIButton {
     
+    // Set the button type
     private var type: WAButtonType = .primary
     
-    
+    // Label
     private let label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -35,6 +36,7 @@ final class BaseButton: UIButton {
         return label
     }()
     
+    // iconview
     private let iconView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "home")
@@ -54,6 +56,7 @@ final class BaseButton: UIButton {
         configureAll()
     }
     
+    // MARK: Configure All
     private func configureAll(){
         setupViews()
         constaintViews()
@@ -104,6 +107,7 @@ private extension BaseButton {
         
         switch type {
             
+        // Primary Burron
         case .primary:
             label.textColor = .blue
             label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
@@ -114,7 +118,7 @@ private extension BaseButton {
             iconView.contentMode = .scaleAspectFit // adjust the icon's content mode
             iconView.clipsToBounds = true // clip the icon's contents to its bounds
             
-            
+         // Secondary Button
         case .secondary:
             backgroundColor = .systemBackground
             layer.cornerRadius = 14

@@ -14,7 +14,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
     
     // MARK: DidTap -> Model 04
     func collectionTableViewCellDidTapItem(with viewModel4: TitleCollectionViewCellViewModel4) {
-
+        
         let alert = UIAlertController(title: viewModel4.name, message: "Fitness Goal: "+viewModel4.fitnessGoal+"\n\n"+viewModel4.details, preferredStyle: .alert)
         
         // Add action to open YouTube
@@ -58,33 +58,33 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
         table.register(CollectionTableViewCell4.self, forCellReuseIdentifier: CollectionTableViewCell4.identifier)
         return table
     }()
-
-
+    
+    
     // MARK: Variable Declartion
     private let apiCaller = APICaller()
     private var viewModels: [CollectionTableViewCellViewModel] = []
     private var viewModels3: [CollectionTableViewCellViewModel3] = []
     private var viewModels4: [CollectionTableViewCellViewModel4] = []
-
+    
     func fetchData() {
         let keychain = KeychainWrapper.standard
-    //
+        //
         func getUserDetailsFitnessGoal() -> String? {
             return keychain.string(forKey: "userDetailsFitnessGoal")
         }
-
+        
         func getUserDetailsHeight() -> Int? {
             return keychain.integer(forKey: "userDetailsHeight")
         }
-
+        
         func getUserDetailsWeight() -> Int? {
             return keychain.integer(forKey: "userDetialsWeight")
         }
-
+        
         func getUserDetailsAge() -> Int? {
             return keychain.integer(forKey: "userDetialsAge")
         }
-
+        
         func getUserDetailsStatus() -> String? {
             return keychain.string(forKey: "userDetialsStatus")
         }
@@ -115,7 +115,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
             }
         }
-
+        
         
         // Load Exercise
         apiCaller.loadExercise { [weak self] nutritionElements in
@@ -144,7 +144,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
             }
         }
-
+        
         
         apiCaller.loadMeditation { [weak self] nutritionElements in
             guard let self = self else { return }
@@ -159,42 +159,42 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             self.viewModels4 = collectionViewModels
             
             // Reload the table view to display the new data
-//            self.tableView.reloadData()
+            //            self.tableView.reloadData()
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Create a container view to hold the titleLabel
         let containerView = UIView()
-
+        
         // Create a custom UILabel for the navigation title
         let titleLabel = UILabel()
         titleLabel.text = "Details"
         titleLabel.textColor = UIColor.red
         titleLabel.font = UIFont.boldSystemFont(ofSize: 26)
-
+        
         // Add the titleLabel to the containerView
         containerView.addSubview(titleLabel)
-
+        
         // Apply constraints to position the titleLabel within the containerView
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -30)  
         ])
-
+        
         // Set the containerView as the titleView of the navigation item
         navigationItem.titleView = containerView
-
+        
         fetchData()
     }
-
+    
     override func setupViews() {
         super.setupViews()
         
@@ -220,7 +220,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             return viewModels4.count
         }
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //MARK: Exercise Section
         if indexPath.section == 0 {
@@ -247,7 +247,7 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             return cell
         }
     }
-
+    
     // MARK: TableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
@@ -258,11 +258,11 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             return view.frame.size.width/2.5
         }
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
-
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Exercises To Gain Your Goal"
@@ -272,11 +272,11 @@ class SettingsBaseController: BaseController, UITableViewDataSource, UITableView
             return "Meditation To Gain Your Goal"
         }
     }
-
+    
 }
 
 extension SettingsBaseController: CollectionTableViewCellDelegate{
-
+    
     func collectionTableViewCellDidTapItem(with viewModel: TitleCollectionViewCellViewModel) {
         
         let exerciseTimeString = String(viewModel.exerciseTime)
@@ -291,7 +291,7 @@ extension SettingsBaseController: CollectionTableViewCellDelegate{
                 UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
             }
         }))
-
+        
         
         // Add cancel action
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

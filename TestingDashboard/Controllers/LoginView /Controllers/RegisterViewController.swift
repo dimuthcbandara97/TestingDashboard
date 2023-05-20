@@ -23,46 +23,46 @@ class RegisterViewController: UIViewController {
     private let imageurlField = CustomTextField(fieldType: .imageurl)
     private let genderField = CustomTextField(fieldType: .gender)
     //Remaining call
-
-//    // MARK: - UserElement
-//    struct UserElement: Codable {
-//        let id, name, password, email: String
-//        let gender, status: String
-//        let imageurl: String
-//        let v: Int
-//
-//        enum CodingKeys: String, CodingKey {
-//            case id = "_id"
-//            case name, password, email, gender, status, imageurl
-//            case v = "__v"
-//        }
-//    }
-//
-//    typealias User = [UserElement]
-   
+    
+    //    // MARK: - UserElement
+    //    struct UserElement: Codable {
+    //        let id, name, password, email: String
+    //        let gender, status: String
+    //        let imageurl: String
+    //        let v: Int
+    //
+    //        enum CodingKeys: String, CodingKey {
+    //            case id = "_id"
+    //            case name, password, email, gender, status, imageurl
+    //            case v = "__v"
+    //        }
+    //    }
+    //
+    //    typealias User = [UserElement]
+    
     // Define the variables
-//    var username: String? {
-//        return usernameField.text
-//    }
-//
-//    var email: String? {
-//        return emailField.text
-//    }
-//
-//    var password: String? {
-//        return passwordField.text
-//    }
-//
-//    var age: String? {
-//        return ageField.text
-//    }
-//
-//    var gender: String? {
-//        return genderField.text
-//    }
-
+    //    var username: String? {
+    //        return usernameField.text
+    //    }
+    //
+    //    var email: String? {
+    //        return emailField.text
+    //    }
+    //
+    //    var password: String? {
+    //        return passwordField.text
+    //    }
+    //
+    //    var age: String? {
+    //        return ageField.text
+    //    }
+    //
+    //    var gender: String? {
+    //        return genderField.text
+    //    }
+    
     // Create a user object with the defined variables
-   
+    
     
     // buttons
     private let signUpButton = CustomButton(title: "Register", hasBackground: true, fontSize: .big)
@@ -130,7 +130,7 @@ class RegisterViewController: UIViewController {
         self.signUpButton.translatesAutoresizingMaskIntoConstraints = false
         self.termsTextView.translatesAutoresizingMaskIntoConstraints = false
         self.signInButton.translatesAutoresizingMaskIntoConstraints = false
-
+        
         // Setting up constraints
         NSLayoutConstraint.activate([
             
@@ -158,23 +158,23 @@ class RegisterViewController: UIViewController {
             self.passwordField.heightAnchor.constraint(equalToConstant: 55),
             self.passwordField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             // age
-                    self.imageurlField.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
-                    self.imageurlField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.imageurlField.heightAnchor.constraint(equalToConstant: 55),
-                    self.imageurlField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-                    
-                    // gender
-                    self.genderField.topAnchor.constraint(equalTo: imageurlField.bottomAnchor, constant: 22),
-                    self.genderField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.genderField.heightAnchor.constraint(equalToConstant: 55),
-                    self.genderField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-                    
-                    // sign up
-                    self.signUpButton.topAnchor.constraint(equalTo: genderField.bottomAnchor, constant: 22),
-                    self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
-                    self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-
+            self.imageurlField.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 22),
+            self.imageurlField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            self.imageurlField.heightAnchor.constraint(equalToConstant: 55),
+            self.imageurlField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            
+            // gender
+            self.genderField.topAnchor.constraint(equalTo: imageurlField.bottomAnchor, constant: 22),
+            self.genderField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            self.genderField.heightAnchor.constraint(equalToConstant: 55),
+            self.genderField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            
+            // sign up
+            self.signUpButton.topAnchor.constraint(equalTo: genderField.bottomAnchor, constant: 22),
+            self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
+            self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            
             
             // terms and conditions
             self.termsTextView.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 6),
@@ -188,7 +188,7 @@ class RegisterViewController: UIViewController {
             self.signInButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
         ])
     }
-
+    
     @objc func didTapSignUp() {
         let username = usernameField.text!
         let email = emailField.text!
@@ -203,6 +203,7 @@ class RegisterViewController: UIViewController {
         print(imageurl)
         print(gender)
         
+        // MARK: Keychains
         let keychain = KeychainWrapper.standard
         keychain.set(username, forKey: "UserNameRegister")
         keychain.set(email, forKey: "EmailRegister")
@@ -213,16 +214,16 @@ class RegisterViewController: UIViewController {
         let userss = UserElement(name: username , password: password , email: email , gender: gender , imageurl: imageurl)
         
         APICaller.shared.insertUser(userr:userss) { success, error in
-                    if let error = error {
-                        print("API call failed with error: \(error.localizedDescription)")
-                        return
-                    }
-                    if success {
-                        print("API call successful")
-                    } else {
-                        print("API call failed")
-                    }
-                }
+            if let error = error {
+                print("API call failed with error: \(error.localizedDescription)")
+                return
+            }
+            if success {
+                print("API call successful")
+            } else {
+                print("API call failed")
+            }
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             // Code to be executed after a 2 second delay
@@ -230,11 +231,9 @@ class RegisterViewController: UIViewController {
             let vc = RegisterDetailsController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
-
+        
     }
-
-  
-
+ 
     @objc private func didTapSignIn() {
         self.navigationController?.popToRootViewController(animated: true)
     }

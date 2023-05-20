@@ -12,36 +12,36 @@ class NutritionLoaderTests: XCTestCase {
     func testLoadNutritionWithValidData() {
         let expectation = XCTestExpectation(description: "Load nutrition data from API")
         let nutritionLoader = NutritionLoader()
-
+        
         nutritionLoader.loadNutrition { nutrition in
             XCTAssertGreaterThan(nutrition.count, 0)
             expectation.fulfill()
         }
-
+        
         wait(for: [expectation], timeout: 5.0)
     }
-
+    
     func testLoadNutritionWithInvalidURL() {
         let expectation = XCTestExpectation(description: "Load nutrition data from API with invalid URL")
         let nutritionLoader = NutritionLoader()
-
+        
         nutritionLoader.loadNutrition { nutrition in
             XCTAssertEqual(nutrition.count, 0)
             expectation.fulfill()
         }
-
+        
         wait(for: [expectation], timeout: 5.0)
     }
-
+    
     func testLoadNutritionWithInvalidData() {
         let expectation = XCTestExpectation(description: "Load nutrition data from API with invalid data")
         let nutritionLoader = NutritionLoader()
-
+        
         nutritionLoader.loadNutrition { nutrition in
             XCTAssertEqual(nutrition.count, 0)
             expectation.fulfill()
         }
-
+        
         wait(for: [expectation], timeout: 5.0)
     }
 }
@@ -53,14 +53,14 @@ struct NutritionElement: Codable {
 class NutritionLoader {
     func loadNutrition(completion: @escaping ([NutritionElement]) -> Void) {
         guard let url = URL(string: Constants5.API_KEY_NUTRITION) else { return }
-
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url, timeoutInterval: 30)) { data, _, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "Unknown error")
                 completion([])
                 return
             }
-
+            
             do {
                 let results = try JSONDecoder().decode([NutritionElement].self, from: data)
                 completion(results)
@@ -69,7 +69,7 @@ class NutritionLoader {
                 completion([])
             }
         }
-
+        
         task.resume()
     }
 }

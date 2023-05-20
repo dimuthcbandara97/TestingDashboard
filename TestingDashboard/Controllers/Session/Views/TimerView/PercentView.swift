@@ -11,7 +11,7 @@ import UIKit
 extension TimerView {
     
     final class PercentView: BaseView {
-         
+        
         private let stackView: UIStackView = {
             let view = UIStackView()
             view.axis = .vertical
@@ -19,7 +19,7 @@ extension TimerView {
             view.spacing = 5
             return view
         }()
-
+        
         // Percent
         private let percentLabel: UILabel = {
             let label = UILabel()
@@ -28,7 +28,7 @@ extension TimerView {
             label.textAlignment = .center
             return label
         }()
-
+        
         // Subtitle
         private let subtitleLabel: UILabel = {
             let label = UILabel()
@@ -40,36 +40,36 @@ extension TimerView {
             label.numberOfLines = 1
             return label
         }()
-
-
+        
+        
         
         // MARK: Setup Views
-    override func setupViews() {
-        super.setupViews()
-        setupView(stackView)
-        stackView.addArrangedSubview(percentLabel)
-        stackView.addArrangedSubview(subtitleLabel)
-    }
-     
+        override func setupViews() {
+            super.setupViews()
+            setupView(stackView)
+            stackView.addArrangedSubview(percentLabel)
+            stackView.addArrangedSubview(subtitleLabel)
+        }
+        
         // MARK: Constraints
-    override func constaintViews() {
-        
-        super.constaintViews()
-        
-        // Layouts
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-    }
+        override func constaintViews() {
+            
+            super.constaintViews()
+            
+            // Layouts
+            NSLayoutConstraint.activate([
+                stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                stackView.topAnchor.constraint(equalTo: topAnchor),
+                stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+        }
         
         // Configuring
         func configure(with title: String, andValue value: Int) {
             subtitleLabel.text = title
             percentLabel.text = "\(value)%"
         }
-       
+        
     }
 }

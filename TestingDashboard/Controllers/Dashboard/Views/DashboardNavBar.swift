@@ -15,7 +15,7 @@ class DashboardNavBar: BaseView {
     let tableView = UITableView()
     let cellIdentifier = "CustomCell"
     
-    
+    // MARK: Title Button
     private let titleButton: BaseButton = {
         let button = BaseButton(with: .primary)
         button.setTitle("View Scheudle", for: .normal)
@@ -57,6 +57,7 @@ class DashboardNavBar: BaseView {
     @objc func showAllWorkouts() {
         let eventStore = EKEventStore()
         
+        // Requesting access -> .event
         eventStore.requestAccess(to: .event) { [weak self] eventAccessGranted, eventError in
             guard eventAccessGranted && eventError == nil else {
                 // Access to events denied or error occurred
@@ -69,6 +70,7 @@ class DashboardNavBar: BaseView {
                 return
             }
             
+            // Request Access -> .reminder
             eventStore.requestAccess(to: .reminder) { [weak self] reminderAccessGranted, reminderError in
                 guard reminderAccessGranted && reminderError == nil else {
                     // Access to reminders denied or error occurred
@@ -117,7 +119,7 @@ class DashboardNavBar: BaseView {
                             do {
                                 try eventStore.save(event, span: .thisEvent)
                                 if let viewController = self?.getVisibleViewController() {
-//                                    self?.showAlert(title: "Success", message: "Event added to calendar!", viewController: viewController)
+                                    //                                    self?.showAlert(title: "Success", message: "Event added to calendar!", viewController: viewController)
                                 }
                                 
                                 // Add a reminder for the event
@@ -170,7 +172,7 @@ class DashboardNavBar: BaseView {
                     }
                     
                     datePicker.translatesAutoresizingMaskIntoConstraints = false
-
+                    
                     NSLayoutConstraint.activate([
                         datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 20 + 15 + 40), // Adjust top constraint value with padding
                         datePicker.leadingAnchor.constraint(equalTo: alertController.view.leadingAnchor, constant: 20 + 15 + 40), // Adjust leading constraint value with padding
@@ -183,13 +185,14 @@ class DashboardNavBar: BaseView {
     }
     
     
-    
+    // MARK: Show Alert
     func showAlert(title: String, message: String, viewController: UIViewController) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         viewController.present(alertController, animated: true, completion: nil)
     }
     
+    // MARK: Get Visible View Controller
     func getVisibleViewController() -> UIViewController? {
         if let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
            let rootViewController = keyWindow.rootViewController {
@@ -202,6 +205,7 @@ class DashboardNavBar: BaseView {
         return nil
     }
     
+    // MARK: Show Calender
     @objc func showCalendar() {
         let alertController = UIAlertController(title: "Select a Date", message: nil, preferredStyle: .alert)
         
@@ -235,14 +239,14 @@ class DashboardNavBar: BaseView {
         
         // Set date picker constraints
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-
+        
         NSLayoutConstraint.activate([
             datePicker.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 20 + 15 + 60), // Adjust top constraint value with padding
             datePicker.leadingAnchor.constraint(equalTo: alertController.view.leadingAnchor, constant: 20 + 15 + 60), // Adjust leading constraint value with padding
             datePicker.trailingAnchor.constraint(equalTo: alertController.view.trailingAnchor, constant: -20 - 15 - 60), // Adjust trailing constraint value with padding
             datePicker.bottomAnchor.constraint(equalTo: alertController.view.bottomAnchor, constant: -20 - 15 - 60) // Adjust bottom constraint value with padding
         ])
-
+        
         
         // Configure select action
         let selectAction = UIAlertAction(title: "Select", style: .default) { _ in
@@ -278,8 +282,6 @@ class DashboardNavBar: BaseView {
             topViewController.present(alertController, animated: true, completion: nil)
         }
     }
-    
-    
     
     
     // MARK: Setup Views
@@ -335,6 +337,8 @@ class DashboardNavBar: BaseView {
 }
 
 extension UIViewController {
+    
+    // MARK: Topmost
     func topmostPresentedViewController() -> UIViewController {
         if let presentedViewController = presentedViewController {
             return presentedViewController.topmostPresentedViewController()

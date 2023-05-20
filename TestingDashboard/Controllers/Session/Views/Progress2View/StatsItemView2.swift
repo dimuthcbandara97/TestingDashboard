@@ -19,25 +19,25 @@ enum StatsItem2 {
         switch self {
         case .topic01(let value):
             return StatsItemView2.ItemData(image: UIImage(systemName: "person.fill"),
-                                          value: "\(value)",
-                                          title: "Age")
+                                           value: "\(value)",
+                                           title: "Age")
         case .topic02(let value):
             return StatsItemView2.ItemData(image: UIImage(systemName: "ruler"),
-                                          value: "\(value)",
-                                          title: "Height")
+                                           value: "\(value)",
+                                           title: "Height")
         case .topic03(let value):
             return StatsItemView2.ItemData(image: UIImage(systemName: "rectangle.3.offgrid"),
-                                          value: "\(value)",
-                                          title: "Weight")
+                                           value: "\(value)",
+                                           title: "Weight")
         case .topic04(let value):
             return StatsItemView2.ItemData(image: UIImage(systemName: "heart.text.square"),
-                                          value: "\(value)",
-                                          title: "BMI")
+                                           value: "\(value)",
+                                           title: "BMI")
         }
     }
-
+    
 }
- 
+
 // MARK: Extension
 class StatsItemView2: BaseView {
     
@@ -48,42 +48,42 @@ class StatsItemView2: BaseView {
         let title: String
     }
     
-
-     private let imageView: UIImageView = {
-         let imageView = UIImageView()
-         imageView.contentMode = .scaleAspectFill
-         imageView.clipsToBounds = false
-         imageView.layer.cornerRadius = 8
-         return imageView
-     }()
-//     imageView.contentMode = .scaleAspectFit
-//     imageView.clipsToBounds = true
-
-     private let valueLabel: UILabel = {
-         let label = UILabel()
-         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-         label.textColor = .black
-         label.textAlignment = .center
-         return label
-     }()
-
-     private let titleLabel: UILabel = {
-         let label = UILabel()
-         label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-         label.textColor = .purple
-         label.textAlignment = .center
-         return label
-     }()
-
-     private let stackView: UIStackView = {
-         let view = UIStackView()
-         view.axis = .vertical
-         view.alignment = .center
-         view.distribution = .fillProportionally
-         view.spacing = 5
-         return view
-     }()
-
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = false
+        imageView.layer.cornerRadius = 8
+        return imageView
+    }()
+    //     imageView.contentMode = .scaleAspectFit
+    //     imageView.clipsToBounds = true
+    
+    private let valueLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.textColor = .black
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.textColor = .purple
+        label.textAlignment = .center
+        return label
+    }()
+    
+    private let stackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.alignment = .center
+        view.distribution = .fillProportionally
+        view.spacing = 5
+        return view
+    }()
+    
     
     // CONFIGURE FUNC
     func configure(with item: StatsItem2) {
@@ -104,7 +104,7 @@ extension StatsItemView2 {
         stackView.addArrangedSubview(valueLabel)
         stackView.addArrangedSubview(titleLabel)
     }
-   
+    
     // MARK: Constraint Views
     override func constaintViews(){
         super.constaintViews()

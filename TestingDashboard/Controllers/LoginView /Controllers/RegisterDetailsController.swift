@@ -26,7 +26,7 @@ class RegisterDetailsController: UIViewController {
     private let fitnessGoal = CustomTextField(fieldType: .fitness_goal)
     
     
-   
+    
     
     // buttons
     private let signUpButton = CustomButton(title: "Continue", hasBackground: true, fontSize: .big)
@@ -40,7 +40,7 @@ class RegisterDetailsController: UIViewController {
         
         self.setupUI()
         
-//        self.termsTextView.delegate = self
+        //        self.termsTextView.delegate = self
         
         self.signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         self.signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
@@ -64,7 +64,7 @@ class RegisterDetailsController: UIViewController {
         self.view.addSubview(ageField)
         self.view.addSubview(fitnessGoal)
         self.view.addSubview(signUpButton)
-//        self.view.addSubview(termsTextView)
+        //        self.view.addSubview(termsTextView)
         self.view.addSubview(signInButton)
         
         // Setting translatesAutoresizingMaskIntoConstraints
@@ -75,9 +75,9 @@ class RegisterDetailsController: UIViewController {
         self.ageField.translatesAutoresizingMaskIntoConstraints = false
         self.fitnessGoal.translatesAutoresizingMaskIntoConstraints = false
         self.signUpButton.translatesAutoresizingMaskIntoConstraints = false
-//        self.termsTextView.translatesAutoresizingMaskIntoConstraints = false
+        //        self.termsTextView.translatesAutoresizingMaskIntoConstraints = false
         self.signInButton.translatesAutoresizingMaskIntoConstraints = false
-
+        
         // Setting up constraints
         NSLayoutConstraint.activate([
             
@@ -105,23 +105,23 @@ class RegisterDetailsController: UIViewController {
             self.weightField.heightAnchor.constraint(equalToConstant: 55),
             self.weightField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             // age
-                    self.ageField.topAnchor.constraint(equalTo: weightField.bottomAnchor, constant: 22),
-                    self.ageField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.ageField.heightAnchor.constraint(equalToConstant: 55),
-                    self.ageField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-                    
-                    // gender
-                    self.fitnessGoal.topAnchor.constraint(equalTo: ageField.bottomAnchor, constant: 22),
-                    self.fitnessGoal.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.fitnessGoal.heightAnchor.constraint(equalToConstant: 55),
-                    self.fitnessGoal.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-                    
-                    // sign up
-                    self.signUpButton.topAnchor.constraint(equalTo: fitnessGoal.bottomAnchor, constant: 22),
-                    self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                    self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
-                    self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
-
+            self.ageField.topAnchor.constraint(equalTo: weightField.bottomAnchor, constant: 22),
+            self.ageField.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            self.ageField.heightAnchor.constraint(equalToConstant: 55),
+            self.ageField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            
+            // gender
+            self.fitnessGoal.topAnchor.constraint(equalTo: ageField.bottomAnchor, constant: 22),
+            self.fitnessGoal.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            self.fitnessGoal.heightAnchor.constraint(equalToConstant: 55),
+            self.fitnessGoal.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            
+            // sign up
+            self.signUpButton.topAnchor.constraint(equalTo: fitnessGoal.bottomAnchor, constant: 22),
+            self.signUpButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            self.signUpButton.heightAnchor.constraint(equalToConstant: 55),
+            self.signUpButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+            
             
             // Sign In Button
             self.signInButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 11),
@@ -132,21 +132,21 @@ class RegisterDetailsController: UIViewController {
     }
     
     // MARK: - Selectors
-
+    
     @objc func didTapSignUp() {
-
+        
         
         guard let status = statusField.text,
-                    let weightStr = weightField.text,
-                    let heightStr = heightField.text,
-                    let ageStr = ageField.text,
-                    let fitnessGoal = fitnessGoal.text,
-                    let weight = Int(weightStr),
-                    let height = Int(heightStr),
-                    let age = Int(ageStr) else {
-                  print("Required fields are missing or invalid")
-                  return
-              }
+              let weightStr = weightField.text,
+              let heightStr = heightField.text,
+              let ageStr = ageField.text,
+              let fitnessGoal = fitnessGoal.text,
+              let weight = Int(weightStr),
+              let height = Int(heightStr),
+              let age = Int(ageStr) else {
+            print("Required fields are missing or invalid")
+            return
+        }
         
         print(status)
         print(weightStr)
@@ -154,17 +154,17 @@ class RegisterDetailsController: UIViewController {
         print(ageStr)
         print(fitnessGoal)
         
-
+        
         let keychain = KeychainWrapper.standard
-
+        
         if let emailRegister = keychain.string(forKey: "EmailRegister") {
             print("Email: \(emailRegister)")
-
+            
             let userss = UserDetailssElement(status: status, height: height, weight: weight, age: age, fitnessGoal: fitnessGoal, email: emailRegister)
-
+            
             // Use the 'userss' object as needed
             // ...
-
+            
             APICaller.shared.insertUserDetails(userr: userss) { success, error in
                 if let error = error {
                     print("API call failed with error: \(error.localizedDescription)")
@@ -181,7 +181,7 @@ class RegisterDetailsController: UIViewController {
             // Handle the error case appropriately
             // ...
         }
-
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             // Code to be executed after a 2 second delay
@@ -189,11 +189,11 @@ class RegisterDetailsController: UIViewController {
             let vc = LoginViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        }
-
-
-  
-// MARK: didTapSignIn()
+    }
+    
+    
+    
+    // MARK: didTapSignIn()
     @objc private func didTapSignIn() {
         self.navigationController?.popToRootViewController(animated: true)
     }

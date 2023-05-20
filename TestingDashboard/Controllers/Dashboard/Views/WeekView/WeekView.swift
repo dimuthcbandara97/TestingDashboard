@@ -13,18 +13,18 @@ final class WeekView: BaseView {
     
     private let calendar = Calendar.current
     private let stackView = UIStackView()
- 
+    
 }
 
 
 extension WeekView {
-  
+    
     // MARK: Setup Views
     override func setupViews(){
         super.setupViews()
-       setupView(stackView)
+        setupView(stackView)
     }
-
+    
     override func constaintViews() {
         super.constaintViews()
         NSLayoutConstraint.activate([
@@ -34,29 +34,29 @@ extension WeekView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
-
+    
     override func configureAppearance() {
         super.configureAppearance()
         
         stackView.spacing = 7
         stackView.distribution = .fillEqually
-
+        
         var weekdays = calendar.shortStandaloneWeekdaySymbols
         
         if calendar.firstWeekday == 1 {
-           let sun = weekdays.remove(at: 0)
+            let sun = weekdays.remove(at: 0)
             weekdays.append(sun)
         }
-
+        
         
         weekdays.enumerated().forEach {index, name in
             
             let view = WeekDaysView()
             view.configure(with: index, and: name)
-        
-        stackView.addArrangedSubview(view)
-        
+            
+            stackView.addArrangedSubview(view)
+            
+        }
     }
-}
 }
 

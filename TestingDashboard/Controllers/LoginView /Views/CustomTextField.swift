@@ -44,28 +44,28 @@ class CustomTextField: UITextField {
         self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: self.frame.size.height))
         
         switch fieldType {
-        
-        // user name
+            
+            // user name
         case .username:
             self.placeholder = "Username"
-        
-        // email
+            
+            // email
         case .email:
             self.placeholder = "Email Address"
             self.keyboardType = .emailAddress
             self.textContentType = .emailAddress
             
-        // password
+            // password
         case .password:
             self.placeholder = "Password"
             self.textContentType = .oneTimeCode
             self.isSecureTextEntry = true
-        
-        // Age
+            
+            // Age
         case .age:
             self.placeholder = "Age"
-        
-        // Gender
+            
+            // Gender
         case .gender:
             self.placeholder = "Gender"
             
@@ -80,8 +80,6 @@ class CustomTextField: UITextField {
         case .fitness_goal:
             self.placeholder = "Fitness Goal"
         }
-        
-        
     
     }
     

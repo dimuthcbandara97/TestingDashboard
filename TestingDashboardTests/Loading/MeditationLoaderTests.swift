@@ -12,36 +12,36 @@ class MeditationLoaderTests: XCTestCase {
     func testLoadMeditationWithValidData() {
         let expectation = XCTestExpectation(description: "Load meditation data from API")
         let meditationLoader = MeditationLoader()
-
+        
         meditationLoader.loadMeditation { meditations in
             XCTAssertGreaterThan(meditations.count, 0)
             expectation.fulfill()
         }
-
+        
         wait(for: [expectation], timeout: 5.0)
     }
-
+    
     func testLoadMeditationWithInvalidURL() {
         let expectation = XCTestExpectation(description: "Load meditation data from API with invalid URL")
         let meditationLoader = MeditationLoader()
-
+        
         meditationLoader.loadMeditation { meditations in
             XCTAssertEqual(meditations.count, 0)
             expectation.fulfill()
         }
-
+        
         wait(for: [expectation], timeout: 5.0)
     }
-
+    
     func testLoadMeditationWithInvalidData() {
         let expectation = XCTestExpectation(description: "Load meditation data from API with invalid data")
         let meditationLoader = MeditationLoader()
-
+        
         meditationLoader.loadMeditation { meditations in
             XCTAssertEqual(meditations.count, 0)
             expectation.fulfill()
         }
-
+        
         wait(for: [expectation], timeout: 5.0)
     }
 }
@@ -53,14 +53,14 @@ struct MeditationElement: Codable {
 class MeditationLoader {
     func loadMeditation(completion: @escaping ([MeditationElement]) -> Void) {
         guard let url = URL(string: Constants4.API_KEY_MEDITATION) else { return }
-
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url, timeoutInterval: 30)) { data, _, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "Unknown error")
                 completion([])
                 return
             }
-
+            
             do {
                 let results = try JSONDecoder().decode([MeditationElement].self, from: data)
                 completion(results)
@@ -69,7 +69,7 @@ class MeditationLoader {
                 completion([])
             }
         }
-
+        
         task.resume()
     }
 }

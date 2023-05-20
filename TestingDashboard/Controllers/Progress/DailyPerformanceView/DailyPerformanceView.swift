@@ -29,7 +29,7 @@ extension DailyPerformanceView {
     // MARK: Constraints
     override func constaintViews(){
         super.constaintViews()
-       
+        
         NSLayoutConstraint.activate([
             // LTRB added
             barsView.topAnchor.constraint(equalTo: contentView.topAnchor),

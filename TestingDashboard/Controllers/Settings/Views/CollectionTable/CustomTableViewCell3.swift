@@ -24,8 +24,9 @@ class CollectionTableViewCell3: UITableViewCell , UICollectionViewDelegate, UICo
     private var viewModels3: [TitleCollectionViewCellViewModel3] = []
     
     private let collectionView: UICollectionView
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
@@ -65,8 +66,7 @@ class CollectionTableViewCell3: UITableViewCell , UICollectionViewDelegate, UICo
         return cell
     }
     
-    
-    
+    // MARK: Configure
     func configure(with viewModel: CollectionTableViewCellViewModel3){
         self.viewModels3 = viewModel.viewModels
         collectionView.reloadData()

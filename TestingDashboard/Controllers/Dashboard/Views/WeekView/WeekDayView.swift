@@ -28,53 +28,50 @@ extension WeekView {
             
             nameLabel.text = name.uppercased()
             nameLabel.textColor = isTooday ? .white : .black
-                        
+            
             dateLabel.text = "\(day)"
             dateLabel.textColor = isTooday ? .white : .blue
         }
- 
+        
     }
 }
+
+extension WeekView.WeekDaysView {
     
-    extension WeekView.WeekDaysView {
+    override func setupViews(){
+        super.setupViews()
         
-        override func setupViews(){
-            super.setupViews()
-
-            setupView(stackView)
-           
-            stackView.addArrangedSubview(nameLabel)
-            stackView.addArrangedSubview(dateLabel)
-            
-        }
-
-        override func constaintViews() {
-            super.constaintViews()
-            NSLayoutConstraint.activate([
-               
-                stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-                stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
-                
-                
-            ])
-        }
-
-        override func configureAppearance() {
-            super.configureAppearance()
-
-            layer.cornerRadius = 5
-            layer.masksToBounds = true
-                        
-//            nameLabel.font =
-            nameLabel.textAlignment = .center
-             
-//            dateLabel.font = 
-            dateLabel.textAlignment = .center
-            
-            stackView.spacing = 3
-            stackView.axis = .vertical
-        }
+        setupView(stackView)
+        
+        stackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(dateLabel)
+        
     }
+    
+    override func constaintViews() {
+        super.constaintViews()
+        NSLayoutConstraint.activate([
+            
+            stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            
+        ])
+    }
+    
+    override func configureAppearance() {
+        super.configureAppearance()
+        
+        layer.cornerRadius = 5
+        layer.masksToBounds = true
+
+        nameLabel.textAlignment = .center
+
+        dateLabel.textAlignment = .center
+        
+        stackView.spacing = 3
+        stackView.axis = .vertical
+    }
+}
 
 
 

@@ -63,7 +63,7 @@ class AuthHeaderView: UIView {
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-
+        
         // setting layout constraints manually
         NSLayoutConstraint.activate([
             

@@ -94,28 +94,8 @@ extension BaseBarView {
         ])
     }
     
-//    // MARK: Configure Appearance
+    // MARK: Configure Appearance
 
-//    override func configureAppearance() {
-//        super.configureAppearance()
-//
-//        backgroundColor = UIColor(white: 0.9, alpha: 1.0) // Set a light gray background color
-//
-//        barView.backgroundColor = .systemTeal
-//        barView.layer.cornerRadius = barView.bounds.height / 2 // Make the barView rounded
-//
-//        // Apply a shadow to the barView
-//        barView.layer.shadowColor = UIColor.black.cgColor
-//        barView.layer.shadowOpacity = 0.5
-//        barView.layer.shadowOffset = CGSize(width: 0, height: 2)
-//        barView.layer.shadowRadius = 4
-//
-//        // Add a border to the barView
-//        barView.layer.borderWidth = 1
-//        barView.layer.borderColor = UIColor.white.cgColor
-//
-//
-//    }
 
     override func configureAppearance() {
         super.configureAppearance()

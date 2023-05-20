@@ -22,7 +22,7 @@ class TitleCollectionViewCell4: UICollectionViewCell {
     static let identifier = "TitleCollectionViewCell4"
     
     private let label: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = .black
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 20, weight: .medium)
@@ -37,7 +37,6 @@ class TitleCollectionViewCell4: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        contentView.backgroundColor = .systemPink
         contentView.addSubview(label)
         contentView.addSubview(imageView)
         contentView.layer.cornerRadius = 6
@@ -49,18 +48,20 @@ class TitleCollectionViewCell4: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Layout Sub Views
     override func layoutSubviews() {
         super.layoutSubviews()
         label.frame = contentView.bounds
         imageView.frame = contentView.bounds
     }
     
+    // MARK: Configure
     func configure(with viewModel: TitleCollectionViewCellViewModel4){
         contentView.backgroundColor = viewModel.backgroundColor.withAlphaComponent(0.3) // set the background color with transparency
         if let imageURL = viewModel.imageURL {
             DispatchQueue.global().async { [weak self] in
                 if let imageData = try? Data(contentsOf: imageURL),
-                    let image = UIImage(data: imageData) {
+                   let image = UIImage(data: imageData) {
                     DispatchQueue.main.async {
                         self?.imageView.alpha = 0.5 // set the image transparency
                         self?.imageView.image = image

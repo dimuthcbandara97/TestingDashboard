@@ -9,7 +9,8 @@
 import Foundation
 
 struct Constants {
-    // 
+    
+    // MARK: Links of the API
     static let API_KEY_USERS = "https://nodemongocrud.onrender.com/api/users"
     static let API_KEY_EXERCISE = "https://nodemongocrud.onrender.com/api/exercise"
     static let API_KEY_MEDITATION = "https://nodemongocrud.onrender.com/api/meditation"
@@ -20,8 +21,7 @@ struct Constants {
     static let API_KEY_STATS = "https://nodemongocrud.onrender.com/api/stats"
     static let API_KEY_USER_DETAILS = "https://nodemongocrud.onrender.com/api/user_details"
     static let API_KEY_FAVOURITES = "https://nodemongocrud.onrender.com/api/favourites"
-
-    
+        
 }
 
 enum APIError: Error {

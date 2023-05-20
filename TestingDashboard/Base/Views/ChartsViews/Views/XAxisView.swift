@@ -18,21 +18,6 @@ final  class XAxisView: BaseView {
     }()
     
     // MARK: Configure Appeaance
-//    func configure(with data: [BaseChartsView.Data]) {
-//        stackView.arrangedSubviews.forEach {
-//            $0.removeFromSuperview()
-//        }
-//        data.reversed().forEach {
-//            let lable = UILabel()
-////            lable.font =
-//            lable.textColor = .black
-//            lable.textAlignment = .center
-//            //lable.textAlignment = .center
-//            lable.text = $0.title.uppercased() //TODO: Remake calculated interval
-//
-//            stackView.addArrangedSubview(lable)
-//        }
-//    }
     func configure(with data: [BaseChartsView.Data]) {
         stackView.arrangedSubviews.forEach {
             $0.removeFromSuperview()
@@ -57,7 +42,7 @@ final  class XAxisView: BaseView {
             stackView.addArrangedSubview(label)
         }
     }
-
+    
     
 }
 
@@ -84,7 +69,6 @@ extension XAxisView {
     
     override func configureAppearance() {
         super.configureAppearance()
-        
         backgroundColor = .clear
     }
 }

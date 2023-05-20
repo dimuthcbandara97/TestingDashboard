@@ -24,7 +24,7 @@ class CollectionTableViewCell4: UITableViewCell , UICollectionViewDelegate, UICo
     private var viewModels4: [TitleCollectionViewCellViewModel4] = []
     
     private let collectionView: UICollectionView
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal

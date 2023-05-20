@@ -25,20 +25,22 @@ class CollectionTableViewCell: UITableViewCell , UICollectionViewDelegate, UICol
     private var viewModels: [TitleCollectionViewCellViewModel] = []
     
     private let collectionView: UICollectionView
-
+    
+    // MARK: Init Method
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
         self.collectionView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
-
+        
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.collectionView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
-
+        
         contentView.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -67,7 +69,7 @@ class CollectionTableViewCell: UITableViewCell , UICollectionViewDelegate, UICol
         cell.configure(with: viewModels[indexPath.row])
         return cell
     }
-        
+    
     
     func configure(with viewModel: CollectionTableViewCellViewModel){
         self.viewModels = viewModel.viewModels

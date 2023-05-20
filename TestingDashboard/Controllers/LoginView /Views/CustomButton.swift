@@ -32,7 +32,7 @@ class CustomButton: UIButton {
         
         // choosing font Size
         switch fontSize {
-        
+            
         case .big:
             self.titleLabel?.font = .systemFont(ofSize: 22, weight: .bold)
             
