@@ -44,6 +44,11 @@
 
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>Requesting access to save photos and videos to the photo library</string>
+    
+    <key>NSUserNotificationEnabled</key>
+    <true/>
+    <key>NSAlertStyle</key>
+    <string>alert</string>
 
     <key>UIUserNotificationCategories</key>
     <array>

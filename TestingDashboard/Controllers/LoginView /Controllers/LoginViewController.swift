@@ -72,12 +72,8 @@ class LoginViewController: UIViewController {
     }
     
     func dispatchNotification() {
-        let title = "Your Workout"
-        let body = "Testing Workout"
-        let hour = 15
-        let minute = 43
-        let isDaily = true
-        
+        let title = "Gym Application"
+        let body = "Continue Your Exercises.... 💪🏋️‍♂️"
         let notificationCenter = UNUserNotificationCenter.current()
         
         let content = UNMutableNotificationContent()
@@ -85,11 +81,11 @@ class LoginViewController: UIViewController {
         content.body = body
         content.sound = .default
         
-        var dateComponents = DateComponents()
-        dateComponents.hour = hour
-        dateComponents.minute = minute
+        // Calculate the notification trigger time
+        let tenMinutesFromNow = Calendar.current.date(byAdding: .minute, value: 2, to: Date())!
+        let triggerDateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: tenMinutesFromNow)
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isDaily)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDateComponents, repeats: false)
         
         let request = UNNotificationRequest(identifier: "MyNotification", content: content, trigger: trigger)
         
@@ -101,6 +97,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
+
     
     // View Will Appear
     override func viewWillAppear(_ animated: Bool) {
