@@ -33,4 +33,4 @@ Link to open meditations - https://nodemongocrud.onrender.com/api/meditation
 Link to open nutrition - https://nodemongocrud.onrender.com/api/nutrition
 
 # Screencast Video
-Link - https://drive.google.com/drive/folders/1eElzIV5FPuOK9YiYtBfqYUXGUqgx_Rca?usp=share_link 
+Link - https://drive.google.com/file/d/1aH95XlteQtakAY7FHmBuj3WR8IWI4K-U/view?usp=share_link  
