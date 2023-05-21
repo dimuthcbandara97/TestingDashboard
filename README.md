@@ -24,7 +24,6 @@ This code structure is designed using MVVM architecture
 # File Distribution -> Controllers
 ![image](https://github.com/dimuthcbandara97/TestingDashboard/assets/107378946/70ff3b4a-03bd-4b11-ad6b-978087b8d4c4)
 
-
 # Link to the backend code
 https://github.com/dimuthcbandara97/NodeMongoCRUD
 
@@ -32,3 +31,6 @@ https://github.com/dimuthcbandara97/NodeMongoCRUD
 Link to open exercises - https://nodemongocrud.onrender.com/api/exercise
 Link to open meditations - https://nodemongocrud.onrender.com/api/meditation
 Link to open nutrition - https://nodemongocrud.onrender.com/api/nutrition
+
+# Screencast Video
+Link - https://drive.google.com/drive/folders/1eElzIV5FPuOK9YiYtBfqYUXGUqgx_Rca?usp=share_link 
